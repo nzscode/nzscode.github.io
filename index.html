@@ -5,17 +5,47 @@
   <title>My Code Snippets</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial scale=1">
-  <link rel="stylesheet" href=styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <section class="info_block">
         <section class="Title">
-            <h3>Lists</h3>
-            <h4>Combining two lists into one:</h4>
-            <div class="highlight">
+            <h1>Lists</h1>
+            <button type="button" class="collapsible">Combining two lists into one</button>
+            <div class="content">
+                <section class = "code-box">                
                 <span></span>
-                <span class="arrows">...</span>
-                <span class="txt gr">list1 = ["apples", "bananas"]</span>
+                
+                <span class="code-text">f_names = <span class="brackets">[</span><span class="string">"Sophia", "Liam", "Olivia", "Noah"<span class="brackets">]</span></span></span>
+                <br>
+                <br>
+                
+                <span class="code-text">l_names = <span class="brackets">[</span><span class="string">"Smith", "Kim", "García", "Müller"<span class="brackets">]</span></span></span>
+                <br>
+                <br>
+                
+                <span class="code-text">full_name = []</span>
+                <br>
+                <br>
+                
+                <span class="code-text"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="method">range</span>(<span class="method">len</span>(f_names)):</span>
+                <br>
+                
+                <span class="code-text">&emsp;&emsp;&emsp;&emsp;full_name.<span class="method">append</span>([f_names[i], l_names[i]])</span>
+                <br>
+                
+                <br>
+                
+                <span class="code-text"><span class="function-reference">print</span>(full_name)</span>
+                <br>
+                <br>
+                </section>
+                <br>
+                <section class="output-box"
+                
+                <span class="code-text">[['Sophia', 'Smith'], ['Liam', 'Kim'], ['Olivia', 'García'], ['Noah', 'Müller']</span>
+                <br>
+
             </div>
         </section>
     </section>
