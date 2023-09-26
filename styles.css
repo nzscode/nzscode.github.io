@@ -51,11 +51,14 @@ h1{
     margin-right: 45px;
 }
 
-.brackets{
+.brackets-out{
     /*  */
     color: yellow;
 }
 
+.brackets-in{
+    color: #37f877;
+}
 .method{
     color: cornflowerblue;
 }
