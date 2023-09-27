@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="info_block">
+        <section class="Title">
+            <h1>Lists</h1>
+            <section class="snippet-block">
+                <button type="button" class="collapsible">Combining two lists into one</button>
+                <div class="content">
+                    <section class = "code-box" id="1">                
+                    <span><button class="copy-btn" onclick="copy_to_clip()">Copy</button></span>
+                    <br><br>
+                    
+                    <span class="code-text">f_names = <span class="brackets-out">[</span><span class="string">"Sophia", "Liam", "Olivia", "Noah"<span class="brackets-out">]</span></span></span>
+                    <br>
+                    <br>                
+                    <span class="code-text">l_names = <span class="brackets-out">[</span><span class="string">"Smith", "Kim", "García", "Müller"<span class="brackets-out">]</span></span></span>
+                    <br>
+                    <br>                
+                    <span class="code-text">full_name = []</span>
+                    <br>
+                    <br>                
+                    <span class="code-text"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="method">range</span>(<span class="method">len</span>(f_names)):</span>
+                    <br>                
+                    <span class="code-text">&emsp;&emsp;&emsp;&emsp;full_name.<span class="method">append</span>([f_names[i], l_names[i]])</span>
+                    <br>                
+                    <br>                
+                    <span class="code-text"><span class="function-reference">print</span>(full_name)</span>
+                    <br>
+                    <br>
+                    </section>
+                    <br>
+
+                    <section class="output-box"                
+                    <span class="code-text">[['Sophia', 'Smith'], ['Liam', 'Kim'], ['Olivia', 'García'], ['Noah', 'Müller']</span>
+                    <br>
+                </div>            
+            </section>
+            <br>
+            <section class="snippet-block">
+                <button type="button" class="collapsible">Splitting a list</button>
+                <div class="content">
+                    <section class = "code-box code-text">                
+                    <span></span>                    
+                    f_names = <span class="brackets-out">[</span><span class="string">"Sophia", "Liam", "Olivia", "Noah"<span class="brackets-out">]</span></span>
+                    <br>
+                    <br>                
+                    l_names = <span class="brackets-out">[</span><span class="string">"Smith", "Kim", "García", "Müller"<span class="brackets-out">]</span></span>
+                    <br>
+                    <br>                
+                    part1 = f_names<span class="brackets-out">[</span>:int<span class="brackets-out">(</span>len<span class="brackets-in">(</span>f_names<span class="brackets-in">)</span>/<span style="color: orange;">2</span><span class="brackets-out">)</span><span class="brackets-out">]</span>
+                    <br>
+                    <br>                
+                    part2 = f_names[int(len(f_names)/2):]</span>
+                    <br>                   
+                    <br>                
+                    <span class="function-reference">print</span>(part1)
+                    <br>
+                    <br>
+                    <span class="function-reference">print</span>(part2)
+                    </section>
+                    
+                    <br>
+                    <section class="output-box code-text">             
+                    ['Sophia', 'Liam']
+                    <br><br>
+                    ['Olivia', 'Noah']
+                    </section>   
+                    <br>
+                </div>            
+            </section>
+            <br>
+            <section class="snippet-block">
+                <button type="button" class="collapsible">List to tuples</button>
+                <div class="content">
+                    <section class = "code-box code-text">                
+                    <span></span>                    
+                    f_names = <span class="brackets-out">[</span>
+                    <span class="string">"Sophia", "Liam", "Olivia", "Noah"</span>
+                    <span class="brackets-out">]</span>
+                    <br><br>                
+                    l_names = <span class="brackets-out">[</span>
+                    <span class="string">"Smith", "Kim", "García", "Müller"</span>
+                    <span class="brackets-out">]</span>
+                    <br><br>                
+                    people = []
+                    <br><br>
+                    for i in range(len(f_names)):
+                    <br><br>
+                    &emsp;&emsp;&emsp;&emsp;full_name = (f_names[i], l_names[i])
+                    <br><br>
+                    &emsp;&emsp;&emsp;&emsp;prople.append((full_name))
+                    <br><br>                
+                    <span class="function-reference">print</span>(people)
+                    <br><br>
+                    </section>
+                    
+                    <br>
+                    <section class="output-box code-text">             
+                    [('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'García'), ('Noah', Müller)]
+                    <br><br>
+                    </section>   
+                    <br>
+                </div>            
+            </section>
+            <br>
+            <section class="snippet-block">
+                <button type="button" class="collapsible">List to Dictionary</button>
+                <div class="content">
+                    <section class = "code-box code-text">                
+                    <span></span>                    
+                    f_names = <span class="brackets-out">[</span>
+                    <span class="string">"Sophia", "Liam", "Olivia", "Noah"</span>
+                    <span class="brackets-out">]</span>
+                    <br><br>                
+                    l_names = <span class="brackets-out">[</span>
+                    <span class="string">"Smith", "Kim", "García", "Müller"</span>
+                    <span class="brackets-out">]</span>
+                    <br><br>                
+                    people = {}
+                    <br><br>
+                    full_name = {}
+                    <br><br>
+                    for i in range(len(f_names)):
+                    <br><br>
+                    &emsp;&emsp;&emsp;&emsp;full_name["first_name"] = f_names[i]
+                    <br><br>
+                    &emsp;&emsp;&emsp;&emsp;full_name["last_name"] = l_names[i]
+                    <br><br>   
+                    &emsp;&emsp;&emsp;&emsp;people[i] = full_name
+                    <br><br>              
+                    <span class="function-reference">print</span>(people)
+                    <br><br>
+                    </section>
+                    
+                    <br>
+                    <section class="output-box code-text">             
+                    {0: {'first_name': 'Sophia', 'last_name': 'Smith'}, 
+                    1: {'first_name': 'Liam', 'last_name': 'Kim'}, 
+                    2: {'first_name': 'Olivia', 'last_name': 'García'}, 
+                    3: {'first_name': 'Noah', 'last_name': 'Müller'}}
+                    <br><br>
+                    </section>   
+                    <br>
+                </div>            
+            </section>
+            <br>
+            <section class="snippet-block">
+                <button type="button" class="collapsible">List to CSV</button>
+                <div class="content">
+                    <br><br>
+                    To convert a list to a CSV:
+                    <br><br>
+                    <section class = "code-box code-text">                
+                    <span></span>   
+                    <span class="TODO"># TODO: 1. We have to import the Modules and Packages we need.</span>
+                    <br>
+                    from reportlab.platypus import SimpleDocTemplate, TableStyle
+                    <br>
+                    from reportlab.platypus import Paragraph, Spacer, Table, Image
+                    <br>
+                    from reportlab.lib.styles import getSampleStyleSheet
+                    <br>
+                    from reportlab.lib import colors
+                    <br><br>
+                    f_names = <span class="brackets-out">[</span>
+                    <span class="string">"Sophia", "Liam", "Olivia", "Noah"</span>
+                    <span class="brackets-out">]</span>
+                    <br>              
+                    l_names = <span class="brackets-out">[</span>
+                    <span class="string">"Smith", "Kim", "García", "Müller"</span>
+                    <span class="brackets-out">]</span>
+                    <br><br>             
+                    <span class="TODO"># TODO: 2. We must give our new pdf a name and point the path to the folder where we want to store our new pdf.
+                    </span>
+                    <br>   
+                    path = "../Resources/"
+                    <br>
+                    pdf = SimpleDocTemplate(path + "report.pdf")
+                    <br><br>
+                    <span class="TODO"># TODO: 3. We must assign a variable for the Style Sheet Template we will use.
+                    </span>
+                    <br>
+                    styles = getSampleStyleSheet()
+                    <br><br>
+                    <span class="TODO"># TODO: 4. We can give our pdf a title, and a style.</span>
+                    <br>
+                    pdf_title = Paragraph("Names", styles["h1"])
+                    <br><br>
+                    <span class="TODO"># TODO: 5. We have to make a list where the data will be sorted and stored.</span>
+                    <br>
+                    full_names = []
+                    <br><br>
+                    <span class="TODO"># TODO: 6. We need to assign table headers to a list and append it to the data list.</span>
+                    <br>
+                    table_headers = ['First Names', 'Last Names']
+                    <br>
+                    full_names.append(table_headers)
+                    <br>                    
+                    for i in range(len(f_names)):
+                    <br>
+                    &emsp;&emsp;&emsp;&emsp;full_names.append([f_names[i], l_names[i]])
+                    <br><br>
+                    <span class="TODO"># TODO: 7. We need to assign a variable where we will declare the data that is to be the table.</span>
+                    <br>
+                    pdf_table = Table(data=full_names)
+                    <br>
+                    <br>
+                    <span class="TODO"># TODO: 8. We assign a variable to hold all our new style info.</span>
+                    <br>
+                    header_style = TableStyle([
+                    <br>
+                    &emsp;&emsp;&emsp;&emsp;('BACKGROUND', (0,0), (1,0), colors.grey),
+                    <br>
+                    &emsp;&emsp;&emsp;&emsp;('TEXTCOLOR', (0,0), (1,0), colors.blue)
+                    <br>
+                    ])
+                    <br>
+                    <br>
+                    <span class="TODO"># TODO: 9. We will set the header style to the table.</span>
+                    <br>
+                    pdf_table.setStyle(header_style)
+                    <br><br>
+                    <span class="TODO"># TODO: 10. We must build the table.</span>
+                    <br>
+                    pdf.build([pdf_title, pdf_table])
+                    <br>
+                    </section>
+
+                    <br>                    
+                    To see the new CSV file, we just have to navigate to the folder where we saved it and open the appropriate file.
+                    <br>
+
+                    <section class="output-box code-text">             
+                    <img  src="images/Screenshot 2023-09-26 181229.png">
+                    <br><br>
+                    </section>   
+                    <br>
+                </div>            
+            </section>
+        </section>
+    </section>
+    <script src="javascript.js"></script>
+</body>
+</html>
