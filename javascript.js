@@ -12,3 +12,20 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+
+
+document.querySelector('copy-btn').addEventListener('click', () => {
+  const code = document.getElementsByClassName('code-text');
+  navigator.clipboard.writeText(code.innerHTML);
+});
+
+function copy_to_clip(){
+  var copyText = document.getElementById("1");
+
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+
+  navigator.clipboard.writeText(copyText.value);
+
+  alert("Copied the text: " + copyText.value) ;
+}
