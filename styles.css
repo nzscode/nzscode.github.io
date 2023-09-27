@@ -51,6 +51,11 @@ h1{
     margin-right: 45px;
 }
 
+.TODO{
+    font-style: italic;
+    color: #34a75a;
+}
+
 .brackets-out{
     /*  */
     color: yellow;
@@ -95,4 +100,8 @@ h1{
     margin-bottom: 5px;
     margin-left: 45px;
     margin-right: 45px;
+}
+
+.copy-btn{
+    float: right;
 }
