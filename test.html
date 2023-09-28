@@ -8,23 +8,52 @@
     <title>Document</title>
 </head>
 <body>
-    <!DOCTYPE html>
-<!-- Website - www.codingnepalweb.com -->
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Copy Code To Clipboard | CodingLab</title>
-    <link rel="stylesheet" href="style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <pre id="myPreTag">This is some text.<br>This is some text.<br>This is some text.</pre>
+    <br><br><br> 
+    <section>
 
-  </body>
-</html>
+    <button type="button" class="collapsible"><h2>Collapsible Title</h2></button>
+    <div class="content">
+    <!-- Tab links -->
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'html')">HTML</button>
+        <button class="tablinks" onclick="openTab(event, 'css')">CSS</button>
+        <button class="tablinks" onclick="openTab(event, 'js')">JS</button>
+    </div>
+    
+    <!-- Tab content -->
+    <div id="html" class="tabcontent">
+        <pre id="html_copy_btn" class="code-box">
+Code Line 1
+Code Line 2
+Code Line 3
+        </pre>
+    </div>
+    <div id="css" class="tabcontent">
+        <pre id="css_copy_btn" class="code-box">
 
+/* CSS Comments */
+id {
 
+}
 
+.class {
+
+}
+        </pre>
+    </div>
+    <div id="js" class="tabcontent">
+        <pre id="js_copy_btn" class="code-box">
+//  JS Comments //
+Use &.l.t; without the periods in between for lesser than symbol. 
+
+        </pre>
+    </div>
+    <section class="output-box">
+        <span class="code-text">Output</span>
+    </section>
+    </div>
+    <br><br>
+</section>
     <script src="test.js"></script>
 </body>
 </html>
