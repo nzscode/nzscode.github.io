@@ -1,13 +1,49 @@
-body{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+/* THIS IS FOR THE WHOLE PAGE */
+
+body {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
-h1{
-    font-size: 45px;
-    padding: 0px;
-    margin-top: 0px;
-}
+/* THIS IS FOR THE TABS */
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
 
+
+  /* THIS IS FOR THE COLLAPSIBLE BITS */
+  /* Style the button that is used to open and close the collapsible content */
 .collapsible {
     background-color: #eee;
     color: #444;
@@ -32,6 +68,54 @@ h1{
     overflow: hidden;
     background-color: #f1f1f1;
   }
+
+  /* THIS IS FOR THE COPY BUTTON */
+pre {
+    position: relative;
+    background: #d3d6db;
+    padding: 10px;
+    font-size: 15px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    border: 1px solid #e6e7e9;
+}
+
+.copy-button {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  cursor: pointer;
+  color: #fff;
+  background: gray;
+  border-radius: 0.5em;
+  padding: 2px 7px;
+}
+
+.copy-button:hover{
+  color: #000;
+}
+
+/* THIS IS FOR THE OUTPUT BOX */
+.output-box {
+    font-family: monospace;
+    font-size: 18px;
+    padding: 16px;
+    border-width: 2px;
+    border-color: #060606;
+    background-color: #387a4e;
+    color: #cccccc;
+    border-style: solid;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+    text-shadow: -50px 0px 0px rgba(66,66,66,.0);
+    max-width: 1000px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    margin-left: 45px;
+    margin-right: 45px;
+}
+
+/* THIS IS FOR THE CODE BLOCKS */
 .code-box {
     font-family: monospace;
     font-size: 18px;
@@ -82,26 +166,4 @@ h1{
 }
 .code-text{
     color: #ffffff;
-}
-.output-box {
-    font-family: monospace;
-    font-size: 18px;
-    padding: 16px;
-    border-width: 2px;
-    border-color: #060606;
-    background-color: #387a4e;
-    color: #cccccc;
-    border-style: solid;
-    border-radius: 7px;
-    box-shadow: 0px 0px 5px rgba(66,66,66,.75);
-    text-shadow: -50px 0px 0px rgba(66,66,66,.0);
-    max-width: 1000px;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    margin-left: 45px;
-    margin-right: 45px;
-}
-
-.copy-btn{
-    float: right;
 }
