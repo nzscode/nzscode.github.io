@@ -3,9 +3,387 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Tuples</title>
 </head>
 <body>
-    
+    <section id="Tuples">
+        <h2>Tuples</h2>
+        <section id="combining_tuples">
+            <button type="button" class="collapsible">Combining two tuples into one</button>
+            <div class="content">
+            <pre id="combining_tuples_copy" class="code-box"><code>
+# Combining two tuples into one                
+names = [('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller')]
+jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"), ("Zoo keeper", "Toronto Zoo")]
+
+people = []
+for i in range(len(names)):
+    people.append((names[i], jobs[i]))
+
+print(people)
+            </code></pre>
+            <section>
+                <br><br>
+                <h3>Output: </h3>
+            </section>
+            <section class="output-box">
+                <span class="code-text">[(('Sophia', 'Smith'), ('Teacher', 'Da Vinci PS')), (('Liam', 'Kim'), ('Student', 'Dunbarton High')), (('Olivia', 'Garcia'), ('Nurse', 'Rouge Health')), (('Noah', 'Muller'), ('Zoo keeper', 'Toronto Zoo'))]                </span>
+            </section>
+        </section>
+        <br><br>
+        <section id="splitting_tuples">
+            <button type="button" class="collapsible">Splitting a tuple</button>
+            <div class="content">
+            <pre id="splitting_tuples_copy" class="code-box"><code>
+# Splitting a tuple            
+names = [('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller')]
+jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"), ("Zoo keeper", "Toronto Zoo")]
+
+part1 = names[:int(len(names)/2)]
+part2 = names[int(len(names)/2):]
+
+print(part1)
+print(part2)
+            </code></pre>
+            <section>
+                <br><br>
+                <h3>Output: </h3>
+            </section>
+            <section class="output-box">
+                <span class="code-text">[('Sophia', 'Smith'), ('Liam', 'Kim')]<br>
+                    [('Olivia', 'Garcia'), ('Noah', 'Muller')]</span>
+            </section>
+        </section>
+        <br><br>
+        <section id="tuples_to_tuples">
+            <button type="button" class="collapsible">Tuples to Tuples</button>
+            <div class="content">
+            <pre id="tuples_to_tuples_copy" class="code-box"><code>
+# Tuples to Tuples                
+names = [('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller')]
+jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"), ("Zoo keeper", "Toronto Zoo")]
+
+
+people = []
+for i in range(len(names)):
+    person = (names[i][0], names[i][1], jobs[i][0], jobs[i][1])
+    people.append(person)
+
+print(people)
+        </code></pre>
+        <section>
+            <br><br>
+            <h3>Output: </h3>
+        </section>    
+        <section class="output-box">
+                <span class="code-text">[('Sophia', 'Smith', 'Teacher', 'Da Vinci PS'), ('Liam', 'Kim', 'Student', 'Dunbarton High'), ('Olivia', 'Garcia', 'Nurse', 'Rouge Health'), ('Noah', 'Muller', 'Zoo keeper', 'Toronto Zoo')]                </span>
+            </section>
+        </section>
+        <br><br>
+        <section id="tuples_to_dict">
+            <button type="button" class="collapsible">Tuples to Dictionary</button>
+            <div class="content">
+            <!-- Tab links -->
+            <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'tuples_to_dict_expression')">Dictionary Expression</button>
+                <button class="tablinks" onclick="openTab(event, 'tuples_to_dict_literal')">Dictionary Literal</button>
+            </div>  
+            <!-- Tab content -->
+            <div id="tuples_to_dict_expression" class="tabcontent">               
+            <pre id="tuples_to_dict_expression_copy" class="code-box"><code>
+# Tuples to Dictionary Expression              
+names = [('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller')]
+jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"), ("Zoo keeper", "Toronto Zoo")]
+
+
+people = {}
+for i in range(len(names)):
+    person = {}
+    person["first_name"] = names[i][0]
+    person["last_name"] = names[i][1]
+    person["job"] = jobs[i][1]
+    person["work_location"] = jobs[i][1]
+    people[i] = person
+
+print(people)
+            </code></pre></div>
+            <!-- Tab content -->
+            <div id="tuples_to_dict_literal" class="tabcontent"> 
+            <pre id="tuples_to_dict_literal_copy" class="code-box"><code>
+# Tuples to Dictionary Literal               
+names = [('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller')]
+jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"), ("Zoo keeper", "Toronto Zoo")]
+
+
+people = {}
+for i in range(len(names)):
+    person = {"first_name": names[i][0], "last_name": names[i][1], "job": jobs[i][1], "work_location": jobs[i][1]}
+    people[i] = person
+
+print(people)
+            </code></pre></div>
+        <section>
+            <br><br>
+            <h3>Output: </h3>
+        </section>    
+        <section class="output-box">
+                <span class="code-text">{0: {'first_name': 'Sophia', 'last_name': 'Smith'}, 1: {'first_name': 'Liam', 'last_name': 'Kim'}, 2: {'first_name': 'Olivia', 'last_name': 'Garcia'}, 3: {'first_name': 'Noah', 'last_name': 'Muller'}}</span>
+            </section>
+        </section>
+        <br><br>
+        <section id="tuples_to_pdf">
+            <button type="button" class="collapsible">Tuples to PDF</button>
+            <div class="content">
+            <pre id="tuples_to_pdf_copy" class="code-box"><code>
+# Tuples to PDF
+
+# TODO: 1. We have to import the Modules and Packages we need.
+from reportlab.platypus import SimpleDocTemplate, TableStyle
+from reportlab.platypus import Paragraph, Spacer, Table, Image
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib import colors
+
+f_names = [ "Sophia", "Liam", "Olivia", "Noah" ]
+l_names = [ "Smith", "Kim", "Garcia", "Muller" ]
+
+# TODO: 2. We must give our new pdf a name and point the path to the folder where we want to store our new pdf.
+path = "../Resources/"
+pdf = SimpleDocTemplate(path + "report.pdf")
+
+# TODO: 3. We must assign a variable for the Style Sheet Template we will use.
+styles = getSampleStyleSheet()
+
+# TODO: 4. We can give our pdf a title, and a style.
+pdf_title = Paragraph("Names", styles["h1"])
+
+# TODO: 5. We have to make a list where the data will be sorted and stored.
+full_names = []
+
+# TODO: 6. We need to assign table headers to a list and append it to the data list.
+table_headers = ['First Names', 'Last Names']
+full_names.append(table_headers)
+for i in range(len(f_names)):
+    full_names.append([f_names[i], l_names[i]])
+
+# TODO: 7. We need to assign a variable where we will declare the data that is to be the table.
+pdf_table = Table(data=full_names)
+
+# TODO: 8. We assign a variable to hold all our new style info.
+header_style = TableStyle([
+    ('BACKGROUND', (0,0), (1,0), colors.grey),
+    ('TEXTCOLOR', (0,0), (1,0), colors.blue)
+])
+
+# TODO: 9. We will set the header style to the table.
+pdf_table.setStyle(header_style)
+
+# TODO: 10. We must build the table.
+pdf.build([pdf_title, pdf_table])
+        </code></pre>
+        <section>
+            <br><br>
+            <h3>Output: </h3>
+        </section>    
+        <section class="output-box">
+                <span class="code-text">Output</span>
+                <br><br>
+                <img src="images/Screenshot 2023-09-26 181229.png"/>
+            </section>
+        </section>
+        <br><br>
+        <section id="tuples_to_string">
+            <button type="button" class="collapsible">Tuples to String</button>
+            <div class="content">
+            <pre id="tuples_to_string_copy" class="code-box"><code>
+# Tuples to String                
+f_names = ["Sophia", "Liam", "Olivia", "Noah"]
+l_names = ["Smith", "Kim", "Garcia", "Muller"]
+
+name_strings = ""
+
+for i in range(len(f_names)):
+    name_strings += " " + f_names[i]
+
+print(name_strings)
+            </code></pre>
+            <section>
+                <br><br>
+                <h3>Output: </h3>
+            </section>
+            <section class="output-box">
+                <span class="code-text"></span>
+                Sophia Liam Olivia Noah
+            </section>
+        </section>
+        <br><br>
+        <section id="tuples_to_csv">
+            <button type="button" class="collapsible">Tuples to CSV</button>
+            <div class="content">
+            <pre id="tuples_to_csv_copy" class="code-box"><code>
+# Tuples to csv
+import csv
+f_names = ["Sophia", "Liam", "Olivia", "Noah"]
+l_names = ["Smith", "Kim", "Garcia", "Muller"]
+
+full_names = []
+
+for i in range(len(f_names)):
+    full_names.append([f_names[i], l_names[i]])
+
+fields = ["First_Name", "Last_Name"]
+path = "../Resources/"
+with open(path + "people2.csv", 'w') as file:
+    write = csv.writer(file)
+
+    write.writerow(fields)
+    write.writerows(full_names)
+            </code></pre>
+            <section>
+                <br><br>
+                <h3>Output: </h3>
+            </section>
+            <section class="output-box">
+                <span class="code-text"></span>
+                <img src="images/Screenshot 2023-09-27 200409.png">
+            </section>
+        </section>
+        <br><br>
+        <section id="tuples_to_json">
+            <button type="button" class="collapsible">List to JSON</button>
+            <div class="content">
+            <!-- Tab links -->
+            <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'tuples_to_json_unindented')">Unindented</button>
+                <button class="tablinks" onclick="openTab(event, 'tuples_to_json_indented')">Indented</button>
+            </div>
+            <!-- Tab content -->
+            <div id="tuples_to_json_unindented" class="tabcontent">    
+            <pre id="tuples_to_json_unindented_copy" class="code-box"><code>
+# List to JSON Unindented                
+import json
+f_names = ["Sophia", "Liam", "Olivia", "Noah"]
+l_names = ["Smith", "Kim", "Garcia", "Muller"]
+
+full_names = []
+fields = ["First_Name", "Last_Name"]
+
+full_names.append(fields)
+
+for i in range(len(f_names)):
+    full_names.append([f_names[i], l_names[i]])
+
+path = "../Resources/"
+with open(path + "people_unindented.json", 'w') as outfile:
+    json.dump(full_names, outfile)
+            </code></pre>
+            </div>
+            <!-- Tab content -->
+            <div id="tuples_to_json_indented" class="tabcontent">    
+            <pre id="tuples_to_json_indented_copy" class="code-box"><code>
+# List to JSON Indented
+import json
+f_names = ["Sophia", "Liam", "Olivia", "Noah"]
+l_names = ["Smith", "Kim", "Garcia", "Muller"]
+
+full_names = []
+fields = ["First_Name", "Last_Name"]
+
+full_names.append(fields)
+
+for i in range(len(f_names)):
+    full_names.append([f_names[i], l_names[i]])
+
+path = "../Resources/"
+with open(path + "people_indented.json", 'w') as outfile:
+    json.dump(full_names, outfile, sort_keys=False, indent=4)   
+            </code></pre></div>
+            <section>
+                <br><br>
+                <h3>Output: </h3>
+            </section>
+            <section class="output-box">
+                <span class="code-text"></span>
+                Sophia Liam Olivia Noah
+            </section>
+        </section>
+        <br><br>    
+        <section id=tuples_to_sql">
+            <button type="button" class="collapsible">Tuples to SQL</button>
+            <div class="content">
+            <pre id="tuples_to_sql_copy" class="code-box"><code>
+# Tuples to SQL      
+
+# TODO - 1: Import Package
+import psycopg2
+
+# TODO - 2: Establish a Connection
+conn = psycopg2.connect(user='postgres', password='password', host='localhost', port='5432', database='master') 
+
+# TODO - 3: Create a cursor object  
+cur = conn.cursor()  
+
+# TODO: OPTIONAL If a table of the same name exists in this database "master", delete it.
+cur.execute("""DROP TABLE IF EXISTS person""")
+
+# TODO - 4: Make a List of Tuples to use for the table entries
+f_names = ["Sophia", "Liam", "Olivia", "Noah"]
+l_names = ["Smith", "Kim", "Garcia", "Muller"]
+
+full_names = []
+
+for i in range(len(f_names)):
+    full_names.append((f_names[i], l_names[i]))
+
+# TODO - 5: Insert the table entries into the table
+for i in range(len(full_names)):
+    cur.execute("""INSERT INTO person(first_name, last_name) VALUES
+    (%s, %s)""", full_names[i])
+
+# TODO - 6: Commit the changes through the connection
+conn.commit()
+
+# TODO - 7: Close the Connection
+conn.close()
+            </code></pre>
+            <section>
+                <br><br>
+                <h3>Output: </h3>
+            </section>
+            <section class="output-box">
+                <span class="code-text"></span>
+                <img src="images/Screenshot 2023-09-27 213424.png">
+            </section>
+        </section>
+        <br><br>    
+        <section id="tuples_to_html">
+            <button type="button" class="collapsible">Tuple to HTML</button>
+            <div class="content">
+            <pre id="tuples_to_html_copy" class="code-box"><code>
+# Tuple to HTML                
+f_names = ["Sophia", "Liam", "Olivia", "Noah"]
+l_names = ["Smith", "Kim", "Garcia", "Muller"]
+
+path = "../Resources/"
+
+with open(path + 'demo.html', 'w') as file:
+    for i in range(len(f_names)):
+        file.writelines("&lt;li>" + f_names[i]+"," + l_names[i] + "&lt;/li>" + "\n")
+
+            </code></pre>
+            <section>
+                <br><br>
+                <h3>Output: </h3>
+            </section>
+            <section class="output-box">
+                <span class="code-text"></span>
+                <img src="images/Screenshot 2023-09-27 220209.png">
+                <img src="images/Screenshot 2023-09-27 220222.png"
+            </section>
+        </section>
+        <br><br>            
+    </section>
+        
+    <script src="tuples.js"></script>
 </body>
 </html>
