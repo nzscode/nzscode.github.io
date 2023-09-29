@@ -13,13 +13,13 @@
             <button type="button" class="collapsible">Combining two tuples into one</button>
             <div class="content">
             <pre id="combining_tuples_copy" class="code-box"><code>
-# Combining two tuples into one                
+# Combining two tuples into one
 names = [('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller')]
 jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"), ("Zoo keeper", "Toronto Zoo")]
 
-people = []
+people = ()
 for i in range(len(names)):
-    people.append((names[i], jobs[i]))
+    people += (names[i] + jobs[i])
 
 print(people)
             </code></pre>
@@ -28,7 +28,7 @@ print(people)
                 <h3>Output: </h3>
             </section>
             <section class="output-box">
-                <span class="code-text">[(('Sophia', 'Smith'), ('Teacher', 'Da Vinci PS')), (('Liam', 'Kim'), ('Student', 'Dunbarton High')), (('Olivia', 'Garcia'), ('Nurse', 'Rouge Health')), (('Noah', 'Muller'), ('Zoo keeper', 'Toronto Zoo'))]                </span>
+                <span class="code-text">('Sophia', 'Smith', 'Teacher', 'Da Vinci PS', 'Liam', 'Kim', 'Student', 'Dunbarton High', 'Olivia', 'Garcia', 'Nurse', 'Rouge Health', 'Noah', 'Muller', 'Zoo keeper', 'Toronto Zoo')
             </section>
         </section>
         <br><br>
@@ -37,8 +37,8 @@ print(people)
             <div class="content">
             <pre id="splitting_tuples_copy" class="code-box"><code>
 # Splitting a tuple            
-names = [('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller')]
-jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"), ("Zoo keeper", "Toronto Zoo")]
+names = (('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller'))
+jobs = (("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"), ("Zoo keeper", "Toronto Zoo"))
 
 part1 = names[:int(len(names)/2)]
 part2 = names[int(len(names)/2):]
@@ -51,33 +51,8 @@ print(part2)
                 <h3>Output: </h3>
             </section>
             <section class="output-box">
-                <span class="code-text">[('Sophia', 'Smith'), ('Liam', 'Kim')]<br>
-                    [('Olivia', 'Garcia'), ('Noah', 'Muller')]</span>
-            </section>
-        </section>
-        <br><br>
-        <section id="tuples_to_tuples">
-            <button type="button" class="collapsible">Tuples to Tuples</button>
-            <div class="content">
-            <pre id="tuples_to_tuples_copy" class="code-box"><code>
-# Tuples to Tuples                
-names = [('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller')]
-jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"), ("Zoo keeper", "Toronto Zoo")]
-
-
-people = []
-for i in range(len(names)):
-    person = (names[i][0], names[i][1], jobs[i][0], jobs[i][1])
-    people.append(person)
-
-print(people)
-        </code></pre>
-        <section>
-            <br><br>
-            <h3>Output: </h3>
-        </section>    
-        <section class="output-box">
-                <span class="code-text">[('Sophia', 'Smith', 'Teacher', 'Da Vinci PS'), ('Liam', 'Kim', 'Student', 'Dunbarton High'), ('Olivia', 'Garcia', 'Nurse', 'Rouge Health'), ('Noah', 'Muller', 'Zoo keeper', 'Toronto Zoo')]                </span>
+                <span class="code-text">(('Sophia', 'Smith'), ('Liam', 'Kim'))<br>
+                    (('Olivia', 'Garcia'), ('Noah', 'Muller'))</span>
             </section>
         </section>
         <br><br>
@@ -144,35 +119,81 @@ from reportlab.platypus import Paragraph, Spacer, Table, Image
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib import colors
 
-f_names = [ "Sophia", "Liam", "Olivia", "Noah" ]
-l_names = [ "Smith", "Kim", "Garcia", "Muller" ]
+names = [('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller')]
+jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"),
+        ("Zoo keeper", "Toronto Zoo")]
 
 # TODO: 2. We must give our new pdf a name and point the path to the folder where we want to store our new pdf.
 path = "../Resources/"
-pdf = SimpleDocTemplate(path + "report.pdf")
+pdf = SimpleDocTemplate(path + "tuples.pdf")
 
 # TODO: 3. We must assign a variable for the Style Sheet Template we will use.
 styles = getSampleStyleSheet()
 
 # TODO: 4. We can give our pdf a title, and a style.
-pdf_title = Paragraph("Names", styles["h1"])
+pdf_title = Paragraph("Full Names", styles["h1"])
 
 # TODO: 5. We have to make a list where the data will be sorted and stored.
-full_names = []
+people = []
 
 # TODO: 6. We need to assign table headers to a list and append it to the data list.
-table_headers = ['First Names', 'Last Names']
-full_names.append(table_headers)
-for i in range(len(f_names)):
-    full_names.append([f_names[i], l_names[i]])
+headers = ("First Name", "Last Name", "Job", "Workplace")
+people.append(headers)
+for i in range(len(names)):
+    person = (names[i][0], names[i][1], jobs[i][0], jobs[i][1])
+    people.append(person)
 
 # TODO: 7. We need to assign a variable where we will declare the data that is to be the table.
-pdf_table = Table(data=full_names)
+                #We will also specifiy a corner radius(top-left, top-right, bottom-left, bottom-right)
+pdf_table = Table(data=people, cornerRadii=(20, 3, 3, 33))
 
 # TODO: 8. We assign a variable to hold all our new style info.
 header_style = TableStyle([
-    ('BACKGROUND', (0,0), (1,0), colors.grey),
-    ('TEXTCOLOR', (0,0), (1,0), colors.blue)
+    # cells (0,0) to (3,0) are aligned center
+    ('ALIGN', (0, 0), (3, 0), 'CENTER'),
+
+    # cells (0,0) to (3,0) have a background color of (r,g,b,a(btwn 0-1)),
+        #rgb must be in decimals so rgb values must each be divided by 255
+    ('BACKGROUND', (0, 0), (3, 0), colors.Color(255 / 255, 182 / 255, 193 / 255, 0.5)),
+
+    # cells (0,0) to (3,0) have hot pink font
+    ('TEXTCOLOR', (0,0), (3, 0), colors.hotpink),
+
+    # cells (0,1) to (1,4) have orange red font
+    ('TEXTCOLOR', (0,1), (1,4), colors.orangered),
+
+    # cells (2,1) to (3,4) have purple font
+    ('TEXTCOLOR', (2,1), (3,4), colors.purple),
+
+    # cells (1,3) to (2,4) have aqua font
+    ('TEXTCOLOR', (1,3), (2,4), colors.aqua),
+
+    # cells (0,0) to (3,0) have a left padding of 30px
+    ('LEFTPADDING', (0,0), (3,0), 30),
+
+    # cells (0,0) to (3,0) have a right padding of 30px
+    ('RIGHTPADDING', (0, 0), (3, 0), 30),
+
+    # cells (0,0) to (3,0) have a top padding of 30px
+    ('TOPPADDING', (0, 0), (3, 0), 30),
+
+    # cells (0,0) to (3,0) have a bottom padding of 30px
+    ('BOTTOMPADDING', (0, 0), (3, 0), 30),
+
+    # cells (3,1) to (3,4) are aligned right
+    ('ALIGN', (3,1), (3,4), 'RIGHT'),
+
+    # cells (0,0) to (3,0) use the "Helvetica", "Bold", "Italic" font, of size 18, with offset betwn lines of 15 
+    ('FONT', (0, 0), (3,0), "Helvetica-BoldOblique", 18, 15),
+
+    # cells (1,2) to (2,3) ause "Courier", "Italic" font, of size 12, with offset btwn lines of 15
+    ('FONT', (1, 2), (2, 3), "Courier-Oblique", 12, 15),
+
+    # cells (0,0) to (3,4) have grid lines, of width=2, and black
+    ('GRID', (0, 0), (3, 4), 2, colors.black),
+
+    # cells (2,2) to (3,4) have outer box lines, of width=6, in green
+    ('BOX', (2, 2), (3, 4), 6, colors.green)
 ])
 
 # TODO: 9. We will set the header style to the table.
@@ -188,7 +209,7 @@ pdf.build([pdf_title, pdf_table])
         <section class="output-box">
                 <span class="code-text">Output</span>
                 <br><br>
-                <img src="images/Screenshot 2023-09-26 181229.png"/>
+                <img src="images/Screenshot 2023-09-28 123350.png"/>
             </section>
         </section>
         <br><br>
@@ -197,15 +218,17 @@ pdf.build([pdf_title, pdf_table])
             <div class="content">
             <pre id="tuples_to_string_copy" class="code-box"><code>
 # Tuples to String                
-f_names = ["Sophia", "Liam", "Olivia", "Noah"]
-l_names = ["Smith", "Kim", "Garcia", "Muller"]
+names = [('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller')]
+jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"),
+        ("Zoo keeper", "Toronto Zoo")]
 
-name_strings = ""
+people = ""
 
-for i in range(len(f_names)):
-    name_strings += " " + f_names[i]
+for i in range(len(names)):
+    person = names[i][0] + ", " + names[i][1] + ", " + jobs[i][0] + ", " + jobs[i][1]
+    people += person + "\n"
 
-print(name_strings)
+print(people)
             </code></pre>
             <section>
                 <br><br>
@@ -213,7 +236,10 @@ print(name_strings)
             </section>
             <section class="output-box">
                 <span class="code-text"></span>
-                Sophia Liam Olivia Noah
+Sophia, Smith, Teacher, Da Vinci PS<br>
+Liam, Kim, Student, Dunbarton High<br>
+Olivia, Garcia, Nurse, Rouge Health<br>
+Noah, Muller, Zoo keeper, Toronto Zoo<br>
             </section>
         </section>
         <br><br>
@@ -223,21 +249,26 @@ print(name_strings)
             <pre id="tuples_to_csv_copy" class="code-box"><code>
 # Tuples to csv
 import csv
-f_names = ["Sophia", "Liam", "Olivia", "Noah"]
-l_names = ["Smith", "Kim", "Garcia", "Muller"]
 
-full_names = []
+names = [('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller')]
+jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"),
+        ("Zoo keeper", "Toronto Zoo")]
 
-for i in range(len(f_names)):
-    full_names.append([f_names[i], l_names[i]])
+people = []
+fields = ["First_Name", "Last_Name", "Jobs", "Workplace"]
 
-fields = ["First_Name", "Last_Name"]
+fields = tuple(fields)
+
+for i in range(len(names)):
+    person = tuple(names[i]) + tuple(jobs[i])
+    people.append(person)
+
 path = "../Resources/"
-with open(path + "people2.csv", 'w') as file:
+with open(path + "tup.csv", 'w') as file:
     write = csv.writer(file)
 
     write.writerow(fields)
-    write.writerows(full_names)
+    write.writerows(people)
             </code></pre>
             <section>
                 <br><br>
@@ -245,42 +276,80 @@ with open(path + "people2.csv", 'w') as file:
             </section>
             <section class="output-box">
                 <span class="code-text"></span>
-                <img src="images/Screenshot 2023-09-27 200409.png">
+                <img src="images/Screenshot 2023-09-28 115254.png">
             </section>
         </section>
         <br><br>
         <section id="tuples_to_json">
-            <button type="button" class="collapsible">List to JSON</button>
+            <button type="button" class="collapsible">Tuples to JSON</button>
             <div class="content">
             <!-- Tab links -->
             <div class="tab">
-                <button class="tablinks" onclick="openTab(event, 'tuples_to_json_unindented')">Unindented</button>
-                <button class="tablinks" onclick="openTab(event, 'tuples_to_json_indented')">Indented</button>
+                <button class="tablinks" onclick="openTab(event, 'tuples_to_json_dumps')">json.dumps</button>
+                <button class="tablinks" onclick="openTab(event, 'tuples_to_json_dump')">json.dump</button>
             </div>
             <!-- Tab content -->
-            <div id="tuples_to_json_unindented" class="tabcontent">    
-            <pre id="tuples_to_json_unindented_copy" class="code-box"><code>
-# List to JSON Unindented                
+            <div id="tuples_to_json_dumps" class="tabcontent">    
+            <pre id="tuples_to_json_dumps_copy" class="code-box"><code>
+# Tuples to JSON dumps
 import json
-f_names = ["Sophia", "Liam", "Olivia", "Noah"]
-l_names = ["Smith", "Kim", "Garcia", "Muller"]
+names = (('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller'))
+jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"),
+        ("Zoo keeper", "Toronto Zoo")]
 
-full_names = []
-fields = ["First_Name", "Last_Name"]
+people = []
+person = {}
+field_names = ["first_name", "last_name", "jobs", "workplace"]
+for i in range(len(names)):
+    person[field_names[0]] = names[i][0]
+    person[field_names[1]] = names[i][1]
+    person[field_names[2]] = jobs[i][0]
+    person[field_names[3]] = jobs[i][1]
+    people.append(person)
 
-full_names.append(fields)
+json_str = json.dumps(people, indent=4)
 
-for i in range(len(f_names)):
-    full_names.append([f_names[i], l_names[i]])
-
-path = "../Resources/"
-with open(path + "people_unindented.json", 'w') as outfile:
-    json.dump(full_names, outfile)
+print(json_str)
             </code></pre>
+            <section>
+                <br><br>
+                <h3>Output: </h3>
+            </section>
+            <section class="output-box">
+                <span class="code-text"></span>
+                <pre class="output-box" style="border: none; box-shadow: none; padding: none; margin: none;" >
+[
+    {
+        "first_name": "Noah",
+        "last_name": "Muller",
+        "jobs": "Zoo keeper",
+        "workplace": "Toronto Zoo"
+    },
+    {
+        "first_name": "Noah",
+        "last_name": "Muller",
+        "jobs": "Zoo keeper",
+        "workplace": "Toronto Zoo"
+    },
+    {
+        "first_name": "Noah",
+        "last_name": "Muller",
+        "jobs": "Zoo keeper",
+        "workplace": "Toronto Zoo"
+    },
+    {
+        "first_name": "Noah",
+        "last_name": "Muller",
+        "jobs": "Zoo keeper",
+        "workplace": "Toronto Zoo"
+    }
+]
+                </pre>
+            </section>
             </div>
             <!-- Tab content -->
-            <div id="tuples_to_json_indented" class="tabcontent">    
-            <pre id="tuples_to_json_indented_copy" class="code-box"><code>
+            <div id="tuples_to_json_dump" class="tabcontent">    
+            <pre id="tuples_to_json_dump_copy" class="code-box"><code>
 # List to JSON Indented
 import json
 f_names = ["Sophia", "Liam", "Olivia", "Noah"]
@@ -297,15 +366,17 @@ for i in range(len(f_names)):
 path = "../Resources/"
 with open(path + "people_indented.json", 'w') as outfile:
     json.dump(full_names, outfile, sort_keys=False, indent=4)   
-            </code></pre></div>
+            </code></pre>
             <section>
                 <br><br>
                 <h3>Output: </h3>
             </section>
             <section class="output-box">
-                <span class="code-text"></span>
-                Sophia Liam Olivia Noah
+                <span class="code-text" ></span>
+                <img src="images/Screenshot 2023-09-28 172020.png">
             </section>
+        </div>
+            
         </section>
         <br><br>    
         <section id=tuples_to_sql">
@@ -314,36 +385,37 @@ with open(path + "people_indented.json", 'w') as outfile:
             <pre id="tuples_to_sql_copy" class="code-box"><code>
 # Tuples to SQL      
 
-# TODO - 1: Import Package
 import psycopg2
 
-# TODO - 2: Establish a Connection
-conn = psycopg2.connect(user='postgres', password='password', host='localhost', port='5432', database='master') 
+conn = psycopg2.connect(user='postgres', password='password', host='localhost', port='5432', database='master')
 
-# TODO - 3: Create a cursor object  
-cur = conn.cursor()  
+cur = conn.cursor()
+names = (('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller'))
+jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"),
+        ("Zoo keeper", "Toronto Zoo")]
 
-# TODO: OPTIONAL If a table of the same name exists in this database "master", delete it.
-cur.execute("""DROP TABLE IF EXISTS person""")
+cur.execute("""DROP TABLE IF EXISTS person_tup""")
 
-# TODO - 4: Make a List of Tuples to use for the table entries
-f_names = ["Sophia", "Liam", "Olivia", "Noah"]
-l_names = ["Smith", "Kim", "Garcia", "Muller"]
+person_tup = """CREATE TABLE IF NOT EXISTS person_tup(
+    num Serial,
+    first_name VARCHAR(225),
+    last_name VARCHAR(225),
+    job VARCHAR(225),
+    workplace VARCHAR(225));"""
 
-full_names = []
+cur.execute(person_tup)
 
-for i in range(len(f_names)):
-    full_names.append((f_names[i], l_names[i]))
+people = []
+for i in range(len(names)):
+    person = ((names[i][0]), names[i][1], jobs[i][0], jobs[i][1])
+    people.append(person)
+    person = ()
 
-# TODO - 5: Insert the table entries into the table
-for i in range(len(full_names)):
-    cur.execute("""INSERT INTO person(first_name, last_name) VALUES
-    (%s, %s)""", full_names[i])
+for i in range(len(people)):
+    cur.execute("""INSERT INTO person_tup(first_name, last_name, job, workplace) VALUES
+    (%s, %s, %s, %s)""", people[i])
 
-# TODO - 6: Commit the changes through the connection
 conn.commit()
-
-# TODO - 7: Close the Connection
 conn.close()
             </code></pre>
             <section>
@@ -352,23 +424,24 @@ conn.close()
             </section>
             <section class="output-box">
                 <span class="code-text"></span>
-                <img src="images/Screenshot 2023-09-27 213424.png">
+                <img src="images/Screenshot 2023-09-28 182151.png">
             </section>
         </section>
         <br><br>    
         <section id="tuples_to_html">
             <button type="button" class="collapsible">Tuple to HTML</button>
             <div class="content">
+                Do not include &.l.t.; in the code when copyin on using on IDE. replace that with lesser than symbol instead.
             <pre id="tuples_to_html_copy" class="code-box"><code>
 # Tuple to HTML                
-f_names = ["Sophia", "Liam", "Olivia", "Noah"]
-l_names = ["Smith", "Kim", "Garcia", "Muller"]
+names = (('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller'))
+jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"),
+        ("Zoo keeper", "Toronto Zoo")]
 
 path = "../Resources/"
-
-with open(path + 'demo.html', 'w') as file:
-    for i in range(len(f_names)):
-        file.writelines("&lt;li>" + f_names[i]+"," + l_names[i] + "&lt;/li>" + "\n")
+with open(path + "person_tup.html", 'w') as file:
+    for i in range(len(names)):
+        file.writelines("&lt;li>" + names[i][0] + ", " + names[i][1] + ": " + jobs[i][0] + ", " + jobs[i][1] + "&lt;/li>" + "\n")
 
             </code></pre>
             <section>
@@ -377,8 +450,7 @@ with open(path + 'demo.html', 'w') as file:
             </section>
             <section class="output-box">
                 <span class="code-text"></span>
-                <img src="images/Screenshot 2023-09-27 220209.png">
-                <img src="images/Screenshot 2023-09-27 220222.png"
+                <img src="images/Screenshot 2023-09-28 183025.png">
             </section>
         </section>
         <br><br>            

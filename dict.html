@@ -3,9 +3,474 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Dictionary</title>
 </head>
 <body>
+    <section id="Tuples">
+        <h2>Dictionary</h2>
+        <section id="combining_dicts">
+            <button type="button" class="collapsible">Combining two dicts into one</button>
+            <div class="content">
+            <pre id="combining_dicts_copy" class="code-box"><code>
+# Combining two dicts into one
+dummy = [
+    {'a': 3, 'b': 8, 'c': 4},
+    {'a': 9, 'b': 4, 'c': 2},
+    {'a': 9, 'b': 10, 'c': 6},
+]
+
+dingbat = [
+    {'a': 6, 'b': 4, 'c': 1},
+    {'a': 3, 'b': 8, 'c': 3}
+]
+
+dicty = {}
+lst = []
+for i in range(len(dummy)):
+    lst.append(dummy[i])
+
+for i in range(len(dingbat)):
+    lst.append(dingbat[i])
+
+for i in range(len(lst)):
+    dicty[i] = lst[i]
     
+print(dicty)
+            </code></pre>
+            <section>
+                <br><br>
+                <h3>Output: </h3>
+            </section>
+            <section class="output-box">
+                <span class="code-text">{0: {'a': 3, 'b': 8, 'c': 4}, 1: {'a': 9, 'b': 4, 'c': 2}, 2: {'a': 9, 'b': 10, 'c': 6}, 3: {'a': 6, 'b': 4, 'c': 1}, 4: {'a': 3, 'b': 8, 'c': 3}}
+            </section>
+        </section>
+        <br><br>
+        <section id="splitting_tuples">
+            <button type="button" class="collapsible">Splitting a tuple</button>
+            <div class="content">
+            <pre id="splitting_dicts_copy" class="code-box"><code>
+# Splitting a dict           
+names = (('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller'))
+jobs = (("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"), ("Zoo keeper", "Toronto Zoo"))
+
+part1 = names[:int(len(names)/2)]
+part2 = names[int(len(names)/2):]
+
+print(part1)
+print(part2)
+            </code></pre>
+            <section>
+                <br><br>
+                <h3>Output: </h3>
+            </section>
+            <section class="output-box">
+                <span class="code-text">(('Sophia', 'Smith'), ('Liam', 'Kim'))<br>
+                    (('Olivia', 'Garcia'), ('Noah', 'Muller'))</span>
+            </section>
+        </section>
+        <br><br>
+        <section id="dicts_to_dict">
+            <button type="button" class="collapsible">Dicts to Dictionary</button>
+            <div class="content">
+            <!-- Tab links -->
+            <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'dicts_to_dict_expression')">Dictionary Expression</button>
+                <button class="tablinks" onclick="openTab(event, 'dicts_to_dict_literal')">Dictionary Literal</button>
+            </div>  
+            <!-- Tab content -->
+            <div id="dicts_to_dict_expression" class="tabcontent">               
+            <pre id="dicts_to_dict_expression_copy" class="code-box"><code>
+# Dicts to Dictionary Expression              
+names = [('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller')]
+jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"), ("Zoo keeper", "Toronto Zoo")]
+
+
+people = {}
+for i in range(len(names)):
+    person = {}
+    person["first_name"] = names[i][0]
+    person["last_name"] = names[i][1]
+    person["job"] = jobs[i][1]
+    person["work_location"] = jobs[i][1]
+    people[i] = person
+
+print(people)
+            </code></pre></div>
+            <!-- Tab content -->
+            <div id="dicts_to_dict" class="tabcontent"> 
+            <pre id="dicts_to_dict_copy" class="code-box"><code>
+# Dicts to Dictionary              
+names = [('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller')]
+jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"), ("Zoo keeper", "Toronto Zoo")]
+
+
+people = {}
+for i in range(len(names)):
+    person = {"first_name": names[i][0], "last_name": names[i][1], "job": jobs[i][1], "work_location": jobs[i][1]}
+    people[i] = person
+
+print(people)
+            </code></pre></div>
+        <section>
+            <br><br>
+            <h3>Output: </h3>
+        </section>    
+        <section class="output-box">
+                <span class="code-text">{0: {'first_name': 'Sophia', 'last_name': 'Smith'}, 1: {'first_name': 'Liam', 'last_name': 'Kim'}, 2: {'first_name': 'Olivia', 'last_name': 'Garcia'}, 3: {'first_name': 'Noah', 'last_name': 'Muller'}}</span>
+            </section>
+        </section>
+        <br><br>
+        <section id="dicts_to_pdf">
+            <button type="button" class="collapsible">Dicts to PDF</button>
+            <div class="content">
+            <pre id="dicts_to_pdf_copy" class="code-box"><code>
+# Dicts to PDF
+
+# TODO: 1. We have to import the Modules and Packages we need.
+from reportlab.platypus import SimpleDocTemplate, TableStyle
+from reportlab.platypus import Paragraph, Spacer, Table, Image
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib import colors
+
+names = [('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller')]
+jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"),
+        ("Zoo keeper", "Toronto Zoo")]
+
+# TODO: 2. We must give our new pdf a name and point the path to the folder where we want to store our new pdf.
+path = "../Resources/"
+pdf = SimpleDocTemplate(path + "tuples.pdf")
+
+# TODO: 3. We must assign a variable for the Style Sheet Template we will use.
+styles = getSampleStyleSheet()
+
+# TODO: 4. We can give our pdf a title, and a style.
+pdf_title = Paragraph("Full Names", styles["h1"])
+
+# TODO: 5. We have to make a list where the data will be sorted and stored.
+people = []
+
+# TODO: 6. We need to assign table headers to a list and append it to the data list.
+headers = ("First Name", "Last Name", "Job", "Workplace")
+people.append(headers)
+for i in range(len(names)):
+    person = (names[i][0], names[i][1], jobs[i][0], jobs[i][1])
+    people.append(person)
+
+# TODO: 7. We need to assign a variable where we will declare the data that is to be the table.
+                #We will also specifiy a corner radius(top-left, top-right, bottom-left, bottom-right)
+pdf_table = Table(data=people, cornerRadii=(20, 3, 3, 33))
+
+# TODO: 8. We assign a variable to hold all our new style info.
+header_style = TableStyle([
+    # cells (0,0) to (3,0) are aligned center
+    ('ALIGN', (0, 0), (3, 0), 'CENTER'),
+
+    # cells (0,0) to (3,0) have a background color of (r,g,b,a(btwn 0-1)),
+        #rgb must be in decimals so rgb values must each be divided by 255
+    ('BACKGROUND', (0, 0), (3, 0), colors.Color(255 / 255, 182 / 255, 193 / 255, 0.5)),
+
+    # cells (0,0) to (3,0) have hot pink font
+    ('TEXTCOLOR', (0,0), (3, 0), colors.hotpink),
+
+    # cells (0,1) to (1,4) have orange red font
+    ('TEXTCOLOR', (0,1), (1,4), colors.orangered),
+
+    # cells (2,1) to (3,4) have purple font
+    ('TEXTCOLOR', (2,1), (3,4), colors.purple),
+
+    # cells (1,3) to (2,4) have aqua font
+    ('TEXTCOLOR', (1,3), (2,4), colors.aqua),
+
+    # cells (0,0) to (3,0) have a left padding of 30px
+    ('LEFTPADDING', (0,0), (3,0), 30),
+
+    # cells (0,0) to (3,0) have a right padding of 30px
+    ('RIGHTPADDING', (0, 0), (3, 0), 30),
+
+    # cells (0,0) to (3,0) have a top padding of 30px
+    ('TOPPADDING', (0, 0), (3, 0), 30),
+
+    # cells (0,0) to (3,0) have a bottom padding of 30px
+    ('BOTTOMPADDING', (0, 0), (3, 0), 30),
+
+    # cells (3,1) to (3,4) are aligned right
+    ('ALIGN', (3,1), (3,4), 'RIGHT'),
+
+    # cells (0,0) to (3,0) use the "Helvetica", "Bold", "Italic" font, of size 18, with offset betwn lines of 15 
+    ('FONT', (0, 0), (3,0), "Helvetica-BoldOblique", 18, 15),
+
+    # cells (1,2) to (2,3) ause "Courier", "Italic" font, of size 12, with offset btwn lines of 15
+    ('FONT', (1, 2), (2, 3), "Courier-Oblique", 12, 15),
+
+    # cells (0,0) to (3,4) have grid lines, of width=2, and black
+    ('GRID', (0, 0), (3, 4), 2, colors.black),
+
+    # cells (2,2) to (3,4) have outer box lines, of width=6, in green
+    ('BOX', (2, 2), (3, 4), 6, colors.green)
+])
+
+# TODO: 9. We will set the header style to the table.
+pdf_table.setStyle(header_style)
+
+# TODO: 10. We must build the table.
+pdf.build([pdf_title, pdf_table])
+        </code></pre>
+        <section>
+            <br><br>
+            <h3>Output: </h3>
+        </section>    
+        <section class="output-box">
+                <span class="code-text">Output</span>
+                <br><br>
+                <img src="images/Screenshot 2023-09-28 123350.png"/>
+            </section>
+        </section>
+        <br><br>
+        <section id="dicts_to_string">
+            <button type="button" class="collapsible">Dicts to String</button>
+            <div class="content">
+            <pre id="dicts_to_string_copy" class="code-box"><code>
+# Dicts to String                
+names = [('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller')]
+jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"),
+        ("Zoo keeper", "Toronto Zoo")]
+
+people = ""
+
+for i in range(len(names)):
+    person = names[i][0] + ", " + names[i][1] + ", " + jobs[i][0] + ", " + jobs[i][1]
+    people += person + "\n"
+
+print(people)
+            </code></pre>
+            <section>
+                <br><br>
+                <h3>Output: </h3>
+            </section>
+            <section class="output-box">
+                <span class="code-text"></span>
+Sophia, Smith, Teacher, Da Vinci PS<br>
+Liam, Kim, Student, Dunbarton High<br>
+Olivia, Garcia, Nurse, Rouge Health<br>
+Noah, Muller, Zoo keeper, Toronto Zoo<br>
+            </section>
+        </section>
+        <br><br>
+        <section id="dicts_to_csv">
+            <button type="button" class="collapsible">Dicts to CSV</button>
+            <div class="content">
+            <pre id="dicts_to_csv_copy" class="code-box"><code>
+# Dicts to csv
+import csv
+
+names = [('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller')]
+jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"),
+        ("Zoo keeper", "Toronto Zoo")]
+
+people = []
+fields = ["First_Name", "Last_Name", "Jobs", "Workplace"]
+
+fields = tuple(fields)
+
+for i in range(len(names)):
+    person = tuple(names[i]) + tuple(jobs[i])
+    people.append(person)
+
+path = "../Resources/"
+with open(path + "tup.csv", 'w') as file:
+    write = csv.writer(file)
+
+    write.writerow(fields)
+    write.writerows(people)
+            </code></pre>
+            <section>
+                <br><br>
+                <h3>Output: </h3>
+            </section>
+            <section class="output-box">
+                <span class="code-text"></span>
+                <img src="images/Screenshot 2023-09-28 115254.png">
+            </section>
+        </section>
+        <br><br>
+        <section id="dicts_to_json">
+            <button type="button" class="collapsible">Dicts to JSON</button>
+            <div class="content">
+            <!-- Tab links -->
+            <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'dicts_to_json_dumps')">json.dumps</button>
+                <button class="tablinks" onclick="openTab(event, 'dicts_to_json_dump')">json.dump</button>
+            </div>
+            <!-- Tab content -->
+            <div id="dicts_to_json_dumps" class="tabcontent">    
+            <pre id="dicts_to_json_dumps_copy" class="code-box"><code>
+# Dicts to JSON dumps
+import json
+names = (('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller'))
+jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"),
+        ("Zoo keeper", "Toronto Zoo")]
+
+people = []
+person = {}
+field_names = ["first_name", "last_name", "jobs", "workplace"]
+for i in range(len(names)):
+    person[field_names[0]] = names[i][0]
+    person[field_names[1]] = names[i][1]
+    person[field_names[2]] = jobs[i][0]
+    person[field_names[3]] = jobs[i][1]
+    people.append(person)
+
+json_str = json.dumps(people, indent=4)
+
+print(json_str)
+            </code></pre>
+            <section>
+                <br><br>
+                <h3>Output: </h3>
+            </section>
+            <section class="output-box">
+                <span class="code-text"></span>
+                <pre class="output-box" style="border: none; box-shadow: none; padding: none; margin: none;" >
+[
+    {
+        "first_name": "Noah",
+        "last_name": "Muller",
+        "jobs": "Zoo keeper",
+        "workplace": "Toronto Zoo"
+    },
+    {
+        "first_name": "Noah",
+        "last_name": "Muller",
+        "jobs": "Zoo keeper",
+        "workplace": "Toronto Zoo"
+    },
+    {
+        "first_name": "Noah",
+        "last_name": "Muller",
+        "jobs": "Zoo keeper",
+        "workplace": "Toronto Zoo"
+    },
+    {
+        "first_name": "Noah",
+        "last_name": "Muller",
+        "jobs": "Zoo keeper",
+        "workplace": "Toronto Zoo"
+    }
+]
+                </pre>
+            </section>
+            </div>
+            <!-- Tab content -->
+            <div id="dicts_to_json_dump" class="tabcontent">    
+            <pre id="dicts_to_json_dump_copy" class="code-box"><code>
+# List to JSON Indented
+import json
+f_names = ["Sophia", "Liam", "Olivia", "Noah"]
+l_names = ["Smith", "Kim", "Garcia", "Muller"]
+
+full_names = []
+fields = ["First_Name", "Last_Name"]
+
+full_names.append(fields)
+
+for i in range(len(f_names)):
+    full_names.append([f_names[i], l_names[i]])
+
+path = "../Resources/"
+with open(path + "people_indented.json", 'w') as outfile:
+    json.dump(full_names, outfile, sort_keys=False, indent=4)   
+            </code></pre>
+            <section>
+                <br><br>
+                <h3>Output: </h3>
+            </section>
+            <section class="output-box">
+                <span class="code-text" ></span>
+                <img src="images/Screenshot 2023-09-28 172020.png">
+            </section>
+        </div>
+            
+        </section>
+        <br><br>    
+        <section id=dicts_to_sql">
+            <button type="button" class="collapsible">Dicts to SQL</button>
+            <div class="content">
+            <pre id="dicts_to_sql_copy" class="code-box"><code>
+# Dicts to SQL      
+
+import psycopg2
+
+conn = psycopg2.connect(user='postgres', password='password', host='localhost', port='5432', database='master')
+
+cur = conn.cursor()
+names = (('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller'))
+jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"),
+        ("Zoo keeper", "Toronto Zoo")]
+
+cur.execute("""DROP TABLE IF EXISTS person_tup""")
+
+person_tup = """CREATE TABLE IF NOT EXISTS person_tup(
+    num Serial,
+    first_name VARCHAR(225),
+    last_name VARCHAR(225),
+    job VARCHAR(225),
+    workplace VARCHAR(225));"""
+
+cur.execute(person_tup)
+
+people = []
+for i in range(len(names)):
+    person = ((names[i][0]), names[i][1], jobs[i][0], jobs[i][1])
+    people.append(person)
+    person = ()
+
+for i in range(len(people)):
+    cur.execute("""INSERT INTO person_tup(first_name, last_name, job, workplace) VALUES
+    (%s, %s, %s, %s)""", people[i])
+
+conn.commit()
+conn.close()
+            </code></pre>
+            <section>
+                <br><br>
+                <h3>Output: </h3>
+            </section>
+            <section class="output-box">
+                <span class="code-text"></span>
+                <img src="images/Screenshot 2023-09-28 182151.png">
+            </section>
+        </section>
+        <br><br>    
+        <section id="dicts_to_html">
+            <button type="button" class="collapsible">Dicts to HTML</button>
+            <div class="content">
+                Do not include &.l.t.; in the code when copyin on using on IDE. replace that with lesser than symbol instead.
+            <pre id="dicts_to_html_copy" class="code-box"><code>
+# Dicts to HTML                
+names = (('Sophia', 'Smith'), ('Liam', 'Kim'), ('Olivia', 'Garcia'), ('Noah', 'Muller'))
+jobs = [("Teacher", "Da Vinci PS"), ("Student", "Dunbarton High"), ("Nurse", "Rouge Health"),
+        ("Zoo keeper", "Toronto Zoo")]
+
+path = "../Resources/"
+with open(path + "person_tup.html", 'w') as file:
+    for i in range(len(names)):
+        file.writelines("&lt;li>" + names[i][0] + ", " + names[i][1] + ": " + jobs[i][0] + ", " + jobs[i][1] + "&lt;/li>" + "\n")
+
+            </code></pre>
+            <section>
+                <br><br>
+                <h3>Output: </h3>
+            </section>
+            <section class="output-box">
+                <span class="code-text"></span>
+                <img src="images/Screenshot 2023-09-28 183025.png">
+            </section>
+        </section>
+        <br><br>            
+    </section>
+        
+    <script src="dicts.js"></script>
 </body>
 </html>

@@ -81,15 +81,14 @@ function openTab(evt, tabName) {
     });
     };
       
-    addCopyButton("combining_tuples_copy");
-    addCopyButton("splitting_tuples_copy");
-    addCopyButton("tuples_to_dict_literal_copy");
-    addCopyButton("tuples_to_dict_expression_copy");
-    addCopyButton("tuples_to_csv_copy");
-    addCopyButton("tuples_to_string_copy");
-    addCopyButton("tuples_to_json_dumps_copy");
-    addCopyButton("tuples_to_json_dump_copy");
-    addCopyButton("tuples_to_pdf_copy");
-    addCopyButton("tuples_to_sql_copy");
-    addCopyButton("tuples_to_html_copy");
+    addCopyButton("combining_dicts_copy");
+    addCopyButton("splitting_dicts_copy");
+    addCopyButton("dicts_to_dict_copy");
+    addCopyButton("dicts_to_csv_copy");
+    addCopyButton("dicts_to_string_copy");
+    addCopyButton("dicts_to_json_dumps_copy");
+    addCopyButton("dicts_to_json_dump_copy");
+    addCopyButton("dicts_to_pdf_copy");
+    addCopyButton("dicts_to_sql_copy");
+    addCopyButton("dicts_to_html_copy");
     
