@@ -40,7 +40,7 @@ print(dicty)
             </section>
             </div>
         </section>
-        <br><br><br>
+        <br><br>
         <section id="splitting_dicts">
             <button type="button" class="collapsible">Splitting a dict</button>
             <div class="content">
@@ -191,7 +191,7 @@ pdf.build([pdf_title, pdf_table])
         <section class="output-box">
                 <span class="code-text">Output</span>
                 <br><br>
-                <img src="images/Screenshot 2023-09-28 123350.png"/>
+                <img src="images/Screenshot 2023-09-28 183025.png"/>
             </section>
             </div>
         </section>
@@ -202,17 +202,36 @@ pdf.build([pdf_title, pdf_table])
         <div class="content">
             <!-- Tabs -->
             <div class="tab">
-                <button class="tablinks" onclick="openTab(event, 'TabID')">Tab Name</button>
+                <button class="tablinks" onclick="openTab(event, 'dicts_to_csv_key,value')">Dicts to CSV: Key, Value</button>
+                <button class="tablinks" onclick="openTab(event, 'dicts_to_csv_fields_to_values')">Dicts to Fields to Values</button>
             </div>
-            <div id="TabID" class="tabcontent">
+            <div id="dicts_to_csv_key,value" class="tabcontent">
             <!-- Tabs -->
                 <h3>Important Info:</h3>                
                 <!---------------------Tab Content --------------------->
-                <pre id="dicts_to_csv_copy" class="code-box">
+                <pre id="dicts_to_csv_key,value_copy" class="code-box">
                     <code>
-                    code line1
-                    code line2
-                    code line3
+# Dicts to CSV, key, values
+import csv
+
+dict_demo = [
+    {'a': 3, 'b': 8, 'c': 4},
+    {'a': 9, 'b': 4, 'c': 2},
+    {'a': 9, 'b': 10, 'c': 6}
+]
+dict_list = []
+fields = ("k", "v")
+
+for i in range(len(dict_demo)):
+    for k, v in dict_demo[i].items():
+        dict_list.append((k, v))
+
+path = "../Resources/"
+with open(path + "dict.csv", 'w') as file:
+    write = csv.writer(file)
+
+    write.writerow(fields)
+    write.writerows(dict_list)
                     </code>
                 </pre>
                 <br><br>
@@ -222,15 +241,254 @@ pdf.build([pdf_title, pdf_table])
                 <section class="output-box">
                     <span class="code-text">Output</span>
                     <br><br>
-                    <img src="images/Screenshot 2023-09-28 123350.png"/>
+                    <img src="images/Screenshot 2023-09-29 130141.png"/>
+                </section>
+                <!---------------------Tab Content --------------------->
+            </div>
+            <div id="dicts_to_csv_fields_to_values" class="tabcontent">
+                <!-- Tabs -->
+                    <h3>Important Info:</h3>                
+                    <!---------------------Tab Content --------------------->
+                    <pre id="dicts_to_csv_fields_to_values_copy" class="code-box">
+                        <code>
+# Dicts to CSV, Fields and ValuesONLY
+import csv
+
+dict_demo = [
+    {'a': 3, 'b': 8, 'c': 4},
+    {'a': 9, 'b': 4, 'c': 2},
+    {'a': 9, 'b': 10, 'c': 6}
+]
+dict_list = []
+fields = ("a", "b", "c")
+
+for i in range(len(dict_demo)):
+    dl = []
+    for k, v in dict_demo[i].items():
+        dl.append(v)
+    dict_list.append(dl)
+# print(dict_list)
+
+path = "../Resources/"
+with open(path + "dict.csv", 'w') as file:
+    write = csv.writer(file)
+
+    write.writerow(fields)
+    write.writerows(dict_list)
+                        </code>
+                    </pre>
+                    <br><br>
+                    <section>                
+                        <h3>Output: </h3>
+                    </section>    
+                    <section class="output-box">
+                        <span class="code-text">Output</span>
+                        <br><br>
+                        <img src="images/Screenshot 2023-09-29 210809.png"/>
+                    </section>
+                    <!---------------------Tab Content --------------------->
+                </div>
+        </div>
+    </section>
+    <!--_________________END OF SECTION COLLAPSIBLE_________________--> 
+    <br><br>                
+    <!--_________________SECTION COLLAPSIBLE_________________-->
+    <section id="dicts_to_html">
+        <button type="button" class="collapsible">Dicts to HTML</button>
+        <div class="content">
+            <!-- Tabs -->
+            <!-- Tabs -->
+            <h3>Important Info:</h3>                
+            <!---------------------Tab Content --------------------->
+            <pre id="dicts_to_html_copy" class="code-box">
+                <code>
+data = [
+    {'a': 3, 'b': 8, 'c': 4},
+    {'a': 9, 'b': 4, 'c': 2},
+    {'a': 9, 'b': 10, 'c': 6}
+]
+
+path = "../Resources/"
+
+entries = []
+for i in range(len(data)):
+    for k, v in data[i].items():
+        entries.append([k, v])
+# print(entries)
+
+
+with open(path + 'demo.html', 'w') as file:
+    for i in range(len(entries)):
+        file.writelines("&lt;li>" + str(entries[i]) + "&lt;/li>" + "\n")
+                </code>
+            </pre>
+            <br><br>
+            <section>                
+                <h3>Output: </h3>
+            </section>    
+            <section class="output-box">
+                <span class="code-text">Output</span>
+                <br><br>
+                <img src=""/>
+            </section>
+                <!---------------------Tab Content --------------------->
+        </div>
+    </section>
+    <!--_________________END OF SECTION COLLAPSIBLE_________________--> 
+    <br><br>
+                    
+    <!--_________________SECTION COLLAPSIBLE_________________-->
+        <section id="dicts_to_json">
+            <button type="button" class="collapsible">Dicts to JSON</button>
+            <div class="content">
+                <!-- Tabs -->
+                <div class="tab">
+                    <button class="tablinks" onclick="openTab(event, 'dicts_to_json_full_dict')">dicts_to_json</button>
+                    <button class="tablinks" onclick="openTab(event, 'dicts_to_json_itemized')">dicts_to_json_itemized</button>
+                </div>
+                <div id="dicts_to_json_full_dict" class="tabcontent">
+                <!-- Tabs -->
+                    <h3>Important Info:</h3><br>
+                    <li>Does not use field names</li>
+                    <li>prints each dict from the list as one json entry</li>                
+                    <!---------------------Tab Content --------------------->
+                    <pre id="dicts_to_json_full_dict_copy" class="code-box">
+                        <code>
+import json
+data = [
+    {'a': 3, 'b': 8, 'c': 4},
+    {'a': 9, 'b': 4, 'c': 2},
+    {'a': 9, 'b': 10, 'c': 6}
+]
+
+path = "../Resources/"
+
+entries = []
+for i in range(len(data)):
+    entries.append(data[i])
+
+with open(path + "demp.json", 'w') as file:
+    json.dump(entries, file, indent=4)
+                        </code>
+                    </pre>
+                    <br><br>
+                    <section>                
+                        <h3>Output: </h3>
+                    </section>    
+                    <section class="output-box">
+                        <span class="code-text">Output</span>
+                        <br><br>
+                        <img src="images/Screenshot 2023-09-29 225203.png"/>
+                    </section>
+                <!---------------------Tab Content --------------------->
+                </div>
+                <div id="dicts_to_json_itemized" class="tabcontent">
+                    <!-- Tabs -->
+                    <h3>Important Info:</h3><br>
+                    <li>Does not use field names</li>
+                    <li>prints each key, value pair in dict from the list as one json entry</li>                
+                    <!---------------------Tab Content --------------------->
+                    <pre id="dicts_to_json_itemized_copy" class="code-box">
+                        <code>
+import json
+data = [
+    {'a': 3, 'b': 8, 'c': 4},
+    {'a': 9, 'b': 4, 'c': 2},
+    {'a': 9, 'b': 10, 'c': 6}
+]
+
+path = "../Resources/"
+
+entries = []
+for i in range(len(data)):
+    for k, v in data[i].items():
+        entries.append([k, v])
+# print(entries)
+
+
+with open(path + 'demo.json', 'w') as file:
+    json.dump(entries, file, indent=4)
+                        </code>
+                    </pre>
+                    <br><br>
+                    <section>                
+                        <h3>Output: </h3>
+                    </section>    
+                    <section class="output-box">
+                        <span class="code-text">Output</span>
+                        <br><br>
+                        <img src="images/Screenshot 2023-09-29 225400.png"/>
+                    </section>
+                    <!---------------------Tab Content --------------------->
+                </div>
+            </div>
+        </section>
+    <!--_________________END OF SECTION COLLAPSIBLE_________________--> 
+    <br><br> 
+    <!--_________________SECTION COLLAPSIBLE_________________-->
+    <section id="dicts_to_SQL">
+        <button type="button" class="collapsible">Dicts to SQL</button>
+        <div class="content">
+            <!-- Tabs -->
+            <!-- <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'dicts_to_sql')">Dicts to SQL</button>
+            </div>
+            <div id="dicts_to_sql" class="tabcontent"> -->
+            <!-- Tabs -->
+                <h3>Important Info:</h3> 
+                <li>Can not enter pure dict, must be changed into lists or tuples.</li>               
+                <!---------------------Tab Content --------------------->
+                <pre id="dicts_to_sql_copy" class="code-box">
+                    <code>
+import psycopg2
+
+conn = psycopg2.connect(user='postgres', password='password', host='localhost', port='5432', database='master')
+
+cur = conn.cursor()
+
+cur.execute("""DROP TABLE IF EXISTS dict_demo""")
+
+cur.execute("""CREATE TABLE dict_demo(
+    num SERIAL,
+    keys VARCHAR(225),
+    values VARCHAR(225)
+    );""")
+
+data = [
+    {'a': 3, 'b': 8, 'c': 4},
+    {'a': 9, 'b': 4, 'c': 2},
+    {'a': 9, 'b': 10, 'c': 6}
+]
+
+path = "../Resources/"
+
+entries = []
+for i in range(len(data)):
+    for k, v in data[i].items():
+        entries.append((k, v))
+
+for i in range(len(entries)):
+    cur.execute("""INSERT INTO dict_demo(keys, values) VALUES
+    (%s, %s)""", entries[i])
+
+conn.commit()
+conn.close()
+                    </code>
+                </pre>
+                <br><br>
+                <section>                
+                    <h3>Output: </h3>
+                </section>    
+                <section class="output-box">
+                    <span class="code-text">Output</span>
+                    <br><br>
+                    <img src="images/Screenshot 2023-09-30 001245.png"/>
                 </section>
                 <!---------------------Tab Content --------------------->
             </div>
         </div>
     </section>
-  <!--_________________END OF SECTION COLLAPSIBLE_________________--> 
-                    
-                
+    <!--_________________END OF SECTION COLLAPSIBLE_________________--> 
     </section>        
     <script src="dicts.js"></script>
 </body>
