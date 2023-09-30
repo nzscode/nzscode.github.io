@@ -1,1316 +1,439 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="build_format.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="build_format.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
   <body>
-    <section>
+    <section id="collapsible">
       <h2>Collapsible</h2>
       <section>
-      <button type="button" class="collapsible"><h2>Collapsible Title</h2></button>
-      <div class="content">
+        <button type="button" class="collapsible">
+          <h2>Collapsible Title</h2>
+        </button>
+        <div class="content">
           <h3>Collapsible Contents:</h3>
-          &emsp;&emsp;&emsp;&emsp;Hola, Como es tas? 
-  
+          &emsp;&emsp;&emsp;&emsp;Hola, Como es tas?
           <pre>
-  code block
-  code block
-  code block
-          </pre>
-      </div>
+code block
+code block
+code block
+                    </pre
+          >
+        </div>
       </section>
-      <br><br><br>
-      
-      
-      <button type="button" class="collapsible"><h2>Code: For Collapsible</h2></button>
-      <div class="content">
+      <br />
       <!-- Tab links -->
       <div class="tab">
-          <button class="tablinks" onclick="openTab(event, 'CollapsibleONLY_html')">CollapsibleONLY_html</button>
-          <button class="tablinks" onclick="openTab(event, 'CollapsibleONLY_css')">CollapsibleONLY_css</button>
-          <button class="tablinks" onclick="openTab(event, 'CollapsibleONLY_js')">CollapsibleONLY_js</button>
+        <button
+          class="tablinks"
+          onclick="openTab(event, 'CollapsibleONLY_html')"
+        >
+          CollapsibleONLY_html
+        </button>
+        <button
+          class="tablinks"
+          onclick="openTab(event, 'CollapsibleONLY_css')"
+        >
+          CollapsibleONLY_css
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'CollapsibleONLY_js')">
+          CollapsibleONLY_js
+        </button>
       </div>
-      
+
       <!-- Tab content -->
       <div id="CollapsibleONLY_html" class="tabcontent">
-          <pre id="Collapsible_html_copy">
-  &lt;section>
-      &lt;button type="button" class="collapsible">&lt;h2>Collapsible Title&lt;/h2>&lt;/button>
-      &lt;div class="content">
-          Hola, Como es tas?
-      &lt;/div>
-  &lt;/section>
-          </pre>
-      </div>
-      <div id="CollapsibleONLY_css" class="tabcontent">
-          <pre id="Collapsible_css_copy">
-  
-  /* THIS IS FOR THE COLLAPSIBLE BITS */
-  /* Style the button that is used to open and close the collapsible content */
-  .collapsible {
-      background-color: #eee;
-      color: #444;
-      cursor: pointer;
-      padding: 18px;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 15px;
-  }
-  
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  .active, .collapsible:hover {
-      background-color: #ccc;
-  }
-  
-  /* Style the collapsible content. Note: hidden by default */
-  .content {
-      padding: 0 18px;
-      display: none;
-      overflow: hidden;
-  background-color: #f1f1f1;
-  }
-  
-  
-          </pre>
-      </div>
-      <div id="CollapsibleONLY_js" class="tabcontent">
-          <pre id="Collapsible_js_copy">
-  //   THIS IS FOR THE COLLAPSIBLE BITS
-  var coll = document.getElementsByClassName("collapsible");
-  var i;
-  
-  for (i = 0; i &lt; coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-          this.classList.toggle("active");
-          var content = this.nextElementSibling;
-          if (content.style.display === "block") {
-              content.style.display = "none";
-          } else {
-              content.style.display = "block";
-          }
-      });
-  }
-          </pre>
-      </div>
-      </div>
-      <br><br>
-      </section>
-           
-    <section>
-      <h2>TABS</h2>
-      <section>
-      <button type="button" class="collapsible"><h2>TABS</h2></button>
-      <div class="content">
-      <!-- Tab links -->
-      <div class="tab">
-          <button class="tablinks" onclick="openTab(event, 'London')">London</button>
-          <button class="tablinks" onclick="openTab(event, 'Paris')">Paris</button>
-          <button class="tablinks" onclick="openTab(event, 'Tokyo')">Tokyo</button>
-      </div>
-      
-      <!-- Tab content -->
-      <div id="London" class="tabcontent">
-          <h3>London</h3>
-          <p>London is the capital city of England.</p>
-      </div>
-      
-      <div id="Paris" class="tabcontent">
-          <h3>Paris</h3>
-          <p>Paris is the capital of France.</p>
-      </div>
-      
-      <div id="Tokyo" class="tabcontent">
-          <h3>Tokyo</h3>
-          <p>Tokyo is the capital of Japan.</p>
-      </div>
-      
-      <br><br><br>
-      <button type="button" class="collapsible"><h2>Code: For Tabs</h2></button>
-      <div class="content">
-      <!-- Tab links -->
-      <div class="tab">
-          <button class="tablinks" onclick="openTab(event, 'tabsONLY_html')">tabsONLY_html</button>
-          <button class="tablinks" onclick="openTab(event, 'tabsONLY_css')">tabsONLY_css</button>
-          <button class="tablinks" onclick="openTab(event, 'tabsONLY_js')">tabsONLY_js</button>
-      </div>
-      
-      <!-- Tab content -->
-      <div id="tabsONLY_html" class="tabcontent">
-          <pre id="tabsONLY_html_copy">
-      &lt;section>
-      <!-- Tab links -->
-      &lt;div class="tab">
-      &lt;button class="tablinks" onclick="openTab(event, 'London')">London&lt;/button>
-      &lt;button class="tablinks" onclick="openTab(event, 'Paris')">Paris&lt;/button>
-      &lt;button class="tablinks" onclick="openTab(event, 'Tokyo')">Tokyo&lt;/button>
-      &lt;/div>
-      
-      &lt;!-- Tab content -->
-      &lt;div id="London" class="tabcontent">
-      &lt;h3>London&lt;/h3>
-      &lt;p>London is the capital city of England.&lt;/p>
-      &lt;/div>
-      
-      &lt;div id="Paris" class="tabcontent">
-      &lt;h3>Paris&lt;/h3>
-      &lt;p>Paris is the capital of France.&lt;/p>
-      &lt;/div>
-      
-      &lt;div id="Tokyo" class="tabcontent">
-      &lt;h3>Tokyo&lt;/h3>
-      &lt;p>Tokyo is the capital of Japan.&lt;/p>
-      &lt;/div>
-      &lt;/section>
-          </pre>
-      </div>
-      <div id="tabsONLY_css" class="tabcontent">
-          <pre id="tabsONLY_css_copy">
-      /* Style the tab */
-      .tab {
-      overflow: hidden;
-      border: 1px solid #ccc;
-      background-color: #f1f1f1;
-      }
-      
-      /* Style the buttons that are used to open the tab content */
-      .tab button {
-      background-color: inherit;
-      float: left;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      padding: 14px 16px;
-      transition: 0.3s;
-      }
-      
-      /* Change background color of buttons on hover */
-      .tab button:hover {
-      background-color: #ddd;
-      }
-      
-      /* Create an active/current tablink class */
-      .tab button.active {
-      background-color: #ccc;
-      }
-      
-      /* Style the tab content */
-      .tabcontent {
-      display: none;
-      padding: 6px 12px;
-      border: 1px solid #ccc;
-      border-top: none;
-      }
-          </pre>
-      </div>
-      <div id="tabsONLY_js" class="tabcontent">
-          <pre id="tabsONLY_js_copy">
-      function openTab(evt, tabName) {
-      // Declare all variables
-      var i, tabcontent, tablinks;
-      
-      // Get all elements with class="tabcontent" and hide them
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i &lt; tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-      }
-      
-      // Get all elements with class="tablinks" and remove the class "active"
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i &lt; tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      
-      // Show the current tab, and add an "active" class to the button that opened the tab
-      document.getElementById(tabName).style.display = "block";
-      evt.currentTarget.className += " active";
-      }
-          </pre>
-      </div>
-      </div>
-      <br><br>
-      </section>
-      <br><br><br>
-      <section>
-          <button type="button" class="collapsible"><h2>TABS with Output Code Below</h2></button>
-          <div class="content">
-          <!-- Tab links -->
-          <div class="tab">
-              <button class="tablinks" onclick="openTab(event, 'X')">X</button>
-              <button class="tablinks" onclick="openTab(event, 'Y')">Y</button>
-              <button class="tablinks" onclick="openTab(event, 'Z')">Z</button>
-          </div>
-      
-          <!-- Tab content -->
-          <div id="X" class="tabcontent">
-              <h3>X</h3>
-              <p>X</p>
-          </div>
-      
-          <div id="Y" class="tabcontent">
-              <h3>Y</h3>
-              <p>Y</p>
-          </div>
-      
-          <div id="Z" class="tabcontent">
-              <h3>Z</h3>
-              <p>Z</p>
-          </div>
-          <br><br>
-          This is the Output Box:
-          <section class="output-box">
-          <span class="code-text">I AM THE OOOUUUUTTTPPPUUUTTT!!!!!</span>
-          </section>
-          <br><br><br>
-          <button type="button" class="collapsible"><h2>Code: For Tabs</h2></button>
-      <div class="content">
-      <!-- Tab links -->
-      <div class="tab">
-          <button class="tablinks" onclick="openTab(event, 'tabsWithOutputONLY_html')">tabsWithOutputONLY_html</button>
-          <button class="tablinks" onclick="openTab(event, 'tabsWithOutputONLY_css')">tabsWithOutputONLY_css</button>
-          <button class="tablinks" onclick="openTab(event, 'tabsWithOutputONLY_js')">tabsWithOutputONLY_js</button>
-      </div>
-      
-      <!-- Tab content -->
-      <div id="tabsWithOutputONLY_html" class="tabcontent">
-          This is the new code:
-          <pre id="tabsWithOutputONLY_html_copy">
-      &lt;br>&lt;br>
-      This is the Output Box:
-      &lt;section class="output-box">                
-      &lt;span class="code-text">I AM THE OOOUUUUTTTPPPUUUTTT!!!!!&lt;/span>
-      &lt;/section>
-          </pre>
-      </div>
-      <div id="tabsWithOutputONLY_css" class="tabcontent">
-      This is for the Output Box ONLY
-          <pre id="tabsWithOutputONLY_css_copy">
-      /* THIS IS FOR THE OUTPUT BOX */
-      .output-box {
-      font-family: monospace;
-      font-size: 18px;
-      padding: 16px;
-      border-width: 2px;
-      border-color: #060606;
-      background-color: #387a4e;
-      color: #cccccc;
-      border-style: solid;
-      border-radius: 7px;
-      box-shadow: 0px 0px 5px rgba(66,66,66,.75);
-      text-shadow: -50px 0px 0px rgba(66,66,66,.0);
-      max-width: 1000px;
-      margin-top: 15px;
-      margin-bottom: 5px;
-      margin-left: 45px;
-      margin-right: 45px;
-      }
-          </pre>
-      </div>
-      <div id="tabsWithOutputONLY_js" class="tabcontent">
-          <pre id="tabsWithOutputONLY_js_copy">
-      THERE IS NO javascript
-          </pre>
-      </div>
-      </div>
-      <br><br>
-      </div>
-      </section>
-      
-          <br><br><br>
-          <section>
-              <button type="button" class="collapsible"><h2>TABS With Text Block</h2></button>
-              <div class="content">
-                  <!-- Tab links -->
-                  <div class="tab">
-                      <button class="tablinks" onclick="openTab(event, 'Potato')">Potato</button>
-                      <button class="tablinks" onclick="openTab(event, 'Onion')">Onion</button>
-                      <button class="tablinks" onclick="openTab(event, 'Pineapple')">Pineapple</button>
-                  </div>
-      
-                  <!-- Tab content -->
-                  <div id="Potato" class="tabcontent ">
-                      <pre id="pot" class="code-box">This is some text.<br>This is some text.<br>This is some text.</pre>
-                  </div>
-      
-                  <div id="Onion" class="tabcontent">
-                      <pre id="on" class="code-box">2This is some text.<br>2This is some text.<br>2This is some text.</pre>
-                  </div>
-      
-                  <div id="Pineapple" class="tabcontent">
-                      <pre id="pin" class="code-box">This is 333some text.<br>This is 333some text.<br>This is 333some text.</pre>
-                  </div>
-                  <br><br>
-          This is the Output Box:
-          <section class="output-box">
-          <span class="code-text">I AM THE OOOUUUUTTTPPPUUUTTT!!!!!</span>
-          </section>
-          <br><br><br>
-          <button type="button" class="collapsible"><h2>Code: For Tabs</h2></button>
-      <div class="content">
-      <!-- Tab links -->
-      <div class="tab">
-          <button class="tablinks" onclick="openTab(event, 'tabsWithCodeBlock_html')">tabsCodeBlockONLY_html</button>
-          <button class="tablinks" onclick="openTab(event, 'tabsWithCodeBlock_css')">tabsCodeBlockONLY_css</button>
-          <button class="tablinks" onclick="openTab(event, 'tabsWithCodeBlock_js')">tabsCodeBlockONLY_js</button>
-      </div>
-      
-      <!-- Tab content -->
-      <div id="tabsWithCodeBlock_html" class="tabcontent">
-          This is the new code:
-          Make sure the IDs are always Unique!
-          <pre id="tabsWithCodeBlock_html_copy">
-      &lt;div id="Potato" class="tabcontent">
-      &lt;pre id="1" class="code-box">This is some text.&lt;br>This is some text.&lt;br>This is some text.&lt;/pre>
-      &lt;/div>
-          </pre>
-      </div>
-      <div id="tabsWithCodeBlock_css" class="tabcontent">
-      This is for the Code Block ONLY
-          <pre id="tabsWithCodeBlock_css_copy">
-      /* THIS IS FOR THE CODE BLOCKS */
-      .code-box {
-      font-family: monospace;
-      font-size: 18px;
-      padding: 16px;
-      border-width: 4px;
-      border-color: #060606;
-      background-color: #646464;
-      color: #d8d7d7;
-      border-style: solid;
-      border-radius: 7px;
-      box-shadow: 0px 0px 5px rgba(66,66,66,.75);
-      text-shadow: -50px 0px 0px rgba(66,66,66,.0);
-      max-width: 1000px;
-      margin-top: 15px;
-      margin-bottom: 5px;
-      margin-left: 45px;
-      margin-right: 45px;
-      }
-      
-      .TODO{
-      font-style: italic;
-      color: #34a75a;
-      }
-      
-      .brackets-out{
-      /*  */
-      color: yellow;
-      }
-      
-      .brackets-in{
-      color: #37f877;
-      }
-      .method{
-      color: cornflowerblue;
-      }
-      
-      .string{
-      color:rgb(161, 233, 161);
-      }
-      
-      .function-reference{
-      /* def dog_bark()=>>> dog_bark() is highlighted */
-      color: hotpink;
-      }
-      .keyword{
-      /* used for import, for, in, try, except, print */
-      color: orange;
-      }
-      .code-text{
-      color: #ffffff;
-      }
-          </pre>
-      </div>
-      <div id="tabsWithCodeBlock_js" class="tabcontent">
-          <pre id="tabsWithCodeBlock_js_copy">
-      THERE IS NO javascript
-          </pre>
-      </div>
-      </div>
-      <br><br>
-              </div>
-          </section>
-          <br><br><br>
-          <section>
-              <button type="button" class="collapsible"><h2>TABS With Copy Button & Text Block</h2></button>
-              <div class="content">
-                  <!-- Tab links -->
-                  <div class="tab">
-                      <button class="tablinks" onclick="openTab(event, 'Flora')">Flora</button>
-                      <button class="tablinks" onclick="openTab(event, 'Fauna')">Fauna</button>
-                      <button class="tablinks" onclick="openTab(event, 'Mineral')">Mineral</button>
-                  </div>
-      
-                  <!-- Tab content -->
-                  <div id="Flora" class="tabcontent ">
-                      <pre id="Flora_html">This is some FLORA.<br>This is some FLORA.<br>This is some FLORA.</pre>
-                  </div>
-      
-                  <div id="Fauna" class="tabcontent">
-                      <pre id="Fauna_html">This is some text.<br>This is some text.<br>This is some text.</pre>
-                  </div>
-      
-                  <div id="Mineral" class="tabcontent">
-                      <pre id="Mineral_html">This is some Mineral.<br>This is some Mineral.<br>This is some Mineral.</pre>
-                  </div>
-                  <br><br>
-          This is the Output Box:
-          <section class="output-box">
-          <span class="code-text">I AM THE OOOUUUUTTTPPPUUUTTT!!!!!</span>
-          </section>
-          <br><br><br>
-          <button type="button" class="collapsible"><h2>Code: For Tabs</h2></button>
-      <div class="content">
-      <!-- Tab links -->
-      <div class="tab">
-          <button class="tablinks" onclick="openTab(event, 'tabsWithCopyButton_html')">tabsCopyButton_html</button>
-          <button class="tablinks" onclick="openTab(event, 'tabsWithCopyButton_css')">tabsCopyButton_css</button>
-          <button class="tablinks" onclick="openTab(event, 'tabsWithCopyButton_js')">tabsCopyButton_js</button>
-      </div>
-      
-      <!-- Tab content -->
-      <div id="tabsWithCopyButton_html" class="tabcontent">
-          This is the new code:
-          Make sure the IDs are always Unique!
-          <pre id="tabsWithCopyButton_html_copy">
-      &lt;div id="Potato" class="tabcontent">
-      &lt;pre id="1">This is some text.&lt;br>This is some text.&lt;br>This is some text.&lt;/pre>
-      &lt;/div>
-          </pre>
-      </div>
-      <div id="tabsWithCopyButton_css" class="tabcontent">
-          <pre id="tabsWithCopyButton_css_copy">
-      /* THIS IS FOR THE COPY BUTTON */
-      pre {
-      position: relative;
-      background: #d3d6db;
-      padding: 10px;
-      font-size: 15px;
-      word-wrap: break-word;
-      white-space: pre-wrap;
-      border: 1px solid #e6e7e9;
-      }
-      
-      .copy-button {
-      position: absolute;
-      top: 2px;
-      right: 10px;
-      cursor: pointer;
-      color: #fff;
-      background: gray;
-      border-radius: 0.5em;
-      padding: 2px 7px;
-      }
-      
-      .copy-button:hover{
-      color: #000;
-      }
-          </pre>
-      </div>
-      <div id="tabsWithCopyButton_js" class="tabcontent">
-          <pre id="tabsWithCopyButton_js_copy">
-      // THIS IS FOR THE COPY BUTTON
-      
-      function addCopyButton (tab_id) {
-      // Get the ^lt;pre> element
-      const preButton = document.getElementById(tab_id);
-      
-      // Create a copy button element
-      const copyButton = document.createElement("span");
-      copyButton.innerText = "Copy";
-      copyButton.classList.add("copy-button");
-      
-      // Append the copy button to the ^lt;pre> Button
-      preButton.appendChild(copyButton);
-      
-      // Add click event listener to the copy button
-      copyButton.addEventListener("click", () => {
-      // Hide the copy button temporarily
-      copyButton.style.display = "none";
-      
-      // Create a range and select the text inside the ^lt;pre> Button
-      const range = document.createRange();
-      range.selectNode(preButton);
-      window.getSelection().removeAllRanges();
-      window.getSelection().addRange(range);
-      
-      try {
-      // Copy the selected text to the clipboard
-      document.execCommand("copy");
-      
-      // Alert the user that the text has been copied
-      copyButton.innerText = "Copied!";
-      setTimeout(function(){
-      copyButton.innerText = "Copy";
-      }, 2000);
-      } catch (err) {
-      console.error("Unable to copy text:", err);
-      } finally {
-      // Show the copy button again
-      copyButton.style.display = "inline";
-      
-      // Deselect the text
-      window.getSelection().removeAllRanges();
-      }
-      });
-      };      
-      
-      addCopyButton("Flora_html");
-      addCopyButton("Fauna_html");
-      addCopyButton("Mineral_html");
-          </pre>
-      </div>
-      </div>
-      <br><br>
-          </div>
-          </section>
-          <br><br><br>
-          <section>
-              <button type="button" class="collapsible"><h2>TABS With Copy Button & Text Block & Output Sections in Each Tab</h2></button>
-              <div class="content">
-                  <!-- Tab links -->
-                  <div class="tab">
-                      <button class="tablinks" onclick="openTab(event, 'Test1HTML')">HTML</button>
-                      <button class="tablinks" onclick="openTab(event, 'Test1CSS')">CSS</button>
-                      <button class="tablinks" onclick="openTab(event, 'Test1JS')">JS</button>
-                      <button class="tablinks" onclick="openTab(event, 'Test1Python1.1')">Python1.1</button>
-                      <button class="tablinks" onclick="openTab(event, 'Test1Python1.2')">Python1.2</button>
-                  </div>
-      
-                  <!-- Tab content -->
-                  <div id="Test1HTML" class="tabcontent ">
-                      <pre id="Test1HTML_copy">This is some FLORA.<br>This is some FLORA.<br>This is some FLORA.</pre>
-                  </div>
-      
-                  <div id="Test1CSS" class="tabcontent">
-                      <pre id="Test1CSS_copy">This is some text.<br>This is some text.<br>This is some text.</pre>
-                  </div>
-      
-                  <div id="Test1JS" class="tabcontent">
-                      <pre id="Test1JS_copy">This is some Mineral.<br>This is some Mineral.<br>This is some Mineral.</pre>
-                  </div>
-                  <div id="Test1Python1.1" class="tabcontent">
-                      <pre id="Test1Python1.1_copy">This is some Mineral.<br>This is some Mineral.<br>This is some Mineral.</pre>
-                      Python1.1 Output Box:
-                      <section class="output-box">
-                      <span class="code-text">I AM THE OOOUUUUTTTPPPUUUTTT!!!!!</span>
-                      </section>
-                  </div>
-                  <div id="Test1Python1.2" class="tabcontent">
-                      <pre id="Test1Python1.2_copy">This is some Mineral.<br>This is some Mineral.<br>This is some Mineral.</pre>
-                      Python1.2 Output Box:
-                      <section class="output-box">
-                      <span class="code-text">I AM THE OOOUUUUTTTPPPUUUTTT!!!!!</span>
-                      </section>
-                  </div>
-                  <br><br>
-          This is the EXPECTED Output Box:
-          <section class="output-box">
-          <span class="code-text">I AM THE OOOUUUUTTTPPPUUUTTT!!!!!</span>
-          </section>
-          <br><br><br>
-          <button type="button" class="collapsible"><h2>Code: For Tabs</h2></button>
-      <div class="content">
-      <!-- Tab links -->
-      <div class="tab">
-          <button class="tablinks" onclick="openTab(event, 'tabsWithOutputOnTabs_html')">tabsOutputOnTabs_html</button>
-          <button class="tablinks" onclick="openTab(event, 'tabsWithOutputOnTabs_css')">tabsOutputOnTabs_css</button>
-          <button class="tablinks" onclick="openTab(event, 'tabsWithOutputOnTabs_js')">tabsOutputOnTabs_js</button>
-      </div>
-      
-      <!-- Tab content -->
-      <div id="tabsWithOutputOnTabs_html" class="tabcontent">
-          This is the new code:
-          Make sure the IDs are always Unique!
-          <pre id="tabsWithOutputOnTabs_html_copy">
-      &lt;section>
-      &lt;button type="button" class="collapsible">&lt;h2>TABS With Copy Button & Text Block & Output Sections in Each Tab&lt;/h2>&lt;/button>
-      &lt;div class="content">
-      &lt;!-- Tab links -->
-      &lt;div class="tab">
-      &lt;button class="tablinks" onclick="openTab(event, 'Test1HTML')">HTML&lt;/button>
-      &lt;button class="tablinks" onclick="openTab(event, 'Test1CSS')">CSS&lt;/button>
-      &lt;button class="tablinks" onclick="openTab(event, 'Test1JS')">JS&lt;/button>
-      &lt;button class="tablinks" onclick="openTab(event, 'Test1Python1.1')">Python1.1&lt;/button>
-      &lt;button class="tablinks" onclick="openTab(event, 'Test1Python1.2')">Python1.2&lt;/button>
-      &lt;/div>
-      
-      &lt;!-- Tab content -->
-      &lt;div id="Test1HTML" class="tabcontent ">
-      &lt;pre id="Test1HTML_copy">This is some FLORA.&lt;br>This is some FLORA.&lt;br>This is some FLORA.&lt;/pre>                         
-      &lt;/div>
-      
-      &lt;div id="Test1CSS" class="tabcontent">
-      &lt;pre id="Test1CSS_copy">This is some text.&lt;br>This is some text.&lt;br>This is some text.&lt;/pre>
-      &lt;/div>
-      
-      &lt;div id="Test1JS" class="tabcontent">
-      &lt;pre id="Test1JS_copy">This is some Mineral.&lt;br>This is some Mineral.&lt;br>This is some Mineral.&lt;/pre>
-      &lt;/div>
-      
-      &lt;div id="Test1Python1.1" class="tabcontent">
-      &lt;pre id="Test1Python1.1_copy">This is some Mineral.&lt;br>This is some Mineral.&lt;br>This is some Mineral.&lt;/pre>
-      Python1.1 Output Box:
-      &lt;section class="output-box">
-      &lt;span class="code-text">I AM THE OOOUUUUTTTPPPUUUTTT!!!!!&lt;/span>
-      &lt;/section>
-      &lt;/div>
-      
-      &lt;div id="Test1Python1.2" class="tabcontent">
-      &lt;pre id="Test1Python1.2_copy">This is some Mineral.&lt;br>This is some Mineral.&lt;br>This is some Mineral.&lt;/pre>
-      Python1.2 Output Box:
-      &lt;section class="output-box">
-      &lt;span class="code-text">I AM THE OOOUUUUTTTPPPUUUTTT!!!!!&lt;/span>
-      &lt;/section>
-      &lt;/div>
-      &lt;br>&lt;br>
-      This is the EXPECTED Output Box:
-      &lt;section class="output-box">                
-      &lt;span class="code-text">I AM THE OOOUUUUTTTPPPUUUTTT!!!!!&lt;/span>
-      &lt;/section>
-          </pre>
-      </div>
-      <div id="tabsWithOutputOnTabs_css" class="tabcontent">
-          <pre id="tabsWithOutputOnTabs_css_copy">
-      /* Style the tab */
-      .tab {
-      overflow: hidden;
-      border: 1px solid #ccc;
-      background-color: #f1f1f1;
-      }
-      
-      /* Style the buttons that are used to open the tab content */
-      .tab button {
-      background-color: inherit;
-      float: left;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      padding: 14px 16px;
-      transition: 0.3s;
-      }
-      
-      /* Change background color of buttons on hover */
-      .tab button:hover {
-      background-color: #ddd;
-      }
-      
-      /* Create an active/current tablink class */
-      .tab button.active {
-      background-color: #ccc;
-      }
-      
-      /* Style the tab content */
-      .tabcontent {
-      display: none;
-      padding: 6px 12px;
-      border: 1px solid #ccc;
-      border-top: none;
-      }
-      
-      
-      /* THIS IS FOR THE COLLAPSIBLE BITS */
-      /* Style the button that is used to open and close the collapsible content */
-      .collapsible {
-      background-color: #eee;
-      color: #444;
-      cursor: pointer;
-      padding: 18px;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 15px;
-      }
-      
-      /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-      .active, .collapsible:hover {
-      background-color: #ccc;
-      }
-      
-      /* Style the collapsible content. Note: hidden by default */
-      .content {
-      padding: 0 18px;
-      display: none;
-      overflow: hidden;
-      background-color: #f1f1f1;
-      }
-      
-      /* THIS IS FOR THE COPY BUTTON */
-      pre {
-      position: relative;
-      background: #d3d6db;
-      padding: 10px;
-      font-size: 15px;
-      word-wrap: break-word;
-      white-space: pre-wrap;
-      border: 1px solid #e6e7e9;
-      }
-      
-      .copy-button {
-      position: absolute;
-      top: 2px;
-      right: 10px;
-      cursor: pointer;
-      color: #fff;
-      background: gray;
-      border-radius: 0.5em;
-      padding: 2px 7px;
-      }
-      
-      .copy-button:hover{
-      color: #000;
-      }
-      
-      /* THIS IS FOR THE OUTPUT BOX */
-      .output-box {
-      font-family: monospace;
-      font-size: 18px;
-      padding: 16px;
-      border-width: 2px;
-      border-color: #060606;
-      background-color: #387a4e;
-      color: #cccccc;
-      border-style: solid;
-      border-radius: 7px;
-      box-shadow: 0px 0px 5px rgba(66,66,66,.75);
-      text-shadow: -50px 0px 0px rgba(66,66,66,.0);
-      max-width: 1000px;
-      margin-top: 15px;
-      margin-bottom: 5px;
-      margin-left: 45px;
-      margin-right: 45px;
-      }
-      
-      /* THIS IS FOR THE CODE BLOCKS */
-      .code-box {
-      font-family: monospace;
-      font-size: 18px;
-      padding: 16px;
-      border-width: 4px;
-      border-color: #060606;
-      background-color: #646464;
-      color: #d8d7d7;
-      border-style: solid;
-      border-radius: 7px;
-      box-shadow: 0px 0px 5px rgba(66,66,66,.75);
-      text-shadow: -50px 0px 0px rgba(66,66,66,.0);
-      max-width: 1000px;
-      margin-top: 15px;
-      margin-bottom: 5px;
-      margin-left: 45px;
-      margin-right: 45px;
-      }
-      
-      .TODO{
-      font-style: italic;
-      color: #34a75a;
-      }
-      
-      .brackets-out{
-      /*  */
-      color: yellow;
-      }
-      
-      .brackets-in{
-      color: #37f877;
-      }
-      .method{
-      color: cornflowerblue;
-      }
-      
-      .string{
-      color:rgb(161, 233, 161);
-      }
-      
-      .function-reference{
-      /* def dog_bark()=>>> dog_bark() is highlighted */
-      color: hotpink;
-      }
-      .keyword{
-      /* used for import, for, in, try, except, print */
-      color: orange;
-      }
-      .code-text{
-      color: #ffffff;
-      }
-      
-          </pre>
-      </div>
-      <div id="tabsWithOutputOnTabs_js" class="tabcontent">
-          <pre id="tabsWithOutputOnTabs_js_copy">
-      function openTab(evt, tabName) {
-      // Declare all variables
-      var i, tabcontent, tablinks;
-      
-      // Get all elements with class="tabcontent" and hide them
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i &lt; tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-      }
-      
-      // Get all elements with class="tablinks" and remove the class "active"
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i &lt; tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      
-      // Show the current tab, and add an "active" class to the button that opened the tab
-      document.getElementById(tabName).style.display = "block";
-      evt.currentTarget.className += " active";
-      }
-      
-      //   THIS IS FOR THE COLLAPSIBLE BITS
-      var coll = document.getElementsByClassName("collapsible");
-      var i;
-      
-      for (i = 0; i &lt; coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var content = this.nextElementSibling;
-      if (content.style.display === "block") {
-      content.style.display = "none";
-      } else {
-      content.style.display = "block";
-      }
-      });
-      }
-      
-      // THIS IS FOR THE COPY BUTTON
-      
-      function addCopyButton (tab_id) {
-      // Get the ^lt;pre> element
-      const preButton = document.getElementById(tab_id);
-      
-      // Create a copy button element
-      const copyButton = document.createElement("span");
-      copyButton.innerText = "Copy";
-      copyButton.classList.add("copy-button");
-      
-      // Append the copy button to the ^lt;pre> Button
-      preButton.appendChild(copyButton);
-      
-      // Add click event listener to the copy button
-      copyButton.addEventListener("click", () => {
-      // Hide the copy button temporarily
-      copyButton.style.display = "none";
-      
-      // Create a range and select the text inside the ^lt;pre> Button
-      const range = document.createRange();
-      range.selectNode(preButton);
-      window.getSelection().removeAllRanges();
-      window.getSelection().addRange(range);
-      
-      try {
-      // Copy the selected text to the clipboard
-      document.execCommand("copy");
-      
-      // Alert the user that the text has been copied
-      copyButton.innerText = "Copied!";
-      setTimeout(function(){
-      copyButton.innerText = "Copy";
-      }, 2000);
-      } catch (err) {
-      console.error("Unable to copy text:", err);
-      } finally {
-      // Show the copy button again
-      copyButton.style.display = "inline";
-      
-      // Deselect the text
-      window.getSelection().removeAllRanges();
-      }
-      });
-      };       
-      
-      addCopyButton("Test1HTML_copy")
-      addCopyButton("Test1CSS_copy")
-      addCopyButton("Test1JS_copy")
-      addCopyButton("Test1Python1.1_copy")
-      addCopyButton("Test1Python1.2_copy")
-          </pre>
-      </div>
-      </div>
-      <br><br>
-          </div>
-          </div>
-          </section>
-    </section>
-    <br><br><br> 
-    <section>
-
-    <button type="button" class="collapsible"><h2>Collapsible Title</h2></button>
-    <div class="content">
-    <!-- Tab links -->
-    <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'html_example')">HTML</button>
-        <button class="tablinks" onclick="openTab(event, 'css_example')">CSS</button>
-        <button class="tablinks" onclick="openTab(event, 'js_example')">JS</button>
-    </div>
-    
-    <!-- Tab content -->
-    <div id="html_example" class="tabcontent">
-        <pre id="html_example_copy_btn" class="code-box">
-Code Line 1
-Code Line 2
-Code Line 3
-        </pre>
-    </div>
-    <div id="css_example" class="tabcontent">
-        <pre id="css_example_copy_btn" class="code-box">
-
-/* CSS Comments */
-id {
-
-}
-
-.class {
-
-}
-        </pre>
-    </div>
-    <div id="js_example" class="tabcontent">
-        <pre id="js_example_copy_btn" class="code-box">
-//  JS Comments //
-Use &.l.t; without the periods in between for lesser than symbol. 
-
-        </pre>
-    </div>
-    <section class="output-box">
-        <span class="code-text">Output</span>
-    </section>
-    <br><br>
-    <br><br>
-
-    <button type="button" class="collapsible"><h2>Collapsible Title</h2></button>
-    <div class="content">
-    <!-- Tab links -->
-    <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'html')">HTML</button>
-        <button class="tablinks" onclick="openTab(event, 'css')">CSS</button>
-        <button class="tablinks" onclick="openTab(event, 'js')">JS</button>
-    </div>
-    
-    <!-- Tab content -->
-    <div id="html" class="tabcontent">
-        <pre id="html_copy_btn" class="code-box">
-    &lt;br>&lt;br>&lt;br> 
-    &lt;section>
-
+        <pre id="Collapsible_html_copy">
+&lt;section>
     &lt;button type="button" class="collapsible">&lt;h2>Collapsible Title&lt;/h2>&lt;/button>
     &lt;div class="content">
-    &lt;!-- Tab links -->
-    &lt;div class="tab">
-        &lt;button class="tablinks" onclick="openTab(event, 'html_example')">HTML&lt;/button>
-        &lt;button class="tablinks" onclick="openTab(event, 'css_example')">CSS&lt;/button>
-        &lt;button class="tablinks" onclick="openTab(event, 'js_example')">JS&lt;/button>
+        Hola, Como es tas?
     &lt;/div>
-    
-    &lt;!-- Tab content -->
-    &lt;div id="html_example" class="tabcontent">
-        &lt;pre id="html_example_copy_btn" class="code-box">
-Code Line 1
-Code Line 2
-Code Line 3
-        &lt;/pre>
-    &lt;/div>
-    &lt;div id="css_example" class="tabcontent">
-        &lt;pre id="css_example_copy_btn" class="code-box">
-
-/* CSS Comments */
-id {
-
-}
-
-.class {
-
-}
-        &lt;/pre>
-    &lt;/div>
-    &lt;div id="js_example" class="tabcontent">
-        &lt;pre id="js_example_copy_btn" class="code-box">
-//  JS Comments //
-Use &.l.t; without the periods in between for lesser than symbol. 
-
-        &lt;/pre>
-    &lt;/div>
-    &lt;section class="output-box">
-        &lt;span class="code-text">Output&lt;/span>
-    &lt;/section>
-    &lt;br>&lt;br>
-    &lt;br>&lt;br>
-        </pre>
-    </div>
-    <div id="css" class="tabcontent">
-        <pre id="css_copy_btn" class="code-box">
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-}
+&lt;/section>
+                </pre
+        >
+      </div>
+      <div id="CollapsibleONLY_css" class="tabcontent">
+        <pre id="Collapsible_css_copy">
   
-/* Style the buttons that are used to open the tab content */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-}
-  
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
-  
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-}
-  
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
-
-
 /* THIS IS FOR THE COLLAPSIBLE BITS */
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
 }
-  
+
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .collapsible:hover {
-  background-color: #ccc;
+    background-color: #ccc;
 }
-  
+
 /* Style the collapsible content. Note: hidden by default */
 .content {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  background-color: #f1f1f1;
-}
-
-  /* THIS IS FOR THE COPY BUTTON */
-pre {
-  position: relative;
-  background: #d3d6db;
-  padding: 10px;
-  font-size: 15px;
-  word-wrap: break-word;
-  white-space: pre-wrap;
-  border: 1px solid #e6e7e9;
-}
-
-.copy-button {
-  position: absolute;
-  top: 2px;
-  right: 10px;
-  cursor: pointer;
-  color: #fff;
-  background: gray;
-  border-radius: 0.5em;
-  padding: 2px 7px;
-}
-
-.copy-button:hover{
-  color: #000;
-}
-
-/* THIS IS FOR THE OUTPUT BOX */
-.output-box {
-  font-family: monospace;
-  font-size: 18px;
-  padding: 16px;
-  border-width: 2px;
-  border-color: #060606;
-  background-color: #387a4e;
-  color: #cccccc;
-  border-style: solid;
-  border-radius: 7px;
-  box-shadow: 0px 0px 5px rgba(66,66,66,.75);
-  text-shadow: -50px 0px 0px rgba(66,66,66,.0);
-  max-width: 1000px;
-  margin-top: 15px;
-  margin-bottom: 5px;
-  margin-left: 45px;
-  margin-right: 45px;
-}
-
-/* THIS IS FOR THE CODE BLOCKS */
-.code-box {
-  font-family: monospace;
-  font-size: 18px;
-  padding: 16px;
-  border-width: 4px;
-  border-color: #060606;
-  background-color: #646464;
-  color: #d8d7d7;
-  border-style: solid;
-  border-radius: 7px;
-  box-shadow: 0px 0px 5px rgba(66,66,66,.75);
-  text-shadow: -50px 0px 0px rgba(66,66,66,.0);
-  max-width: 1000px;
-  margin-top: 15px;
-  margin-bottom: 5px;
-  margin-left: 45px;
-  margin-right: 45px;
-}
-
-.TODO{
-  font-style: italic;
-  color: #34a75a;
-}
-
-.brackets-out{
-  /*  */
-  color: yellow;
-}
-
-.brackets-in{
-  color: #37f877;
-}
-.method{
-  color: cornflowerblue;
-}
-
-.string{
-  color:rgb(161, 233, 161);
-}
-
-.function-reference{
-  /* def dog_bark()=>>> dog_bark() is highlighted */
-  color: hotpink;
-}
-.keyword{
-  /* used for import, for, in, try, except, print */
-  color: orange;
-}
-.code-text{
-  color: #ffffff;
-}
-          
-        </pre>
-    </div>
-    <div id="js" class="tabcontent">
-        <pre id="js_copy_btn" class="code-box">
-function openTab(evt, tabName) {
-  // Declare all variables
-  var i, tabcontent, tablinks;
-
-  // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i &lt; tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-
-  // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i &lt; tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+background-color: #f1f1f1;
+}  
+                </pre
+        >
+      </div>
+      <div id="CollapsibleONLY_js" class="tabcontent">
+        <pre id="Collapsible_js_copy">
 //   THIS IS FOR THE COLLAPSIBLE BITS
 var coll = document.getElementsByClassName("collapsible");
 var i;
 
 for (i = 0; i &lt; coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+    });
+}
+                </pre
+        >
+      </div>
+      <br /><br />
+    </section>
+    <section id="tabs">
+      <h2>Tabs</h2>
+      <section>
+        <!-- Tab links -->
+        <div class="tab">
+          <button class="tablinks" onclick="openTab(event, 'tabsONLY_html')">
+            tabsONLY_html
+          </button>
+          <button class="tablinks" onclick="openTab(event, 'tabsONLY_css')">
+            tabsONLY_css
+          </button>
+          <button class="tablinks" onclick="openTab(event, 'tabsONLY_js')">
+            tabsONLY_js
+          </button>
+        </div>
+        <!-- Tab content -->
+        <div id="tabsONLY_html" class="tabcontent">
+          <pre id="tabsONLY_html_copy">
+&lt;section>
+<!-- Tab links -->
+&lt;div class="tab">
+&lt;button class="tablinks" onclick="openTab(event, 'Tab1')">Tab1&lt;/button>
+&lt;/div>
+
+&lt;!-- Tab content -->
+&lt;div id="Tab1" class="tabcontent">
+&lt;h3>Tab1 Title&lt;/h3>
+&lt;p>Tab1 info&lt;/p>
+&lt;/div>
+&lt;/section>
+                    </pre>
+        </div>
+        <div id="tabsONLY_css" class="tabcontent">
+          <pre id="tabsONLY_css_copy">
+/* Style the tab */
+.tab {
+overflow: hidden;
+border: 1px solid #ccc;
+background-color: #f1f1f1;
 }
 
+/* Style the buttons that are used to open the tab content */
+.tab button {
+background-color: inherit;
+float: left;
+border: none;
+outline: none;
+cursor: pointer;
+padding: 14px 16px;
+transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+display: none;
+padding: 6px 12px;
+border: 1px solid #ccc;
+border-top: none;
+}
+                    </pre
+          >
+        </div>
+        <div id="tabsONLY_js" class="tabcontent">
+          <pre id="tabsONLY_js_copy">
+function openTab(evt, tabName) {
+// Declare all variables
+var i, tabcontent, tablinks;
+
+// Get all elements with class="tabcontent" and hide them
+tabcontent = document.getElementsByClassName("tabcontent");
+for (i = 0; i &lt; tabcontent.length; i++) {
+tabcontent[i].style.display = "none";
+}
+
+// Get all elements with class="tablinks" and remove the class "active"
+tablinks = document.getElementsByClassName("tablinks");
+for (i = 0; i &lt; tablinks.length; i++) {
+tablinks[i].className = tablinks[i].className.replace(" active", "");
+}
+
+// Show the current tab, and add an "active" class to the button that opened the tab
+document.getElementById(tabName).style.display = "block";
+evt.currentTarget.className += " active";
+}
+                    </pre
+          >
+        </div>
+        <br /><br />
+      </section>
+    </section>
+    <section id="copy_btn">
+      <h2>Copy Button</h2>
+      <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'copy_btn_html')">
+          Copy_Button_html
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'copy_btn_css')">
+          Copy_Button_css
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'copy_btn_js')">
+          Copy_Button_js
+        </button>
+      </div>
+      <!--Tab Content  -->
+      <div id="copy_btn_html" class="tabcontent">
+        <pre id="copy_btn_html_copy">
+            
+&lt;div id="Unique_Tab_ID" class="tabcontent">
+&lt;pre id="Unique_Copy_Id">This is some text.&lt;br>This is some text.&lt;br>This is some text.&lt;/pre>
+&lt;/div>
+                        </pre
+        >
+      </div>
+      <div id="copy_btn_css" class="tabcontent">
+        <pre id="copy_btn_css_copy">
+/* THIS IS FOR THE COPY BUTTON */
+pre {
+position: relative;
+background: #d3d6db;
+padding: 10px;
+font-size: 15px;
+word-wrap: break-word;
+white-space: pre-wrap;
+border: 1px solid #e6e7e9;
+}
+
+.copy-button {
+position: absolute;
+top: 2px;
+right: 10px;
+cursor: pointer;
+color: #fff;
+background: gray;
+border-radius: 0.5em;
+padding: 2px 7px;
+}
+
+.copy-button:hover{
+color: #000;
+}
+                        </pre
+        >
+      </div>
+      <div id="copy_btn_js" class="tabcontent">
+        <pre id="copy_btn_js_copy">
 // THIS IS FOR THE COPY BUTTON
 
 function addCopyButton (tab_id) {
-  // Get the ^lt;pre> element
-  const preButton = document.getElementById(tab_id);
+// Get the ^lt;pre> element
+const preButton = document.getElementById(tab_id);
 
-  // Create a copy button element
-  const copyButton = document.createElement("span");
-  copyButton.innerText = "Copy";
-  copyButton.classList.add("copy-button");
+// Create a copy button element
+const copyButton = document.createElement("span");
+copyButton.innerText = "Copy";
+copyButton.classList.add("copy-button");
 
-  // Append the copy button to the ^lt;pre> Button
-  preButton.appendChild(copyButton);
+// Append the copy button to the ^lt;pre> Button
+preButton.appendChild(copyButton);
 
-  // Add click event listener to the copy button
-  copyButton.addEventListener("click", () => {
-  // Hide the copy button temporarily
-  copyButton.style.display = "none";
+// Add click event listener to the copy button
+copyButton.addEventListener("click", () => {
+// Hide the copy button temporarily
+copyButton.style.display = "none";
 
-  // Create a range and select the text inside the ^lt;pre> Button
-  const range = document.createRange();
-  range.selectNode(preButton);
-  window.getSelection().removeAllRanges();
-  window.getSelection().addRange(range);
+// Create a range and select the text inside the ^lt;pre> Button
+const range = document.createRange();
+range.selectNode(preButton);
+window.getSelection().removeAllRanges();
+window.getSelection().addRange(range);
 
-  try {
-      // Copy the selected text to the clipboard
-      document.execCommand("copy");
+try {
+// Copy the selected text to the clipboard
+document.execCommand("copy");
 
-      // Alert the user that the text has been copied
-      copyButton.innerText = "Copied!";
-      setTimeout(function(){
-      copyButton.innerText = "Copy";
-      }, 2000);
-  } catch (err) {
-      console.error("Unable to copy text:", err);
-  } finally {
-      // Show the copy button again
-      copyButton.style.display = "inline";
+// Alert the user that the text has been copied
+copyButton.innerText = "Copied!";
+setTimeout(function(){
+copyButton.innerText = "Copy";
+}, 2000);
+} catch (err) {
+console.error("Unable to copy text:", err);
+} finally {
+// Show the copy button again
+copyButton.style.display = "inline";
 
-      // Deselect the text
-      window.getSelection().removeAllRanges();
-  }
-  });
-};
-        </pre>
-    </div>
-    <section class="output-box">
-        <span class="code-text">Output</span>
+// Deselect the text
+window.getSelection().removeAllRanges();
+}
+});
+};      
+
+addCopyButton("Flora_html");
+addCopyButton("Fauna_html");
+addCopyButton("Mineral_html");
+                        </pre
+        >
+      </div>
     </section>
-    </div>
-    <br><br>
-    </div>
-    
-    
-</section>
-
-
-
-
-<script src="build_format.js"></script>
-</body>
+    <br /><br />
+    <section id="output_code_box">
+      <h2>Output Box</h2>
+      <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'output_box_html')">
+          output_box_html
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'output_box_css')">
+          output_box_css
+        </button>
+      </div>
+      <!--Tab Content  -->
+      <div id="output_box_html" class="tabcontent">
+        <pre id="output_box_html_copy">
+&lt;br>&lt;br>
+This is the Output Box:
+&lt;section class="output-box">                
+&lt;span class="code-text">I AM THE OOOUUUUTTTPPPUUUTTT!!!!!&lt;/span>
+&lt;/section>
+                        </pre
+        >
+      </div>
+      <!--Tab Content  -->
+      <div id="output_box_css" class="tabcontent">
+        <pre id="output_box_css_copy">
+       
+/* THIS IS FOR THE OUTPUT BOX */
+.output-box {
+font-family: monospace;
+font-size: 18px;
+padding: 16px;
+border-width: 2px;
+border-color: #060606;
+background-color: #387a4e;
+color: #cccccc;
+border-style: solid;
+border-radius: 7px;
+box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+text-shadow: -50px 0px 0px rgba(66,66,66,.0);
+max-width: 1000px;
+margin-top: 15px;
+margin-bottom: 5px;
+margin-left: 45px;
+margin-right: 45px;
+}
+                        </pre
+        >
+      </div>
+    </section>
+    <br /><br />
+    <h2>Basic Code Block</h2>
+    <!--________________________________________SECTION COLLAPSIBLE________________________________________-->
+    <section id="Basic_Code_Block">
+      <button type="button" class="collapsible">Basic Code Block</button>
+      <div class="content">
+        <!-- Tabs -->
+        <div class="tab">
+          <button class="tablinks" onclick="openTab(event, 'basic_code_block')">
+            Basic Code Block
+          </button>
+        </div>
+        <div id="basic_code_block" class="tabcontent">
+          <!-- Tabs -->
+          <h3>Important Info:</h3>
+          <!---------------------Tab Content --------------------->
+          <pre id="basic_code_block_copy" class="code-box">
+                  <code>
+&lt;!--_________________SECTION COLLAPSIBLE_________________-->
+    &lt;section id="dicts_to_csv">
+      &lt;button type="button" class="collapsible">Dicts to CSV&lt;/button>
+      &lt;div class="content">
+          &lt;!-- Tabs -->
+          &lt;div class="tab">
+              &lt;button class="tablinks" onclick="openTab(event, 'TabID')">Tab Name&lt;/button>
+          &lt;/div>
+          &lt;div id="TabID" class="tabcontent">
+          &lt;!-- Tabs -->
+              &lt;h3>Important Info:&lt;/h3>                
+              &lt;!---------------------Tab Content --------------------->
+              &lt;pre id="dicts_to_csv_copy" class="code-box">
+                  &lt;code>
+                  code line1
+                  code line2
+                  code line3
+                  &lt;/code>
+              &lt;/pre>
+              &lt;br>&lt;br>
+              &lt;section>                
+                  &lt;h3>Output: &lt;/h3>
+              &lt;/section>    
+              &lt;section class="output-box">
+                  &lt;span class="code-text">Output&lt;/span>
+                  &lt;br>&lt;br>
+                  &lt;img src="images/Screenshot 2023-09-28 123350.png"/>
+              &lt;/section>
+              &lt;!---------------------Tab Content --------------------->
+          &lt;/div>
+      &lt;/div>
+  &lt;/section>
+&lt;!--_________________END OF SECTION COLLAPSIBLE_________________--> 
+                  </code>
+              </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            <span class="code-text">Output</span>
+            <br /><br />
+            <img src="" />
+          </section>
+          <!---------------------Tab Content --------------------->
+        </div>
+      </div>
+    </section>
+    <!--________________________________________END OF SECTION COLLAPSIBLE________________________________________-->
+    <script src="build_format.js"></script>
+  </body>
 </html>
