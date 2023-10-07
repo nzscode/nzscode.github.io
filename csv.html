@@ -1,11 +1,749 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>CSV, PDF, JSON, SQL, HTML</title>
+  </head>
+  <body>
+    <section id="CSV">
+      <h2>CSV</h2>
+      <!--_________________SECTION COLLAPSIBLE_________________-->
+      <section id="CSV1">
+        <button type="button" class="collapsible">Saving a CSV</button>
+        <div class="content">
+          <!-- Tabs -->
+          <!-- Tabs -->
+          <h3>Important Info:</h3>
+          <li>Only lists/ tuples can be saved as CSV.</li>
+          <li>
+            To save a dict as a CSV, the dict must be changed into a list/
+            tuple.
+          </li>
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabs -->
+          <!-- Delete the br above if not using tabs -->
+          <pre id="saving_csv_list_tup_copy" class="code-box">
+                    <code>
+# Using list or tuples for CSV
+import csv
+<!-- data = [["a", 1], ["b", "f"], [3, "c"], [4, 5], [1, 2, 3]]
+OR
+data = (("a", 1), ("b", "f"), (3, "c"), (4, 5), (1, 2, 3))
+OR
+data = [["a", 1], ("b", "f"), [3, "c"], [4, 5], [1, 2, 3]] -->
+<!-- OR -->
+
+data = (["a", 1], ("b", "f"), [3, "c"], ([4, 5], [1, 2, 3]))
+# Data can be any combination of tuples &/OR lists
+
+fields = ("a", "b", "c")
+
+path = "../Resources/"  
+with open(path + "dict.csv", 'w') as file:  
+    write = csv.writer(file)  
     
-</body>
+    write.writerow(fields)  
+    write.writerows(data)
+                    </code>
+                </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            <img src="images/Screenshot 2023-10-02 095105.png" />
+          </section>
+          <!-- Delete the div below if not using tabs -->
+          <!-- Delete the div above if not using tabs -->
+          <!---------------------Tab Content --------------------->
+        </div>
+      </section>
+      <!--_________________END OF SECTION COLLAPSIBLE_________________-->
+      <br /><br />
+      <!--_________________SECTION COLLAPSIBLE_________________-->
+      <section id="CSV2">
+        <button type="button" class="collapsible">Reading a CSV</button>
+        <div class="content">
+          <!-- Tabs -->
+          <!-- Tabs -->
+          <h3>Important Info:</h3>
+          <li>
+            Delimiter is so the reader can find where to seprate the strings.
+          </li>
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabs -->
+          <!-- Delete the br above if not using tabs -->
+          <pre id="reading_csv_copy" class="code-box">
+                    <code>
+import csv
+path = "../Resources/"
+
+with open(path+"demo.csv") as file:
+    reader = csv.reader(file, delimiter=']')
+
+    for row in reader:
+        print('\n'.join(row))
+                    </code>
+                </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            a,b,c<br />
+            <br />
+            a,1<br />
+            <br />
+            b,f<br />
+            <br />
+            3,c<br />
+            <br />
+            [4, 5],"[1, 2, 3<br />
+          </section>
+          <!---------------------Tab Content --------------------->
+        </div>
+        <!-- Delete the dive below if not using tabs -->
+        <!-- Delete the dive above if not using tabs -->
+      </section>
+      <!--_________________END OF SECTION COLLAPSIBLE_________________-->
+      <br /><br />
+      <!--_________________SECTION COLLAPSIBLE_________________-->
+      <section id="CSV3">
+        <button type="button" class="collapsible">Read CSV into a dict</button>
+        <div class="content">
+          <!-- Tabs -->
+          <!-- Tabs -->
+          <h3>Important Info:</h3>
+          <li>This only reads a csv and places it into a dict format.</li>
+          <li>
+            The field names must include all the field names. To do this we read
+            the field names from the csv file, first.
+          </li>
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabs -->
+          <!-- Delete the br above if not using tabs -->
+          <pre id="read_csv_to_dict_copy" class="code-box">
+                    <code>
+import csv
+path = "../Resources/"
+
+with open(path+"demo.csv") as file:
+    dictreader = csv.DictReader(file)
+
+# To find the field names:
+    print(dictreader.fieldnames)
+
+    for row in dictreader:
+        print(row['a'], row['b'], row['c'])
+                    </code>
+                </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            ['a', 'b', 'c']<br />
+            a 1 None<br />
+            b f None<br />
+            3 c None<br />
+            [4, 5] [1, 2, 3] None
+          </section>
+          <!---------------------Tab Content --------------------->
+        </div>
+        <!-- Delete the dive below if not using tabs -->
+        <!-- Delete the dive above if not using tabs -->
+      </section>
+      <!--_________________END OF SECTION COLLAPSIBLE_________________-->
+      <br /><br />
+
+      <!--_________________SECTION COLLAPSIBLE_________________-->
+      <section id="CSV4">
+        <button type="button" class="collapsible">
+          Write a csv into a dict
+        </button>
+        <div class="content">
+          <!-- Tabs -->
+          <!-- Tabs -->
+          <h3>Important Info:</h3>
+          <li>Must include a field names list.</li>
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabs -->
+          <!-- Delete the br above if not using tabs -->
+          <pre id="write_csv_to_dict_copy" class="code-box">
+                    <code>
+import csv
+path = "../Resources/"
+
+data = [["a", 1], ("b", "f"), [3, "c"], [4, 5], (9, 8)]
+with open(path+"demo.csv", 'w', newline='') as file:
+    field_names = ['a', 'b']
+    dict_writer = csv.DictWriter(file, fieldnames=field_names)
+
+    dict_writer.writeheader()
+    
+    for i in range(len(data)):
+        dict_writer.writerow({'a': data[i][0], 'b': data[i][1]})
+                    </code>
+                </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            <img src="images/Screenshot 2023-10-02 103020.png" />
+          </section>
+          <!---------------------Tab Content --------------------->
+        </div>
+        <!-- Delete the dive below if not using tabs -->
+        <!-- Delete the dive above if not using tabs -->
+      </section>
+      <!--_________________END OF SECTION COLLAPSIBLE_________________-->
+      <br /><br />
+    </section>
+    <!-- NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ------------>
+    <section id="PDF">
+      <h2>PDF</h2>
+      <!--_________________SECTION COLLAPSIBLE_________________-->
+      <section id="PDF1">
+        <button type="button" class="collapsible">Save a PDF</button>
+        <div class="content">
+          <!-- Tabs -->
+          <!-- Tabs -->
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabs -->
+          <!-- Delete the br above if not using tabs -->
+          <pre id="write_pdf_copy" class="code-box">
+                    <code>
+from reportlab.platypus import SimpleDocTemplate, TableStyle
+from reportlab.platypus import Paragraph, Spacer, Table, Image
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib import colors
+
+data = [["a", 1], ["b", 2], ["c", 9, 4]]
+
+path = "../Resources/"
+pdf = SimpleDocTemplate(path + "demo.pdf")
+styles = getSampleStyleSheet()
+
+pdf_title = Paragraph("TITLE", styles["h1"])
+
+pdf_entries = []
+headers = ("header A", "header B")
+pdf_entries.append(headers)
+
+for i in range(len(data)):
+    pdf_entries.append(data[i])
+# print(pdf_entries)  
+
+pdf_table = Table(data=pdf_entries)
+
+pdf.build([pdf_title, pdf_table])
+                    </code>
+                </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            <img src="images/Screenshot 2023-10-02 164721.png" />
+          </section>
+          <!---------------------Tab Content --------------------->
+        </div>
+        <!-- Delete the dive below if not using tabs -->
+        <!-- Delete the dive above if not using tabs -->
+      </section>
+      <!--_________________END OF SECTION COLLAPSIBLE_________________-->
+      <br /><br />
+
+      <!--_________________SECTION COLLAPSIBLE_________________-->
+      <section id="PDF2">
+        <button type="button" class="collapsible">Reading from PDF</button>
+        <div class="content">
+          <!-- Tabs -->
+          <!-- Tabs -->
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabs -->
+          <!-- Delete the br above if not using tabs -->
+          <pre id="read_pdf_copy" class="code-box">
+                    <code>
+from pathlib import Path
+
+from pypdf import PdfReader
+
+path = "../Resources/"
+file = "demo.pdf"
+
+pdf_reader = PdfReader(path + file)
+
+# To print num of pages:
+print(len(pdf_reader.pages))
+
+# To access metadata:
+print(pdf_reader.metadata)
+# To get specific metadata:
+print(pdf_reader.metadata.title)
+
+# To extract info from the pdf
+pages = pdf_reader.pages[0]
+print(pages)
+
+# To extract text from the page
+pdf_text = pages.extract_text()
+
+print(pdf_text)
+                    </code>
+                </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            <img src="images/Screenshot 2023-10-02 171903.png" />
+          </section>
+          <!---------------------Tab Content --------------------->
+        </div>
+        <!-- Delete the dive below if not using tabs -->
+        <!-- Delete the dive above if not using tabs -->
+      </section>
+      <!--_________________END OF SECTION COLLAPSIBLE_________________-->
+      <br /><br />
+    </section>
+    <section id="JSON">
+      <h2>JSON</h2>
+      <!--_________________SECTION COLLAPSIBLE_________________-->
+      <section id="JSON1">
+        <button type="button" class="collapsible">Write JSON</button>
+        <div class="content">
+          <!-- Tabs -->
+          <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'json_dump')">
+              JSON dump
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'json_dumps')">
+              JSON dumps
+            </button>
+          </div>
+          <!-- Tabs -->
+
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabs -->
+          <div id="json_dump" class="tabcontent">
+            <h3>Important Info:</h3>
+            <li>Dump : you must specify the file you are saving to.</li>
+            <li>Can not print it directly to the console/terminal.</li>
+            <br /><br /><br />
+
+            <!-- Delete the br above if not using tabs -->
+            <pre id="json_dump_copy" class="code-box">
+                    <code>
+import json
+
+data_random = "b", "c", "e", [5, 4], {"j": [1,2,3]}
+data_list = ["a", "1", {"b": [3, "c"]}, ["d", "4"], ("e", 5)]
+data_dict = {
+    "x": 99,
+    100: "y",
+    "z": {
+        "w": "6"
+    }
+}
+
+path = "../Resources/"
+
+with open(path + "demo_random.json", 'w') as file:
+    json.dump(data_random, file, indent=4)
+
+with open(path + "demo_list.json", 'w') as file:
+    json.dump(data_list, file, indent=4)
+
+with open(path + "demo_dict.json", 'w') as file:
+    json.dump(data_dict, file, indent=4)
+                    </code>
+                </pre>
+            <br /><br />
+            <section>
+              <h3>Output:</h3>
+            </section>
+            <section class="output-box">
+              <figure>
+                <img
+                  src="images/Screenshot 2023-10-04 134229.png"
+                  title="data_dict.json"
+                />
+                <figcaption>demo_dict.json</figcaption>
+              </figure>
+
+              <figure>
+                <img
+                  src="images/Screenshot 2023-10-04 134238.png"
+                  title="data_list.json"
+                />
+                <figcaption>demo_list.json</figcaption>
+              </figure>
+
+              <figure>
+                <img
+                  src="images/Screenshot 2023-10-04 134247.png"
+                  title="data_random.json"
+                />
+                <figcaption>demo_random.json</figcaption>
+              </figure>
+            </section>
+          </div>
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabs -->
+          <div id="json_dumps" class="tabcontent">
+            <h3>Important Info:</h3>
+            <li>Dumps :</li>
+            <li>Converts object into a string</li>
+            <li>Can save as a string object, then write to a file.</li>
+            <li>Can write directly into a file.</li>
+            <li>Can print it directly to the console/terminal.</li>
+            <li>Considers lists/dicts/tuples/strings the same way.</li>
+            <br /><br /><br />
+            <!-- Delete the br above if not using tabs -->
+            <pre id="json_dumps_copy" class="code-box">
+                    <code>
+import json
+
+data_random = "b", "c", "e", [5, 4], {"j": [1, 2, 3]}
+data_list = ["a", "1", {"b": [3, "c"]}, ["d", "4"], ("e", 5)]
+data_dict = {
+    "x": 99,
+    100: "y",
+    "z": {
+        "w": "6"
+    }
+}
+
+path = "../Resources/"
+
+# dumps converts the object into a string then saves directly to a file.
+with open(path + "text_dump.json", 'w') as file:
+    json_string = json.dumps(data_dict, indent=4)
+    file.write(json_string)
+
+# OR
+with open(path + "text_dump.json", 'w') as file:
+    file.write(json.dumps(data_dict, indent=4))
+
+# Allows direct printing on console/terminal
+print(json.dumps(data_dict, indent=4))
+
+                    </code>
+                </pre>
+            <br /><br />
+            <section>
+              <h3>Output:</h3>
+            </section>
+            <section class="output-box">
+              <figure>
+                <img
+                  src="images/Screenshot 2023-10-04 134229.png"
+                  title="data_dict.json"
+                />
+                <figcaption>demo_dict.json</figcaption>
+              </figure>
+              <figure>
+                <img
+                  src="images/Screenshot 2023-10-06 111352.png"
+                  title="data_dict.json (dumps)"
+                />
+                <figcaption>
+                  data_dict using dumps on terminal/console
+                </figcaption>
+              </figure>
+            </section>
+            <!---------------------Tab Content --------------------->
+          </div>
+          <!-- Delete the dive below if not using tabs -->
+        </div>
+        <!-- Delete the dive above if not using tabs -->
+      </section>
+      <!--_________________END OF SECTION COLLAPSIBLE_________________-->
+      <br /><br />
+
+      <!--_________________SECTION COLLAPSIBLE_________________-->
+      <section id="JSON2">
+        <button type="button" class="collapsible">Read JSON</button>
+        <div class="content">
+          <!-- Tabs -->
+          <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'json_load')">
+              JSON load
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'json_loads')">
+              JSON loads
+            </button>
+          </div>
+          <!-- Tabs -->
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabs -->
+          <div id="json_load" class="tabcontent">
+            <h3>Important Info:</h3>
+            <li>Must be from a json parsed file.</li>
+            <li>
+              Can have tuples, and digits as keys (because they will be
+              converted tuple => lists digits => strings)
+            </li>
+            <li>
+              The file we are using: demo.json, is a json file, so everything is
+              already parsed into a string.
+            </li>
+            <li>Two methods are included below</li>
+            <br /><br /><br />
+            <!-- Delete the br above if not using tabs -->
+            <pre id="json_load_copy" class="code-box">
+                    <code>
+import json
+
+path = "../Resources/"
+
+with open(path + "demo.json") as file:
+    json_file = json.load(file)
+print(json_file)
+print(json_file["8"])
+#See image1
+
+# OR
+
+with open(path + "demo.json", 'r') as file:
+    x = file.read()
+    y = json.loads(str(x))
+    print(y)
+    print(y["x"])
+#See image2
+                    </code>
+                </pre>
+            <br /><br />
+            <section>
+              <h3>Output:</h3>
+            </section>
+            <section class="output-box">
+              <figure>
+                <img
+                  src="images/Screenshot 2023-10-06 124128.png"
+                  title="image1"
+                />
+                <figcaption>image1</figcaption>
+              </figure>
+              <figure>
+                <img
+                  src="images/Screenshot 2023-10-06 124135.png"
+                  title="image2"
+                />
+                <figcaption>image2</figcaption>
+              </figure>
+            </section>
+            <!---------------------Tab Content --------------------->
+          </div>
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabs -->
+          <div id="json_loads" class="tabcontent">
+            <h3>Important Info:</h3>
+            <li>Loads:</li>
+            <li>Can use a json parsed file. But it must be read first</li>
+            <li>
+              If using a dict/list/tuple/string, etc. everything must be changed
+              to a string. So no (). Digits must have "" aroud them. Values are
+              fine and can remain digits.
+            </li>
+            <li>
+              This is not an efficient way of doing this, you are better off
+              parsing the whole file and saving it as a json, then using it.
+            </li>
+            <li>IF using a raw file:</li>
+            <pre>
+                    data_dict = {
+                        "x": 99,
+                        "100": "y",
+                        "z": {
+                            "w": "6"
+                        },
+                        "q": [90, 8.7, ["r", 6]],
+                        8: [5.5, "t", [56, 65, 66]]
+                    }
+                </pre
+            >
+
+            <li>
+              The whole dict must have """ """ surrounding them, and the key =>
+              8, must have " " around it. The values are fine. So the new
+              string-fied dict will look like this:
+            </li>
+            <pre>
+                    data_dict = """{
+                        "x": 99,
+                        "100": "y",
+                        "z": {
+                            "w": "6"
+                        },
+                        "q": [90, 8.7, ["r", 6]],
+                        "8": [5.5, "t", [56, 65, 66]]
+                    }"""
+                </pre
+            >
+            <br /><br /><br />
+            <!-- Delete the br above if not using tabs -->
+            <pre id="json_loads_copy" class="code-box">
+                    <code>
+import json
+
+path = "../Resources/"
+
+with open(path + "demo.json") as file:
+    x = file.read()
+    p = json.loads(x)
+
+print(p)
+print(p["8"])
+                    </code>
+                </pre>
+            <br /><br />
+            <section>
+              <h3>Output:</h3>
+            </section>
+            <section class="output-box">
+              <figure>
+                <img
+                  src="images/Screenshot 2023-10-06 124128.png"
+                  title="image1"
+                />
+                <figcaption>image1</figcaption>
+              </figure>
+              <figure>
+                <img
+                  src="images/Screenshot 2023-10-06 124135.png"
+                  title="image2"
+                />
+                <figcaption>image2</figcaption>
+              </figure>
+            </section>
+            <!---------------------Tab Content --------------------->
+          </div>
+          <!-- Delete the dive below if not using tabs -->
+        </div>
+        <!-- Delete the dive above if not using tabs -->
+      </section>
+      <!--_________________END OF SECTION COLLAPSIBLE_________________-->
+      <br /><br />
+    </section>
+    <!--_________________SECTION COLLAPSIBLE_________________-->
+    <section id="SQL">
+      <h2>SQL</h2>
+      <button type="button" class="collapsible">Create Database</button>
+      <div class="content">
+        <!-- Tabs -->
+        <!-- Tabs -->
+        <!-- important info can belong here, if it applies to all tabs. -->
+        <h3>Important Info:</h3>
+        <li>
+          Check the Dashboard of the POSTGRES SERVER
+          <figure>
+            <img
+              src="images/Screenshot 2023-10-06 134208.png"
+              title="pgAdmin4_dashboard"
+            />
+            <figcaption>pgAdmin4 Dashboard</figcaption>
+          </figure>
+        </li>
+        <!---------------------Tab Content --------------------->
+        <!-- Delete the div and br below if not using tabs -->
+          <!-- important info can belong here, if it applies to indiv tab. -->
+          <br /><br /><br />
+          <!-- Delete the br above if not using tabs -->
+          <pre id="create_database_copy" class="code-box">
+                    <code>
+import psycopg2
+
+conn = psycopg2.connect(
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432)
+
+conn.autocommit = True
+cur = conn.cursor()
+
+cur.execute("""CREATE DATABASE demo_database""")
+
+conn.commit()
+conn.close()
+                    </code>
+                </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            <figure>
+              <img
+                src="images/Screenshot 2023-10-07 110642.png"
+                title="created_database"
+              />
+              <figcaption>Created Database</figcaption>
+            </figure>
+          </section>
+
+          <!---------------------Tab Content --------------------->
+        </div>
+        <!-- Delete the dive below if not using tabs -->
+      </div>
+      <!-- Delete the dive above if not using tabs -->
+    </section>
+    <!--_________________END OF SECTION COLLAPSIBLE_________________-->
+    <br /><br />
+                  
+    <!--_________________SECTION COLLAPSIBLE_________________-->
+    <section id="ID#">
+        <button type="button" class="collapsible">TITLE</button>
+        <div class="content">
+            <!-- Tabs -->
+            <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'TabID')">Tab Name</button>
+            </div>
+            <!-- Tabs --> 
+            <!-- important info can belong here, if it applies to all tabs. -->
+                <h3>Important Info:</h3>   
+                <li></li>             
+                <!---------------------Tab Content --------------------->
+                <!-- Delete the div and br below if not using tabs -->
+                <div id="TabID" class="tabcontent">       
+                <!-- important info can belong here, if it applies to indiv tab. --> 
+                <h3>Important Info:</h3>   
+                <li></li>           
+                <br><br><br>
+                <!-- Delete the br above if not using tabs -->
+                <pre id="tab_name_copy" class="code-box">
+                    <code>
+                    code line1
+                    code line2
+                    code line3
+                    </code>
+                </pre>
+                <br><br>
+                <section>                
+                    <h3>Output: </h3>
+                </section>
+                <figure>               
+                <section class="output-box">
+                    <img src=""
+                    title=""/>
+                </section>
+                <figcaption>Image Caption</figcaption>
+                </figure> 
+                <!---------------------Tab Content --------------------->
+            </div>
+        <!-- Delete the dive below if not using tabs -->
+        </div>
+        <!-- Delete the dive above if not using tabs -->
+    </section>
+  <!--_________________END OF SECTION COLLAPSIBLE_________________--> 
+  <br><br>
+                
+            
+    <script src="csv.js"></script>
+  </body>
 </html>

@@ -81,14 +81,14 @@ function addCopyButton(tab_id) {
   });
 }
 
-addCopyButton("combining_list_copy");
-addCopyButton("splitting_list_copy");
-addCopyButton("list_to_tuple_copy");
-addCopyButton("list_to_dict_copy");
-addCopyButton("list_to_csv_copy");
-addCopyButton("list_to_string_copy");
-addCopyButton("list_to_pdf_copy");
-addCopyButton("list_to_json_copy");
-addCopyButton("list_to_pdf_copy");
-addCopyButton("list_to_sql_copy");
-addCopyButton("list_to_html_copy");
+addCopyButton("string_to_list_copy");
+addCopyButton("combining_strings_copy");
+addCopyButton("splitting_string_into_parts_copy");
+addCopyButton("splitting_string_delimiter_list_copy");
+addCopyButton("string_to_dicts_copy");
+addCopyButton("string_to_tuples_copy");
+addCopyButton("string_to_csv_copy");
+addCopyButton("string_to_pdf_copy");
+addCopyButton("string_to_json_copy");
+addCopyButton("string_to_html_copy");
+addCopyButton("string_to_sql_copy");

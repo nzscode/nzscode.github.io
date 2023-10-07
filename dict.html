@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Dictionary</title>
-</head>
-<body>
+  </head>
+  <body>
     <section id="Dict">
-        <h2>Dictionary</h2>
-        <section id="combining_dicts">
-            <button type="button" class="collapsible">Combining two dicts into one</button>
-            <div class="content">
-            <pre id="combining_dicts_copy" class="code-box"><code>
+      <h2>Dictionary</h2>
+      <br /><br />
+      <!--_________________SECTION COLLAPSIBLE_________________-->
+      <section id="Dicts1">
+        <button type="button" class="collapsible">Combining Dicts</button>
+        <div class="content">
+          <!-- Tabs -->
+          <!-- Tabs -->
+          <!---------------------Tab Content --------------------->
+          <pre id="combining_dicts_copy" class="code-box">
+                    <code>
 # Combining two dicts into one
 dummy = [
     {'a': 3, 'b': 8, 'c': 4},
@@ -30,21 +36,30 @@ dicty = {}
 dicty = dummy + dingbat
 
 print(dicty)
-            </code></pre>
-            <section>
-                <br><br>
-                <h3>Output: </h3>
-            </section>            
-            <section class="output-box">
-                <span class="code-text">[{'a': 3, 'b': 8, 'c': 4}, {'a': 9, 'b': 4, 'c': 2}, {'a': 9, 'b': 10, 'c': 6}, {'bob'}, {'twila'}]
-            </section>
-            </div>
-        </section>
-        <br><br>
-        <section id="splitting_dicts">
-            <button type="button" class="collapsible">Splitting a dict</button>
-            <div class="content">
-            <pre id="splitting_dicts_copy" class="code-box"><code>
+                    </code>
+                </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            [{'a': 3, 'b': 8, 'c': 4}, {'a': 9, 'b': 4, 'c': 2}, {'a': 9, 'b':
+            10, 'c': 6}, {'bob'}, {'twila'}]
+          </section>
+          <!---------------------Tab Content --------------------->
+        </div>
+      </section>
+      <!--_________________END OF SECTION COLLAPSIBLE_________________-->
+      <br /><br />
+      <!--_________________SECTION COLLAPSIBLE_________________-->
+      <section id="Dicts2">
+        <button type="button" class="collapsible">Splitting Dicts</button>
+        <div class="content">
+          <!-- Tabs -->
+          <!-- Tabs -->
+          <!---------------------Tab Content --------------------->
+          <pre id="splitting_dicts_copy" class="code-box">
+                    <code>
 # Splitting a dict           
 dummy = [
     {'a': 3, 'b': 8, 'c': 4},
@@ -60,23 +75,31 @@ part1 = dummy[:int(len(dummy)/2)]
 part2 = dummy[int(len(dummy)/2):]
 
 print(part1)
-print(part2)
-            </code></pre>
-            <section>
-                <br><br>
-                <h3>Output: </h3>
-            </section>
-            <section class="output-box">
-                <span class="code-text">[{'a': 3, 'b': 8, 'c': 4}]<br>
-                    [{'a': 9, 'b': 4, 'c': 2}, {'a': 9, 'b': 10, 'c': 6}]</span>
-            </section>
-            </div>
-        </section>
-        <br><br>
-        <section id="dicts_to_string">
-            <button type="button" class="collapsible">Dicts to String</button>
-            <div class="content">
-            <pre id="dicts_to_string_copy" class="code-box"><code>
+print(part2)          
+                    </code>
+                </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            [{'a': 3, 'b': 8, 'c': 4}]<br />
+            [{'a': 9, 'b': 4, 'c': 2}, {'a': 9, 'b': 10, 'c': 6}]
+          </section>
+          <!---------------------Tab Content --------------------->
+        </div>
+      </section>
+      <!--_________________END OF SECTION COLLAPSIBLE_________________-->
+      <br /><br />
+      <!--_________________SECTION COLLAPSIBLE_________________-->
+      <section id="Dicts3">
+        <button type="button" class="collapsible">Dicts to String</button>
+        <div class="content">
+          <!-- Tabs -->
+          <!-- Tabs -->
+          <!---------------------Tab Content --------------------->
+          <pre id="dicts_to_string_copy" class="code-box">
+                    <code>                    
 # Dicts to String                
 dict_demo = [
     {'a': 3, 'b': 8, 'c': 4},
@@ -90,22 +113,29 @@ for i in range(len(dict_demo)):
         string += f"{k}: {v}" + ", "
 
 print(string)
-            </code></pre>
-            <section>
-                <br><br>
-                <h3>Output: </h3>
-            </section>
-            <section class="output-box">
-                <span class="code-text"></span>
-                a: 3, b: 8, c: 4, a: 9, b: 4, c: 2, a: 9, b: 10, c: 6, 
-            </section>
-            </div>
-        </section>
-        <br><br>
-        <section id="dicts_to_list">
-            <button type="button" class="collapsible">Dicts to list</button>
-            <div class="content">             
-            <pre id="dicts_to_list_copy" class="code-box"><code>
+                    </code>
+                </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            a: 3, b: 8, c: 4, a: 9, b: 4, c: 2, a: 9, b: 10, c: 6,
+          </section>
+          <!---------------------Tab Content --------------------->
+        </div>
+      </section>
+      <!--_________________END OF SECTION COLLAPSIBLE_________________-->
+      <br /><br />
+      <!--_________________SECTION COLLAPSIBLE_________________-->
+      <section id="Dicts4">
+        <button type="button" class="collapsible">Dicts to list</button>
+        <div class="content">
+          <!-- Tabs -->
+          <!-- Tabs -->
+          <!---------------------Tab Content --------------------->
+          <pre id="dicts_to_list_copy" class="code-box">
+                    <code>
 # Dicts to list            
 dummy = [
     {'a': 3, 'b': 8, 'c': 4},
@@ -126,25 +156,36 @@ for i in range(len(dummy)):
             new_lst.append(list(lst[i]))
     dict_lst.append(new_lst)
 
-print(dict_lst)
-            </code></pre>
-        <section>
-            <br><br>
-            <h3>Output: </h3>
-        </section>    
-        <section class="output-box">
-                <span class="code-text">[[['a', 3], ['b', 8], ['c', 4]], [['a', 9], ['b', 4], ['c', 2]], [['a', 9], ['b', 10], ['c', 6]]]
-            </section>
-            </div>
-        </section>
-        <br><br>
-        <!--________________________________________SECTION COLLAPSIBLE____________________________________________________  -->
-        <section id="dicts_to_pdf">
-            <button type="button" class="collapsible">Dicts to PDF</button>
-            <div class="content">
-                Dict must be broken into either a list of lists or a list of tuples to make into a  report.
-            <!---------------------Tab Content --------------------->
-            <pre id="dicts_to_pdf_copy" class="code-box"><code>
+print(dict_lst)                                    
+                        </code>
+                </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            [[['a', 3], ['b', 8], ['c', 4]], [['a', 9], ['b', 4], ['c', 2]],
+            [['a', 9], ['b', 10], ['c', 6]]]
+          </section>
+          <!---------------------Tab Content --------------------->
+        </div>
+      </section>
+      <!--_________________END OF SECTION COLLAPSIBLE_________________-->
+      <br /><br />
+      <!--_________________SECTION COLLAPSIBLE_________________-->
+      <section id="Dicts5">
+        <button type="button" class="collapsible">Dicts to PDF</button>
+        <div class="content">
+          <!-- Tabs -->
+          <!-- Tabs -->
+          <h3>Important Info:</h3>
+          <li>
+            Dict must be broken into either a list of lists or a list of tuples
+            to make into a report.
+          </li>
+          <!---------------------Tab Content --------------------->
+          <pre id="dicts_to_pdf_copy" class="code-box">
+                    <code>                                        
 # Dicts to PDF
 from reportlab.platypus import SimpleDocTemplate, TableStyle
 from reportlab.platypus import Paragraph, Spacer, Table, Image
@@ -183,33 +224,44 @@ header_style = TableStyle([
 pdf_table.setStyle(header_style)
 
 pdf.build([pdf_title, pdf_table])
-        </code></pre>
-        <section>
-            <br><br>
-            <h3>Output: </h3>
-        </section>    
-        <section class="output-box">
-                <span class="code-text">Output</span>
-                <br><br>
-                <img src="images/Screenshot 2023-09-28 183025.png"/>
-            </section>
-            </div>
-        </section>
-        <br><br>                         
-<!--_________________SECTION COLLAPSIBLE_________________-->
-    <section id="dicts_to_csv">
+                    </code>
+                </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            <img src="images/Screenshot 2023-09-28 183025.png" />
+          </section>
+          <!---------------------Tab Content --------------------->
+        </div>
+      </section>
+      <!--_________________END OF SECTION COLLAPSIBLE_________________-->
+      <br /><br />
+      <!--_________________SECTION COLLAPSIBLE_________________-->
+      <section id="Dicts6">
         <button type="button" class="collapsible">Dicts to CSV</button>
         <div class="content">
+          <!-- Tabs -->
+          <div class="tab">
+            <button
+              class="tablinks"
+              onclick="openTab(event, 'dicts_to_csv_key,value')"
+            >
+              Dicts to CSV: Key, Value
+            </button>
+            <button
+              class="tablinks"
+              onclick="openTab(event, 'dicts_to_csv_fields_to_values')"
+            >
+              Dicts to Fields to Values
+            </button>
+          </div>
+          <div id="dicts_to_csv_key,value" class="tabcontent">
             <!-- Tabs -->
-            <div class="tab">
-                <button class="tablinks" onclick="openTab(event, 'dicts_to_csv_key,value')">Dicts to CSV: Key, Value</button>
-                <button class="tablinks" onclick="openTab(event, 'dicts_to_csv_fields_to_values')">Dicts to Fields to Values</button>
-            </div>
-            <div id="dicts_to_csv_key,value" class="tabcontent">
-            <!-- Tabs -->
-                <h3>Important Info:</h3>                
-                <!---------------------Tab Content --------------------->
-                <pre id="dicts_to_csv_key,value_copy" class="code-box">
+            <h3>Important Info:</h3>
+            <!---------------------Tab Content --------------------->
+            <pre id="dicts_to_csv_key,value_copy" class="code-box">
                     <code>
 # Dicts to CSV, key, values
 import csv
@@ -234,22 +286,22 @@ with open(path + "dict.csv", 'w') as file:
     write.writerows(dict_list)
                     </code>
                 </pre>
-                <br><br>
-                <section>                
-                    <h3>Output: </h3>
-                </section>    
-                <section class="output-box">
-                    <span class="code-text">Output</span>
-                    <br><br>
-                    <img src="images/Screenshot 2023-09-29 130141.png"/>
-                </section>
-                <!---------------------Tab Content --------------------->
-            </div>
-            <div id="dicts_to_csv_fields_to_values" class="tabcontent">
-                <!-- Tabs -->
-                    <h3>Important Info:</h3>                
-                    <!---------------------Tab Content --------------------->
-                    <pre id="dicts_to_csv_fields_to_values_copy" class="code-box">
+            <br /><br />
+            <section>
+              <h3>Output:</h3>
+            </section>
+            <section class="output-box">
+              <span class="code-text">Output</span>
+              <br /><br />
+              <img src="images/Screenshot 2023-09-29 130141.png" />
+            </section>
+            <!---------------------Tab Content --------------------->
+          </div>
+          <div id="dicts_to_csv_fields_to_values" class="tabcontent">
+            <!-- Tabs -->
+            <h3>Important Info:</h3>
+            <!---------------------Tab Content --------------------->
+            <pre id="dicts_to_csv_fields_to_values_copy" class="code-box">
                         <code>
 # Dicts to CSV, Fields and ValuesONLY
 import csv
@@ -277,30 +329,29 @@ with open(path + "dict.csv", 'w') as file:
     write.writerows(dict_list)
                         </code>
                     </pre>
-                    <br><br>
-                    <section>                
-                        <h3>Output: </h3>
-                    </section>    
-                    <section class="output-box">
-                        <span class="code-text">Output</span>
-                        <br><br>
-                        <img src="images/Screenshot 2023-09-29 210809.png"/>
-                    </section>
-                    <!---------------------Tab Content --------------------->
-                </div>
+            <br /><br />
+            <section>
+              <h3>Output:</h3>
+            </section>
+            <section class="output-box">
+              <span class="code-text">Output</span>
+              <br /><br />
+              <img src="images/Screenshot 2023-09-29 210809.png" />
+            </section>
+            <!---------------------Tab Content --------------------->
+          </div>
         </div>
-    </section>
-    <!--_________________END OF SECTION COLLAPSIBLE_________________--> 
-    <br><br>                
-    <!--_________________SECTION COLLAPSIBLE_________________-->
-    <section id="dicts_to_html">
+      </section>
+      <!--_________________END OF SECTION COLLAPSIBLE_________________-->
+      <br /><br />
+      <!--_________________SECTION COLLAPSIBLE_________________-->
+      <section id="Dicts7">
         <button type="button" class="collapsible">Dicts to HTML</button>
         <div class="content">
-            <!-- Tabs -->
-            <!-- Tabs -->
-            <h3>Important Info:</h3>                
-            <!---------------------Tab Content --------------------->
-            <pre id="dicts_to_html_copy" class="code-box">
+          <!-- Tabs -->
+          <!-- Tabs -->
+          <!---------------------Tab Content --------------------->
+          <pre id="dicts_to_html_copy" class="code-box">
                 <code>
 data = [
     {'a': 3, 'b': 8, 'c': 4},
@@ -322,37 +373,47 @@ with open(path + 'demo.html', 'w') as file:
         file.writelines("&lt;li>" + str(entries[i]) + "&lt;/li>" + "\n")
                 </code>
             </pre>
-            <br><br>
-            <section>                
-                <h3>Output: </h3>
-            </section>    
-            <section class="output-box">
-                <span class="code-text">Output</span>
-                <br><br>
-                <img src=""/>
-            </section>
-                <!---------------------Tab Content --------------------->
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            <span class="code-text">Output</span>
+            <br /><br />
+            <img src="" />
+          </section>
+          <!---------------------Tab Content --------------------->
         </div>
-    </section>
-    <!--_________________END OF SECTION COLLAPSIBLE_________________--> 
-    <br><br>
-                    
-    <!--_________________SECTION COLLAPSIBLE_________________-->
-        <section id="dicts_to_json">
-            <button type="button" class="collapsible">Dicts to JSON</button>
-            <div class="content">
-                <!-- Tabs -->
-                <div class="tab">
-                    <button class="tablinks" onclick="openTab(event, 'dicts_to_json_full_dict')">dicts_to_json</button>
-                    <button class="tablinks" onclick="openTab(event, 'dicts_to_json_itemized')">dicts_to_json_itemized</button>
-                </div>
-                <div id="dicts_to_json_full_dict" class="tabcontent">
-                <!-- Tabs -->
-                    <h3>Important Info:</h3><br>
-                    <li>Does not use field names</li>
-                    <li>prints each dict from the list as one json entry</li>                
-                    <!---------------------Tab Content --------------------->
-                    <pre id="dicts_to_json_full_dict_copy" class="code-box">
+      </section>
+      <!--_________________END OF SECTION COLLAPSIBLE_________________-->
+      <br /><br />
+      <!--_________________SECTION COLLAPSIBLE_________________-->
+      <section id="Dicts8">
+        <button type="button" class="collapsible">Dicts to JSON</button>
+        <div class="content">
+          <!-- Tabs -->
+          <div class="tab">
+            <button
+              class="tablinks"
+              onclick="openTab(event, 'dicts_to_json_full_dict')"
+            >
+              dicts_to_json
+            </button>
+            <button
+              class="tablinks"
+              onclick="openTab(event, 'dicts_to_json_itemized')"
+            >
+              dicts_to_json_itemized
+            </button>
+          </div>
+          <div id="dicts_to_json_full_dict" class="tabcontent">
+            <!-- Tabs -->
+            <h3>Important Info:</h3>
+            <br />
+            <li>Does not use field names</li>
+            <li>prints each dict from the list as one json entry</li>
+            <!---------------------Tab Content --------------------->
+            <pre id="dicts_to_json_full_dict_copy" class="code-box">
                         <code>
 import json
 data = [
@@ -371,24 +432,28 @@ with open(path + "demp.json", 'w') as file:
     json.dump(entries, file, indent=4)
                         </code>
                     </pre>
-                    <br><br>
-                    <section>                
-                        <h3>Output: </h3>
-                    </section>    
-                    <section class="output-box">
-                        <span class="code-text">Output</span>
-                        <br><br>
-                        <img src="images/Screenshot 2023-09-29 225203.png"/>
-                    </section>
-                <!---------------------Tab Content --------------------->
-                </div>
-                <div id="dicts_to_json_itemized" class="tabcontent">
-                    <!-- Tabs -->
-                    <h3>Important Info:</h3><br>
-                    <li>Does not use field names</li>
-                    <li>prints each key, value pair in dict from the list as one json entry</li>                
-                    <!---------------------Tab Content --------------------->
-                    <pre id="dicts_to_json_itemized_copy" class="code-box">
+            <br /><br />
+            <section>
+              <h3>Output:</h3>
+            </section>
+            <section class="output-box">
+              <span class="code-text">Output</span>
+              <br /><br />
+              <img src="images/Screenshot 2023-09-29 225203.png" />
+            </section>
+            <!---------------------Tab Content --------------------->
+          </div>
+          <div id="dicts_to_json_itemized" class="tabcontent">
+            <!-- Tabs -->
+            <h3>Important Info:</h3>
+            <br />
+            <li>Does not use field names</li>
+            <li>
+              prints each key, value pair in dict from the list as one json
+              entry
+            </li>
+            <!---------------------Tab Content --------------------->
+            <pre id="dicts_to_json_itemized_copy" class="code-box">
                         <code>
 import json
 data = [
@@ -410,35 +475,31 @@ with open(path + 'demo.json', 'w') as file:
     json.dump(entries, file, indent=4)
                         </code>
                     </pre>
-                    <br><br>
-                    <section>                
-                        <h3>Output: </h3>
-                    </section>    
-                    <section class="output-box">
-                        <span class="code-text">Output</span>
-                        <br><br>
-                        <img src="images/Screenshot 2023-09-29 225400.png"/>
-                    </section>
-                    <!---------------------Tab Content --------------------->
-                </div>
-            </div>
-        </section>
-    <!--_________________END OF SECTION COLLAPSIBLE_________________--> 
-    <br><br> 
-    <!--_________________SECTION COLLAPSIBLE_________________-->
-    <section id="dicts_to_SQL">
+            <br /><br />
+            <section>
+              <h3>Output:</h3>
+            </section>
+            <section class="output-box">
+              <span class="code-text">Output</span>
+              <br /><br />
+              <img src="images/Screenshot 2023-09-29 225400.png" />
+            </section>
+            <!---------------------Tab Content --------------------->
+          </div>
+        </div>
+      </section>
+      <!--_________________END OF SECTION COLLAPSIBLE_________________-->
+      <br /><br />
+      <!--_________________SECTION COLLAPSIBLE_________________-->
+      <section id="Dicts9">
         <button type="button" class="collapsible">Dicts to SQL</button>
         <div class="content">
-            <!-- Tabs -->
-            <!-- <div class="tab">
-                <button class="tablinks" onclick="openTab(event, 'dicts_to_sql')">Dicts to SQL</button>
-            </div>
-            <div id="dicts_to_sql" class="tabcontent"> -->
-            <!-- Tabs -->
-                <h3>Important Info:</h3> 
-                <li>Can not enter pure dict, must be changed into lists or tuples.</li>               
-                <!---------------------Tab Content --------------------->
-                <pre id="dicts_to_sql_copy" class="code-box">
+          <h3>Important Info:</h3>
+          <li>
+            Can not enter pure dict, must be changed into lists or tuples.
+          </li>
+          <!---------------------Tab Content --------------------->
+          <pre id="dicts_to_sql_copy" class="code-box">
                     <code>
 import psycopg2
 
@@ -475,21 +536,20 @@ conn.commit()
 conn.close()
                     </code>
                 </pre>
-                <br><br>
-                <section>                
-                    <h3>Output: </h3>
-                </section>    
-                <section class="output-box">
-                    <span class="code-text">Output</span>
-                    <br><br>
-                    <img src="images/Screenshot 2023-09-30 001245.png"/>
-                </section>
-                <!---------------------Tab Content --------------------->
-            </div>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            <span class="code-text">Output</span>
+            <br /><br />
+            <img src="images/Screenshot 2023-09-30 001245.png" />
+          </section>
+          <!---------------------Tab Content --------------------->
         </div>
+      </section>
+      <!--_________________END OF SECTION COLLAPSIBLE_________________-->
     </section>
-    <!--_________________END OF SECTION COLLAPSIBLE_________________--> 
-    </section>        
     <script src="dicts.js"></script>
-</body>
+  </body>
 </html>

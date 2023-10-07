@@ -81,14 +81,14 @@ function addCopyButton(tab_id) {
   });
 }
 
-addCopyButton("combining_list_copy");
-addCopyButton("splitting_list_copy");
-addCopyButton("list_to_tuple_copy");
-addCopyButton("list_to_dict_copy");
-addCopyButton("list_to_csv_copy");
-addCopyButton("list_to_string_copy");
-addCopyButton("list_to_pdf_copy");
-addCopyButton("list_to_json_copy");
-addCopyButton("list_to_pdf_copy");
-addCopyButton("list_to_sql_copy");
-addCopyButton("list_to_html_copy");
+addCopyButton("saving_csv_list_tup_copy");
+addCopyButton("reading_csv_copy");
+addCopyButton("read_csv_to_dict_copy");
+addCopyButton("write_csv_to_dict_copy");
+addCopyButton("write_pdf_copy");
+addCopyButton("read_pdf_copy");
+addCopyButton("json_dump_copy");
+addCopyButton("json_dumps_copy");
+addCopyButton("json_load_copy");
+addCopyButton("json_loads_copy");
+addCopyButton("create_database_copy");

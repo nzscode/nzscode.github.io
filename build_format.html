@@ -370,7 +370,7 @@ margin-right: 45px;
     <br /><br />
     <h2>Basic Code Block</h2>
     <!--________________________________________SECTION COLLAPSIBLE________________________________________-->
-    <section id="Basic_Code_Block">
+    <section id="BSC1">
       <button type="button" class="collapsible">Basic Code Block</button>
       <div class="content">
         <!-- Tabs -->
@@ -382,53 +382,67 @@ margin-right: 45px;
         <div id="basic_code_block" class="tabcontent">
           <!-- Tabs -->
           <h3>Important Info:</h3>
+          <li>
+            If not interested in tabs, remove everything between: &lt;!-- Tabs
+            --> and everything between the "delete the below/delete the above"
+          </li>
+          <li>
+            If not interested in adding an image remove the "&lt;img src=''/>
+            tag
+          </li>
           <!---------------------Tab Content --------------------->
           <pre id="basic_code_block_copy" class="code-box">
                   <code>
-&lt;!--_________________SECTION COLLAPSIBLE_________________-->
-    &lt;section id="dicts_to_csv">
-      &lt;button type="button" class="collapsible">Dicts to CSV&lt;/button>
-      &lt;div class="content">
-          &lt;!-- Tabs -->
-          &lt;div class="tab">
-              &lt;button class="tablinks" onclick="openTab(event, 'TabID')">Tab Name&lt;/button>
-          &lt;/div>
-          &lt;div id="TabID" class="tabcontent">
-          &lt;!-- Tabs -->
-              &lt;h3>Important Info:&lt;/h3>                
-              &lt;!---------------------Tab Content --------------------->
-              &lt;pre id="dicts_to_csv_copy" class="code-box">
-                  &lt;code>
-                  code line1
-                  code line2
-                  code line3
-                  &lt;/code>
-              &lt;/pre>
-              &lt;br>&lt;br>
-              &lt;section>                
-                  &lt;h3>Output: &lt;/h3>
-              &lt;/section>    
-              &lt;section class="output-box">
-                  &lt;span class="code-text">Output&lt;/span>
+    &lt;!--_________________SECTION COLLAPSIBLE_________________-->
+        &lt;section id="ID#">
+          &lt;button type="button" class="collapsible">TITLE&lt;/button>
+          &lt;div class="content">
+              &lt;!-- Tabs -->
+              &lt;div class="tab">
+                  &lt;button class="tablinks" onclick="openTab(event, 'TabID')">Tab Name&lt;/button>
+              &lt;/div>
+              &lt;!-- Tabs --> 
+              &lt;!-- important info can belong here, if it applies to all tabs. -->
+                  &lt;h3>Important Info:&lt;/h3>   
+                  &lt;li>&lt;/li>             
+                  &lt;!---------------------Tab Content --------------------->
+                  &lt;!-- Delete the div and br below if not using tabs -->
+                  &lt;div id="TabID" class="tabcontent">       
+                  &lt;!-- important info can belong here, if it applies to indiv tab. --> 
+                  &lt;h3>Important Info:&lt;/h3>   
+                  &lt;li>&lt;/li>           
+                  &lt;br>&lt;br>&lt;br>
+                  &lt;!-- Delete the br above if not using tabs -->
+                  &lt;pre id="tab_name_copy" class="code-box">
+                      &lt;code>
+                      code line1
+                      code line2
+                      code line3
+                      &lt;/code>
+                  &lt;/pre>
                   &lt;br>&lt;br>
-                  &lt;img src="images/Screenshot 2023-09-28 123350.png"/>
-              &lt;/section>
-              &lt;!---------------------Tab Content --------------------->
+                  &lt;section>                
+                      &lt;h3>Output: &lt;/h3>
+                  &lt;/section>
+                  &lt;figure>               
+                  &lt;section class="output-box">
+                      &lt;img src=""
+                      title=""/>
+                  &lt;/section>
+                  &lt;figcaption>Image Caption&lt;/figcaption>
+                  &lt;/figure> 
+                  &lt;!---------------------Tab Content --------------------->
+              &lt;/div>
+          &lt;!-- Delete the dive below if not using tabs -->
           &lt;/div>
-      &lt;/div>
-  &lt;/section>
-&lt;!--_________________END OF SECTION COLLAPSIBLE_________________--> 
+          &lt;!-- Delete the dive above if not using tabs -->
+      &lt;/section>
+    &lt;!--_________________END OF SECTION COLLAPSIBLE_________________--> 
+    &lt;br>&lt;br>
                   </code>
               </pre>
           <br /><br />
-          <section>
-            <h3>Output:</h3>
-          </section>
-          <section class="output-box">
-            <span class="code-text">Output</span>
-            <br /><br />
-            <img src="" />
-          </section>
+
           <!---------------------Tab Content --------------------->
         </div>
       </div>
