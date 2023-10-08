@@ -378,6 +378,9 @@ margin-right: 45px;
           <button class="tablinks" onclick="openTab(event, 'basic_code_block')">
             Basic Code Block
           </button>
+          <button class="tablinks" onclick="openTab(event, 'basic_css')">
+            Basic CSS
+          </button>
         </div>
         <div id="basic_code_block" class="tabcontent">
           <!-- Tabs -->
@@ -393,6 +396,7 @@ margin-right: 45px;
           <!---------------------Tab Content --------------------->
           <pre id="basic_code_block_copy" class="code-box">
                   <code>
+  &lt;!---~~--- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC ---~~--->
     &lt;!--_________________SECTION COLLAPSIBLE_________________-->
         &lt;section id="ID#">
           &lt;button type="button" class="collapsible">TITLE&lt;/button>
@@ -404,7 +408,8 @@ margin-right: 45px;
               &lt;!-- Tabs --> 
               &lt;!-- important info can belong here, if it applies to all tabs. -->
                   &lt;h3>Important Info:&lt;/h3>   
-                  &lt;li>&lt;/li>             
+                  &lt;li>&lt;/li>
+                  &lt;li class="li_tabbed">&lt;/li>             
                   &lt;!---------------------Tab Content --------------------->
                   &lt;!-- Delete the div and br below if not using tabs -->
                   &lt;div id="TabID" class="tabcontent">       
@@ -412,6 +417,7 @@ margin-right: 45px;
                   &lt;h3>Important Info:&lt;/h3>   
                   &lt;li>&lt;/li>           
                   &lt;br>&lt;br>&lt;br>
+                  &lt;!-- Delete the Important info above if not needed -->
                   &lt;!-- Delete the br above if not using tabs -->
                   &lt;pre id="tab_name_copy" class="code-box">
                       &lt;code>
@@ -426,24 +432,48 @@ margin-right: 45px;
                   &lt;/section>                                 
                   &lt;section class="output-box">
                   &lt;figure>
-                      &lt;img src=""
-                      title=""/>                  
                   &lt;figcaption>Image Caption&lt;/figcaption>
+                      &lt;img src="images"
+                      title=""/>                        
+                  &lt;/figure>
+                  &lt;p class="centered">
+                    &lt;&lt;&lt; - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+                  &lt;/p>
+                  &lt;figure>
+                  &lt;figcaption>Image Caption&lt;/figcaption>
+                      &lt;img src="images"
+                      title=""/>                        
                   &lt;/figure>
                   &lt;/section>
                   &lt;!---------------------Tab Content --------------------->
               &lt;/div>
-          &lt;!-- Delete the dive below if not using tabs -->
+          &lt;!-- Delete the div below if not using tabs -->
           &lt;/div>
-          &lt;!-- Delete the dive above if not using tabs -->
+          &lt;!-- Delete the div above if not using tabs -->
       &lt;/section>
     &lt;!--_________________END OF SECTION COLLAPSIBLE_________________--> 
     &lt;br>&lt;br>
+&lt;!------------ NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ------------>
+
                   </code>
               </pre>
           <br /><br />
 
           <!---------------------Tab Content --------------------->
+        </div>
+        <div id="basic_css" class="tabcontent">
+          <pre id="basic_css_copy">
+/* Just General CSS for aesthetics */
+
+.li_tabbed {
+  margin-left: 75px;
+}
+
+.centered {
+  font-size: 20px;
+  text-align: center;
+}
+          </pre>
         </div>
       </div>
     </section>

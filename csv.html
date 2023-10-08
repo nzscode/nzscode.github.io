@@ -1522,44 +1522,117 @@ conn.close()
         <button type="button" class="collapsible">Rename Table</button>
         <div class="content">
           <!-- Tabs -->
-          <div class="tab">
-            <button class="tablinks" onclick="openTab(event, 'TabID')">
-              Tab Name
-            </button>
-          </div>
           <!-- Tabs -->
           <!-- important info can belong here, if it applies to all tabs. -->
           <h3>Important Info:</h3>
-          <li></li>
+          <li>
+            Make sure you are in the database where the table is being changed.
+          </li>
+          <li>
+            When trying to change the database, if you get a message that the
+            database session is active, disconnect the database.
+          </li>
+          <li>
+            When trying to alter using GitBash or SQLShell use the code below.
+          </li>
+          <pre>
+<code>ALTER TABLE <i>&lt;old table name></i> RENAME TO <i>&lt;new table name></i>;</code></pre>
           <!---------------------Tab Content --------------------->
           <!-- Delete the div and br below if not using tabs -->
-          <div id="TabID" class="tabcontent">
-            <!-- important info can belong here, if it applies to indiv tab. -->
-            <h3>Important Info:</h3>
-            <li></li>
-            <br /><br /><br />
-            <!-- Delete the br above if not using tabs -->
-            <pre id="tab_name_copy" class="code-box">
+          <!-- important info can belong here, if it applies to indiv tab. -->
+          <br /><br /><br />
+          <!-- Delete the br above if not using tabs -->
+          <pre id="alter_table_name_copy" class="code-box">
                     <code>
-                    code line1
-                    code line2
-                    code line3
+import psycopg2
+
+conn = psycopg2.connect(
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432,
+    database='demo_database')
+
+conn.autocommit = True
+cur = conn.cursor()
+
+cur.execute("""ALTER TABLE old_demo_table RENAME TO new_demo_table;""")
+
+conn.commit()
+conn.close()
                     </code>
                 </pre>
-            <br /><br />
-            <section>
-              <h3>Output:</h3>
-            </section>
-            <section class="output-box">
-              <figure>
-                <img src="" title="" />
-                <figcaption>Image Caption</figcaption>
-              </figure>
-            </section>
-            <!---------------------Tab Content --------------------->
-          </div>
-          <!-- Delete the dive below if not using tabs -->
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            <figure>
+              <figcaption>pgAdmin => Old table name</figcaption>
+              <img
+                src="images/Screenshot 2023-10-08 095239.png"
+                title="old_table_name"
+              />
+            </figure>
+            <figure>
+              <figcaption>pgAdmin => New table name</figcaption>
+              <img
+                src="images/Screenshot 2023-10-08 095352.png"
+                title="new_table_name"
+              />
+            </figure>
+            <p class="centered">
+              &lt;&lt;&lt; - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+            </p>
+            <figure>
+              <figcaption>Gitbash => Old table name</figcaption>
+              <img
+                src="images/Screenshot 2023-10-08 101258.png"
+                title="GitBash_alter_table_name"
+              />
+            </figure>
+            <figure>
+              <figcaption>GitBash => Alter table name</figcaption>
+              <img
+                src="images/Screenshot 2023-10-08 101328.png"
+                title="GitBash_alter_table_name"
+              />
+            </figure>
+            <figure>
+              <figcaption>GitBash => New table name</figcaption>
+              <img
+                src="images/Screenshot 2023-10-08 102408.png"
+                title="GitBash_new_table_name"
+              />
+            </figure>
+            <figure>
+              <figcaption>SQLShell => Old table name</figcaption>
+              <img
+                src="images/Screenshot 2023-10-08 100606.png"
+                title="PSQL_old_table_name"
+              />
+            </figure>
+            <p class="centered">
+              &lt;&lt;&lt; - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+            </p>
+            <figure>
+              <figcaption>SQLShell => Alter table name</figcaption>
+              <img
+                src="images/Screenshot 2023-10-08 100746.png"
+                title="PSQL_alter_table_name"
+              />
+            </figure>
+            <figure>
+              <figcaption>SQLShell => New table name</figcaption>
+              <img
+                src="images/Screenshot 2023-10-08 100816.png"
+                title="PSQL_new_table_name"
+              />
+            </figure>
+          </section>
+          <!---------------------Tab Content --------------------->
         </div>
+        <!-- Delete the dive below if not using tabs -->
         <!-- Delete the dive above if not using tabs -->
       </section>
       <!--_________________END OF SECTION COLLAPSIBLE_________________-->

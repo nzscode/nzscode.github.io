@@ -96,5 +96,5 @@ addCopyButton("delete_database_copy");
 addCopyButton("create_table_copy");
 addCopyButton("delete_table_copy");
 addCopyButton("alter_database_name_copy");
-addCopyButton("diconnect_3_copy");
+addCopyButton("alter_table_name_copy");
 addCopyButton("diconnect_4_copy");

@@ -81,16 +81,10 @@ function addCopyButton(tab_id) {
   });
 }
 
-addCopyButton("Collapsible_html_copy");
-addCopyButton("Collapsible_css_copy");
-addCopyButton("Collapsible_js_copy");
-addCopyButton("tabsONLY_html_copy");
-addCopyButton("tabsONLY_css_copy");
-addCopyButton("tabsONLY_js_copy");
-addCopyButton("copy_btn_html_copy");
-addCopyButton("copy_btn_css_copy");
-addCopyButton("copy_btn_js_copy");
-addCopyButton("output_box_html_copy");
-addCopyButton("output_box_css_copy");
-addCopyButton("basic_code_block_copy");
-addCopyButton("basic_css_copy");
+addCopyButton("create_database_Python_copy");
+addCopyButton("delete_database_copy");
+addCopyButton("create_table_copy");
+addCopyButton("delete_table_copy");
+addCopyButton("alter_database_name_copy");
+addCopyButton("alter_table_name_copy");
+addCopyButton("diconnect_4_copy");

@@ -136,39 +136,13 @@ pre {
   margin-right: 45px;
 }
 
-.TODO {
-  font-style: italic;
-  color: #34a75a;
-}
-
-.brackets-out {
-  /*  */
-  color: yellow;
-}
-
-.brackets-in {
-  color: #37f877;
-}
-.method {
-  color: cornflowerblue;
-}
-
-.string {
-  color: rgb(161, 233, 161);
-}
-
-.function-reference {
-  /* def dog_bark()=>>> dog_bark() is highlighted */
-  color: hotpink;
-}
-.keyword {
-  /* used for import, for, in, try, except, print */
-  color: orange;
-}
-.code-text {
-  color: #ffffff;
-}
+/* Just General CSS for aesthetics */
 
 .li_tabbed {
   margin-left: 75px;
+}
+
+.centered {
+  font-size: 20px;
+  text-align: center;
 }
