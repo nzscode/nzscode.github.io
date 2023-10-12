@@ -141,7 +141,7 @@
       <!--_________________END OF Access SQL SECTION _________________-->
       <br /><br />
       <!--_________________Disconnect from Database SECTION _________________-->
-      <section id="SQL3">
+      <section id="SQL2">
         <button type="button" class="collapsible">
           Disconnect from Database
         </button>
@@ -340,7 +340,7 @@
       <!--_________________END OF Disconnect from Database SECTION _________________-->
       <br /><br />
       <!--_________________Create Database SECTION _________________-->
-      <section id="SQL2">
+      <section id="SQL3">
         <button type="button" class="collapsible">Create Database</button>
         <div class="content">
           <!-- Tabs -->
@@ -490,7 +490,7 @@
       <!--_________________END OF Create Database SECTION _________________-->
       <br /><br />
       <!--_________________Change to Database SECTION _________________-->
-      <section id="SQL2">
+      <section id="SQL4">
         <button type="button" class="collapsible">Change To Database</button>
         <div class="content">
           <!-- Tabs -->
@@ -602,237 +602,8 @@
       </section>
       <!--_________________END OF Change to Database SECTION _________________-->
       <br /><br />
-      <!--_________________Delete Database SECTION _________________-->
-      <section id="SQL3">
-        <button type="button" class="collapsible">Delete Database</button>
-        <div class="content">
-          <!-- Tabs -->
-          <!-- Tabs -->
-          <!-- important info can belong here, if it applies to all tabs. -->
-          <!---------------------Tab Content --------------------->
-          <!-- Delete the div and br below if not using tabs -->
-          <!-- important info can belong here, if it applies to indiv tab. -->
-          <br /><br /><br />
-          <!-- Delete the br above if not using tabs -->
-          <pre id="delete_database_copy" class="code-box">
-                      <code>
-  import psycopg2
-  
-  conn = psycopg2.connect(
-      user='postgres',
-      password='password',
-      host='localhost',
-      port=5432)
-  
-  conn.autocommit = True
-  cur = conn.cursor()
-  
-  cur.execute("""DROP DATABASE IF EXISTS demo_database""")
-  
-  conn.commit()
-  conn.close()
-                      </code>
-                  </pre>
-          <br /><br />
-          <section>
-            <h3>Output:</h3>
-          </section>
-          <figure>
-            <section class="output-box">
-              <img
-                src="images/Screenshot 2023-10-07 111337.png"
-                title="delete_database"
-              />
-            </section>
-            <figcaption>Delete Database</figcaption>
-          </figure>
-          <!---------------------Tab Content --------------------->
-        </div>
-        <!-- Delete the dive below if not using tabs -->
-        <!-- Delete the dive above if not using tabs -->
-      </section>
-      <!--_________________END OF Delete Database SECTION _________________-->
-      <br /><br />
-      <!--_________________Create Table SECTION _________________-->
-      <section id="SQL4">
-        <button type="button" class="collapsible">Create Table</button>
-        <div class="content">
-          <!-- Tabs -->
-          <!-- Tabs -->
-          <!-- important info can belong here, if it applies to all tabs. -->
-          <h3>Important Info:</h3>
-          <li>
-            A Seperate config file can be made with the connection details to
-            safeguard database access details.
-          </li>
-          <li>
-            When creating a table, you must always specify the columns and their
-            types.
-          </li>
-          <li>
-            Serial can have the PRIMARY KEY attribute, which will help it when
-            joining it with other tables for queries.<br />
-            &emsp;&emsp;&emsp;The PRIMARY KEY makes each record unique.
-          </li>
-          <li>
-            NOT NULL => this field must have data in it, if there is no data,
-            the table will not work.
-          </li>
-          <br />
-          <br />
-          <ul>
-            <strong>The most often used Data Types in SQL tables.</strong>
-          </ul>
-          <li class="li_tabbed">
-            Serial: 1 to 2Billion, consecutive auto incrementing number.
-          </li>
-          <li class="li_tabbed">Integer: From -21,000 upto 21,000.</li>
-          <li class="li_tabbed">
-            Decimal: Upto 13,000 before decimal, and 16,000 after decimal.
-          </li>
-          <li class="li_tabbed">Money: From -92,000 upto 92,000.</li>
-          <li class="li_tabbed">
-            Varchar(n): Variable length string where (n) is the user specified
-            max length of characters.
-          </li>
-          <li class="li_tabbed">Text: unlimited length of characters.</li>
-          <li class="li_tabbed">Bool: True / False.</li>
-          <li class="li_tabbed">Date: Saved in yy-mm-dd format.</li>
-          <li class="li_tabbed">
-            Time(p)[without time zone]: Time of day no time zone.
-          </li>
-          <li class="li_tabbed">Time(p): Time of day, including time zone.</li>
-          <li class="li_tabbed">
-            Timestamp(p)[without time zone]: Date and time, without time zone.
-          </li>
-          <li class="li_tabbed">
-            Timestamp(p): Date and time, including time zone.
-          </li>
-          <li class="li_tabbed">Json: Textual json data.</li>
-          <li class="li_tabbed">XML: XML data.</li>
-
-          <!---------------------Tab Content --------------------->
-          <!-- Delete the div and br below if not using tabs -->
-          <!-- important info can belong here, if it applies to indiv tab. -->
-          <br /><br /><br />
-          <!-- Delete the br above if not using tabs -->
-          <pre id="create_table_copy" class="code-box">
-                      <code>
-  import psycopg2
-  
-  conn = psycopg2.connect(
-      user='postgres',
-      password='password',
-      host='localhost',
-      port=5432,
-      database='demo_database')
-  
-  conn.autocommit = True
-  cur = conn.cursor()
-  
-  cur.execute("""CREATE TABLE demo_table1(
-      id SERIAL PRIMARY KEY,    
-      age INTEGER NOT NULL,
-      radius DECIMAL,
-      price MONEY,
-      department VARCHAR(225),
-      quote TEXT,
-      group_leader BOOLEAN NOT NULL,
-      date DATE,
-      time TIME with time zone,
-      tmwtz TIME without time zone
-      );""")
-  
-  conn.commit()
-  conn.close()
-                      </code>
-                  </pre>
-          <br /><br />
-          <section>
-            <h3>Output:</h3>
-          </section>
-          <section class="output-box">
-            <figure>
-              <img
-                src="images/Screenshot 2023-10-07 113056.png"
-                title="path_to_columns"
-              />
-              <figcaption>Path to Columns</figcaption>
-            </figure>
-            <figure>
-              <img
-                src="images/Screenshot 2023-10-07 115959.png"
-                title="table_with_coloumns"
-              />
-              <figcaption>Table with columns</figcaption>
-            </figure>
-          </section>
-          <!---------------------Tab Content --------------------->
-        </div>
-        <!-- Delete the dive below if not using tabs -->
-        <!-- Delete the dive above if not using tabs -->
-      </section>
-      <!--_________________END OF SECTION Create Table _________________-->
-      <br /><br />
-      <!--_________________Delete Table SECTION _________________-->
-      <section id="SQL5">
-        <button type="button" class="collapsible">Deleting Table</button>
-        <div class="content">
-          <!-- Tabs -->
-          <!-- Tabs -->
-          <!-- important info can belong here, if it applies to all tabs. -->
-          <h3>Important Info:</h3>
-          <li>
-            To see that this has been carried out, you can refresh pgAdmin,
-            PostgreSQL or Access PostgreSQL through GitBash or SQL shell
-          </li>
-          <!---------------------Tab Content --------------------->
-          <!-- Delete the div and br below if not using tabs -->
-          <!-- important info can belong here, if it applies to indiv tab. -->
-          <br /><br /><br />
-          <!-- Delete the br above if not using tabs -->
-          <pre id="delete_table_copy" class="code-box">
-                      <code>
-  import psycopg2
-  
-  conn = psycopg2.connect(
-      user='postgres',
-      password='password',
-      host='localhost',
-      port=5432,
-      database='demo_database')
-  
-  conn.autocommit = True
-  cur = conn.cursor()
-  
-  cur.execute("""DROP TABLE IF EXISTS demo_table1;""")
-  
-  conn.commit()
-  conn.close()
-                      </code>
-                  </pre>
-          <br /><br />
-          <section>
-            <h3>Output:</h3>
-          </section>
-          <section class="output-box">
-            <figure>
-              <img
-                src="images/Screenshot 2023-10-07 130338.png"
-                title="delete_table"
-              />
-              <figcaption>Delete Table</figcaption>
-            </figure>
-          </section>
-          <!---------------------Tab Content --------------------->
-        </div>
-        <!-- Delete the dive below if not using tabs -->
-        <!-- Delete the dive above if not using tabs -->
-      </section>
-      <!--_________________END OF Delete Table SECTION _________________-->
-      <br /><br />
       <!--_________________Rename Database SECTION _________________-->
-      <section id="SQL6">
+      <section id="SQL5">
         <button type="button" class="collapsible">Rename Database</button>
         <div class="content">
           <!-- Tabs -->
@@ -887,10 +658,138 @@
         <!-- Delete the dive below if not using tabs -->
         <!-- Delete the dive above if not using tabs -->
       </section>
-      <!--_________________END OF SECTION Rename Database _________________-->
+      <!--_________________END OF Rename Database SECTION _________________-->
+      <br /><br />
+      <!--_________________Copy Database SECTION_________________-->
+      <section id="SQL6">
+        <button type="button" class="collapsible">Copy Database</button>
+        <div class="content">
+          <!-- Tabs -->
+          <!-- Tabs -->
+          <!-- important info can belong here, if it applies to all tabs. -->
+          <h3>Important Info:</h3>
+          <li>Make sure you are not in the database being changed.</li>
+          <li>
+            When trying to change the database, if you get a message that the
+            database session is active, disconnect the database.
+          </li>
+          <li>
+            When trying to alter using GitBash or SQLShell use the code below.
+          </li>
+          <pre>
+  <code>CREATE DATABASE <i>&lt;new database name></i> WITH TEMPLATE <i>&lt;original database name></i> OWNER <i>&lt;database owner></i>;</code></pre>
+
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabs -->
+          <!-- important info can belong here, if it applies to indiv tab. -->
+          <br /><br /><br />
+          <!-- Delete the Important info above if not needed -->
+          <!-- Delete the br above if not using tabs -->
+          <pre id="copy_database_copy" class="code-box">
+                    <code>
+ import psycopg2
+
+conn = psycopg2.connect(
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432,
+    database='postgres')
+
+conn.autocommit = True
+cur = conn.cursor()
+
+cur.execute("""CREATE DATABASE demo_database_2 WITH TEMPLATE gitbash_shell OWNER postgres;""")
+
+conn.commit()
+conn.close()
+                    </code>
+                </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            <figure>
+              <figcaption>Original Databases</figcaption>
+              <img
+                src="images/Screenshot 2023-10-08 150301.png"
+                title="original_database_prior_to_copying"
+              />
+            </figure>
+            <figure>
+              <figcaption>Copying Database</figcaption>
+              <img
+                src="images/Screenshot 2023-10-08 150444.png"
+                title="copying_database"
+              />
+            </figure>
+            <figure>
+              <figcaption>New & Original Databases</figcaption>
+              <img
+                src="images/Screenshot 2023-10-08 150654.png"
+                title="databases_after_copying"
+              />
+            </figure>
+          </section>
+          <!---------------------Tab Content --------------------->
+        </div>
+      </section>
+      <!--_________________END OF Copy Database SECTION _________________-->
+      <br /><br />
+      <!--_________________Delete Database SECTION _________________-->
+      <section id="SQL7">
+        <button type="button" class="collapsible">Delete Database</button>
+        <div class="content">
+          <!-- Tabs -->
+          <!-- Tabs -->
+          <!-- important info can belong here, if it applies to all tabs. -->
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabs -->
+          <!-- important info can belong here, if it applies to indiv tab. -->
+          <br /><br /><br />
+          <!-- Delete the br above if not using tabs -->
+          <pre id="delete_database_copy" class="code-box">
+                      <code>
+  import psycopg2
+  
+  conn = psycopg2.connect(
+      user='postgres',
+      password='password',
+      host='localhost',
+      port=5432)
+  
+  conn.autocommit = True
+  cur = conn.cursor()
+  
+  cur.execute("""DROP DATABASE IF EXISTS demo_database""")
+  
+  conn.commit()
+  conn.close()
+                      </code>
+                  </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <figure>
+            <section class="output-box">
+              <img
+                src="images/Screenshot 2023-10-07 111337.png"
+                title="delete_database"
+              />
+            </section>
+            <figcaption>Delete Database</figcaption>
+          </figure>
+          <!---------------------Tab Content --------------------->
+        </div>
+        <!-- Delete the dive below if not using tabs -->
+        <!-- Delete the dive above if not using tabs -->
+      </section>
+      <!--_________________END OF Delete Database SECTION _________________-->
       <br /><br />
       <!--_________________Rename Table SECTION _________________-->
-      <section id="SQL7">
+      <section id="SQL10">
         <button type="button" class="collapsible">Rename Table</button>
         <div class="content">
           <!-- Tabs -->
@@ -938,7 +837,673 @@
           <section>
             <h3>Output:</h3>
           </section>
+          <section class="output-box"></section>
+          <!---------------------Tab Content --------------------->
+        </div>
+        <!-- Delete the dive below if not using tabs -->
+        <!-- Delete the dive above if not using tabs -->
+      </section>
+      <!--_________________END OF Rename Table SECTION _________________-->
+      <br /><br />
+      <!--_________________Create Schema SECTION_________________-->
+      <section id="SQL11">
+        <button type="button" class="collapsible">Create Schema</button>
+        <div class="content">
+          <h2>Using GitBash/Shell :</h2>
+          <!-- Tabs -->
+          <!-- Tabs -->
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <h3>Important Info:</h3>
+          <li>
+            It is important to be in the database where you want to create the
+            schema.<br />
+            A database can contain 1 or more schemas, but a aschema can belong
+            to only one database.
+          </li>
+          <li class="li_tabbed">The default schema is public.</li>
+          <li class="li_tabbed">To create a new schema:</li>
+          <pre
+            class="li_tabbed"
+          ><code>CREATE SCHEMA <i>&lt;new schema name></i>;</code></pre>
+          <li class="li_tabbed">
+            IF you try to look up the tables using <i>\dt</i>, you wouldn't see
+            the new schema. This is because the search path is set to public by
+            default.
+          </li>
+          <li class="li_tabbed">To show the current search path:</li>
+          <pre class="li_tabbed"><code>SHOW search_path;</code></pre>
+          <li class="li_tabbed">To put the new schema in the path:</li>
+          <pre
+            class="li_tabbed"
+          ><code>SET search_path TO <i>&lt;new schema name></i>;</code></pre>
+          <li class="li_tabbed">
+            Or to use multiple schemas, so that when <i><b>\dt</b></i> is used
+            all tables in all schemas will show:
+          </li>
+          <pre
+            class="li_tabbed"
+          ><code>SET search_path TO <i>&lt;new schema name></i>, public;</code></pre>
+          <li>
+            To see all Schemas use <i><b>\dn</b></i>
+          </li>
+          <p class="centered">
+            <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+          </p>
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabsAAAAAA-------->
+          <!-- Delete above if not using tabsA AAAAAAAAA------------------->
+          <!-- important info can belong here, if it applies to indiv tab.--------------->
+          <br />
+          <!-- Delete the Important info above if not needed----------------------------->
+          <pre id="create_schema_copy" class="code-box">
+                    <code>
+import psycopg2
+
+conn = psycopg2.connect(
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432,
+    database='demo_database')
+
+conn.autocommit = True
+cur = conn.cursor()
+
+cur.execute("""CREATE SCHEMA IF NOT EXISTS test AUTHORIZATION postgres;""")
+
+conn.commit()
+conn.close()
+                    </code>
+                </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
           <section class="output-box">
+            <figure>
+              <figcaption>GitBash/PSQL => Create Schema</figcaption>
+              <img
+                src="images/Screenshot 2023-10-08 164504.png"
+                title="GitBash/PSQL_creating_schema"
+              />
+            </figure>
+            <figure>
+              <figcaption>GitBash/PSQL => List all Schemas</figcaption>
+              <img
+                src="images/Screenshot 2023-10-09 092440.png"
+                title="GitBash/PSQL_list_all_schemas"
+              />
+            </figure>
+            <figure>
+              <figcaption>
+                GitBash/PSQL => Set search path to multiple schemas
+              </figcaption>
+              <img
+                src="images/Screenshot 2023-10-09 093124.png"
+                title="GitBash/PSQL_set_search_path_to_multiple_schemas"
+              />
+            </figure>
+            <figure>
+              <figcaption>GitBash/PSQL => View all schemas</figcaption>
+              <img
+                src="images/Screenshot 2023-10-09 093414.png"
+                title="GitBash/PSQL_view_all_schemas"
+              />
+            </figure>
+            <figure>
+              <figcaption>GitBash/PSQL => Show search path</figcaption>
+              <img
+                src="images/Screenshot 2023-10-09 093339.png"
+                title="GitBash/PSQL_view_search_path"
+              />
+            </figure>
+            <p class="centered">
+              <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+            </p>
+            <figure>
+              <figcaption>Python => Create Schema</figcaption>
+              <img
+                src="images/Screenshot 2023-10-09 095123.png"
+                title="Python_create_schema"
+              />
+            </figure>
+          </section>
+          <!---------------------Tab Content --------------------->
+        </div>
+      </section>
+      <!--_________________END OF Create Schema SECTION_________________-->
+      <br /><br />
+      <!--_________________Delete Schema SECTION_________________-->
+      <section id="SQL12">
+        <button type="button" class="collapsible">Delete Schema</button>
+        <div class="content">
+          <!-- Tabs -->
+          <!-- Tabs -->
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <h3>Important Info:</h3>
+          <li>
+            Make Sure your are in the database assosciated with the schema you
+            are trying to drop.
+          </li>
+          <li>To delete a Schema</li>
+          <ul class="li_tabbed">
+            <pre><code>DROP SCHEMA <i>&lt;schema name></i>;</code></pre>
+          </ul>
+          <li>To delete a Schema including everything it contains</li>
+          <ul class="li_tabbed">
+            <pre><code>DROP SCHEMA <i>&lt;schema name></i> CASCADE;</code></pre>
+          </ul>
+          <li>Can also use IF EXISTS if necessary</li>
+          <ul class="li_tabbed">
+            <pre><code>DROP SCHEMA IF EXISTS <i>&lt;schema name></i> CASCADE ;</code></pre>
+          </ul>
+          <li>
+            <b
+              ><i
+                >Once the schema is dropped you have to reset search path.</i
+              ></b
+            >
+          </li>
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabsAAAAAA-------->
+          <!-- Delete above if not using tabsA AAAAAAAAA------------------->
+          <!-- important info can belong here, if it applies to indiv tab.--------------->
+          <br /><br />
+          <!-- Delete the Important info above if not needed----------------------------->
+          <pre id="delete_schema_copy" class="code-box">
+                    <code>
+import psycopg2
+
+conn = psycopg2.connect(
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432,
+    database='demo_database')
+
+conn.autocommit = True
+cur = conn.cursor()
+
+cur.execute("""DROP SCHEMA IF EXISTS demo_schema CASCADE;""")
+
+conn.commit()
+conn.close()
+                    </code>
+                </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            <figure>
+              <figcaption>Python => Drop Schema</figcaption>
+              <img
+                src="images/Screenshot 2023-10-09 124332.png"
+                title="drop_schema"
+              />
+            </figure>
+            <p class="centered">
+              <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+            </p>
+            <figure>
+              <figcaption>List of Schemas</figcaption>
+              <img
+                src="images//Screenshot 2023-10-09 131834.png"
+                title="list_of_schemas"
+              />
+            </figure>
+            <figure>
+              <figcaption>Show search path</figcaption>
+              <img
+                src="images/Screenshot 2023-10-09 124846.png"
+                title="show search path"
+              />
+            </figure>
+            <figure>
+              <figcaption>Drop Schema</figcaption>
+              <img
+                src="images/Screenshot 2023-10-09 125645.png"
+                title="drop_schema"
+              />
+            </figure>
+            <figure>
+              <figcaption>List of Schemas</figcaption>
+              <img
+                src="images/Screenshot 2023-10-09 125716.png"
+                title="list_of_schemas"
+              />
+            </figure>
+            <figure>
+              <figcaption>Re-Set search path</figcaption>
+              <img
+                src="images/Screenshot 2023-10-09 125743.png"
+                title="re_set_search_path"
+              />
+            </figure>
+            <figure>
+              <figcaption>Show search_path</figcaption>
+              <img
+                src="images/Screenshot 2023-10-09 125759.png"
+                title="show_search_path"
+              />
+            </figure>
+          </section>
+          <!---------------------Tab Content --------------------->
+        </div>
+        <!-- Delete the div below if not using tabsA -->
+        <!-- Delete the div above if not using tabsA -->
+      </section>
+      <!--_________________END OF Delete Schema SECTION_________________-->
+      <br /><br />
+      <!--_________________SECTION_________________-->
+      <section id="SQL13">
+        <button type="button" class="collapsible">Move Table</button>
+        <div class="content">
+          <!-- Tabs -->
+          <!-- Tabs -->
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <h3>Important Info:</h3>
+          <li>It does not make sense to move the Schemas.</li>
+          <li>
+            It is better to copy and move the tables as needed to a new schema
+            made in a different database
+          </li>
+          <pre
+            class="li_tabbed"
+          ><code>ALTER TABLE <i>&lt;table name></i> SET SCHEMA <i>&lt;schema name></i>;</code></pre>
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabsAAAAAA-------->
+          <!-- Delete above if not using tabsA AAAAAAAAA------------------->
+          <!-- important info can belong here, if it applies to indiv tab.--------------->
+          <br /><br />
+          <!-- Delete the Important info above if not needed----------------------------->
+          <pre id="move_table_schemas_copy" class="code-box">
+                    <code>
+                    code line1
+                    code line2
+                    code line3
+                    </code>
+                </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            <figure>
+              <figcaption>Image Caption</figcaption>
+              <img src="images" title="" />
+            </figure>
+            <p class="centered">
+              <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+            </p>
+            <figure>
+              <figcaption>Image Caption</figcaption>
+              <img src="images" title="" />
+            </figure>
+          </section>
+          <!---------------------Tab Content --------------------->
+        </div>
+        <!-- Delete the div below if not using tabsA -->
+        <!-- Delete the div above if not using tabsA -->
+      </section>
+      <!--_________________END OF SECTION_________________-->
+      <br /><br />
+      <!--_________________create_table SECTION_________________-->
+      <section id="SQL14">
+        <button type="button" class="collapsible">Create Table</button>
+        <div class="content">
+          <h3>Important Info:</h3>
+          <ul class="li_tabbed">
+            Change the
+            <span style="color: aqua; background-color: gray"> aqua</span>
+            code to any of the variations below replacing what is between &lt; &
+            > in italics with the appropriate names.
+          </ul>
+          <li>
+            A Seperate config file can be made with the connection details to
+            safeguard database access details.
+          </li>
+          <li>
+            When creating a table, you must always specify the columns and their
+            types.
+          </li>
+          <li>To create a table:</li>
+          <pre
+            class="li_tabbed"
+          ><code>CREATE TABLE IF NOT EXISTS <i>&lt;table name></i>(<br><i>&lt;column name 1></i>,<br><i>&lt;column name 2></i>);</code></pre>
+          <li>To create a table in a schema:</li>
+          <pre
+            class="li_tabbed"
+          ><code>CREATE TABLE IF NOT EXISTS <i>&lt;schema name.table name></i>(<br><i>&lt;column name 1></i>,<br><i>&lt;column name 2></i>);</code></pre>
+          <li>
+            Serial can have the PRIMARY KEY attribute, which will help it when
+            joining it with other tables for queries.<br />
+            &emsp;&emsp;&emsp;The PRIMARY KEY makes each record unique.
+          </li>
+          <li>
+            NOT NULL => this field must have data in it, if there is no data,
+            the table will not work.
+          </li>
+          <li>
+            DEFAULT => Default value to fill as value for the column if no data
+            is provided at input.
+          </li>
+          <br />
+          <ul>
+            <strong>The most often used Data Types in SQL tables.</strong>
+          </ul>
+          <li class="li_tabbed">
+            Serial: 1 to 2Billion, consecutive auto incrementing number.
+          </li>
+          <li class="li_tabbed">Integer: From -21,000 upto 21,000.</li>
+          <li class="li_tabbed">
+            Decimal: Upto 13,000 before decimal, and 16,000 after decimal.
+          </li>
+          <li class="li_tabbed">Money: From -92,000 upto 92,000.</li>
+          <li class="li_tabbed">
+            Varchar(n): Variable length string where (n) is the user specified
+            max length of characters.
+          </li>
+          <li class="li_tabbed">Text: unlimited length of characters.</li>
+          <li class="li_tabbed">Bool: True / False.</li>
+          <li class="li_tabbed">Date: Saved in yy-mm-dd format.</li>
+          <li class="li_tabbed">
+            Time(p)[without time zone]: Time of day no time zone.
+          </li>
+          <li class="li_tabbed">Time(p): Time of day, including time zone.</li>
+          <li class="li_tabbed">
+            Timestamp(p)[without time zone]: Date and time, without time zone.
+          </li>
+          <li class="li_tabbed">
+            Timestamp(p): Date and time, including time zone.
+          </li>
+          <li class="li_tabbed">Json: Textual json data.</li>
+          <li class="li_tabbed">XML: XML data.</li>
+          <br />
+          <li class="li_tabbed">
+            Example Code:
+            <pre class="li_tabbed"><code>"""CREATE TABLE demo_table1(
+                id SERIAL PRIMARY KEY,    
+                age INTEGER NOT NULL,
+                radius DECIMAL,
+                price MONEY,
+                department VARCHAR(225),
+                quote TEXT,
+                group_leader BOOLEAN NOT NULL,
+                date DATE,
+                time TIME with time zone,
+                tmwtz TIME without time zone
+                );"""</code></pre>
+          </li>
+          <br /><br />
+          <!-- Delete the Important info above if not needed----------------------------->
+          <pre id="create_table_copy" class="code-box">
+                    <code>
+import psycopg2
+
+conn = psycopg2.connect(
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432,
+    database='demo_database')
+
+conn.autocommit = True
+cur = conn.cursor()
+
+create_table = 
+    """<span style="color: aqua;">CREATE TABLE IF NOT EXISTS demo_table(
+        demo_col_0 SERIAL,
+        demo_col_1 VARCHAR(225),
+        demo_col_2 VARCHAR(225)
+        );</span>"""
+
+
+cur.execute(create_table)
+
+conn.commit()
+conn.close()
+                    </code>
+                </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            <figure>
+              <figcaption>Create Table</figcaption>
+              <img
+                src="images/Screenshot 2023-10-12 112845.png"
+                title="Create Table"
+              />
+            </figure>
+            <p class="centered">
+              <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+            </p>
+            <figure>
+              <figcaption>Create Table in Schema</figcaption>
+              <img
+                src="images/Screenshot 2023-10-12 112623.png"
+                title="create_table_in_schema"
+              />
+            </figure>
+          </section>
+        </div>
+        <!-- Delete the div above if not using tabsA -->
+      </section>
+      <!--_________________END OF create_table SECTION_________________-->
+      <br /><br />
+      <!--_________________drop_table SECTION_________________-->
+      <section id="SQL15">
+        <button type="button" class="collapsible">Drop Table</button>
+        <div class="content">
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <h3>Important Info:</h3>
+          <ul class="li_tabbed">
+            Change the
+            <span style="color: aqua; background-color: gray"> aqua</span>
+            code to any of the variations below replacing what is between &lt; &
+            > in italics with the appropriate names.
+          </ul>
+          <li>
+            Table is always created in default schema: public schema, UNLESS
+            specified.
+          </li>
+          <li>
+            To confirm the change, check using psql or refresh the database in
+            pgAdmin.
+          </li>
+          <li>To drop table:</li>
+          <pre
+            class="li_tabbed"
+          ><code>DROP TABLE IF EXISTS <i>&lt;table name></i>;</code></pre>
+          <li>To drop table from a schema:</li>
+          <pre
+            class="li_tabbed"
+          ><code>DROP TABLE IF EXISTS <i>&lt;schema name.table name></i>;</code></pre>
+          <li>To drop table and all dependant objects:</li>
+          <pre
+            class="li_tabbed"
+          ><code>DROP TABLE IF EXISTS <i>&lt;table name></i> CASCADE;</code></pre>
+          <pre id="drop_table_copy" class="code-box">
+                    <code>
+import psycopg2
+
+conn = psycopg2.connect(
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432,
+    database='demo_database')
+
+conn.autocommit = True
+cur = conn.cursor()
+
+drop_table = <span style="color: aqua;">"""DROP TABLE IF EXISTS demo_table;"""</span>
+
+cur.execute(drop_table)
+
+conn.commit()
+conn.close()
+                    </code>
+                </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            <figure>
+              <figcaption>Drop Table</figcaption>
+              <img
+                src="images/Screenshot 2023-10-12 122825.png"
+                title="drop_table"
+              />
+            </figure>
+            <p class="centered">
+              <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+            </p>
+            <figure>
+              <figcaption>Drop Table From a Schema</figcaption>
+              <img
+                src="images/Screenshot 2023-10-12 122756.png"
+                title="drop_tabloe_from_schema"
+              />
+            </figure>
+          </section>
+        </div>
+      </section>
+      <!--_________________END OF SECTION_________________-->
+      <br /><br />
+      <!--_________________SECTION_________________-->
+      <section id="SQL16">
+        <button type="button" class="collapsible">Alter Table</button>
+        <div class="content">
+          <!-- Tabs -->
+          <div class="tab">
+            <button
+              class="tablinks"
+              onclick="openTab(event, 'alter_table_rename')"
+            >
+              Alter Table => Rename
+            </button>
+          </div>
+          <!-- Tabs -->
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <h3>Important Info:</h3>
+          <ul class="li_tabbed">
+            Change the
+            <span style="color: aqua; background-color: gray"> aqua</span>
+            code to any of the variations below replacing what is between &lt; &
+            > in italics with the appropriate names.
+          </ul>
+          <li>To rename table</li>
+          <pre
+            class="li_tabbed"
+          ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> RENAME TO <i>&lt;new table name></i>;</code></pre>
+          <li>To rename table in a schema</li>
+          <pre
+            class="li_tabbed"
+          ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> RENAME TO <i>&lt;schema name.new table name></i>;</code></pre>
+          <li>Set Schema of a table</li>
+          <pre
+            class="li_tabbed"
+          ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> SET SCHEMA <i>&lt;schema name></i>;</code></pre>
+          <li>
+            Column add, drop, and alter can also be done at the same time.
+          </li>
+          <li class="li_tabbed">To add a column:</li>
+          <pre
+            class="li_tabbed"
+          ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> ADD COLUMN IF NOT EXISTS <i>&lt;column name> &lt;column type></i> ;</code></pre>
+          <li class="li_tabbed">To add a column in a schema:</li>
+          <pre
+            class="li_tabbed"
+          ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> ADD COLUMN IF NOT EXISTS <i>&lt;column name> &lt;column type></i> ;</code></pre>
+          <li class="li_tabbed">To drop a column:</li>
+          <pre
+            class="li_tabbed"
+          ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> DROP COLUMN IF EXISTS <i>&lt;column name></i> ;</code></pre>
+          <li class="li_tabbed">To drop a column in a schema:</li>
+          <pre
+            class="li_tabbed"
+          ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> DROP COLUMN IF EXISTS <i>&lt;column name></i> ;</code></pre>
+          <li class="li_tabbed">To alter column name:</li>
+          <pre
+            class="li_tabbed"
+          ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> RENAME COLUMN <i>&lt;new column name></i> ;</code></pre>
+          <li class="li_tabbed">To alter column name in a schema:</li>
+          <pre
+            class="li_tabbed"
+          ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> RENAME COLUMN <i>&lt;new column name></i> ;</code></pre>
+          <li class="li_tabbed">To alter column type:</li>
+          <pre
+            class="li_tabbed"
+          ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> ALTER COLUMN <i>&lt;column name></i> TYPE <i>&lt;column type></i>;</code></pre>
+          <li class="li_tabbed">To alter column type in a schema:</li>
+          <pre
+            class="li_tabbed"
+          ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> ALTER COLUMN <i>&lt;column name></i> TYPE <i>&lt;column type></i>;</code></pre>
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <!---------------------Tab Content --------------------->
+          <br /><br />
+          <!-- Delete the div and br below if not using tabsAAAAAA-------->
+          <pre id="alter_table_copy" class="code-box">
+                    <code>
+import psycopg2
+
+conn = psycopg2.connect(
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432,
+    database='demo_database')
+
+conn.autocommit = True
+cur = conn.cursor()
+
+alter_table = <span style="color: aqua;">"""ALTER TABLE IF EXISTS demo_table RENAME TO demo_renamed_table"""</span>
+
+cur.execute(alter_table)
+
+conn.commit()
+conn.close()
+                    </code>
+                </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            <figure>
+              <figcaption>Alter Table</figcaption>
+              <img
+                src="images/Screenshot 2023-10-12 124355.png"
+                title="alter_table"
+              />
+            </figure>
+            <p class="centered">
+              <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+            </p>
+            <figure>
+              <figcaption>Alter Table In Schema</figcaption>
+              <img
+                src="images/Screenshot 2023-10-12 125053.png"
+                title="alter_table_in_schema"
+              />
+            </figure>
+            <p><<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>></p>
+            <figure>
+              <figcaption>
+                Set Schema of a table (Move a Schema from one table to another)
+              </figcaption>
+              <img
+                src="images//Screenshot 2023-10-12 125628.png"
+                title="set_schema_of_table"
+              />
+            </figure>
             <figure>
               <figcaption>pgAdmin => Old table name</figcaption>
               <img
@@ -1004,11 +1569,722 @@
           </section>
           <!---------------------Tab Content --------------------->
         </div>
-        <!-- Delete the dive below if not using tabs -->
-        <!-- Delete the dive above if not using tabs -->
       </section>
-      <!--_________________END OF SECTION Rename Table _________________-->
+      <!--_________________END OF SECTION_________________-->
       <br /><br />
+      <!------------ NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ------------>
+
+      <!---~~--- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC ---~~--->
+      <!--_________________SECTION_________________-->
+      <section id="SQL17">
+        <button type="button" class="collapsible">Copy Table</button>
+        <div class="content">
+          <!-- Tabs -->
+          <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'TabID')">
+              Tab Name
+            </button>
+          </div>
+          <!-- Tabs -->
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <h3>Important Info:</h3>
+          <li></li>
+          <li class="li_tabbed"></li>
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabsAAAAAA-------->
+          <div id="TabID" class="tabcontent">
+            <!-- Delete above if not using tabsA AAAAAAAAA------------------->
+            <!-- important info can belong here, if it applies to indiv tab.--------------->
+            <h3>Important Info:</h3>
+            <li></li>
+            <br /><br /><br />
+            <!-- Delete the Important info above if not needed----------------------------->
+            <pre id="tab_name_copy" class="code-box">
+                    <code>
+                    code line1
+                    code line2
+                    code line3
+                    </code>
+                </pre>
+            <br /><br />
+            <section>
+              <h3>Output:</h3>
+            </section>
+            <section class="output-box">
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+              <p class="centered">
+                <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+              </p>
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+            </section>
+            <!---------------------Tab Content --------------------->
+          </div>
+          <!-- Delete the div below if not using tabsA -->
+        </div>
+        <!-- Delete the div above if not using tabsA -->
+      </section>
+      <!--_________________END OF SECTION_________________-->
+      <br /><br />
+      <!------------ NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ------------>
+
+      <!---~~--- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC ---~~--->
+      <!--_________________SECTION_________________-->
+      <section id="SQL18">
+        <button type="button" class="collapsible">Add Column</button>
+        <div class="content">
+          <!-- Tabs -->
+          <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'TabID')">
+              Tab Name
+            </button>
+          </div>
+          <!-- Tabs -->
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <h3>Important Info:</h3>
+          <li></li>
+          <li class="li_tabbed"></li>
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabsAAAAAA-------->
+          <div id="TabID" class="tabcontent">
+            <!-- Delete above if not using tabsA AAAAAAAAA------------------->
+            <!-- important info can belong here, if it applies to indiv tab.--------------->
+            <h3>Important Info:</h3>
+            <li></li>
+            <br /><br /><br />
+            <!-- Delete the Important info above if not needed----------------------------->
+            <pre id="tab_name_copy" class="code-box">
+                    <code>
+                    code line1
+                    code line2
+                    code line3
+                    </code>
+                </pre>
+            <br /><br />
+            <section>
+              <h3>Output:</h3>
+            </section>
+            <section class="output-box">
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+              <p class="centered">
+                <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+              </p>
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+            </section>
+            <!---------------------Tab Content --------------------->
+          </div>
+          <!-- Delete the div below if not using tabsA -->
+        </div>
+        <!-- Delete the div above if not using tabsA -->
+      </section>
+      <!--_________________END OF SECTION_________________-->
+      <br /><br />
+      <!------------ NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ------------>
+
+      <!---~~--- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC ---~~--->
+      <!--_________________SECTION_________________-->
+      <section id="SQL19">
+        <button type="button" class="collapsible">Delete Column</button>
+        <div class="content">
+          <!-- Tabs -->
+          <!-- Tabs -->
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <h3>Important Info:</h3>
+          <li>We will use the alter table command to drop a column</li>
+          <pre
+            class="li_tabbed"
+          ><code>ALTER TABLE <i>&lt;table name></i> DROP COLUMN <i>&lt; column name 1></i>, DROP COLUMN <i>&lt; column name 2></i>;</code></pre>
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabsAAAAAA-------->
+          <!-- Delete above if not using tabsA AAAAAAAAA------------------->
+          <!-- important info can belong here, if it applies to indiv tab.---------------><br /><br />
+          <!-- Delete the Important info above if not needed----------------------------->
+          <pre id="tab_name_copy" class="code-box">
+                    <code>
+                    code line1
+                    code line2
+                    code line3
+                    </code>
+                </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            <figure>
+              <figcaption>Image Caption</figcaption>
+              <img src="images" title="" />
+            </figure>
+            <p class="centered">
+              <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+            </p>
+            <figure>
+              <figcaption>Image Caption</figcaption>
+              <img src="images" title="" />
+            </figure>
+          </section>
+          <!---------------------Tab Content --------------------->
+        </div>
+        <!-- Delete the div below if not using tabsA -->
+        <!-- Delete the div above if not using tabsA -->
+      </section>
+      <!--_________________END OF SECTION_________________-->
+      <br /><br />
+      <!------------ NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ------------>
+
+      <!---~~--- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC ---~~--->
+      <!--_________________SECTION_________________-->
+      <section id="SQL20">
+        <button type="button" class="collapsible">Alter Column</button>
+        <div class="content">
+          <!-- Tabs -->
+          <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'TabID')">
+              Tab Name
+            </button>
+          </div>
+          <!-- Tabs -->
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <h3>Important Info:</h3>
+          <li></li>
+          <li class="li_tabbed"></li>
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabsAAAAAA-------->
+          <div id="TabID" class="tabcontent">
+            <!-- Delete above if not using tabsA AAAAAAAAA------------------->
+            <!-- important info can belong here, if it applies to indiv tab.--------------->
+            <h3>Important Info:</h3>
+            <li></li>
+            <br /><br /><br />
+            <!-- Delete the Important info above if not needed----------------------------->
+            <pre id="tab_name_copy" class="code-box">
+                    <code>
+                    code line1
+                    code line2
+                    code line3
+                    </code>
+                </pre>
+            <br /><br />
+            <section>
+              <h3>Output:</h3>
+            </section>
+            <section class="output-box">
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+              <p class="centered">
+                <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+              </p>
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+            </section>
+            <!---------------------Tab Content --------------------->
+          </div>
+          <!-- Delete the div below if not using tabsA -->
+        </div>
+        <!-- Delete the div above if not using tabsA -->
+      </section>
+      <!--_________________END OF SECTION_________________-->
+      <br /><br />
+      <!------------ NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ------------>
+
+      <!---~~--- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC ---~~--->
+      <!--_________________SECTION_________________-->
+      <section id="ID#">
+        <button type="button" class="collapsible">Move Column</button>
+        <div class="content">
+          <!-- Tabs -->
+          <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'TabID')">
+              Tab Name
+            </button>
+          </div>
+          <!-- Tabs -->
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <h3>Important Info:</h3>
+          <li></li>
+          <li class="li_tabbed"></li>
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabsAAAAAA-------->
+          <div id="TabID" class="tabcontent">
+            <!-- Delete above if not using tabsA AAAAAAAAA------------------->
+            <!-- important info can belong here, if it applies to indiv tab.--------------->
+            <h3>Important Info:</h3>
+            <li></li>
+            <br /><br /><br />
+            <!-- Delete the Important info above if not needed----------------------------->
+            <pre id="tab_name_copy" class="code-box">
+                    <code>
+                    code line1
+                    code line2
+                    code line3
+                    </code>
+                </pre>
+            <br /><br />
+            <section>
+              <h3>Output:</h3>
+            </section>
+            <section class="output-box">
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+              <p class="centered">
+                <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+              </p>
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+            </section>
+            <!---------------------Tab Content --------------------->
+          </div>
+          <!-- Delete the div below if not using tabsA -->
+        </div>
+        <!-- Delete the div above if not using tabsA -->
+      </section>
+      <!--_________________END OF SECTION_________________-->
+      <br /><br />
+      <!------------ NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ------------>
+
+      <!---~~--- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC ---~~--->
+      <!--_________________SECTION_________________-->
+      <section id="ID#">
+        <button type="button" class="collapsible">Copy Column</button>
+        <div class="content">
+          <!-- Tabs -->
+          <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'TabID')">
+              Tab Name
+            </button>
+          </div>
+          <!-- Tabs -->
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <h3>Important Info:</h3>
+          <li></li>
+          <li class="li_tabbed"></li>
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabsAAAAAA-------->
+          <div id="TabID" class="tabcontent">
+            <!-- Delete above if not using tabsA AAAAAAAAA------------------->
+            <!-- important info can belong here, if it applies to indiv tab.--------------->
+            <h3>Important Info:</h3>
+            <li></li>
+            <br /><br /><br />
+            <!-- Delete the Important info above if not needed----------------------------->
+            <pre id="tab_name_copy" class="code-box">
+                    <code>
+                    code line1
+                    code line2
+                    code line3
+                    </code>
+                </pre>
+            <br /><br />
+            <section>
+              <h3>Output:</h3>
+            </section>
+            <section class="output-box">
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+              <p class="centered">
+                <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+              </p>
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+            </section>
+            <!---------------------Tab Content --------------------->
+          </div>
+          <!-- Delete the div below if not using tabsA -->
+        </div>
+        <!-- Delete the div above if not using tabsA -->
+      </section>
+      <!--_________________END OF SECTION_________________-->
+      <br /><br />
+      <!------------ NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ------------>
+
+      <!---~~--- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC ---~~--->
+      <!--_________________SECTION_________________-->
+      <section id="ID#">
+        <button type="button" class="collapsible">Alter Column Type</button>
+        <div class="content">
+          <!-- Tabs -->
+          <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'TabID')">
+              Tab Name
+            </button>
+          </div>
+          <!-- Tabs -->
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <h3>Important Info:</h3>
+          <li></li>
+          <li class="li_tabbed"></li>
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabsAAAAAA-------->
+          <div id="TabID" class="tabcontent">
+            <!-- Delete above if not using tabsA AAAAAAAAA------------------->
+            <!-- important info can belong here, if it applies to indiv tab.--------------->
+            <h3>Important Info:</h3>
+            <li></li>
+            <br /><br /><br />
+            <!-- Delete the Important info above if not needed----------------------------->
+            <pre id="tab_name_copy" class="code-box">
+                    <code>
+                    code line1
+                    code line2
+                    code line3
+                    </code>
+                </pre>
+            <br /><br />
+            <section>
+              <h3>Output:</h3>
+            </section>
+            <section class="output-box">
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+              <p class="centered">
+                <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+              </p>
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+            </section>
+            <!---------------------Tab Content --------------------->
+          </div>
+          <!-- Delete the div below if not using tabsA -->
+        </div>
+        <!-- Delete the div above if not using tabsA -->
+      </section>
+      <!--_________________END OF SECTION_________________-->
+      <br /><br />
+      <!------------ NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ------------>
+
+      <!---~~--- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC ---~~--->
+      <!--_________________SECTION_________________-->
+      <section id="ID#">
+        <button type="button" class="collapsible">Insert Values</button>
+        <div class="content">
+          <!-- Tabs -->
+          <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'TabID')">
+              Tab Name
+            </button>
+          </div>
+          <!-- Tabs -->
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <h3>Important Info:</h3>
+          <li></li>
+          <li class="li_tabbed"></li>
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabsAAAAAA-------->
+          <div id="TabID" class="tabcontent">
+            <!-- Delete above if not using tabsA AAAAAAAAA------------------->
+            <!-- important info can belong here, if it applies to indiv tab.--------------->
+            <h3>Important Info:</h3>
+            <li></li>
+            <br /><br /><br />
+            <!-- Delete the Important info above if not needed----------------------------->
+            <pre id="tab_name_copy" class="code-box">
+                    <code>
+                    code line1
+                    code line2
+                    code line3
+                    </code>
+                </pre>
+            <br /><br />
+            <section>
+              <h3>Output:</h3>
+            </section>
+            <section class="output-box">
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+              <p class="centered">
+                <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+              </p>
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+            </section>
+            <!---------------------Tab Content --------------------->
+          </div>
+          <!-- Delete the div below if not using tabsA -->
+        </div>
+        <!-- Delete the div above if not using tabsA -->
+      </section>
+      <!--_________________END OF SECTION_________________-->
+      <br /><br />
+      <!------------ NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ------------>
+
+      <!---~~--- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC ---~~--->
+      <!--_________________SECTION_________________-->
+      <section id="ID#">
+        <button type="button" class="collapsible">Delete Values</button>
+        <div class="content">
+          <!-- Tabs -->
+          <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'TabID')">
+              Tab Name
+            </button>
+          </div>
+          <!-- Tabs -->
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <h3>Important Info:</h3>
+          <li></li>
+          <li class="li_tabbed"></li>
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabsAAAAAA-------->
+          <div id="TabID" class="tabcontent">
+            <!-- Delete above if not using tabsA AAAAAAAAA------------------->
+            <!-- important info can belong here, if it applies to indiv tab.--------------->
+            <h3>Important Info:</h3>
+            <li></li>
+            <br /><br /><br />
+            <!-- Delete the Important info above if not needed----------------------------->
+            <pre id="tab_name_copy" class="code-box">
+                    <code>
+                    code line1
+                    code line2
+                    code line3
+                    </code>
+                </pre>
+            <br /><br />
+            <section>
+              <h3>Output:</h3>
+            </section>
+            <section class="output-box">
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+              <p class="centered">
+                <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+              </p>
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+            </section>
+            <!---------------------Tab Content --------------------->
+          </div>
+          <!-- Delete the div below if not using tabsA -->
+        </div>
+        <!-- Delete the div above if not using tabsA -->
+      </section>
+      <!--_________________END OF SECTION_________________-->
+      <br /><br />
+      <!------------ NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ------------>
+
+      <!---~~--- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC ---~~--->
+      <!--_________________SECTION_________________-->
+      <section id="ID#">
+        <button type="button" class="collapsible">Alter Values</button>
+        <div class="content">
+          <!-- Tabs -->
+          <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'TabID')">
+              Tab Name
+            </button>
+          </div>
+          <!-- Tabs -->
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <h3>Important Info:</h3>
+          <li></li>
+          <li class="li_tabbed"></li>
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabsAAAAAA-------->
+          <div id="TabID" class="tabcontent">
+            <!-- Delete above if not using tabsA AAAAAAAAA------------------->
+            <!-- important info can belong here, if it applies to indiv tab.--------------->
+            <h3>Important Info:</h3>
+            <li></li>
+            <br /><br /><br />
+            <!-- Delete the Important info above if not needed----------------------------->
+            <pre id="tab_name_copy" class="code-box">
+                    <code>
+                    code line1
+                    code line2
+                    code line3
+                    </code>
+                </pre>
+            <br /><br />
+            <section>
+              <h3>Output:</h3>
+            </section>
+            <section class="output-box">
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+              <p class="centered">
+                <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+              </p>
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+            </section>
+            <!---------------------Tab Content --------------------->
+          </div>
+          <!-- Delete the div below if not using tabsA -->
+        </div>
+        <!-- Delete the div above if not using tabsA -->
+      </section>
+      <!--_________________END OF SECTION_________________-->
+      <br /><br />
+      <!------------ NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ------------>
+
+      <!---~~--- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC ---~~--->
+      <!--_________________SECTION_________________-->
+      <section id="ID#">
+        <button type="button" class="collapsible">Copy Values</button>
+        <div class="content">
+          <!-- Tabs -->
+          <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'TabID')">
+              Tab Name
+            </button>
+          </div>
+          <!-- Tabs -->
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <h3>Important Info:</h3>
+          <li></li>
+          <li class="li_tabbed"></li>
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabsAAAAAA-------->
+          <div id="TabID" class="tabcontent">
+            <!-- Delete above if not using tabsA AAAAAAAAA------------------->
+            <!-- important info can belong here, if it applies to indiv tab.--------------->
+            <h3>Important Info:</h3>
+            <li></li>
+            <br /><br /><br />
+            <!-- Delete the Important info above if not needed----------------------------->
+            <pre id="tab_name_copy" class="code-box">
+                    <code>
+                    code line1
+                    code line2
+                    code line3
+                    </code>
+                </pre>
+            <br /><br />
+            <section>
+              <h3>Output:</h3>
+            </section>
+            <section class="output-box">
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+              <p class="centered">
+                <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+              </p>
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+            </section>
+            <!---------------------Tab Content --------------------->
+          </div>
+          <!-- Delete the div below if not using tabsA -->
+        </div>
+        <!-- Delete the div above if not using tabsA -->
+      </section>
+      <!--_________________END OF SECTION_________________-->
+      <br /><br />
+      <!------------ NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ------------>
+
+      <!---~~--- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC ---~~--->
+      <!--_________________SECTION_________________-->
+      <section id="ID#">
+        <button type="button" class="collapsible">Move Values</button>
+        <div class="content">
+          <!-- Tabs -->
+          <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'TabID')">
+              Tab Name
+            </button>
+          </div>
+          <!-- Tabs -->
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <h3>Important Info:</h3>
+          <li></li>
+          <li class="li_tabbed"></li>
+          <!-- important info can belong here, if it applies to all tabs.------------>
+          <!---------------------Tab Content --------------------->
+          <!-- Delete the div and br below if not using tabsAAAAAA-------->
+          <div id="TabID" class="tabcontent">
+            <!-- Delete above if not using tabsA AAAAAAAAA------------------->
+            <!-- important info can belong here, if it applies to indiv tab.--------------->
+            <h3>Important Info:</h3>
+            <li></li>
+            <br /><br /><br />
+            <!-- Delete the Important info above if not needed----------------------------->
+            <pre id="tab_name_copy" class="code-box">
+                    <code>
+                    code line1
+                    code line2
+                    code line3
+                    </code>
+                </pre>
+            <br /><br />
+            <section>
+              <h3>Output:</h3>
+            </section>
+            <section class="output-box">
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+              <p class="centered">
+                <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+              </p>
+              <figure>
+                <figcaption>Image Caption</figcaption>
+                <img src="images" title="" />
+              </figure>
+            </section>
+            <!---------------------Tab Content --------------------->
+          </div>
+          <!-- Delete the div below if not using tabsA -->
+        </div>
+        <!-- Delete the div above if not using tabsA -->
+      </section>
+      <!--_________________END OF SECTION_________________-->
+      <br /><br />
+      <!------------ NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ------------>
     </section>
     <script src="sql.js"></script>
   </body>
