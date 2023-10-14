@@ -93,3 +93,4 @@ addCopyButton("delete_schema_copy");
 addCopyButton("create_table_copy");
 addCopyButton("create_table_in_schema_copy");
 addCopyButton("alter_table_copy");
+addCopyButton("copy_table_copy");
