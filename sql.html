@@ -1958,6 +1958,17 @@ conn.close()
             To insert values to specific tables in specific schemas, follow the
             <i>&lt;schema name.table name></i> convention.
           </li>
+          <li>
+            Use ASC to sort by Ascending Order, or DESC to sort by descending
+            order. ASC is used by default.
+          </li>
+          <li>
+            Use NULLS FIRST or NULLS LAST to explicitly specify if nulls should
+            be sorted first or last. DESC uses NULLS FIRST by default.
+          </li>
+          <pre
+            class="li_tabbed"
+          ><code>SELECT <i>&lt;column name></i> FROM <i>&lt;table name></i> ORDER BY <i>&lt;column name></i> <i>&lt;ASC/DESC></i> <i>&lt;NULLS FIRST/NULLS LAST></i>;</code></pre>
           <!---------------------Tab Content --------------------->
           <pre id="tab_name_copy" class="code-box">
                   <code>
@@ -1988,6 +1999,152 @@ conn.close()
               <figcaption>Order By</figcaption>
               <img src="images/Screenshot 2023-10-18 214326.png" title="" />
             </figure>
+          </section>
+          <!---------------------Tab Content --------------------->
+        </div>
+      </section>
+      <!--_________________END OF SECTION_________________-->
+      <br /><br />
+
+      <!--_________________SECTION_________________-->
+      <section id="SQL19">
+        <button type="button" class="collapsible">Distinct</button>
+        <div class="content">
+          <h3>Important Info:</h3>
+          <ul class="li_tabbed">
+            Change the
+            <span style="color: aqua; background-color: gray"> aqua</span>
+            code to any of the variations below replacing what is between &lt; &
+            > in italics with the appropriate names.
+          </ul>
+          <li>
+            To insert values to specific tables in specific schemas, follow the
+            <i>&lt;schema name.table name></i> convention.
+          </li>
+          <pre
+            class="li_tabbed"
+          ><code>SELECT DISTINCT <i>&lt;column name></i>FROM <i>&lt;table name></i> ORDER BY <i>&lt;column name></i> <i>&lt;ASC/DESC></i> <i>&lt;NULL FIRST/NULL LAST></i>;</code></pre>
+          <!---------------------Tab Content --------------------->
+          <pre id="tab_name_copy" class="code-box">
+                  <code>
+import psycopg2
+
+conn = psycopg2.connect(
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432,
+    database='demo_database')
+
+conn.autocommit = True
+cur = conn.cursor()
+                  
+order = """<span style="color:aqua; background-color:grey;">SELECT f_name FROM demo_schema.demo_table ORDER BY f_name ASC;</span>"""
+cur.execute(order)
+
+conn.commit()
+conn.close()
+                  </code>
+              </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            <figure>
+              <figcaption>Order By Distinct</figcaption>
+              <img src="images/Screenshot 2023-10-18 231930.png" title="" />
+            </figure>
+          </section>
+          <!---------------------Tab Content --------------------->
+        </div>
+      </section>
+      <!--_________________END OF SECTION_________________-->
+      <br /><br />
+      <!--_________________SECTION_________________-->
+      <section id="SQL20">
+        <button type="button" class="collapsible">Where</button>
+        <div class="content">
+          <h3>Important Info:</h3>
+          <ul class="li_tabbed">
+            Change the
+            <span style="color: aqua; background-color: gray"> aqua</span>
+            code to any of the variations below replacing what is between &lt; &
+            > in italics with the appropriate names.
+          </ul>
+          <li>
+            To insert values to specific tables in specific schemas, follow the
+            <i>&lt;schema name.table name</i> convention.
+          </li>
+          <li>Where clause uses comparison and logical Operators.</li>
+
+          <li class="li_tabbed">=</li>
+          <li class="li_tabbed">&lt;</li>
+          <li class="li_tabbed"></li>
+          <li class="li_tabbed">&lt;=</li>
+          <li class="li_tabbed">>=</li>
+          <li class="li_tabbed">&lt;> or !=</li>
+          <li class="li_tabbed">AND</li>
+          <li class="li_tabbed">OR</li>
+          <li class="li_tabbed">
+            IN
+            <ul class="li_tabbed">
+              Used only when checking a list of operators.
+            </ul>
+            <pre
+              class="li_tabbed li_tabbed"
+            ><code>value IN (value1, value2, ...)</code></pre>
+            <ul class="li_tabbed">
+              Returns TRUE if
+              <i>value</i>
+              matches any value in the list.
+            </ul>
+          </li>
+          <li class="li_tabbed">BETWEEN</li>
+          <li class="li_tabbed">LIKE</li>
+          <li class="li_tabbed">IS NULL</li>
+          <li class="li_tabbed">NOT</li>
+          <!---------------------Tab Content --------------------->
+
+          <!---------------------Tab Content --------------------->
+        </div>
+      </section>
+      <!--_________________END OF SECTION_________________-->
+      <br /><br />
+
+      <!--_________________SECTION_________________-->
+      <section id="ID#">
+        <button type="button" class="collapsible">TITLE</button>
+        <div class="content">
+          <h3>Important Info:</h3>
+          <ul class="li_tabbed">
+            Change the
+            <span style="color: aqua; background-color: gray"> aqua</span>
+            code to any of the variations below replacing what is between &lt; &
+            > in italics with the appropriate names.
+          </ul>
+          <li>
+            To insert values to specific tables in specific schemas, follow the
+            <i>&lt;schema name.table name</i> convention.
+          </li>
+          <!---------------------Tab Content --------------------->
+          <pre id="tab_name_copy" class="code-box">
+                  <code>
+                  code line1
+                  code line2
+                  code line3
+                  <span style="color:aqua; background-color:grey;"></span>
+                  </code>
+              </pre>
+          <br /><br />
+          <section>
+            <h3>Output:</h3>
+          </section>
+          <section class="output-box">
+            <figure>
+              <figcaption>Image Caption</figcaption>
+              <img src="images" title="" />
+            </figure>
             <p class="centered">
               <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
             </p>
@@ -2003,8 +2160,6 @@ conn.close()
       <br /><br />
       <!------------ NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ------------>
       <!---~~--- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC ---~~--->
-
-      <br /><br />
     </section>
     <script src="sql.js"></script>
   </body>
