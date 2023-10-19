@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice JS</title>
+  </head>
+  <body>
+    <div>
+        <section id="ID#">
+            <button type="button" class="collapsible">Copy Values</button>
+            <div>
+              <h1>Copy Values</h1>
+              <!-- important info can belong here, if it applies to all tabs.------------>
+              <h3><i>Important Info:</i></h3>
+              <ul class="li_tabbed">
+                Change the
+                <span style="color: aqua; background-color: gray"> aqua</span>
+                code to any of the variations below replacing what is between &lt; &
+                > in italics with the appropriate names.
+              </ul>
+              <li>
+                To insert values to specific tables in specific schemas, follow the
+                <i>&lt;schema name.table name></i> convention.
+              </li>
+              <li>
+                When inserting column values from one column to another SQL
+                considers it to be new entries and fills in the other columns with
+                default values.
+              </li>
+              <li>To Copy Values within the same table</li>
+              <pre
+                class="li_tabbed"
+              ><code>INSERT INTO <i>&lt;table name></i>(<i>&lt;column name></i>) SELECT <i>&lt;column name></i> FROM <i>&lt;table name></i>;</code></pre>
+              <li>
+                To Copy Values from one table and insert it into another table (This
+                is applicable even to tables in different schemas)
+              </li>
+              <pre
+                class="li_tabbed"
+              ><code>INSERT INTO <i>&lt;table  name></i>(<i>&lt;column name></i>) SELECT <i>&lt;column name></i> FROM <i>&lt;table name></i>;</code></pre>
+              <!-- important info can belong here, if it applies to all tabs.------------>
+              <!---------------------Tab Content ---------------------><br /><br />
+              <pre id="tab_name_copy" class="code-box">
+                        <code>
+        import psycopg2
+        
+        conn = psycopg2.connect(
+        user='postgres',
+        password='password',
+        host='localhost',
+        port=5432,
+        database='demo_database')
+        
+        conn.autocommit = True
+        cur = conn.cursor()
+                          
+        copy_values_same_table = """<span style="color:aqua">INSERT INTO demo_schema.demo_table(demo_col_2) SELECT demo_col_1 FROM demo_schema.demo_table;</span>"""
+                    
+        cur.execute(copy_values_same_table)
+        
+        conn.commit()
+        conn.close()
+                      </code>
+                    </pre>
+              <br /><br />
+              <section>
+                <h3>Output:</h3>
+              </section>
+              <section class="output-box">
+                <figure>
+                  <figcaption>copy values within the same table</figcaption>
+                  <img src="images/Screenshot 2023-10-18 211102.png" title="" />
+                </figure>
+                <p class="centered">
+                  <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+                </p>
+                <figure>
+                  <figcaption>Image Caption</figcaption>
+                  <img src="images" title="" />
+                </figure>
+              </section>
+    </div>
+    <script src="practice.js"></script>
+  </body>
+</html>
