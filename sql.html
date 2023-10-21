@@ -2078,43 +2078,225 @@ conn.close()
           </li>
           <li>Where clause uses comparison and logical Operators.</li>
 
-          <li class="li_tabbed">=</li>
-          <li class="li_tabbed">&lt;</li>
-          <li class="li_tabbed"></li>
-          <li class="li_tabbed">&lt;=</li>
-          <li class="li_tabbed">>=</li>
-          <li class="li_tabbed">&lt;> or !=</li>
-          <li class="li_tabbed">AND</li>
-          <li class="li_tabbed">OR</li>
           <li class="li_tabbed">
-            IN
-            <ul class="li_tabbed">
-              Used only when checking a list of operators.
-            </ul>
-            <pre
-              class="li_tabbed li_tabbed"
-            ><code>value IN (value1, value2, ...)</code></pre>
-            <ul class="li_tabbed">
-              Returns TRUE if
-              <i>value</i>
-              matches any value in the list.
-            </ul>
+            <b><i>=</i></b>
           </li>
-          <li class="li_tabbed">BETWEEN</li>
-          <li class="li_tabbed">LIKE</li>
-          <li class="li_tabbed">IS NULL</li>
-          <li class="li_tabbed">NOT</li>
-          <!---------------------Tab Content --------------------->
-
-          <!---------------------Tab Content --------------------->
+          <li class="li_tabbed">
+            <b><i>&lt;</i></b>
+          </li>
+          <li class="li_tabbed">
+            <b><i>></i></b>
+          </li>
+          <li class="li_tabbed">
+            <b><i>&lt;=</i></b>
+          </li>
+          <li class="li_tabbed">
+            <b><i>>=</i></b>
+          </li>
+          <li class="li_tabbed">
+            <b><i>&lt;> or !=</i></b>
+          </li>
+          <li class="li_tabbed">
+            <b><i>AND</i></b>
+          </li>
+          <span class="li_tabbed"
+            >Used when checking if all conditions are either TRUE or FALSE
+            <pre
+              class="li_tabbed"
+            ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> = <i>&lt;value></i> AND <i>&lt;column name></i> = <i>&lt;value></i>;</code></pre>
+          </span>
+          <section class="li_tabbed">
+            <b
+              ><i><u>Output:</u></i></b
+            >
+            <section class="output-box">
+              <figure>
+                <figcaption>WHERE => AND</figcaption>
+                <img src="images/Screenshot 2023-10-20 183846.png" title="" />
+              </figure>
+            </section>
+          </section>
+          <li class="li_tabbed">
+            <b><i>OR</i></b>
+          </li>
+          <span class="li_tabbed"
+            >Used if at least one condition must evaluate to TRUE
+            <pre
+              class="li_tabbed"
+            ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> = <i>&lt;value></i> OR <i>&lt;column name></i> = <i>&lt;value></i>;</code></pre>
+          </span>
+          <section class="li_tabbed">
+            <b
+              ><i><u>Output:</u></i></b
+            >
+            <section class="output-box">
+              <figure>
+                <figcaption>WHERE => OR</figcaption>
+                <img src="images/Screenshot 2023-10-20 184209.png" title="" />
+              </figure>
+            </section>
+          </section>
+          <li class="li_tabbed">
+            <b><i>IN</i></b>
+          </li>
+          <span class="li_tabbed">
+            Used only when checking a list of operators. Returns TRUE if
+            <i>value</i> matches any value in the list.
+            <pre
+              class="li_tabbed"
+            ><code>SELECT * FROM <i>&lt;table_name></i> WHERE <i>&lt;column name></i> IN (<i>&lt;value1, value2, ...></i>);</code></pre>
+          </span>
+          <section class="li_tabbed">
+            <b
+              ><i><u>Output:</u></i></b
+            >
+            <section class="output-box">
+              <figure>
+                <figcaption>WHERE => IN</figcaption>
+                <img src="images/Screenshot 2023-10-20 184255.png" title="" />
+              </figure>
+            </section>
+          </section>
+          <li class="li_tabbed">
+            <b><i>BETWEEN</i></b>
+          </li>
+          <span class="li_tabbed">
+            Used to match a value between a range.
+            <pre class="li_tabbed"><code
+                >SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> BETWEEN <i>&lt;value1></i> AND <i>&lt;value2></i>;</code
+              ></pre>
+          </span>
+          <section class="li_tabbed">
+            <b
+              ><i><u>Output:</u></i></b
+            >
+            <section class="output-box">
+              <figure>
+                <figcaption>WHERE => BETWEEN</figcaption>
+                <img src="images/Screenshot 2023-10-20 184349.png" title="" />
+              </figure>
+            </section>
+          </section>
+          <li class="li_tabbed">
+            <b><i>LIKE</i></b>
+          </li>
+          <span class="li_tabbed">
+            Used to query data using pattern matching.
+            <li class="li_tabbed li_tab">
+              <b>%</b><br />
+              <span class="li_tab"
+                >Matches any sequence of zero or more characters.</span
+              ><br />
+              <span class="li_tab"
+                >EX: Matches anything that starts with 'Vio'</span
+              >
+              <pre><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> LIKE 'Vio%';</code></pre>
+              <section class="li_tabbed">
+                <b
+                  ><i><u>Output:</u></i></b
+                >
+                <section class="output-box">
+                  <figure>
+                    <figcaption>WHERE => LIKE => %</figcaption>
+                    <img
+                      src="images/Screenshot 2023-10-20 183846.png"
+                      title=""
+                    />
+                  </figure>
+                </section>
+              </section>
+            </li>
+            <li class="li_tabbed li_tab">
+              <b>_</b> Matches any single character<br /><span class="li_tab"
+                >Matches anything where the second character is 'i', followed by
+                any number of other characters.</span
+              >
+              <pre><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> LIKE '_i%';</code></pre>
+              <section class="li_tabbed">
+                <b
+                  ><i><u>Output:</u></i></b
+                >
+                <section class="output-box">
+                  <figure>
+                    <figcaption>WHERE => AND</figcaption>
+                    <img
+                      src="images/Screenshot 2023-10-20 183846.png"
+                      title=""
+                    />
+                  </figure>
+                </section>
+              </section>
+            </li>
+            <li class="li_tabbed li_tab">
+              <b>ILIKE</b> Used for non-case-sensitive matching.<br />
+              <span class="li_tab"
+                >Matches but doesn't care for case sensitive.</span
+              >
+              <pre><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> ILIKE '%Vio%';</code></pre>
+              <section class="li_tabbed">
+                <b
+                  ><i><u>Output:</u></i></b
+                >
+                <section class="output-box">
+                  <figure>
+                    <figcaption>WHERE => AND</figcaption>
+                    <img
+                      src="images/Screenshot 2023-10-20 183846.png"
+                      title=""
+                    />
+                  </figure>
+                </section>
+              </section>
+            </li>
+          </span>
+          <li class="li_tabbed">
+            <b><i>IS NULL</i></b>
+          </li>
+          <span class="li_tabbed">
+            Check if the value is NULL.
+            <pre
+              class="li_tabbed"
+            ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> = <i>&lt;value></i> AND <i>&lt;column name></i> IS NULL;</code></pre>
+          </span>
+          <section class="li_tabbed">
+            <b
+              ><i><u>Output:</u></i></b
+            >
+            <section class="output-box">
+              <figure>
+                <figcaption>WHERE => AND</figcaption>
+                <img src="images/Screenshot 2023-10-20 183846.png" title="" />
+              </figure>
+            </section>
+          </section>
+          <li class="li_tabbed">
+            <b><i>NOT</i></b>
+          </li>
+          <span class="li_tabbed">
+            Omits the values specified by NOT
+            <pre
+              class="li_tabbed"
+            ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> NOT IN (<i>&lt;value1, value2, ...></i>);</code></pre>
+          </span>
+          <section class="li_tabbed">
+            <b
+              ><i><u>Output:</u></i></b
+            >
+            <section class="output-box">
+              <figure>
+                <figcaption>WHERE => AND</figcaption>
+                <img src="images/Screenshot 2023-10-20 183846.png" title="" />
+              </figure>
+            </section>
+          </section>
+          <br /><br />
         </div>
       </section>
       <!--_________________END OF SECTION_________________-->
       <br /><br />
-
       <!--_________________SECTION_________________-->
-      <section id="ID#">
-        <button type="button" class="collapsible">TITLE</button>
+      <section id="SQL21">
+        <button type="button" class="collapsible">LIMIT</button>
         <div class="content">
           <h3>Important Info:</h3>
           <ul class="li_tabbed">
