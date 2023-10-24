@@ -3,14 +3,24 @@
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #000;
+}
+
+li {
+  font-size: 14px;
+}
+
+figcaption {
+  font-size: 12px;
+  font-style: italic;
 }
 
 /* THIS IS FOR THE TABS */
 /* Style the tab */
 .tab {
   overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  /* border: 1px solid #ccc; */
+  background-color: #e9c46a;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -26,12 +36,12 @@ body {
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-  background-color: #ddd;
+  background-color: #f4a261;
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-  background-color: #ccc;
+  background-color: #efb366;
 }
 
 /* Style the tab content */
@@ -45,11 +55,11 @@ body {
 /* THIS IS FOR THE COLLAPSIBLE BITS */
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-  background-color: #eee;
-  color: #444;
+  /* background-color: #eee;
+  color: #444; */
   cursor: pointer;
-  padding: 18px;
-  width: 100%;
+  /* padding: 18px; */
+  /* width: 100%; */
   border: none;
   text-align: left;
   outline: none;
@@ -59,26 +69,26 @@ body {
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active,
 .collapsible:hover {
-  background-color: #ccc;
+  /* background-color: #ccc; */
 }
 
 /* Style the collapsible content. Note: hidden by default */
 .content {
-  padding: 0 18px;
+  /* padding: 0 18px; */
   display: none;
   overflow: hidden;
-  background-color: #f1f1f1;
+  /* background-color: #f1f1f1; */
 }
 
 /* THIS IS FOR THE COPY BUTTON */
 pre {
   position: relative;
-  background: #d3d6db;
+  background: #fecab1;
   padding: 10px;
   font-size: 15px;
   word-wrap: break-word;
   white-space: pre-wrap;
-  border: 1px solid #e6e7e9;
+  /* border: 1px solid #e6e7e9; */
 }
 
 .copy-button {
@@ -124,7 +134,7 @@ pre {
   border-width: 4px;
   border-color: #060606;
   background-color: #646464;
-  color: #d8d7d7;
+  color: #fae1db;
   border-style: solid;
   border-radius: 7px;
   box-shadow: 0px 0px 5px rgba(66, 66, 66, 0.75);
@@ -134,6 +144,95 @@ pre {
   margin-bottom: 5px;
   margin-left: 45px;
   margin-right: 45px;
+}
+
+/* SIDE BAR */
+/* The sidebar menu */
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 200px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #264653; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a,
+.dropdown-btn {
+  padding: 6px 6px 6px 26px;
+  padding-left: 20px;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: bold;
+  color: #2a9d8f;
+  display: block;
+  border: none;
+  width: 100%;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.sidenav .title {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bolder;
+  color: #e9c46a;
+  display: block;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover,
+.dropdown-btn:hover {
+  color: #e76f51;
+  background-color: #f4a261;
+}
+
+/* Style page content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidebar */
+  font-size: 20px;
+  padding: 0px 10px;
+}
+
+.active {
+  background-color: #8ab17d;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #275c62;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 10px;
+  }
+  .sidenav a {
+    font-size: 12px;
+  }
 }
 
 /* Just General CSS for aesthetics */
@@ -149,4 +248,13 @@ pre {
 
 .li_tab {
   padding-left: 10mm;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  padding: 5px;
 }

@@ -1,59 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="test.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="test.css" />
 
-    <title>Document</title>
-</head>
-<body>
-    <br><br><br> 
-    <section>
-
-    <button type="button" class="collapsible"><h2>Collapsible Title</h2></button>
-    <div class="content">
-    <!-- Tab links -->
-    <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'html')">HTML</button>
-        <button class="tablinks" onclick="openTab(event, 'css')">CSS</button>
-        <button class="tablinks" onclick="openTab(event, 'js')">JS</button>
+    <title>SQL</title>
+  </head>
+  <body>
+    <div class="sidenav">
+      <h2 class="nav-title">Access</h2>
+      <a href="#access_sql">Access SQL</a>
+      <a href="#services"></a>
+      <a href="#contact">Contact</a>
+      <button class="dropdown-btn">
+        Dropdown
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+      <a href="#contact">Search</a>
     </div>
-    
-    <!-- Tab content -->
-    <div id="html" class="tabcontent">
-        <pre id="html_copy_btn" class="code-box">
-Code Line 1
-Code Line 2
-Code Line 3
-        </pre>
+    <div class="main">
+      <div id="#access_sql">
+        <h3>Acess SQL</h3>
+        <section class="important-info">
+          <ul>
+            <h5>Important Info :</h5>
+            <li>To Access the psql server from GitBash first type: cd</li>
+            <li>Now enter the psql server by typing: psql -U postgres</li>
+            <li class="li-2">The -U is for user</li>
+            <li class="li-2">postgres, is the username</li>
+            <li class="li-2">
+              The password is whatever you have set up: make sure it is easy to
+              remember.
+            </li>
+            <li class="li-2">As of 2023-10-07 , the password is password.</li>
+          </ul>
+        </section>
+        <div class="tab">
+          <h4>Using Python</h4>
+          <section class="code-block">
+            <pre><code>import psycopg2
+          
+conn = psycopg2.connect(
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432)
+
+conn.autocommit = True
+cur = conn.cursor()
+
+# Actions to perform will go here:
+cur.execute("""     """)
+
+conn.commit()
+conn.close()
+          </code></pre>
+          </section>
+          <section class="data-used">
+            <figure>
+              <p>Data Used</p>
+              <img src="images/Screenshot 2023-09-26 181229.png" alt="" />
+              <figcaption>Image1</figcaption>
+            </figure>
+          </section>
+          <section class="output">
+            <figure>
+              <p>After Code</p>
+              <img src="images/Screenshot 2023-09-27 200409.png" alt="" />
+              <figcaption>Image2</figcaption>
+            </figure>
+          </section>
+        </div>
+      </div>
     </div>
-    <div id="css" class="tabcontent">
-        <pre id="css_copy_btn" class="code-box">
 
-/* CSS Comments */
-id {
-
-}
-
-.class {
-
-}
-        </pre>
-    </div>
-    <div id="js" class="tabcontent">
-        <pre id="js_copy_btn" class="code-box">
-//  JS Comments //
-Use &.l.t; without the periods in between for lesser than symbol. 
-
-        </pre>
-    </div>
-    <section class="output-box">
-        <span class="code-text">Output</span>
-    </section>
-    </div>
-    <br><br>
-</section>
     <script src="test.js"></script>
-</body>
+  </body>
 </html>

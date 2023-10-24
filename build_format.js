@@ -94,3 +94,5 @@ addCopyButton("output_box_html_copy");
 addCopyButton("output_box_css_copy");
 addCopyButton("basic_code_block_copy");
 addCopyButton("basic_css_copy");
+addCopyButton("side_nav_bar_python_copy");
+addCopyButton("side_nav_bar_css_copy");

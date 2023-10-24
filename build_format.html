@@ -370,31 +370,27 @@ margin-right: 45px;
     <br /><br />
     <h2>Basic Code Block</h2>
     <!--________________________________________SECTION COLLAPSIBLE________________________________________-->
-    <section id="BSC1">
-      <button type="button" class="collapsible">Basic Code Block</button>
-      <div class="content">
+    <section id="BasicCodeBlock">
+      <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'basic_code_block')">
+          Basic Code Block
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'basic_css')">
+          Basic CSS
+        </button>
+      </div>
+      <div id="basic_code_block" class="tabcontent">
         <!-- Tabs -->
-        <div class="tab">
-          <button class="tablinks" onclick="openTab(event, 'basic_code_block')">
-            Basic Code Block
-          </button>
-          <button class="tablinks" onclick="openTab(event, 'basic_css')">
-            Basic CSS
-          </button>
-        </div>
-        <div id="basic_code_block" class="tabcontent">
-          <!-- Tabs -->
-          <h3>Important Info:</h3>
-          <li>
-            If not interested in tabs, remove everything between: &lt;!-- Tabs
-            --> and everything between the "delete the below/delete the above"
-          </li>
-          <li>
-            If not interested in adding an image remove the "&lt;img src=''/>
-            tag
-          </li>
-          <!---------------------Tab Content --------------------->
-          <pre id="basic_code_block_copy" class="code-box">
+        <h3>Important Info:</h3>
+        <li>
+          If not interested in tabs, remove everything between: &lt;!-- Tabs -->
+          and everything between the "delete the below/delete the above"
+        </li>
+        <li>
+          If not interested in adding an image remove the "&lt;img src=''/> tag
+        </li>
+        <!---------------------Tab Content --------------------->
+        <pre id="basic_code_block_copy" class="code-box">
                   <code>
     &lt;!--_________________SECTION_________________-->
         &lt;section id="ID#">
@@ -460,12 +456,12 @@ margin-right: 45px;
 
                   </code>
               </pre>
-          <br /><br />
+        <br /><br />
 
-          <!---------------------Tab Content --------------------->
-        </div>
-        <div id="basic_css" class="tabcontent">
-          <pre id="basic_css_copy">
+        <!---------------------Tab Content --------------------->
+      </div>
+      <div id="basic_css" class="tabcontent">
+        <pre id="basic_css_copy">
 /* Just General CSS for aesthetics */
 
 .li_tabbed {
@@ -476,11 +472,119 @@ margin-right: 45px;
   font-size: 20px;
   text-align: center;
 }
-          </pre>
-        </div>
+          </pre
+        >
       </div>
     </section>
     <!--________________________________________END OF SECTION COLLAPSIBLE________________________________________-->
+    <br /><br />
+    <h2>Side Nav Bar</h2>
+    <!--_________________SECTION_________________-->
+    <section id="sideNavBar">
+      <div class="tab">
+        <button
+          class="tablinks"
+          onclick="openTab(event, 'side_nav_bar_python')"
+        >
+          Side Nav Bar Python
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'side_nav_bar_css')">
+          Side Nav Bar CSS
+        </button>
+      </div>
+      <!-- Tabs Bar-->
+
+      <!---------------------Tab Content --------------------->
+      <!-- Tab-------->
+      <div id="side_nav_bar_python" class="tabcontent">
+        <!-- Tab ------->
+        Make sure the main part of your webpage is enclosed in &lt;div>
+        &lt;/div> with class="main"
+        <pre id="side_nav_bar_python_copy" class="code-box">
+                  <code>
+&lt;div class="sidenav">
+  &lt;a href="#">About&lt;/a>
+  &lt;a href="#">Services&lt;/a>
+  &lt;a href="#">Clients&lt;/a>
+  &lt;a href="#">Contact&lt;/a>
+&lt;/div>
+                  </code>
+              </pre>
+        <br /><br />
+        <section>
+          <h3>Output:</h3>
+        </section>
+        <section class="output-box">
+          <figure>
+            <figcaption>Image Caption</figcaption>
+            <img src="images" title="" />
+          </figure>
+          <p class="centered">
+            <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+          </p>
+          <figure>
+            <figcaption>Image Caption</figcaption>
+            <img src="images" title="" />
+          </figure>
+        </section>
+      </div>
+      <!---------------------Tab Content --------------------->
+      <!---------------------Tab Content --------------------->
+      <!-- Tab-------->
+      <div id="side_nav_bar_css" class="tabcontent">
+        <!-- Tab ------->
+        <pre id="side_nav_bar_css_copy" class="code-box">
+                    <code>
+/* The sidebar menu */
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+                    </code>
+                </pre>
+        <br /><br />
+
+        <!---------------------Tab Content --------------------->
+      </div>
+    </section>
+    <!--_________________END OF SECTION_________________-->
+    <br /><br />
+    <!------------ NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ------------>
+    <!---~~--- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC ---~~--->
+
     <script src="build_format.js"></script>
   </body>
 </html>
