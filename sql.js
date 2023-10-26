@@ -19,22 +19,6 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
-//   THIS IS FOR THE COLLAPSIBLE BITS
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
-
 // NAV MENU DROP DOWN
 //* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
 var dropdown = document.getElementsByClassName("dropdown-btn");
@@ -84,7 +68,6 @@ for (let i = 0; i < figCapCount; i++) {
 }
 
 // THIS IS FOR THE COPY BUTTON
-
 function addCopyButton(tab_id) {
   // Get the ^lt;pre> element
   const preButton = document.getElementById(tab_id);
@@ -129,7 +112,7 @@ function addCopyButton(tab_id) {
   });
 }
 
-addCopyButton("create_database_Python_copy");
+addCopyButton("create_database_python_copy");
 addCopyButton("delete_database_copy");
 addCopyButton("create_table_copy");
 addCopyButton("delete_table_copy");

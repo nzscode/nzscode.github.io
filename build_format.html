@@ -1,406 +1,425 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="build_format.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <section id="collapsible">
-      <h2>Collapsible</h2>
-      <section>
-        <button type="button" class="collapsible">
-          <h2>Collapsible Title</h2>
-        </button>
-        <div class="content">
-          <h3>Collapsible Contents:</h3>
-          &emsp;&emsp;&emsp;&emsp;Hola, Como es tas?
-          <pre>
-code block
-code block
-code block
-                    </pre
-          >
-        </div>
-      </section>
-      <br />
-      <!-- Tab links -->
-      <div class="tab">
-        <button
-          class="tablinks"
-          onclick="openTab(event, 'CollapsibleONLY_html')"
-        >
-          CollapsibleONLY_html
-        </button>
-        <button
-          class="tablinks"
-          onclick="openTab(event, 'CollapsibleONLY_css')"
-        >
-          CollapsibleONLY_css
-        </button>
-        <button class="tablinks" onclick="openTab(event, 'CollapsibleONLY_js')">
-          CollapsibleONLY_js
-        </button>
-      </div>
-
-      <!-- Tab content -->
-      <div id="CollapsibleONLY_html" class="tabcontent">
-        <pre id="Collapsible_html_copy">
-&lt;section>
-    &lt;button type="button" class="collapsible">&lt;h2>Collapsible Title&lt;/h2>&lt;/button>
-    &lt;div class="content">
-        Hola, Como es tas?
-    &lt;/div>
-&lt;/section>
-                </pre
-        >
-      </div>
-      <div id="CollapsibleONLY_css" class="tabcontent">
-        <pre id="Collapsible_css_copy">
-  
-/* THIS IS FOR THE COLLAPSIBLE BITS */
-/* Style the button that is used to open and close the collapsible content */
-.collapsible {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-}
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .collapsible:hover {
-    background-color: #ccc;
-}
-
-/* Style the collapsible content. Note: hidden by default */
-.content {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-background-color: #f1f1f1;
-}  
-                </pre
-        >
-      </div>
-      <div id="CollapsibleONLY_js" class="tabcontent">
-        <pre id="Collapsible_js_copy">
-//   THIS IS FOR THE COLLAPSIBLE BITS
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i &lt; coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-            content.style.display = "none";
-        } else {
-            content.style.display = "block";
-        }
-    });
-}
-                </pre
-        >
-      </div>
-      <br /><br />
-    </section>
-    <section id="tabs">
-      <h2>Tabs</h2>
-      <section>
-        <!-- Tab links -->
-        <div class="tab">
-          <button class="tablinks" onclick="openTab(event, 'tabsONLY_html')">
-            tabsONLY_html
-          </button>
-          <button class="tablinks" onclick="openTab(event, 'tabsONLY_css')">
-            tabsONLY_css
-          </button>
-          <button class="tablinks" onclick="openTab(event, 'tabsONLY_js')">
-            tabsONLY_js
-          </button>
-        </div>
-        <!-- Tab content -->
-        <div id="tabsONLY_html" class="tabcontent">
-          <pre id="tabsONLY_html_copy">
-&lt;section>
-<!-- Tab links -->
-&lt;div class="tab">
-&lt;button class="tablinks" onclick="openTab(event, 'Tab1')">Tab1&lt;/button>
-&lt;/div>
-
-&lt;!-- Tab content -->
-&lt;div id="Tab1" class="tabcontent">
-&lt;h3>Tab1 Title&lt;/h3>
-&lt;p>Tab1 info&lt;/p>
-&lt;/div>
-&lt;/section>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="build_format.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- <div>
+            <section id="collapsible">
+                <h2>Collapsible</h2>
+                <section>
+                    <button type="button" class="collapsible">
+                        <h2>Collapsible Title</h2>
+                    </button>
+                    <div class="content">
+                        <h3>Collapsible Contents:</h3>
+                        &emsp;&emsp;&emsp;&emsp;Hola, Como es tas?
+                        <pre>
+            code block
+            code block
+            code block
+                        </pre>
+                    </div>
+                </section>
+                <br />
+                <div class="tab">
+                    <button
+                        class="tablinks"
+                        onclick="openTab(event, 'CollapsibleONLY_html')"
+                    >
+                        CollapsibleONLY_html
+                    </button>
+                    <button
+                        class="tablinks"
+                        onclick="openTab(event, 'CollapsibleONLY_css')"
+                    >
+                        CollapsibleONLY_css
+                    </button>
+                    <button
+                        class="tablinks"
+                        onclick="openTab(event, 'CollapsibleONLY_js')"
+                    >
+                        CollapsibleONLY_js
+                    </button>
+                </div>
+                <div id="CollapsibleONLY_html" class="tabcontent">
+                    <pre id="Collapsible_html_copy">
+            &lt;section>
+                &lt;button type="button" class="collapsible">&lt;h2>Collapsible Title&lt;/h2>&lt;/button>
+                &lt;div class="content">
+            Hola, Como es tas?
+                &lt;/div>
+            &lt;/section>
                     </pre>
-        </div>
-        <div id="tabsONLY_css" class="tabcontent">
-          <pre id="tabsONLY_css_copy">
-/* Style the tab */
-.tab {
-overflow: hidden;
-border: 1px solid #ccc;
-background-color: #f1f1f1;
-}
-
-/* Style the buttons that are used to open the tab content */
-.tab button {
-background-color: inherit;
-float: left;
-border: none;
-outline: none;
-cursor: pointer;
-padding: 14px 16px;
-transition: 0.3s;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-display: none;
-padding: 6px 12px;
-border: 1px solid #ccc;
-border-top: none;
-}
-                    </pre
-          >
-        </div>
-        <div id="tabsONLY_js" class="tabcontent">
-          <pre id="tabsONLY_js_copy">
-function openTab(evt, tabName) {
-// Declare all variables
-var i, tabcontent, tablinks;
-
-// Get all elements with class="tabcontent" and hide them
-tabcontent = document.getElementsByClassName("tabcontent");
-for (i = 0; i &lt; tabcontent.length; i++) {
-tabcontent[i].style.display = "none";
-}
-
-// Get all elements with class="tablinks" and remove the class "active"
-tablinks = document.getElementsByClassName("tablinks");
-for (i = 0; i &lt; tablinks.length; i++) {
-tablinks[i].className = tablinks[i].className.replace(" active", "");
-}
-
-// Show the current tab, and add an "active" class to the button that opened the tab
-document.getElementById(tabName).style.display = "block";
-evt.currentTarget.className += " active";
-}
-                    </pre
-          >
-        </div>
-        <br /><br />
-      </section>
-    </section>
-    <section id="copy_btn">
-      <h2>Copy Button</h2>
-      <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'copy_btn_html')">
-          Copy_Button_html
-        </button>
-        <button class="tablinks" onclick="openTab(event, 'copy_btn_css')">
-          Copy_Button_css
-        </button>
-        <button class="tablinks" onclick="openTab(event, 'copy_btn_js')">
-          Copy_Button_js
-        </button>
-      </div>
-      <!--Tab Content  -->
-      <div id="copy_btn_html" class="tabcontent">
-        <pre id="copy_btn_html_copy">
+                </div>
+                <div id="CollapsibleONLY_css" class="tabcontent">
+                    <pre id="Collapsible_css_copy">
+              
+            /* THIS IS FOR THE COLLAPSIBLE BITS */
+            /* Style the button that is used to open and close the collapsible content */
+            .collapsible {
+                background-color: #eee;
+                color: #444;
+                cursor: pointer;
+                padding: 18px;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+            }
             
-&lt;div id="Unique_Tab_ID" class="tabcontent">
-&lt;pre id="Unique_Copy_Id">This is some text.&lt;br>This is some text.&lt;br>This is some text.&lt;/pre>
-&lt;/div>
-                        </pre
-        >
-      </div>
-      <div id="copy_btn_css" class="tabcontent">
-        <pre id="copy_btn_css_copy">
-/* THIS IS FOR THE COPY BUTTON */
-pre {
-position: relative;
-background: #d3d6db;
-padding: 10px;
-font-size: 15px;
-word-wrap: break-word;
-white-space: pre-wrap;
-border: 1px solid #e6e7e9;
-}
-
-.copy-button {
-position: absolute;
-top: 2px;
-right: 10px;
-cursor: pointer;
-color: #fff;
-background: gray;
-border-radius: 0.5em;
-padding: 2px 7px;
-}
-
-.copy-button:hover{
-color: #000;
-}
-                        </pre
-        >
-      </div>
-      <div id="copy_btn_js" class="tabcontent">
-        <pre id="copy_btn_js_copy">
-// THIS IS FOR THE COPY BUTTON
-
-function addCopyButton (tab_id) {
-// Get the ^lt;pre> element
-const preButton = document.getElementById(tab_id);
-
-// Create a copy button element
-const copyButton = document.createElement("span");
-copyButton.innerText = "Copy";
-copyButton.classList.add("copy-button");
-
-// Append the copy button to the ^lt;pre> Button
-preButton.appendChild(copyButton);
-
-// Add click event listener to the copy button
-copyButton.addEventListener("click", () => {
-// Hide the copy button temporarily
-copyButton.style.display = "none";
-
-// Create a range and select the text inside the ^lt;pre> Button
-const range = document.createRange();
-range.selectNode(preButton);
-window.getSelection().removeAllRanges();
-window.getSelection().addRange(range);
-
-try {
-// Copy the selected text to the clipboard
-document.execCommand("copy");
-
-// Alert the user that the text has been copied
-copyButton.innerText = "Copied!";
-setTimeout(function(){
-copyButton.innerText = "Copy";
-}, 2000);
-} catch (err) {
-console.error("Unable to copy text:", err);
-} finally {
-// Show the copy button again
-copyButton.style.display = "inline";
-
-// Deselect the text
-window.getSelection().removeAllRanges();
-}
-});
-};      
-
-addCopyButton("Flora_html");
-addCopyButton("Fauna_html");
-addCopyButton("Mineral_html");
-                        </pre
-        >
-      </div>
-    </section>
-    <br /><br />
-    <section id="output_code_box">
-      <h2>Output Box</h2>
-      <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'output_box_html')">
-          output_box_html
-        </button>
-        <button class="tablinks" onclick="openTab(event, 'output_box_css')">
-          output_box_css
-        </button>
-      </div>
-      <!--Tab Content  -->
-      <div id="output_box_html" class="tabcontent">
-        <pre id="output_box_html_copy">
-&lt;br>&lt;br>
-This is the Output Box:
-&lt;section class="output-box">                
-&lt;span class="code-text">I AM THE OOOUUUUTTTPPPUUUTTT!!!!!&lt;/span>
-&lt;/section>
-                        </pre
-        >
-      </div>
-      <!--Tab Content  -->
-      <div id="output_box_css" class="tabcontent">
-        <pre id="output_box_css_copy">
-       
-/* THIS IS FOR THE OUTPUT BOX */
-.output-box {
-font-family: monospace;
-font-size: 18px;
-padding: 16px;
-border-width: 2px;
-border-color: #060606;
-background-color: #387a4e;
-color: #cccccc;
-border-style: solid;
-border-radius: 7px;
-box-shadow: 0px 0px 5px rgba(66,66,66,.75);
-text-shadow: -50px 0px 0px rgba(66,66,66,.0);
-max-width: 1000px;
-margin-top: 15px;
-margin-bottom: 5px;
-margin-left: 45px;
-margin-right: 45px;
-}
-                        </pre
-        >
-      </div>
-    </section>
-    <br /><br />
-    <h2>Basic Code Block</h2>
-    <!--________________________________________SECTION COLLAPSIBLE________________________________________-->
-    <section id="BasicCodeBlock">
-      <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'basic_code_block')">
-          Basic Code Block
-        </button>
-        <button class="tablinks" onclick="openTab(event, 'basic_css')">
-          Basic CSS
-        </button>
-      </div>
-      <div id="basic_code_block" class="tabcontent">
-        <!-- Tabs -->
-        <h3>Important Info:</h3>
-        <li>
-          If not interested in tabs, remove everything between: &lt;!-- Tabs -->
-          and everything between the "delete the below/delete the above"
-        </li>
-        <li>
-          If not interested in adding an image remove the "&lt;img src=''/> tag
-        </li>
-        <!---------------------Tab Content --------------------->
-        <pre id="basic_code_block_copy" class="code-box">
+            /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+            .active, .collapsible:hover {
+                background-color: #ccc;
+            }
+            
+            /* Style the collapsible content. Note: hidden by default */
+            .content {
+                padding: 0 18px;
+                display: none;
+                overflow: hidden;
+            background-color: #f1f1f1;
+            }
+                    </pre>
+                </div>
+                <div id="CollapsibleONLY_js" class="tabcontent">
+                    <pre id="Collapsible_js_copy">
+            //   THIS IS FOR THE COLLAPSIBLE BITS
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            
+            for (i = 0; i &lt; coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+                });
+            }
+                    </pre>
+                </div>
+                <br /><br />
+            </section>
+            <section id="tabs">
+                <h2>Tabs</h2>
+                <section>
+                    <div class="tab">
+                        <button
+                            class="tablinks"
+                            onclick="openTab(event, 'tabsONLY_html')"
+                        >
+                            tabsONLY_html
+                        </button>
+                        <button
+                            class="tablinks"
+                            onclick="openTab(event, 'tabsONLY_css')"
+                        >
+                            tabsONLY_css
+                        </button>
+                        <button
+                            class="tablinks"
+                            onclick="openTab(event, 'tabsONLY_js')"
+                        >
+                            tabsONLY_js
+                        </button>
+                    </div>
+                    <!-- Tab content -->
+        <!-- <div id="tabsONLY_html" class="tabcontent">
+                        <pre id="tabsONLY_html_copy">
+            &lt;section>
+            &lt;div class="tab">
+            &lt;button class="tablinks" onclick="openTab(event, 'Tab1')">Tab1&lt;/button>
+            &lt;/div>
+            
+            &lt;div id="Tab1" class="tabcontent">
+            &lt;h3>Tab1 Title&lt;/h3>
+            &lt;p>Tab1 info&lt;/p>
+            &lt;/div>
+            &lt;/section>
+                        </pre>
+                    </div>
+                    <div id="tabsONLY_css" class="tabcontent">
+                        <pre id="tabsONLY_css_copy">
+            /* Style the tab */
+            .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            }
+            
+            /* Style the buttons that are used to open the tab content */
+            .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            }
+            
+            /* Change background color of buttons on hover */
+            .tab button:hover {
+            background-color: #ddd;
+            }
+            
+            /* Create an active/current tablink class */
+            .tab button.active {
+            background-color: #ccc;
+            }
+            
+            /* Style the tab content */
+            .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+            }
+                        </pre>
+                    </div>
+                    <div id="tabsONLY_js" class="tabcontent">
+                        <pre id="tabsONLY_js_copy">
+            function openTab(evt, tabName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+            
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i &lt; tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+            }
+            
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i &lt; tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+            }
+                        </pre>
+                    </div>
+                    <br /><br />
+                </section>
+            </section>
+            <section id="copy_btn">
+                <h2>Copy Button</h2>
+                <div class="tab">
+                    <button
+                        class="tablinks"
+                        onclick="openTab(event, 'copy_btn_html')"
+                    >
+                        Copy_Button_html
+                    </button>
+                    <button
+                        class="tablinks"
+                        onclick="openTab(event, 'copy_btn_css')"
+                    >
+                        Copy_Button_css
+                    </button>
+                    <button
+                        class="tablinks"
+                        onclick="openTab(event, 'copy_btn_js')"
+                    >
+                        Copy_Button_js
+                    </button>
+                </div>
+                <div id="copy_btn_html" class="tabcontent">
+                    <pre id="copy_btn_html_copy">
+                
+            &lt;div id="Unique_Tab_ID" class="tabcontent">
+            &lt;pre id="Unique_Copy_Id">This is some text.&lt;br>This is some text.&lt;br>This is some text.&lt;/pre>
+            &lt;/div>
+                            </pre
+                    >
+                </div>
+                <div id="copy_btn_css" class="tabcontent">
+                    <pre id="copy_btn_css_copy">
+            /* THIS IS FOR THE COPY BUTTON */
+            pre {
+            position: relative;
+            background: #d3d6db;
+            padding: 10px;
+            font-size: 15px;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+            border: 1px solid #e6e7e9;
+            }
+            
+            .copy-button {
+            position: absolute;
+            top: 2px;
+            right: 10px;
+            cursor: pointer;
+            color: #fff;
+            background: gray;
+            border-radius: 0.5em;
+            padding: 2px 7px;
+            }
+            
+            .copy-button:hover{
+            color: #000;
+            }
+                            </pre
+                    >
+                </div>
+                <div id="copy_btn_js" class="tabcontent">
+                    <pre id="copy_btn_js_copy">
+            // THIS IS FOR THE COPY BUTTON
+            
+            function addCopyButton (tab_id) {
+            // Get the ^lt;pre> element
+            const preButton = document.getElementById(tab_id);
+            
+            // Create a copy button element
+            const copyButton = document.createElement("span");
+            copyButton.innerText = "Copy";
+            copyButton.classList.add("copy-button");
+            
+            // Append the copy button to the ^lt;pre> Button
+            preButton.appendChild(copyButton);
+            
+            // Add click event listener to the copy button
+            copyButton.addEventListener("click", () => {
+            // Hide the copy button temporarily
+            copyButton.style.display = "none";
+            
+            // Create a range and select the text inside the ^lt;pre> Button
+            const range = document.createRange();
+            range.selectNode(preButton);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            
+            try {
+            // Copy the selected text to the clipboard
+            document.execCommand("copy");
+            
+            // Alert the user that the text has been copied
+            copyButton.innerText = "Copied!";
+            setTimeout(function(){
+            copyButton.innerText = "Copy";
+            }, 2000);
+            } catch (err) {
+            console.error("Unable to copy text:", err);
+            } finally {
+            // Show the copy button again
+            copyButton.style.display = "inline";
+            
+            // Deselect the text
+            window.getSelection().removeAllRanges();
+            }
+            });
+            };      
+            
+            addCopyButton("Flora_html");
+            addCopyButton("Fauna_html");
+            addCopyButton("Mineral_html");
+                            </pre
+                    >
+                </div>
+            </section>
+            <br /><br />
+            <section id="output_code_box">
+                <h2>Output Box</h2>
+                <div class="tab">
+                    <button
+                        class="tablinks"
+                        onclick="openTab(event, 'output_box_html')"
+                    >
+                        output_box_html
+                    </button>
+                    <button
+                        class="tablinks"
+                        onclick="openTab(event, 'output_box_css')"
+                    >
+                        output_box_css
+                    </button>
+                </div>
+                <div id="output_box_html" class="tabcontent">
+                    <pre id="output_box_html_copy">
+            &lt;br>&lt;br>
+            This is the Output Box:
+            &lt;section class="output-box">                
+            &lt;span class="code-text">I AM THE OOOUUUUTTTPPPUUUTTT!!!!!&lt;/span>
+            &lt;/section>
+                            </pre
+                    >
+                </div>
+                <div id="output_box_css" class="tabcontent">
+                    <pre id="output_box_css_copy">
+                   
+            /* THIS IS FOR THE OUTPUT BOX */
+            .output-box {
+            font-family: monospace;
+            font-size: 18px;
+            padding: 16px;
+            border-width: 2px;
+            border-color: #060606;
+            background-color: #387a4e;
+            color: #cccccc;
+            border-style: solid;
+            border-radius: 7px;
+            box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+            text-shadow: -50px 0px 0px rgba(66,66,66,.0);
+            max-width: 1000px;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            margin-left: 45px;
+            margin-right: 45px;
+            }
+                            </pre
+                    >
+                </div>
+            </section>
+            <br /><br />
+            <h2>Basic Code Block</h2>
+        </div> -->
+        <!-- ______________________________________SECTION COLLAPSIBLE_______________________________________
+        <section id="BasicCodeBlock">
+            <div class="tab">
+                <button
+                    class="tablinks"
+                    onclick="openTab(event, 'basic_code_block')"
+                >
+                    Basic Code Block
+                </button>
+                <button class="tablinks" onclick="openTab(event, 'basic_css')">
+                    Basic CSS
+                </button>
+            </div>
+            <div id="basic_code_block" class="tabcontent">
+                - Tabs
+                <h3>Important Info:</h3>
+                <li>
+                    If not interested in tabs, remove everything between:
+                    &lt;!-- Tabs  and everything between the "delete the
+                    below/delete the above"
+                </li>
+                <li>
+                    If not interested in adding an image remove the "&lt;img
+                    src=''/> tag
+                </li>
+                --------------------Tab Content ------------------
+                <pre id="basic_code_block_copy" class="code-box">
                   <code>
-    &lt;!--_________________SECTION_________________-->
+    &lt;!--_________________SECTION_________________
         &lt;section id="ID#">
           &lt;button type="button" class="collapsible">TITLE&lt;/button>
           &lt;div class="content">
-              &lt;!-- Tabs Bar -->
+              &lt;!-- Tabs Bar
               &lt;div class="tab">
                   &lt;button class="tablinks" onclick="openTab(event, 'TabID')">Tab Name&lt;/button>
               &lt;/div>
-              &lt;!-- Tabs Bar-->
+              &lt;!-- Tabs Bar
               &lt;h3>Important Info:&lt;/h3>
               &lt;ul class="li_tabbed">
                 Change the
@@ -412,10 +431,10 @@ margin-right: 45px;
                 To insert values to specific tables in specific schemas, follow the
                 &lt;i>&amp;lt;schema name.table name&lt;/i> convention.
               &lt;/li>
-                  &lt;!---------------------Tab Content --------------------->
-                  &lt;!-- Tab-------->
+                  &lt;!---------------------Tab Content ------------------
+                  &lt;!-- Tab------
                   &lt;div id="TabID" class="tabcontent">
-                  &lt;!-- Tab ------->       
+                  &lt;!-- Tab -----       
                   &lt;pre id="tab_name_copy" class="code-box">
                       &lt;code>
                       code line1
@@ -443,25 +462,24 @@ margin-right: 45px;
                       title=""/>                        
                   &lt;/figure>
                   &lt;/section>
-                  &lt;!---------------------Tab Content --------------------->
+                  &lt;!---------------------Tab Content ------------------
               &lt;/div>
-          &lt;!-- tab div -->
-          &lt;/div>
-          &lt;!-- tab div -->
+          &lt;!-- tab div 
+          &lt;!-- tab div 
       &lt;/section>
-    &lt;!--_________________END OF SECTION_________________--> 
+    &lt;!--_________________END OF SECTION________________ 
     &lt;br>&lt;br>
-&lt;!------------ NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ------------>
-&lt;!---~~--- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC ---~~--->
+&lt;!------------ NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ---------
+&lt;!---~~--- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC ---~
 
                   </code>
               </pre>
-        <br /><br />
+                <br /><br />
 
-        <!---------------------Tab Content --------------------->
-      </div>
-      <div id="basic_css" class="tabcontent">
-        <pre id="basic_css_copy">
+                --------------------Tab Content ------------------- -->
+        <!-- </div>
+            <div id="basic_css" class="tabcontent">
+                <pre id="basic_css_copy">
 /* Just General CSS for aesthetics */
 
 .li_tabbed {
@@ -473,34 +491,36 @@ margin-right: 45px;
   text-align: center;
 }
           </pre
-        >
-      </div>
-    </section>
-    <!--________________________________________END OF SECTION COLLAPSIBLE________________________________________-->
-    <br /><br />
-    <h2>Side Nav Bar</h2>
-    <!--_________________SECTION_________________-->
-    <section id="sideNavBar">
-      <div class="tab">
-        <button
-          class="tablinks"
-          onclick="openTab(event, 'side_nav_bar_python')"
-        >
-          Side Nav Bar Python
-        </button>
-        <button class="tablinks" onclick="openTab(event, 'side_nav_bar_css')">
-          Side Nav Bar CSS
-        </button>
-      </div>
-      <!-- Tabs Bar-->
+                >
+            </div>
+        </section>
+        -________________________________________END OF SECTION COLLAPSIBLE_______________________________________
+        <br /><br />
+        <h2>Side Nav Bar</h2>
+        ________________SECTION_________________
+        <section id="sideNavBar">
+            <div class="tab">
+                <button
+                    class="tablinks"
+                    onclick="openTab(event, 'side_nav_bar_python')"
+                >
+                    Side Nav Bar Python
+                </button>
+                <button
+                    class="tablinks"
+                    onclick="openTab(event, 'side_nav_bar_css')"
+                >
+                    Side Nav Bar CSS
+                </button>
+            </div>
 
-      <!---------------------Tab Content --------------------->
-      <!-- Tab-------->
-      <div id="side_nav_bar_python" class="tabcontent">
-        <!-- Tab ------->
-        Make sure the main part of your webpage is enclosed in &lt;div>
-        &lt;/div> with class="main"
-        <pre id="side_nav_bar_python_copy" class="code-box">
+            -------------------Tab Content ------------------
+             Tab------
+            <div id="side_nav_bar_python" class="tabcontent">
+                 Tab -------
+                Make sure the main part of your webpage is enclosed in &lt;div>
+                &lt;/div> with class="main"
+                <pre id="side_nav_bar_python_copy" class="code-box">
                   <code>
 &lt;div class="sidenav">
   &lt;a href="#">About&lt;/a>
@@ -510,30 +530,26 @@ margin-right: 45px;
 &lt;/div>
                   </code>
               </pre>
-        <br /><br />
-        <section>
-          <h3>Output:</h3>
-        </section>
-        <section class="output-box">
-          <figure>
-            <figcaption>Image Caption</figcaption>
-            <img src="images" title="" />
-          </figure>
-          <p class="centered">
-            <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
-          </p>
-          <figure>
-            <figcaption>Image Caption</figcaption>
-            <img src="images" title="" />
-          </figure>
-        </section>
-      </div>
-      <!---------------------Tab Content --------------------->
-      <!---------------------Tab Content --------------------->
-      <!-- Tab-------->
-      <div id="side_nav_bar_css" class="tabcontent">
-        <!-- Tab ------->
-        <pre id="side_nav_bar_css_copy" class="code-box">
+                <br /><br />
+                <section>
+                    <h3>Output:</h3>
+                </section>
+                <section class="output-box">
+                    <figure>
+                        <figcaption>Image Caption</figcaption>
+                        <img src="images" title="" />
+                    </figure>
+                    <p class="centered">
+                        <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
+                    </p>
+                    <figure>
+                        <figcaption>Image Caption</figcaption>
+                        <img src="images" title="" />
+                    </figure>
+                </section>
+            </div>
+            <div id="side_nav_bar_css" class="tabcontent">
+                <pre id="side_nav_bar_css_copy" class="code-box">
                     <code>
 /* The sidebar menu */
 .sidenav {
@@ -575,16 +591,296 @@ margin-right: 45px;
 }
                     </code>
                 </pre>
-        <br /><br />
+                <br /><br />
+            </div>
+        </section>
+        _______________END OF SECTION_________________
+        <br /><br /> -->
+        <!------------ NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ------------>
+        <!---~~--- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC ---~~--->
+        <!--  -->
+        <!--  -->
+        <!--  -->
 
-        <!---------------------Tab Content --------------------->
-      </div>
-    </section>
-    <!--_________________END OF SECTION_________________-->
-    <br /><br />
-    <!------------ NEW SECTION ---------- NEW SECTION ---------- NEW SECTION ------------>
-    <!---~~--- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC --~~-- NEW TOPIC ---~~--->
+        <!-- --------------------+++++++++++++++++++++++++++++++++++-------------------- -->
+        <!-- <div id="stream-lined">
+            <section id="nav-bar">
+                NAV BAR
+                <pre>
+          <code>
+            &lt;div class="sidenav">
+              &lt;h2 class="nav-title">Access&lt;/h2>
+              &lt;button class="dropdown-btn">
+                &lt;a href="#SQL1">Access SQL&lt;/a>
+              &lt;/button>
+              &lt;div class="dropdown-container">
+                &lt;a href="#sql1_using_python">Using Python&lt;/a>
+                &lt;a href="#sql1_using_gitbash">Using GitBash&lt;/a>
+              &lt;/div>
+              &lt;a href="SQL2">Disconnect SQL&lt;/a>
+            &lt;/div>
+          </code>
+        </pre>
+            </section>
 
-    <script src="build_format.js"></script>
-  </body>
+            <section id="main">
+                <b><u>MAIN</u></b>
+                <pre><code>
+                &lt;div class="main">
+                  &lt;h1>SQL&lt;/h1>
+
+                  <b><u>TOPIC</u></b>
+                    <section class="topic">
+                      <pre><code>
+                        &lt;div id="SQL1">
+                          &lt;h2>Access SQL&lt;/h2>
+                        &lt;/div>
+                      </code></pre>
+                    </section>
+                  <b><u>*Important Info</u></b>
+                    <section class="important_info">
+                      <pre><code>
+                        &lt;section class="important-info">
+                          &lt;h5>Important Info : &lt;/h5>
+                          &lt;ul>
+                            &lt;li>Remember To&lt;/li>
+                            &lt;li class="li-2">Only Change anything Highlighted in aqua&lt;/li>
+                          &lt;/ul>
+                        &lt;/section>
+                      </code></pre>
+                    </section>
+                  <b><u>TAB</u></b>
+                    <section class="tab">
+                      <pre><code>
+                        &lt;div class="tab">
+                          &lt;section id="">
+                            &lt;h4>Using Python&lt;/h4>
+                            &lt;ul>
+                              &lt;li>Make sure to import the needed modules&lt;/li>
+                              &lt;li class="li-2">Import psycopg2&lt;/li>
+                            &lt;/ul>
+                            <b><u>Code Block</u></b>
+                              <section class="code-block">
+                                <pre><code>
+                                  &lt;section class="code-block">
+                                    &lt;pre>&lt;code>
+                                      code1
+                                      code2
+                                      code3                          
+                                    &lt;/code>&lt;/pre>
+                                  &lt;/section>
+                                </code></pre>
+                              </section>
+                            <b><u>Data Used</u></b>
+                              <section class="data-used">
+                                <pre><code>
+                                  &lt;section class="data-used">
+                                    &lt;figure>
+                                      &lt;p>Data Used&lt;/p>
+                                      &lt;img src="images/" alt="" />
+                                      &lt;figcaption>Image1&lt;/figcaption>
+                                    &lt;/figure>
+                                  &lt;/section>
+                                </code></pre>
+                              </section>
+                            <b><u>Output</u></b>
+                              <section class="output">
+                                <pre><code>
+                                  &lt;section class="output">
+                                    &lt;figure>
+                                    &lt;p>After Code&lt;/p>
+                                      &lt;img src="images/" alt="" />
+                                      &lt;figcaption>Image2&lt;/figcaption>
+                                    &lt;/figure>
+                                  &lt;/section>
+                                </code></pre>
+                              </section>
+                          &lt;/section>
+                        &lt;/div>
+                      </code></pre>
+                    </section>
+                &lt;/div>
+              </code></pre>
+            </section>
+        </div> -->
+
+        <!-- ----------------------------------------------------------------------------- -->
+        <!-- ----------------------------------------------------------------------------- -->
+        <!-- ----------------------------------------------------------------------------- -->
+        <h2>Navigation Menu:</h2>
+        <div>
+            <input type="checkbox" id="nav-menu" onclick="displayCode()" />
+            <label for="main">Nav Menu</label>
+        </div>
+
+        <h2>Body Code</h2>
+
+        <div>
+            <input type="checkbox" id="main" onclick="displayCode()" />
+            <label for="main">Main</label>
+        </div>
+
+        <div class="tabbed2">
+            <input
+                type="checkbox"
+                id="main-tab-block"
+                onclick="displayCode()"
+            />
+            <label for="main-tab-block">Tab </label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="tab" onclick="displayCode()" />
+            <label for="tab">Tab</label>
+        </div>
+
+        <div>
+            <input
+                type="checkbox"
+                id="important-info"
+                onclick="displayCode()"
+            />
+            <label for="important-info">Important Info</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="code-block" onclick="displayCode()" />
+            <label for="code-block">Code</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="figure-block" onclick="displayCode()" />
+            <label for="figure-block">Figure</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="data-used" onclick="displayCode()" />
+            <label for="data-used">Data Used</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="output-block" onclick="displayCode()" />
+            <label for="output-block">Output</label>
+        </div>
+
+        <h2>Collapsible</h2>
+        <div>
+            <input type="checkbox" id="collapsible" onclick="displayCode()" />
+            <label for="output-block">Collapsible HTML</label>
+        </div>
+        <div>
+            <input
+                type="checkbox"
+                id="collapsible-css"
+                onclick="displayCode()"
+            />
+            <label for="output-block">Collapsible CSS</label>
+        </div>
+        <div>
+            <input
+                type="checkbox"
+                id="collapsible-js"
+                onclick="displayCode()"
+            />
+            <label for="output-block">Collapsible JS</label>
+        </div>
+        <br /><br /><br />
+
+        CODE CODE CODE
+        <div>
+            <pre id="nav-menu-code" style="display: none"><code>
+&lt;div class="sidenav">
+    &lt;h2 class="nav-title">Connecting :&lt;/h2>
+    &lt;button class="dropdown-btn">
+        &lt;a href="#SQL1">Access SQL&lt;/a>
+    &lt;/button>
+    &lt;div class="dropdown-container">
+        &lt;a href="#access_sql_python">Using Python&lt;/a>
+        &lt;a href="#access_sql_gitbash">Using GitBash&lt;/a>
+        &lt;a href="#access_sql_psql">Using PSQL&lt;/a>
+    &lt;/div>
+&lt;/div>
+                </code></pre>
+        </div>
+
+        <div>
+            <pre id="main-code" style="display: none"><code>
+&lt;div class="main"> 
+    &lt;h1>SQL&lt;/h1> 
+    &lt;div id="SQL1">
+        &lt;h2>Access SQL&lt;/h2><pre id="tab-code" style="display: none"><code>                    
+            &lt;div class="tab">
+                &lt;section id="access_sql_python">
+                    &lt;h4>Using Python&lt;/h4>
+                    &lt;/section>
+            &lt;/div>
+            </code></pre>
+    &lt;/div> 
+&lt;/div>
+            </code></pre>
+        </div>
+        <div>
+            <pre id="tab-code" style="display: none"><code>
+&lt;div class="tab">
+    &lt;section id="access_sql_python">
+        &lt;h4>Using Python&lt;/h4>
+        &lt;/section>
+&lt;/div>
+            </code></pre>
+        </div>
+
+        <div>
+            <pre id="important-info-code" style="display: none"><code>
+&lt;section class="important-info">
+    &lt;h5>Important Info :&lt;/h5>
+    &lt;ul>
+        &lt;li>&lt;/li>
+        &lt;li class="li-2">&lt;/li>
+    &lt;/ul>
+&lt;/section
+            </code></pre>
+        </div>
+        <div>
+            <pre id="code-block" style="display: none"><code>
+&lt;section class="code-block">
+    &lt;pre>&lt;code>code1
+        code2
+        code3
+    &lt;/code>&lt;/pre>
+&lt;/section>
+            </code></pre>
+        </div>
+        <div>
+            <pre id="figure-block" style="display: none"><code>
+&lt;figure>
+    &lt;img src="images/" alt="" />
+    &lt;figcaption>Image2&lt;/figcaption>
+&lt;/figure>
+            </code></pre>
+        </div>
+        <div>
+            <pre id="data_used-block" style="display: none"><code>
+&lt;section class="data-used">
+    &lt;figure>
+        &lt;p>Data Used&lt;/p>
+        &lt;img src="images/" alt="" />
+        &lt;figcaption>Image1&lt;/figcaption>
+    &lt;/figure>
+&lt;/section>
+            </code></pre>
+        </div>
+        <div>
+            <pre id="output-block" style="display: none"><code>
+    &lt;section class="output">
+        &lt;figure>
+            &lt;p>Output&lt;/p>
+            &lt;img src="images/" alt="" />
+            &lt;figcaption>Image2&lt;/figcaption>
+        &lt;/figure>
+    &lt;/section>
+            </code></pre>
+        </div>
+
+        <script src="build_format.js"></script>
+    </body>
 </html>

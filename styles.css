@@ -6,146 +6,145 @@ body {
   color: #000;
 }
 
-li {
+.nav-title {
+  padding-left: 10px;
+  font-size: 16px;
+  color: #e9c46a;
+}
+
+h1 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #264653;
+  color: #e9c46a;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.main h3 {
+  /* color: hotpink; */
+  margin-bottom: 10px;
+}
+
+.main h5 {
+  /* color: red; */
+  margin-bottom: 5px;
+  margin-left: 0px;
+}
+
+.main li {
   font-size: 14px;
+}
+
+.li-2 {
+  margin-left: 30px;
+  font-size: 13px;
+}
+
+.li-2::marker {
+  color: #c292aa;
+  font-size: 12px;
+  /* content: "-  "; */
+}
+
+.tab h4 {
+  background-color: #21556aca;
+  color: #a0d7d1;
+  width: 75%;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 30px;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+ul {
+  margin-top: 0px;
+  margin-left: 25px;
+}
+
+.code-block {
+  /* background-color: pink; */
+  margin-top: 0px;
+  margin-left: 40px;
+  width: 100%;
+  /* padding: 1px 15px; */
+}
+
+.code-block pre {
+  position: relative;
+  background: #f2dca673;
+  padding: 5px;
+  margin-bottom: 5px;
+  width: 85%;
+  /* margin-right: 50px; */
+  font-size: 12px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  border: 1px solid #e6e7e9;
+}
+
+.data-used {
+  position: relative;
+  background-color: #2a569d58;
+  margin-top: 15px;
+}
+
+.output {
+  position: relative;
+  background-color: #2a9d5e58;
+  margin-top: 5px;
+}
+
+.data-used,
+.output {
+  position: relative;
+  margin-left: 40px;
+  max-width: 85%;
+  padding: 5px;
+}
+
+.data-used p,
+.output p {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  /* background-color: yellow; */
+  margin-top: 10px;
+  margin-left: 0px;
+}
+
+.data-used img,
+.output img,
+.tab img {
+  /* background-color: purple; */
+  margin-left: 0px;
+  padding: 5px;
+  max-width: 100%;
+}
+
+.example figure,
+.tab figure {
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 figcaption {
   font-size: 12px;
+  margin-top: 0px;
   font-style: italic;
+  padding-bottom: 15px;
 }
-
-/* THIS IS FOR THE TABS */
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  /* border: 1px solid #ccc; */
-  background-color: #e9c46a;
-}
-
-/* Style the buttons that are used to open the tab content */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #f4a261;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #efb366;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
-
-/* THIS IS FOR THE COLLAPSIBLE BITS */
-/* Style the button that is used to open and close the collapsible content */
-.collapsible {
-  /* background-color: #eee;
-  color: #444; */
-  cursor: pointer;
-  /* padding: 18px; */
-  /* width: 100%; */
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active,
-.collapsible:hover {
-  /* background-color: #ccc; */
-}
-
-/* Style the collapsible content. Note: hidden by default */
-.content {
-  /* padding: 0 18px; */
-  display: none;
-  overflow: hidden;
-  /* background-color: #f1f1f1; */
-}
-
-/* THIS IS FOR THE COPY BUTTON */
-pre {
-  position: relative;
-  background: #fecab1;
-  padding: 10px;
-  font-size: 15px;
-  word-wrap: break-word;
-  white-space: pre-wrap;
-  /* border: 1px solid #e6e7e9; */
-}
-
-.copy-button {
-  position: absolute;
-  top: 2px;
-  right: 10px;
-  cursor: pointer;
-  color: #fff;
-  background: gray;
-  border-radius: 0.5em;
-  padding: 2px 7px;
-}
-
-.copy-button:hover {
-  color: #000;
-}
-
-/* THIS IS FOR THE OUTPUT BOX */
-.output-box {
-  font-family: monospace;
-  font-size: 18px;
-  padding: 16px;
-  border-width: 2px;
-  border-color: #060606;
-  background-color: #387a4e;
-  color: #cccccc;
-  border-style: solid;
-  border-radius: 7px;
-  box-shadow: 0px 0px 5px rgba(66, 66, 66, 0.75);
-  text-shadow: -50px 0px 0px rgba(66, 66, 66, 0);
-  max-width: 1000px;
-  margin-top: 15px;
-  margin-bottom: 5px;
-  margin-left: 45px;
-  margin-right: 45px;
-}
-
-/* THIS IS FOR THE CODE BLOCKS */
-.code-box {
-  font-family: monospace;
-  font-size: 18px;
-  padding: 16px;
-  border-width: 4px;
-  border-color: #060606;
-  background-color: #646464;
-  color: #fae1db;
-  border-style: solid;
-  border-radius: 7px;
-  box-shadow: 0px 0px 5px rgba(66, 66, 66, 0.75);
-  text-shadow: -50px 0px 0px rgba(66, 66, 66, 0);
-  max-width: 1000px;
-  margin-top: 15px;
-  margin-bottom: 5px;
-  margin-left: 45px;
-  margin-right: 45px;
-}
-
 /* SIDE BAR */
 /* The sidebar menu */
 .sidenav {
@@ -178,6 +177,11 @@ pre {
   outline: none;
 }
 
+.dropdown-btn {
+  padding-left: 0px;
+  padding-bottom: 0px;
+}
+
 .sidenav .title {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
@@ -187,10 +191,12 @@ pre {
   display: block;
 }
 
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
 .dropdown-container {
   display: none;
-  background-color: #262626;
-  padding-left: 8px;
+  background-color: #275c62;
+  width: 100;
+  padding-left: 30px;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -212,19 +218,6 @@ pre {
   color: white;
 }
 
-/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-.dropdown-container {
-  display: none;
-  background-color: #275c62;
-  padding-left: 8px;
-}
-
-/* Optional: Style the caret down icon */
-.fa-caret-down {
-  float: right;
-  padding-right: 8px;
-}
-
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidenav {
@@ -233,6 +226,32 @@ pre {
   .sidenav a {
     font-size: 12px;
   }
+}
+
+/* THIS IS FOR THE COPY BUTTON */
+pre {
+  position: relative;
+  background: #fecab1;
+  padding: 10px;
+  font-size: 15px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  /* border: 1px solid #e6e7e9; */
+}
+
+.copy-button {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  cursor: pointer;
+  color: #fff;
+  background: gray;
+  border-radius: 0.5em;
+  padding: 2px 7px;
+}
+
+.copy-button:hover {
+  color: #000;
 }
 
 /* Just General CSS for aesthetics */
