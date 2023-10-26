@@ -707,178 +707,226 @@
         <!-- ----------------------------------------------------------------------------- -->
         <!-- ----------------------------------------------------------------------------- -->
         <!-- ----------------------------------------------------------------------------- -->
-        <h2>Navigation Menu:</h2>
-        <div>
-            <input type="checkbox" id="nav-menu" onclick="displayCode()" />
-            <label for="main">Nav Menu</label>
-        </div>
-
-        <h2>Body Code</h2>
-
-        <div>
-            <input type="checkbox" id="main" onclick="displayCode()" />
-            <label for="main">Main</label>
-        </div>
-
-        <div class="tabbed2">
-            <input
-                type="checkbox"
-                id="main-tab-block"
-                onclick="displayCode()"
-            />
-            <label for="main-tab-block">Tab </label>
-        </div>
-
-        <div>
-            <input type="checkbox" id="tab" onclick="displayCode()" />
-            <label for="tab">Tab</label>
-        </div>
-
-        <div>
-            <input
-                type="checkbox"
-                id="important-info"
-                onclick="displayCode()"
-            />
-            <label for="important-info">Important Info</label>
-        </div>
-
-        <div>
-            <input type="checkbox" id="code-block" onclick="displayCode()" />
-            <label for="code-block">Code</label>
-        </div>
-
-        <div>
-            <input type="checkbox" id="figure-block" onclick="displayCode()" />
-            <label for="figure-block">Figure</label>
-        </div>
-
-        <div>
-            <input type="checkbox" id="data-used" onclick="displayCode()" />
-            <label for="data-used">Data Used</label>
-        </div>
-
-        <div>
-            <input type="checkbox" id="output-block" onclick="displayCode()" />
-            <label for="output-block">Output</label>
-        </div>
-
-        <h2>Collapsible</h2>
-        <div>
-            <input type="checkbox" id="collapsible" onclick="displayCode()" />
-            <label for="output-block">Collapsible HTML</label>
-        </div>
-        <div>
-            <input
-                type="checkbox"
-                id="collapsible-css"
-                onclick="displayCode()"
-            />
-            <label for="output-block">Collapsible CSS</label>
-        </div>
-        <div>
-            <input
-                type="checkbox"
-                id="collapsible-js"
-                onclick="displayCode()"
-            />
-            <label for="output-block">Collapsible JS</label>
-        </div>
-        <br /><br /><br />
-
-        CODE CODE CODE
-        <div>
-            <pre id="nav-menu-code" style="display: none"><code>
+        <div id="Snips">
+            <div id="checkBoxes">
+                <h2>Navigation Menu:</h2>
+                <div>
+                    <input
+                        type="checkbox"
+                        id="nav-menu"
+                        onclick="displayCode('nav-menu-code')"
+                    />
+                    <label for="main">Nav Menu</label>
+                </div>
+                <h2>Body Code</h2>
+                <div>
+                    <input type="checkbox" id="main" onclick="displayCode() " />
+                    <label for="main">Main</label>
+                </div>
+                <div class="tabbed2">
+                    <input
+                        type="checkbox"
+                        id="main-section-intro-block"
+                        onclick="displayCode()"
+                    />
+                    <label for="main-section-intro-block"
+                        >Main Section Intro</label
+                    >
+                </div>
+                <div class="tabbed2">
+                    <input
+                        type="checkbox"
+                        id="main-tab-block"
+                        onclick="displayCode()"
+                    />
+                    <label for="main-tab-block">Tab </label>
+                </div>
+                <div>
+                    <input
+                        type="checkbox"
+                        id="section-intro-code"
+                        onclick="displayCode()"
+                    />
+                    <label for="section-intro-code">Section Intro Code</label>
+                </div>
+                <div class="tabbed2">
+                    <input
+                        type="checkbox"
+                        id="section-tab-code"
+                        onclick="displayCode()"
+                    />
+                    <label for="section-tab-code">Section Tab Code </label>
+                </div>
+                <div>
+                    <input type="checkbox" id="tab" onclick="displayCode()" />
+                    <label for="tab">Tab</label>
+                </div>
+                <div>
+                    <input
+                        type="checkbox"
+                        id="important-info"
+                        onclick="displayCode()"
+                    />
+                    <label for="important-info">Important Info</label>
+                </div>
+                <div>
+                    <input
+                        type="checkbox"
+                        id="code-block"
+                        onclick="displayCode()"
+                    />
+                    <label for="code-block">Code</label>
+                </div>
+                <div>
+                    <input
+                        type="checkbox"
+                        id="figure-block"
+                        onclick="displayCode()"
+                    />
+                    <label for="figure-block">Figure</label>
+                </div>
+                <div>
+                    <input
+                        type="checkbox"
+                        id="data-used"
+                        onclick="displayCode()"
+                    />
+                    <label for="data-used">Data Used</label>
+                </div>
+                <div>
+                    <input
+                        type="checkbox"
+                        id="output-block"
+                        onclick="displayCode()"
+                    />
+                    <label for="output-block">Output</label>
+                </div>
+                <h2>Collapsible</h2>
+                <div>
+                    <input
+                        type="checkbox"
+                        id="collapsible"
+                        onclick="displayCode()"
+                    />
+                    <label for="output-block">Collapsible HTML</label>
+                </div>
+                <div>
+                    <input
+                        type="checkbox"
+                        id="collapsible-css"
+                        onclick="displayCode()"
+                    />
+                    <label for="output-block">Collapsible CSS</label>
+                </div>
+                <div>
+                    <input
+                        type="checkbox"
+                        id="collapsible-js"
+                        onclick="displayCode()"
+                    />
+                    <label for="output-block">Collapsible JS</label>
+                </div>
+            </div>
+            <div id="codeSnippets">
+                <div>
+                    <pre id="nav-menu-code" style="display: none"><code>
 &lt;div class="sidenav">
     &lt;h2 class="nav-title">Connecting :&lt;/h2>
     &lt;button class="dropdown-btn">
-        &lt;a href="#SQL1">Access SQL&lt;/a>
+&lt;a href="#SQL1">Access SQL&lt;/a>
     &lt;/button>
     &lt;div class="dropdown-container">
-        &lt;a href="#access_sql_python">Using Python&lt;/a>
-        &lt;a href="#access_sql_gitbash">Using GitBash&lt;/a>
-        &lt;a href="#access_sql_psql">Using PSQL&lt;/a>
+&lt;a href="#access_sql_python">Using Python&lt;/a>
+&lt;a href="#access_sql_gitbash">Using GitBash&lt;/a>
+&lt;a href="#access_sql_psql">Using PSQL&lt;/a>
     &lt;/div>
 &lt;/div>
-                </code></pre>
-        </div>
-
-        <div>
-            <pre id="main-code" style="display: none"><code>
-&lt;div class="main"> 
-    &lt;h1>SQL&lt;/h1> 
-    &lt;div id="SQL1">
-        &lt;h2>Access SQL&lt;/h2><pre id="tab-code" style="display: none"><code>                    
-            &lt;div class="tab">
-                &lt;section id="access_sql_python">
-                    &lt;h4>Using Python&lt;/h4>
-                    &lt;/section>
-            &lt;/div>
-            </code></pre>
-    &lt;/div> 
+                        </code></pre>
+                </div>
+                <div>
+                    <pre id="main-code" style="display: none"><code>
+&lt;div class="main">
+    &lt;h1>SQL&lt;/h1><pre id="main-section-intro-code" style="display: none"><code>    &lt;div id="SQL1">
+        &lt;h2>Access SQL&lt;/h2><pre id="tab-code" style="display: none"><code>        &lt;div class="tab">
+            &lt;section id="access_sql_python">
+                &lt;h4>Using Python&lt;/h4>
+            &lt;/section>
+        &lt;/div></code></pre>    
+    &lt;/div></code></pre>
 &lt;/div>
-            </code></pre>
-        </div>
-        <div>
-            <pre id="tab-code" style="display: none"><code>
+                    </code></pre>
+                </div>
+                <pre
+                    id="section-intro-code"
+                    style="display: none"
+                ><code>&lt;div id="SQL1">
+    &lt;h2>Access SQL&lt;/h2><pre id="section-tab-code" style="display: none"><code>    &lt;div class="tab">
+        &lt;section id="access_sql_python">
+            &lt;h4>Using Python&lt;/h4>
+        &lt;/section>
+    &lt;/div></code></pre>
+&lt;/div></code></pre>
+                <div>
+                    <pre id="tab-code" style="display: none"><code>
 &lt;div class="tab">
     &lt;section id="access_sql_python">
-        &lt;h4>Using Python&lt;/h4>
-        &lt;/section>
+&lt;h4>Using Python&lt;/h4>
+&lt;/section>
 &lt;/div>
-            </code></pre>
-        </div>
-
-        <div>
-            <pre id="important-info-code" style="display: none"><code>
+                    </code></pre>
+                </div>
+                <div>
+                    <pre id="important-info-code" style="display: none"><code>
 &lt;section class="important-info">
     &lt;h5>Important Info :&lt;/h5>
     &lt;ul>
         &lt;li>&lt;/li>
         &lt;li class="li-2">&lt;/li>
     &lt;/ul>
-&lt;/section
-            </code></pre>
-        </div>
-        <div>
-            <pre id="code-block" style="display: none"><code>
+&lt;/section>
+                    </code></pre>
+                </div>
+                <div>
+                    <pre id="code-block" style="display: none"><code>
 &lt;section class="code-block">
     &lt;pre>&lt;code>code1
-        code2
-        code3
+code2
+code3
     &lt;/code>&lt;/pre>
 &lt;/section>
-            </code></pre>
-        </div>
-        <div>
-            <pre id="figure-block" style="display: none"><code>
+                    </code></pre>
+                </div>
+                <div>
+                    <pre id="figure-block" style="display: none"><code>
 &lt;figure>
     &lt;img src="images/" alt="" />
     &lt;figcaption>Image2&lt;/figcaption>
 &lt;/figure>
-            </code></pre>
-        </div>
-        <div>
-            <pre id="data_used-block" style="display: none"><code>
+                    </code></pre>
+                </div>
+                <div>
+                    <pre id="data_used-block" style="display: none"><code>
 &lt;section class="data-used">
     &lt;figure>
-        &lt;p>Data Used&lt;/p>
-        &lt;img src="images/" alt="" />
-        &lt;figcaption>Image1&lt;/figcaption>
+&lt;p>Data Used&lt;/p>
+&lt;img src="images/" alt="" />
+&lt;figcaption>Image1&lt;/figcaption>
     &lt;/figure>
 &lt;/section>
-            </code></pre>
-        </div>
-        <div>
-            <pre id="output-block" style="display: none"><code>
+                    </code></pre>
+                </div>
+                <div>
+                    <pre id="output-block" style="display: none"><code>
     &lt;section class="output">
-        &lt;figure>
-            &lt;p>Output&lt;/p>
-            &lt;img src="images/" alt="" />
-            &lt;figcaption>Image2&lt;/figcaption>
-        &lt;/figure>
+&lt;figure>
+    &lt;p>Output&lt;/p>
+    &lt;img src="images/" alt="" />
+    &lt;figcaption>Image2&lt;/figcaption>
+&lt;/figure>
     &lt;/section>
-            </code></pre>
+                    </code></pre>
+                </div>
+            </div>
         </div>
 
         <script src="build_format.js"></script>

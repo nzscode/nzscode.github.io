@@ -28,7 +28,7 @@ h2 {
 
 .main h3 {
     /* color: hotpink; */
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .main h5 {
@@ -231,4 +231,11 @@ figcaption {
 
 .tabbed2 {
     margin-left: 50px;
+}
+
+.command {
+    font-size: 25px;
+    padding-right: 5px;
+    border: 3px solid hotpink;
+    border-radius: 5px;
 }

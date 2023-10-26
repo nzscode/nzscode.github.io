@@ -53,7 +53,7 @@
     </div>
     <div class="main">
       <h1>SQL</h1>
-      <!--_________________Access SQL SECTION _________________-->
+
       <div id="SQL1">
         <h2>Access SQL</h2>
         <div class="tab">
@@ -145,9 +145,9 @@ conn.close()
             </ul>
           </section>
         </div></div>
-        <!--_________________END OF Access SQL SECTION _________________-->
+
         <br /><br />
-        <!--_________________Disconnect from Database SECTION _________________-->
+
         <div id="SQL2">
           <h2>Disconnect from Database</h2>
           <div class="tab">
@@ -260,113 +260,142 @@ conn.close()
           </div>
           <!--div class="tab"-->
       </div>
-        <!--_________________END OF Disconnect from Database SECTION _________________-->
-        <br /><br />
-        <!--_________________Create Database SECTION _________________-->
 
-        <!--_________________END OF Create Database SECTION _________________-->
         <br /><br />
-        <!--_________________Change to Database SECTION _________________-->
-        <section id="SQL4">
-          <h2>Change To Database</h2>
-          <button type="button" class="collapsible">Change To Database</button>
-          <div class="content">
-            <!-- Tabs -->
-            <div class="tab">
-              <button
-                class="tablinks"
-                onclick="openTab(event, 'Change_Database_Python')"
-              >
-                Change Database in Python
-              </button>
-              <button
-                class="tablinks"
-                onclick="openTab(event, 'Change_Database_GitBash')"
-              >
-                Change Database in GitBash
-              </button>
-              <button
-                class="tablinks"
-                onclick="openTab(event, 'Change_Database_SQLShell')"
-              >
-                Change Database in SQLShell
-              </button>
-            </div>
-            <div id="Change_Database_Python" class="tabcontent">
-              <h3>Important Info:</h3>
-              <li>To change database:</li>
-              <li class="li-2">
-                In the config file or conn, database='<i>&lt;database name></i>
-              </li>
-              <pre>
-                <code>
-                    import psycopg2
-      
-                    conn = psycopg2.connect(
-                        user='postgres',
-                        password='password',
-                        host='localhost',
-                        port=5432
-                        database='<i>&lt;database name></i>')
-      
-                    conn.autocommit = True
-                    cur = conn.cursor()
-      
-                    # Actions to perform will go here:
-                    cur.execute("""     """)
-      
-                    conn.commit()
-                    conn.close()
-                </code>
-            </pre>
-              <!---------------------Tab Content --------------------->
-            </div>
-            <div id="Change_Database_GitBash" class="tabcontent">
-              <li>
-                <b
-                  >The current database you are logged in is what is shown
-                  before the #</b
-                >
-              </li>
-              <li>
-                To change from default database to new database in GitBash: \c
-                <i>&lt;database name></i><br />
-                <figure>
-                  <img
-                    src="images/Screenshot 2023-10-07 170031.png"
-                    title="to_change_database_gitbash"
-                  />
-                  <figcaption>\c to change database in GitBash</figcaption>
-                </figure>
-              </li>
-              <br />
-              <!---------------------Tab Content --------------------->
-            </div>
-            <div id="Change_Database_SQLShell" class="tabcontent">
-              <li>
-                <b
-                  >The current database you are logged in is what is shown
-                  before the #</b
-                >
-              </li>
-              <li>
-                To change from default database in SQLShell: \c
-                <i>&lt;database name></i>
-              </li>
-              <figure>
-                <img
-                  src="images/Screenshot 2023-10-07 170356.png"
-                  title="to_change_database_SQLShell"
-                />
-                <figcaption>\c to change database in SQLShell</figcaption>
-              </figure>
-              <br />
-            </div>
+
+        <div id="SQL3">
+          <h2>Create Database</h2>
+          <div class="tab">
+              <section id="access_sql_python">
+                  <h4>Using Python</h4>
+                  <section class="important-info">
+                      <h5>Important Info :</h5>
+                      <ul>
+                          <li>
+                              Check the Dashboard of the postgres server to
+                              check status and existence of database(s)
+                          </li>
+                          <figure>
+                              <img
+                                  src="images/Screenshot 2023-10-06 134208.png"
+                                  alt=""
+                              />
+                              <figcaption>pgAdmin4 Dashboard</figcaption>
+                          </figure>
+                          <li></li>
+                      </ul>
+                  </section>
+                  <h3 style="margin-bottom: 0px">
+                      GitBash/PSQL Commands to use:
+                  </h3>
+                  <span class="command tabbed">\l</span>
+                  To see a list of databases
+                  <h3>
+                      Use the following code in pgAdmin replacing what is
+                      between "&lt;" and ">" with the appropriate name.
+                  </h3>
+                  <section class="code-block">
+                      <pre><code>CREATE DATABASE <i>&lt;database name></i>;
+                          </code></pre>
+                  </section>
+                  <h3>Use the code in the block below for Python</h3>
+                  <section class="code-block">
+                      <pre><code>import psycopg2
+  conn = psycopg2.connect(
+      user='postgres',
+      password='password',
+      host='localhost',
+      port=5432)
+  conn.autocommit = True
+  cur = conn.cursor()
+  cur.execute("""CREATE DATABASE demo_database""")
+  conn.commit()
+  conn.close()
+                  </code></pre>
+                  </section>
+                  <section class="output">
+                      <figure>
+                          <p>Output</p>
+                          <img
+                              src="images/Screenshot 2023-10-07 110642.png"
+                              alt=""
+                          />
+                          <figcaption>Created Database</figcaption>
+                      </figure>
+                  </section>
+                  <section class="output">
+                      <figure>
+                          <p>Output</p>
+                          <img
+                              src="images/Screenshot 2023-10-07 143821.png"
+                              alt=""
+                          />
+                          <figcaption>
+                              Seeing list of databases in GitBash/PSQL
+                          </figcaption>
+                      </figure>
+                  </section>
+              </section>
           </div>
-        </section>
-        <!--_________________END OF Change to Database SECTION _________________-->
+      </div>
+
         <br /><br />
-        <!--_________________Rename Database SECTION _________________-->
+
+        <div id="SQL4">
+          <h2>Change to Database</h2>
+          <section class="important-info">
+              <h5>Important Info :</h5>
+              <ul>
+                  <li>
+                      In the config file or con in Python, database='<i
+                          >&lt;database name>'</i
+                      >
+                  </li>
+                  <section class="code-block">
+                      <pre><code>import psycopg2
+    
+conn = psycopg2.connect(
+  user='postgres',
+  password='password',
+  host='localhost',
+  port=5432
+  database='<span style="color:aqua;"><i>&lt;database name></i></span>')
+
+conn.autocommit = True
+cur = conn.cursor()
+
+# Actions to perform will go here:
+cur.execute("""     """)
+
+conn.commit()
+conn.close()
+                      </code></pre>
+                  </section>
+                  <li>
+                      The current database you are logged in is what is shown
+                      before the #
+                  </li>
+                  <li>
+                      To change from default database to new database in
+                      GitBash use <span class="command">\c</span> followed by
+                      the name of the new database: \c
+                      <i>&lt;database name></i><br />
+                  </li>
+                  <figure>
+                      <img
+                          src="images/Screenshot 2023-10-07 170031.png"
+                          title="to_change_database_gitbash"
+                      />
+                      <figcaption>
+                          \c to change database in GitBash/PSQL
+                      </figcaption>
+                  </figure>
+              </ul>
+          </section>
+      </div>
+
+        <br /><br />
+
         <div id="SQL5">
           <h2>Rename Database</h2>
           <section class="important-info">
@@ -384,8 +413,10 @@ conn.close()
               The old database name and the new database name must be surrounded
               by quotation marks.
             </li>
-            <pre>
-              <code>ALTER DATABASE "<i>&lt;old database name></i>" RENAME TO "<i>&lt;new database name></i>";</code></pre>
+            <section class="code-block">
+              <pre>
+                <code>ALTER DATABASE "<i>&lt;old database name></i>" RENAME TO "<i>&lt;new database name></i>";</code></pre>
+            </section>
                           </ul>
           </section>
           <div class="tab">
@@ -417,123 +448,104 @@ conn.close()
               </section>
             </section>
           </div>
-            <!---------------------Tab Content --------------------->
+
           </div>
-        <!--_________________END OF Rename Database SECTION _________________-->
+
         <br /><br />
-        <!--_________________Copy Database SECTION_________________-->
+
         <div id="SQL6">
-          <h2></h2>
-          <div class="tab">
-            <section id="">
-              <h4></h4>
-              <ul>
-                <li></li>
-                <li class="li-2"></li>
-              </ul>
+          <h2>Copy Database</h2>
+            <section class="important-info">
+              <h3>Important Info:</h3>
+              <li>Make sure you are not in the database being changed.</li>
+              <li>
+                When trying to change the database, if you get a message that the
+                database session is active, disconnect the database.
+              </li>
             </section>
-          </div>
-          <button type="button" class="collapsible">Copy Database</button>
-          <div class="content">
-            <h3>Important Info:</h3>
-            <li>Make sure you are not in the database being changed.</li>
-            <li>
-              When trying to change the database, if you get a message that the
-              database session is active, disconnect the database.
-            </li>
-            <li>
-              When trying to alter using GitBash or SQLShell use the code below.
-            </li>
-            <pre>
-        <code>CREATE DATABASE <i>&lt;new database name></i> WITH TEMPLATE <i>&lt;original database name></i> OWNER <i>&lt;database owner></i>;</code></pre>
-            <br /><br /><br />
-            <pre id="copy_database_copy" class="code-box">
-                      <code>
-       import psycopg2
-      
-      conn = psycopg2.connect(
-      user='postgres',
-      password='password',
-      host='localhost',
-      port=5432,
-      database='postgres')
-      
-      conn.autocommit = True
-      cur = conn.cursor()
-      
-      cur.execute("""CREATE DATABASE demo_database_2 WITH TEMPLATE gitbash_shell OWNER postgres;""")
-      
-      conn.commit()
-      conn.close()
-                      </code>
-                  </pre>
+            
+              <h5>When trying to alter using GitBash or SQLShell use the code below.</h5>
+            
+            <section class="code-block">
+              <pre>
+                      <code>CREATE DATABASE <i>&lt;new database name></i> WITH TEMPLATE <i>&lt;original database name></i> OWNER <i>&lt;database owner></i>;</code></pre>
+              
+            </section><br /><br /><br />
+            <section class="code-block">
+              <pre id="copy_database_copy" class="code-box">
+                        <code>
+                     import psycopg2
+                    
+                    conn = psycopg2.connect(
+                    user='postgres',
+                    password='password',
+                    host='localhost',
+                    port=5432,
+                    database='postgres')
+                    
+                    conn.autocommit = True
+                    cur = conn.cursor()
+                    
+                    cur.execute("""CREATE DATABASE demo_database_2 WITH TEMPLATE gitbash_shell OWNER postgres;""")
+                    
+                    conn.commit()
+                    conn.close()
+                        </code>
+                    </pre>
+            </section>
             <br /><br />
-            <section class="output-box">
+            <section class="output">
               <figure>
-                <figcaption>Original Databases</figcaption>
+                
                 <img
                   src="images/Screenshot 2023-10-08 150301.png"
                   title="original_database_prior_to_copying"
-                />
+                /><figcaption>Original Databases</figcaption>
               </figure>
               <figure>
-                <figcaption>Copying Database</figcaption>
+                
                 <img
                   src="images/Screenshot 2023-10-08 150444.png"
                   title="copying_database"
-                />
+                /><figcaption>Copying Database</figcaption>
               </figure>
               <figure>
-                <figcaption>New & Original Databases</figcaption>
+                
                 <img
                   src="images/Screenshot 2023-10-08 150654.png"
                   title="databases_after_copying"
-                />
+                /><figcaption>New & Original Databases</figcaption>
               </figure>
             </section>
-            <!---------------------Tab Content --------------------->
           </div>
-        </div>
-        <!--_________________END OF Copy Database SECTION _________________-->
         <br /><br />
-        <!--_________________Delete Database SECTION _________________-->
         <div id="SQL7">
-          <h2></h2>
-          <div class="tab">
-            <section id="">
-              <h4></h4>
-              <ul>
-                <li></li>
-                <li class="li-2"></li>
-              </ul>
-            </section>
-          </div>
-          <button type="button" class="collapsible">Delete Database</button>
-          <div class="content">
-            <h3>Important Info.</h3>
+          <h2>Delete Database</h2>
             <li>When using GitBash or SQLShell use the code below.</li>
             <br /><br /><br />
-            <pre id="delete_database_copy" class="code-box">
-                        <code>
-        import psycopg2
-        
-        conn = psycopg2.connect(
-        user='postgres',
-        password='password',
-        host='localhost',
-        port=5432)
-        
-        conn.autocommit = True
-        cur = conn.cursor()
-        
-        cur.execute("""DROP DATABASE IF EXISTS demo_database""")
-        
-        conn.commit()
-        conn.close()
-                        </code>
-                    </pre>
+            <section class="code-block">
+              <pre id="delete_database_copy" class="code-box">
+                          <code>
+                      import psycopg2
+                      
+                      conn = psycopg2.connect(
+                      user='postgres',
+                      password='password',
+                      host='localhost',
+                      port=5432)
+                      
+                      conn.autocommit = True
+                      cur = conn.cursor()
+                      
+                      cur.execute("""DROP DATABASE IF EXISTS demo_database""")
+                      
+                      conn.commit()
+                      conn.close()
+                          </code>
+                      </pre>
+            </section>
             <br /><br />
-            <section class="output-box">
+            <section class="output">
               <figure>
                 <img
                   src="images/Screenshot 2023-10-07 111337.png"
@@ -541,9 +553,7 @@ conn.close()
                 />
                 <figcaption>Delete Database</figcaption>
               </figure>
-              <p class="centered">
-                <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
-              </p>
+              
               <figure>
                 <img
                   src="images/Screenshot 2023-10-14 100038.png"
@@ -566,25 +576,10 @@ conn.close()
                 <figcaption>GitBash & PSQL list Databases</figcaption>
               </figure>
             </section>
-            <!---------------------Tab Content --------------------->
           </div>
-        </div>
-        <!--_________________END OF Delete Database SECTION _________________-->
         <br /><br />
-        <!--_________________Create Schema SECTION_________________-->
         <div id="SQL8">
-          <h2></h2>
-          <div class="tab">
-            <section id="">
-              <h4></h4>
-              <ul>
-                <li></li>
-                <li class="li-2"></li>
-              </ul>
-            </section>
-          </div>
-          <button type="button" class="collapsible">Create Schema</button>
-          <div class="content">
+          <h2>Create Schema</h2>
             <h2>Using GitBash/Shell :</h2>
             <h3>Important Info:</h3>
             <li>
@@ -595,56 +590,64 @@ conn.close()
             </li>
             <li class="li-2">The default schema is public.</li>
             <li class="li-2">To create a new schema:</li>
-            <pre
-              class="li-2"
-            ><code>CREATE SCHEMA <i>&lt;new schema name></i>;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>CREATE SCHEMA <i>&lt;new schema name></i>;</code></pre>
+            </section>
             <li class="li-2">
               IF you try to look up the tables using <i>\dt</i>, you wouldn't
               see the new schema. This is because the search path is set to
               public by default.
             </li>
             <li class="li-2">To show the current search path:</li>
-            <pre class="li-2"><code>SHOW search_path;</code></pre>
+            <section class="code-block">
+              <pre class="li-2"><code>SHOW search_path;</code></pre>
+            </section>
             <li class="li-2">To put the new schema in the path:</li>
-            <pre
-              class="li-2"
-            ><code>SET search_path TO <i>&lt;new schema name></i>;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>SET search_path TO <i>&lt;new schema name></i>;</code></pre>
+            </section>
             <li class="li-2">
               Or to use multiple schemas, so that when <i><b>\dt</b></i> is used
               all tables in all schemas will show:
             </li>
-            <pre
-              class="li-2"
-            ><code>SET search_path TO <i>&lt;new schema name></i>, public;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>SET search_path TO <i>&lt;new schema name></i>, public;</code></pre>
+            </section>
             <li>
               To see all Schemas use <i><b>\dn</b></i>
             </li>
-            <p class="centered">
-              <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
-            </p>
+            
             <br />
-            <pre id="create_schema_copy" class="code-box">
-                      <code>
-      import psycopg2
-      
-      conn = psycopg2.connect(
-      user='postgres',
-      password='password',
-      host='localhost',
-      port=5432,
-      database='demo_database')
-      
-      conn.autocommit = True
-      cur = conn.cursor()
-      
-      cur.execute("""CREATE SCHEMA IF NOT EXISTS test AUTHORIZATION postgres;""")
-      
-      conn.commit()
-      conn.close()
-                      </code>
-                  </pre>
+            <section class="code-block">
+              <pre id="create_schema_copy" class="code-box">
+                        <code>
+                    import psycopg2
+                    
+                    conn = psycopg2.connect(
+                    user='postgres',
+                    password='password',
+                    host='localhost',
+                    port=5432,
+                    database='demo_database')
+                    
+                    conn.autocommit = True
+                    cur = conn.cursor()
+                    
+                    cur.execute("""CREATE SCHEMA IF NOT EXISTS test AUTHORIZATION postgres;""")
+                    
+                    conn.commit()
+                    conn.close()
+                        </code>
+                    </pre>
+            </section>
             <br /><br />
-            <section class="output-box">
+            <section class="output">
               <figure>
                 <figcaption>GitBash/PSQL => Create Schema</figcaption>
                 <img
@@ -682,9 +685,6 @@ conn.close()
                   title="GitBash/PSQL_view_search_path"
                 />
               </figure>
-              <p class="centered">
-                <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
-              </p>
               <figure>
                 <figcaption>Python => Create Schema</figcaption>
                 <img
@@ -693,26 +693,10 @@ conn.close()
                 />
               </figure>
             </section>
-            <!---------------------Tab Content --------------------->
-          </div>
         </div>
-        </section>
-        <!--_________________END OF Create Schema SECTION_________________-->
         <br /><br />
-        <!--_________________Delete Schema SECTION_________________-->
         <div id="SQL9">
-          <h2></h2>
-          <div class="tab">
-            <section id="">
-              <h4></h4>
-              <ul>
-                <li></li>
-                <li class="li-2"></li>
-              </ul>
-            </section>
-          </div>
-          <button type="button" class="collapsible">Drop Schema</button>
-          <div class="content">
+          <h2>Drop Schema</h2>
             <h3>Important Info:</h3>
             <li>
               Make Sure your are in the database assosciated with the schema you
@@ -720,7 +704,9 @@ conn.close()
             </li>
             <li>To delete a Schema</li>
             <ul class="li-2">
-              <pre><code>DROP SCHEMA <i>&lt;schema name></i>;</code></pre>
+              <section class="code-block">
+                <pre><code>DROP SCHEMA <i>&lt;schema name></i>;</code></pre>
+              </section>
             </ul>
             <li>To delete a Schema including everything it contains</li>
             <ul class="li-2">

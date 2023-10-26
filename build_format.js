@@ -35,6 +35,12 @@ for (i = 0; i < coll.length; i++) {
     });
 }
 
+function createButton() {
+    const copyButton = document.createElement("span");
+    copyButton.innerText = "Copy";
+    copyButton.classList.add("copy-button");
+}
+
 //  THIS IS FOR THE CHECKBOXES
 function displayCode() {
     var inputTag = document.getElementsByTagName("input");
@@ -50,62 +56,62 @@ function displayCode() {
 
 // THIS IS FOR THE COPY BUTTON
 
-function addCopyButton(tab_id) {
-    // Get the ^lt;pre> element
-    const preButton = document.getElementById(tab_id);
+// function addCopyButton(tab_id) {
+//     // Get the ^lt;pre> element
+//     const preButton = document.getElementById(tab_id);
 
-    // Create a copy button element
-    const copyButton = document.createElement("span");
-    copyButton.innerText = "Copy";
-    copyButton.classList.add("copy-button");
+//     // Create a copy button element
+//     const copyButton = document.createElement("span");
+//     copyButton.innerText = "Copy";
+//     copyButton.classList.add("copy-button");
 
-    // Append the copy button to the ^lt;pre> Button
-    preButton.appendChild(copyButton);
+//     // Append the copy button to the ^lt;pre> Button
+//     preButton.appendChild(copyButton);
 
-    // Add click event listener to the copy button
-    copyButton.addEventListener("click", () => {
-        // Hide the copy button temporarily
-        copyButton.style.display = "none";
+//     // Add click event listener to the copy button
+//     copyButton.addEventListener("click", () => {
+//         // Hide the copy button temporarily
+//         copyButton.style.display = "none";
 
-        // Create a range and select the text inside the ^lt;pre> Button
-        const range = document.createRange();
-        range.selectNode(preButton);
-        window.getSelection().removeAllRanges();
-        window.getSelection().addRange(range);
+//         // Create a range and select the text inside the ^lt;pre> Button
+//         const range = document.createRange();
+//         range.selectNode(preButton);
+//         window.getSelection().removeAllRanges();
+//         window.getSelection().addRange(range);
 
-        try {
-            // Copy the selected text to the clipboard
-            document.execCommand("copy");
+//         try {
+//             // Copy the selected text to the clipboard
+//             document.execCommand("copy");
 
-            // Alert the user that the text has been copied
-            copyButton.innerText = "Copied!";
-            setTimeout(function () {
-                copyButton.innerText = "Copy";
-            }, 2000);
-        } catch (err) {
-            console.error("Unable to copy text:", err);
-        } finally {
-            // Show the copy button again
-            copyButton.style.display = "inline";
+//             // Alert the user that the text has been copied
+//             copyButton.innerText = "Copied!";
+//             setTimeout(function () {
+//                 copyButton.innerText = "Copy";
+//             }, 2000);
+//         } catch (err) {
+//             console.error("Unable to copy text:", err);
+//         } finally {
+//             // Show the copy button again
+//             copyButton.style.display = "inline";
 
-            // Deselect the text
-            window.getSelection().removeAllRanges();
-        }
-    });
-}
+//             // Deselect the text
+//             window.getSelection().removeAllRanges();
+//         }
+//     });
+// }
 
-addCopyButton("Collapsible_html_copy");
-addCopyButton("Collapsible_css_copy");
-addCopyButton("Collapsible_js_copy");
-addCopyButton("tabsONLY_html_copy");
-addCopyButton("tabsONLY_css_copy");
-addCopyButton("tabsONLY_js_copy");
-addCopyButton("copy_btn_html_copy");
-addCopyButton("copy_btn_css_copy");
-addCopyButton("copy_btn_js_copy");
-addCopyButton("output_box_html_copy");
-addCopyButton("output_box_css_copy");
-addCopyButton("basic_code_block_copy");
-addCopyButton("basic_css_copy");
-addCopyButton("side_nav_bar_python_copy");
-addCopyButton("side_nav_bar_css_copy");
+// addCopyButton("Collapsible_html_copy");
+// addCopyButton("Collapsible_css_copy");
+// addCopyButton("Collapsible_js_copy");
+// addCopyButton("tabsONLY_html_copy");
+// addCopyButton("tabsONLY_css_copy");
+// addCopyButton("tabsONLY_js_copy");
+// addCopyButton("copy_btn_html_copy");
+// addCopyButton("copy_btn_css_copy");
+// addCopyButton("copy_btn_js_copy");
+// addCopyButton("output_box_html_copy");
+// addCopyButton("output_box_css_copy");
+// addCopyButton("basic_code_block_copy");
+// addCopyButton("basic_css_copy");
+// addCopyButton("side_nav_bar_python_copy");
+// addCopyButton("side_nav_bar_css_copy");
