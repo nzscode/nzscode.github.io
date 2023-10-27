@@ -30,7 +30,7 @@
       <a href="#SQL5">Rename DatabaseL</a>
       <a href="#SQL6">Copy Database</a>
       <a href="#SQL7">Delete Database</a>
-      <a href="#SQL8">Schema :</a>
+      <h2 class="nav-title">Schema :</h2>
       <a href="#SQL9">Create Schema</a>
       <a href="#SQL10">Drop Schema</a>
       <h2 class="nav-title">Table :</h2>
@@ -53,28 +53,24 @@
     </div>
     <div class="main">
       <h1>SQL</h1>
-
       <div id="SQL1">
         <h2>Access SQL</h2>
-        <div class="tab">
-          <!-- Access SQL Python -->
-          <section id="access_sql_python">
-            <h4>Using Python</h4>
-            <ul>
-              <li>Import psycopg2</li>
-              <li>Create a conn variable with the following parameters</li>
-              <li class="li-2">user='postgres'</li>
-              <li class="li-2">password='password'</li>
-              <li class="li-2">host='localhost'</li>
-              <li class="li-2">port=5432</li>
-              <li>Always make sure to commit and close conn at the end.</li>
-              <li class="li-2">conn.commit()</li>
-              <li class="li-2">conn.close()</li>
-              <li>As of 2023-10-07, the password is password.</li>
-            </ul>
-            <section class="code-block">
-              <pre>
-                <code>
+        <h4>Using Python</h4>
+        <ul>
+          <li>Import psycopg2</li>
+          <li>Create a conn variable with the following parameters</li>
+          <li class="li-2">user='postgres'</li>
+          <li class="li-2">password='password'</li>
+          <li class="li-2">host='localhost'</li>
+          <li class="li-2">port=5432</li>
+          <li>Always make sure to commit and close conn at the end.</li>
+          <li class="li-2">conn.commit()</li>
+          <li class="li-2">conn.close()</li>
+          <li>As of 2023-10-07, the password is password.</li>
+        </ul>
+        <section class="code-block">
+            <pre>
+              <code>
 import psycopg2
 
 conn = psycopg2.connect(
@@ -91,229 +87,187 @@ cur.execute("""     """)
 
 conn.commit()
 conn.close()
-                </code>
-            </pre>
-            </section>
-          </section>
-        </div>
-        <!-- Access SQL GitBash -->
-        <div class="tab">
-          <section id="access_sql_gitbash">
-            <h4>Using GitBash</h4>
-            <ul>
-              <li>To Access the psql server from GitBash first type: cd</li>
-              <figure>
-                <img src="images/Screenshot 2023-10-07 142838.png" alt="" />
-                <figcaption>cd</figcaption>
-              </figure>
-              <li>Now enter the psql server by typing: psql -U postgres</li>
-              <li class="li-2">The -U is for user</li>
-              <li class="li-2">postgres, is the username</li>
-              <li class="li-2">
-                The password is whatever you have set up: make sure it is easy
-                to remember.
-              </li>
-              <section class="example">
-                <figure>
-                  <img src="images/Screenshot 2023-10-07 142845.png" alt="" />
-                  <figcaption>cd</figcaption>
-                </figure>
-              </section>
-              <li>As of 2023-10-07, the password is password.</li>
-            </ul>
-          </section>
-        </div>
-        <!-- Access SQL psql -->
-        <div class="tab">
-          <section id="access_sql_psql">
-            <h4>Using PSQL</h4>
-            <ul>
-              <li>
-                The password is whatever you have set up: make sure it is easy
-                to remember.
-              </li>
-              <li class="li-2">The password will never show.</li>
-              <li class="li-2">As of 2023-10-07, the password is password.</li>
-              <li>
-                Keep hitting enter, for each of the prompts until it asks for
-                the password.
-              </li>
-              <figure>
-                <img src="images/Screenshot 2023-10-07 145402.png" alt="" />
-                <figcaption>logging in to SQLShell</figcaption>
-              </figure>
-            </ul>
-          </section>
-        </div></div>
-
-        <br /><br />
-
-        <div id="SQL2">
-          <h2>Disconnect from Database</h2>
-          <div class="tab">
-              <section id="sql2_python">
-                  <h4>Using Python</h4>
-                  <ul>
-                    <li>To disconnect from database:</li>
-                    <li class="li-2">
-                      In the config file or conn, change the database='<i
-                        >&lt;database name></i
-                      >
-                    </li>
-                    <li>
-                      OR remove it altogether, to drop the database if needed.
-                    </li>
-                  </ul>
-                  <section class="code-block">
-                      <pre><code class="copy">import psycopg2
+              </code>
+          </pre>
+        </section>
+        <h4>Using GitBash</h4>
+        <ul>
+          <li>To Access the psql server from GitBash first type: cd</li>
+          <figure>
+            <img src="images/Screenshot 2023-10-07 142838.png" alt="" />
+            <figcaption>cd</figcaption>
+          </figure>
+          <li>Now enter the psql server by typing: psql -U postgres</li>
+          <li class="li-2">The -U is for user</li>
+          <li class="li-2">postgres, is the username</li>
+          <li class="li-2">
+            The password is whatever you have set up: make sure it is easy
+            to remember.
+          </li>
+          <figure>
+            <img src="images/Screenshot 2023-10-07 142845.png" alt="" />
+            <figcaption>cd</figcaption>
+          </figure>
+        </ul>
+        <li>As of 2023-10-07, the password is password.</li>            
+        <h4>Using PSQL</h4>
+        <ul>
+          <li>
+            The password is whatever you have set up: make sure it is easy
+            to remember.
+          </li>
+          <li class="li-2">The password will never show.</li>
+          <li class="li-2">As of 2023-10-07, the password is password.</li>
+          <li>
+            Keep hitting enter, for each of the prompts until it asks for
+            the password.
+          </li>
+          <figure>
+            <img src="images/Screenshot 2023-10-07 145402.png" alt="" />
+            <figcaption>logging in to SQLShell</figcaption>
+          </figure>
+        </ul>
+      </div>
+      <br /><br />
+      <div id="SQL2">
+        <h2>Disconnect from Database</h2>
+        <h4>Using Python</h4>
+        <ul>
+          <li>To disconnect from database:</li>
+          <li class="li-2">
+            In the config file or conn, change the database='<i>&lt;database name></i>
+          </li>
+          <li>
+            OR remove it altogether, to drop the database if needed.
+          </li>
+        </ul>
+        <section class="code-block">
+          <pre><code class="copy">import psycopg2
 conn = psycopg2.connect(
-user='postgres',
-password='password',
-host='localhost',
-port=5432
-database='<i>&lt;database name></i>')
+  user='postgres',
+  password='password',
+  host='localhost',
+  port=5432
+  database='<i>&lt;database name></i>')
 conn.autocommit = True
 cur = conn.cursor()
 # Actions to perform will go here:
 cur.execute("""     """)
 conn.commit()
 conn.close()
-      </code></pre>
-                  </section>
-                  <div class="tab">
-                    <section id="">
-                      <h4>Using GitBash/PSQL</h4>
-                      <ul>
-                        <li>
-                          <b
-                            >The current database you are logged in is what is shown
-                            before the #</b
-                          >
-                        </li>
-                        <li>
-                          Change to a different database in GitBash: \c
-                          <i>&lt;database name></i><br />
-                          <figure>
-                            <img
-                              src="images/Screenshot 2023-10-07 170031.png"
-                              title="to_change_database_gitbash"
-                            />
-                            <figcaption>\c to change database in GitBash</figcaption>
-                          </figure>
-                        </li>
-                        <li>
-                          If disconnecting from a database, make sure you have changed
-                          to another database first.
-                        </li>
-                        <li>
-                          Type in: (Select each line copy, then left click and choose
-                          paste). Remember to change the <i>&lt;database name></i> to
-                          the actual database you want to terminate.
-                        </li>
-                        <li class="li-2">
-                          <section class="code-block">
-                            <pre><code>SELECT pg_terminate_backend(pg_stat_activity.pid)</code></pre>
-                          </section>
-                        </li>
-                        <li class="li-2">
-                          <section class="code-block">
-                            <pre><code>FROM pg_stat_activity</code></pre>
-                          </section>
-                        </li>
-                        <li class="li-2">
-                          <section class="code-block">
-                            <pre><code>WHERE pg_stat_activity.datname = '<i>&lt;database name>'</i></code></pre>
-                          </section>
-                        </li>
-                        <li class="li-2">
-                          <section class="code-block">
-                            <pre><code>AND pid &lt;> pg_backend_pid();</code></pre>
-                          </section>
-                        </li>
-                
-                        <li>
-                          <b
-                            >When database is in use, and disconnecting from the
-                            database:</b
-                          >
-                          <figure>
-                            <img
-                              src="images/Screenshot 2023-10-07 191505.png"
-                              title="session_using_database"
-                            />
-                            <figcaption>
-                              Session is using database, so it can not be dropped.
-                            </figcaption>
-                          </figure>
-                          <figure>
-                            <img
-                              src="images/Screenshot 2023-10-07 191513.png"
-                              title="disconnecting_from_database"
-                            />
-                            <figcaption>Disconnecting from database.</figcaption>
-                          </figure>
-                        </li>
-                      </ul>
-                    </section>
-                  </div>
-              </section>
-          </div>
-          <!--div class="tab"-->
+          </code></pre>
+        </section>
+        <h4>Using GitBash/PSQL</h4>
+        <ul>
+          <li>
+            <b>The current database you are logged in is what is shown
+              before the #
+            </b>
+          </li>
+          <li>
+            Change to a different database in GitBash: \c
+            <i>&lt;database name></i>
+          </li>
+          <br />
+          <figure>
+            <img
+              src="images/Screenshot 2023-10-07 170031.png"
+              title="to_change_database_gitbash"
+            />
+            <figcaption>\c to change database in GitBash</figcaption>
+          </figure>          
+          <li>
+            If disconnecting from a database, make sure you have changed
+            to another database first.
+          </li>
+          <li>
+            Type in: (Select each line copy, then left click and choose
+            paste). Remember to change the <i>&lt;database name></i> to
+            the actual database you want to terminate.
+          </li>
+          <section class="code-block">
+            <pre><code>SELECT pg_terminate_backend(pg_stat_activity.pid)</code></pre>
+          </section>
+          <section class="code-block">
+            <pre><code>FROM pg_stat_activity</code></pre>
+          </section>
+          <section class="code-block">
+            <pre><code>WHERE pg_stat_activity.datname = '<i>&lt;database name>'</i></code></pre>
+          </section>
+          <section class="code-block">
+            <pre><code>AND pid &lt;> pg_backend_pid();</code></pre>
+          </section>
+          <li>
+            <b
+              >When database is in use, and disconnecting from the
+              database:</b
+            >
+          </li>
+          <figure>
+            <img
+              src="images/Screenshot 2023-10-07 191505.png"
+              title="session_using_database"
+            />
+            <figcaption>
+              Session is using database, so it can not be dropped.
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="images/Screenshot 2023-10-07 191513.png"
+              title="disconnecting_from_database"
+            />
+            <figcaption>Disconnecting from database.</figcaption>
+          </figure>          
+        </ul>
       </div>
-
-        <br /><br />
-
-        <div id="SQL3">
-          <h2>Create Database</h2>
-          <div class="tab">
-              <section id="access_sql_python">
-                  <h4>Using Python</h4>
-                  <section class="important-info">
-                      <h5>Important Info :</h5>
-                      <ul>
-                          <li>
-                              Check the Dashboard of the postgres server to
-                              check status and existence of database(s)
-                          </li>
-                          <figure>
-                              <img
-                                  src="images/Screenshot 2023-10-06 134208.png"
-                                  alt=""
-                              />
-                              <figcaption>pgAdmin4 Dashboard</figcaption>
-                          </figure>
-                          <li></li>
-                      </ul>
-                  </section>
-                  <h3 style="margin-bottom: 0px">
-                      GitBash/PSQL Commands to use:
-                  </h3>
-                  <span class="command tabbed">\l</span>
-                  To see a list of databases
-                  <h3>
-                      Use the following code in pgAdmin replacing what is
-                      between "&lt;" and ">" with the appropriate name.
-                  </h3>
-                  <section class="code-block">
-                      <pre><code>CREATE DATABASE <i>&lt;database name></i>;
-                          </code></pre>
-                  </section>
-                  <h3>Use the code in the block below for Python</h3>
-                  <section class="code-block">
-                      <pre><code>import psycopg2
-  conn = psycopg2.connect(
-      user='postgres',
-      password='password',
-      host='localhost',
-      port=5432)
-  conn.autocommit = True
-  cur = conn.cursor()
-  cur.execute("""CREATE DATABASE demo_database""")
-  conn.commit()
-  conn.close()
-                  </code></pre>
-                  </section>
-                  <section class="output">
+      <br /><br />
+      <div id="SQL3">
+        <h2>Create Database</h2>
+        <h4>Using Python</h4>
+        <ul>
+          <li>
+            Check the Dashboard of the postgres server to
+            check status and existence of database(s)
+          </li>
+          <figure>
+              <img
+                  src="images/Screenshot 2023-10-06 134208.png"
+                  alt=""
+              />
+              <figcaption>pgAdmin4 Dashboard</figcaption>
+          </figure>
+          <li>GitBash/PSQL Commands to use:</li>
+          <li class="tabbed2"><span class="command tabbed">\l</span>
+            To see a list of databases
+          </li>
+        </ul>
+        <h3 style="margin-bottom: 0px"></h3>
+        <h3>
+          Use the following code in pgAdmin replacing what is
+          between "&lt;" and ">" with the appropriate name.
+        </h3>
+        <section class="code-block">
+          <pre><code>CREATE DATABASE <i>&lt;database name></i>;
+            </code>
+          </pre>
+        </section>
+        <h3>Use the code in the block below for Python</h3>
+        <section class="code-block">
+          <pre><code>import psycopg2
+conn = psycopg2.connect(
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432)
+conn.autocommit = True
+cur = conn.cursor()
+cur.execute("""CREATE DATABASE demo_database""")
+conn.commit()
+conn.close()
+          </code></pre>
+        </section>
+        <section class="output">
                       <figure>
                           <p>Output</p>
                           <img
@@ -335,16 +289,12 @@ conn.close()
                           </figcaption>
                       </figure>
                   </section>
-              </section>
-          </div>
       </div>
 
         <br /><br />
 
         <div id="SQL4">
           <h2>Change to Database</h2>
-          <section class="important-info">
-              <h5>Important Info :</h5>
               <ul>
                   <li>
                       In the config file or con in Python, database='<i
@@ -391,15 +341,12 @@ conn.close()
                       </figcaption>
                   </figure>
               </ul>
-          </section>
       </div>
 
         <br /><br />
 
         <div id="SQL5">
           <h2>Rename Database</h2>
-          <section class="important-info">
-            <h5>Important Info: </h5>
             <ul>
               <li>Make sure you are not in the database being changed.</li>
             <li>
@@ -417,52 +364,42 @@ conn.close()
               <pre>
                 <code>ALTER DATABASE "<i>&lt;old database name></i>" RENAME TO "<i>&lt;new database name></i>";</code></pre>
             </section>
-                          </ul>
-          </section>
-          <div class="tab">
-            <section id="rename_database_python">
-              <h4>Using Python</h4>
+          </ul>
+          <h4>Using Python</h4>
               <ul>
                 <li>Make sure to remove the database parameter from conn.</li>
               </ul>
               <section class="code-block">
                 <pre id="alter_database_name_copy">
                         <code>
-        import psycopg2
-        
-        conn = psycopg2.connect(
-        user='postgres',
-        password='password',
-        host='localhost',
-        port=5432)
-        
-        conn.autocommit = True
-        cur = conn.cursor()
-        
-        cur.execute("""ALTER DATABASE "demo_database_old" RENAME TO "demo_database";""")
-        
-        conn.commit()
-        conn.close()
+import psycopg2
+
+conn = psycopg2.connect(
+  user='postgres',
+  password='password',
+  host='localhost',
+  port=5432)
+
+conn.autocommit = True
+cur = conn.cursor()
+
+cur.execute("""ALTER DATABASE "demo_database_old" RENAME TO "demo_database";""")
+
+conn.commit()
+conn.close()
                         </code>
                     </pre>
               </section>
-            </section>
-          </div>
-
-          </div>
-
+            </div>
         <br /><br />
 
         <div id="SQL6">
           <h2>Copy Database</h2>
-            <section class="important-info">
-              <h3>Important Info:</h3>
               <li>Make sure you are not in the database being changed.</li>
               <li>
                 When trying to change the database, if you get a message that the
                 database session is active, disconnect the database.
               </li>
-            </section>
             
               <h5>When trying to alter using GitBash or SQLShell use the code below.</h5>
             
@@ -474,22 +411,22 @@ conn.close()
             <section class="code-block">
               <pre id="copy_database_copy" class="code-box">
                         <code>
-                     import psycopg2
-                    
-                    conn = psycopg2.connect(
-                    user='postgres',
-                    password='password',
-                    host='localhost',
-                    port=5432,
-                    database='postgres')
-                    
-                    conn.autocommit = True
-                    cur = conn.cursor()
-                    
-                    cur.execute("""CREATE DATABASE demo_database_2 WITH TEMPLATE gitbash_shell OWNER postgres;""")
-                    
-                    conn.commit()
-                    conn.close()
+import psycopg2
+
+conn = psycopg2.connect(
+  user='postgres',
+  password='password',
+  host='localhost',
+  port=5432,
+  database='postgres')
+
+conn.autocommit = True
+cur = conn.cursor()
+
+cur.execute("""CREATE DATABASE demo_database_2 WITH TEMPLATE gitbash_shell OWNER postgres;""")
+
+conn.commit()
+conn.close()
                         </code>
                     </pre>
             </section>
@@ -526,21 +463,21 @@ conn.close()
             <section class="code-block">
               <pre id="delete_database_copy" class="code-box">
                           <code>
-                      import psycopg2
-                      
-                      conn = psycopg2.connect(
-                      user='postgres',
-                      password='password',
-                      host='localhost',
-                      port=5432)
-                      
-                      conn.autocommit = True
-                      cur = conn.cursor()
-                      
-                      cur.execute("""DROP DATABASE IF EXISTS demo_database""")
-                      
-                      conn.commit()
-                      conn.close()
+import psycopg2
+
+conn = psycopg2.connect(
+  user='postgres',
+  password='password',
+  host='localhost',
+  port=5432)
+
+conn.autocommit = True
+cur = conn.cursor()
+
+cur.execute("""DROP DATABASE IF EXISTS demo_database""")
+
+conn.commit()
+conn.close()
                           </code>
                       </pre>
             </section>
@@ -580,8 +517,7 @@ conn.close()
         <br /><br />
         <div id="SQL8">
           <h2>Create Schema</h2>
-            <h2>Using GitBash/Shell :</h2>
-            <h3>Important Info:</h3>
+            <h>Important Info:</h>
             <li>
               It is important to be in the database where you want to create the
               schema.<br />
@@ -627,22 +563,22 @@ conn.close()
             <section class="code-block">
               <pre id="create_schema_copy" class="code-box">
                         <code>
-                    import psycopg2
-                    
-                    conn = psycopg2.connect(
-                    user='postgres',
-                    password='password',
-                    host='localhost',
-                    port=5432,
-                    database='demo_database')
-                    
-                    conn.autocommit = True
-                    cur = conn.cursor()
-                    
-                    cur.execute("""CREATE SCHEMA IF NOT EXISTS test AUTHORIZATION postgres;""")
-                    
-                    conn.commit()
-                    conn.close()
+import psycopg2
+
+conn = psycopg2.connect(
+  user='postgres',
+  password='password',
+  host='localhost',
+  port=5432,
+  database='demo_database')
+
+conn.autocommit = True
+cur = conn.cursor()
+
+cur.execute("""CREATE SCHEMA IF NOT EXISTS test AUTHORIZATION postgres;""")
+
+conn.commit()
+conn.close()
                         </code>
                     </pre>
             </section>
@@ -697,7 +633,6 @@ conn.close()
         <br /><br />
         <div id="SQL9">
           <h2>Drop Schema</h2>
-            <h3>Important Info:</h3>
             <li>
               Make Sure your are in the database assosciated with the schema you
               are trying to drop.
@@ -710,11 +645,15 @@ conn.close()
             </ul>
             <li>To delete a Schema including everything it contains</li>
             <ul class="li-2">
-              <pre><code>DROP SCHEMA <i>&lt;schema name></i> CASCADE;</code></pre>
+              <section class="code-block">
+                <pre><code>DROP SCHEMA <i>&lt;schema name></i> CASCADE;</code></pre>
+              </section>
             </ul>
             <li>Can also use IF EXISTS if necessary</li>
             <ul class="li-2">
-              <pre><code>DROP SCHEMA IF EXISTS <i>&lt;schema name></i> CASCADE ;</code></pre>
+              <section class="code-block">
+                <pre><code>DROP SCHEMA IF EXISTS <i>&lt;schema name></i> CASCADE ;</code></pre>
+              </section>
             </ul>
             <li>
               <b
@@ -724,28 +663,30 @@ conn.close()
               >
             </li>
             <br /><br />
-            <pre id="delete_schema_copy" class="code-box">
-                      <code>
-      import psycopg2
-      
-      conn = psycopg2.connect(
-      user='postgres',
-      password='password',
-      host='localhost',
-      port=5432,
-      database='demo_database')
-      
-      conn.autocommit = True
-      cur = conn.cursor()
-      
-      cur.execute("""DROP SCHEMA IF EXISTS demo_schema CASCADE;""")
-      
-      conn.commit()
-      conn.close()
-                      </code>
-                  </pre>
+            <section class="code-block">
+              <pre id="delete_schema_copy" class="code-box">
+                        <code>
+import psycopg2
+
+conn = psycopg2.connect(
+  user='postgres',
+  password='password',
+  host='localhost',
+  port=5432,
+  database='demo_database')
+
+conn.autocommit = True
+cur = conn.cursor()
+
+cur.execute("""DROP SCHEMA IF EXISTS demo_schema CASCADE;""")
+
+conn.commit()
+conn.close()
+                        </code>
+                    </pre>
+            </section>
             <br /><br />
-            <section class="output-box">
+            <section class="output">
               <figure>
                 <figcaption>Python => Drop Schema</figcaption>
                 <img
@@ -753,9 +694,6 @@ conn.close()
                   title="drop_schema"
                 />
               </figure>
-              <p class="centered">
-                <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
-              </p>
               <figure>
                 <figcaption>List of Schemas</figcaption>
                 <img
@@ -799,28 +737,11 @@ conn.close()
                 />
               </figure>
             </section>
-            <!---------------------Tab Content --------------------->
           </div>
-        </div>
-        </section>
-        <!--_________________END OF Delete Schema SECTION_________________-->
         <br /><br />
-        <!--_________________Create Table SECTION_________________-->
         <div id="SQL10">
-          <h2></h2>
-          <div class="tab">
-            <section id="">
-              <h4></h4>
-              <ul>
-                <li></li>
-                <li class="li-2"></li>
-              </ul>
-            </section>
-          </div>
-          <button type="button" class="collapsible">Create Table</button>
-          <div class="content">
-            <h3>Important Info:</h3>
-            <ul class="li-2">
+          <h2>Create Table</h2>
+                    <ul class="li-2">
               Change the
               <span style="color: aqua; background-color: gray"> aqua</span>
               code to any of the variations below replacing what is between &lt;
@@ -835,13 +756,18 @@ conn.close()
               their types.
             </li>
             <li>To create a table:</li>
-            <pre
-              class="li-2"
-            ><code>CREATE TABLE IF NOT EXISTS <i>&lt;table name></i>(<br><i>&lt;column name 1></i>,<br><i>&lt;column name 2></i>);</code></pre>
-            <li>To create a table in a schema:</li>
-            <pre
-              class="li-2"
-            ><code>CREATE TABLE IF NOT EXISTS <i>&lt;schema name.table name></i>(<br><i>&lt;column name 1></i>,<br><i>&lt;column name 2></i>);</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>CREATE TABLE IF NOT EXISTS <i>&lt;table name></i>(<br><i>&lt;column name 1></i>,<br><i>&lt;column name 2></i>);</code></pre>
+              
+            </section><li>To create a table in a schema:</li>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>CREATE TABLE IF NOT EXISTS <i>&lt;schema name.table name></i>(<br><i>&lt;column name 1></i>,<br><i>&lt;column name 2></i>);</code></pre>
+              
+            </section>
             <li>
               Serial can have the PRIMARY KEY attribute, which will help it when
               joining it with other tables for queries.<br />
@@ -889,50 +815,54 @@ conn.close()
             <br />
             <li class="li-2">
               Example Code:
-              <pre class="li-2"><code>"""CREATE TABLE demo_table1(
-                  id SERIAL PRIMARY KEY,
-                  age INTEGER NOT NULL,
-                  radius DECIMAL,
-                  price MONEY,
-                  department VARCHAR(225),
-                  quote TEXT,
-                  group_leader BOOLEAN NOT NULL,
-                  date DATE,
-                  time TIME with time zone,
-                  tmwtz TIME without time zone
-                  );"""</code></pre>
+              <section class="code-block">
+                <pre class="li-2"><code>"""CREATE TABLE demo_table1(
+                    id SERIAL PRIMARY KEY,
+                    age INTEGER NOT NULL,
+                    radius DECIMAL,
+                    price MONEY,
+                    department VARCHAR(225),
+                    quote TEXT,
+                    group_leader BOOLEAN NOT NULL,
+                    date DATE,
+                    time TIME with time zone,
+                    tmwtz TIME without time zone
+                    );"""</code></pre>
+              </section>
             </li>
             <br /><br />
-            <pre id="create_table_copy" class="code-box">
-                      <code>
-      import psycopg2
-      
-      conn = psycopg2.connect(
-      user='postgres',
-      password='password',
-      host='localhost',
-      port=5432,
-      database='demo_database')
-      
-      conn.autocommit = True
-      cur = conn.cursor()
-      
-      create_table =
-      """<span style="color: aqua;">CREATE TABLE IF NOT EXISTS demo_table(
-          demo_col_0 SERIAL,
-          demo_col_1 VARCHAR(225),
-          demo_col_2 VARCHAR(225)
-          );</span>"""
-      
-      
-      cur.execute(create_table)
-      
-      conn.commit()
-      conn.close()
-                      </code>
-                  </pre>
+            <section class="code-block">
+              <pre id="create_table_copy" class="code-box">
+                        <code>
+import psycopg2
+
+conn = psycopg2.connect(
+  user='postgres',
+  password='password',
+  host='localhost',
+  port=5432,
+  database='demo_database')
+
+conn.autocommit = True
+cur = conn.cursor()
+
+create_table =
+"""<span style="color: aqua;">CREATE TABLE IF NOT EXISTS demo_table(
+    demo_col_0 SERIAL,
+    demo_col_1 VARCHAR(225),
+    demo_col_2 VARCHAR(225)
+    );</span>"""
+
+
+cur.execute(create_table)
+
+conn.commit()
+conn.close()
+                        </code>
+                    </pre>
+            </section>
             <br /><br />
-            <section class="output-box">
+            <section class="output">
               <figure>
                 <figcaption>Create Table</figcaption>
                 <img
@@ -947,9 +877,6 @@ conn.close()
                   title="create_table_in_schema"
                 />
               </figure>
-              <p class="centered">
-                <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
-              </p>
               <figure>
                 <figcaption>GitBash/PSQL Create Table</figcaption>
                 <img
@@ -973,25 +900,9 @@ conn.close()
               </figure>
             </section>
           </div>
-        </section>
-        </div>
-        <!--_________________END OF Create Table SECTION_________________-->
         <br /><br />
-        <!--_________________Drop Table SECTION_________________-->
         <div id="SQL11">
-          <h2></h2>
-          <div class="tab">
-            <section id="">
-              <h4></h4>
-              <ul>
-                <li></li>
-                <li class="li-2"></li>
-              </ul>
-            </section>
-          </div>
-          <button type="button" class="collapsible">Drop Table</button>
-          <div class="content">
-            <h3>Important Info:</h3>
+          <h2>Drop Table</h2>
             <ul class="li-2">
               Change the
               <span style="color: aqua; background-color: gray"> aqua</span>
@@ -1007,41 +918,49 @@ conn.close()
               pgAdmin.
             </li>
             <li>To drop table:</li>
-            <pre
-              class="li-2"
-            ><code>DROP TABLE IF EXISTS <i>&lt;table name></i>;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>DROP TABLE IF EXISTS <i>&lt;table name></i>;</code></pre>
+            </section>
             <li>To drop table from a schema:</li>
-            <pre
-              class="li-2"
-            ><code>DROP TABLE IF EXISTS <i>&lt;schema name.table name></i>;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>DROP TABLE IF EXISTS <i>&lt;schema name.table name></i>;</code></pre>
+            </section>
             <li>To drop table and all dependant objects:</li>
-            <pre
-              class="li-2"
-            ><code>DROP TABLE IF EXISTS <i>&lt;table name></i> CASCADE;</code></pre>
-            <pre id="drop_table_copy" class="code-box">
-                      <code>
-      import psycopg2
-      
-      conn = psycopg2.connect(
-      user='postgres',
-      password='password',
-      host='localhost',
-      port=5432,
-      database='demo_database')
-      
-      conn.autocommit = True
-      cur = conn.cursor()
-      
-      drop_table = <span style="color: aqua;">"""DROP TABLE IF EXISTS demo_table;"""</span>
-      
-      cur.execute(drop_table)
-      
-      conn.commit()
-      conn.close()
-                      </code>
-                  </pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>DROP TABLE IF EXISTS <i>&lt;table name></i> CASCADE;</code></pre>
+            </section>
+            <section class="code-block">
+              <pre id="drop_table_copy" class="code-box">
+                        <code>
+import psycopg2
+
+conn = psycopg2.connect(
+  user='postgres',
+  password='password',
+  host='localhost',
+  port=5432,
+  database='demo_database')
+
+conn.autocommit = True
+cur = conn.cursor()
+
+drop_table = <span style="color: aqua;">"""DROP TABLE IF EXISTS demo_table;"""</span>
+
+cur.execute(drop_table)
+
+conn.commit()
+conn.close()
+                        </code>
+                    </pre>
+            </section>
             <br /><br />
-            <section class="output-box">
+            <section class="output-">
               <figure>
                 <figcaption>Drop Table</figcaption>
                 <img
@@ -1056,9 +975,6 @@ conn.close()
                   title="drop_table_from_schema"
                 />
               </figure>
-              <p class="centered">
-                <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
-              </p>
               <figure>
                 <figcaption>GitBash/PSQL Drop Table</figcaption>
                 <img
@@ -1075,36 +991,9 @@ conn.close()
               </figure>
             </section>
           </div>
-        </section>
-        </div>
-        <!--_________________END OF Drop Table SECTION_________________-->
         <br /><br />
-        <!--_________________Alter Table SECTION_________________-->
         <div id="SQL12">
-          <h2></h2>
-          <div class="tab">
-            <section id="">
-              <h4></h4>
-              <ul>
-                <li></li>
-                <li class="li-2"></li>
-              </ul>
-            </section>
-          </div>
-          <button type="button" class="collapsible">Alter Table</button>
-          <div class="content">
-            <!-- Tabs -->
-            <div class="tab">
-              <button
-                class="tablinks"
-                onclick="openTab(event, 'alter_table_rename')"
-              >
-                Alter Table => Rename
-              </button>
-            </div>
-            <!-- Tabs -->
-            <!-- important info can belong here, if it applies to all tabs.------------>
-            <h3>Important Info:</h3>
+          <h2>Alter Table</h2>
             <ul class="li-2">
               Change the
               <span style="color: aqua; background-color: gray"> aqua</span>
@@ -1112,104 +1001,154 @@ conn.close()
               & > in italics with the appropriate names.
             </ul>
             <li>To rename table</li>
-            <pre
-              class="li-2"
-            ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> RENAME TO <i>&lt;new table name></i>;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> RENAME TO <i>&lt;new table name></i>;</code></pre>
+              
+            </section>
             <li>To rename table in a schema</li>
-            <pre
-              class="li-2"
-            ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> RENAME TO <i>&lt;schema name.new table name></i>;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> RENAME TO <i>&lt;schema name.new table name></i>;</code></pre>
+              
+            </section>
             <li>Set Schema of a table</li>
-            <pre
-              class="li-2"
-            ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> SET SCHEMA <i>&lt;schema name></i>;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> SET SCHEMA <i>&lt;schema name></i>;</code></pre>
+              
+            </section>
             <li>To move a table</li>
-            <pre
-              class="li-2"
-            ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> SET SCHEMA <i>&lt;schema name></i>;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> SET SCHEMA <i>&lt;schema name></i>;</code></pre>
+              
+            </section>
             <li>To move a table from one schema to another</li>
-            <pre
-              class="li-2"
-            ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> SET SCHEMA <i>&lt;schema name></i>;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> SET SCHEMA <i>&lt;schema name></i>;</code></pre>
+              
+            </section>
             <li>
               Column add, drop, and alter can also be done at the same time.
             </li>
             <li class="li-2">To add a column:</li>
-            <pre
-              class="li-2"
-            ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> ADD COLUMN IF NOT EXISTS <i>&lt;column name> &lt;column type></i> ;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> ADD COLUMN IF NOT EXISTS <i>&lt;column name> &lt;column type></i> ;</code></pre>
+              
+            </section>
             <li class="li-2">To add a column in a schema:</li>
-            <pre
-              class="li-2"
-            ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> ADD COLUMN IF NOT EXISTS <i>&lt;column name> &lt;column type></i> ;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> ADD COLUMN IF NOT EXISTS <i>&lt;column name> &lt;column type></i> ;</code></pre>
+              
+            </section>
             <li class="li-2">To drop a column:</li>
-            <pre
-              class="li-2"
-            ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> DROP COLUMN IF EXISTS <i>&lt;column name></i> ;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> DROP COLUMN IF EXISTS <i>&lt;column name></i> ;</code></pre>
+              
+            </section>
             <li class="li-2">To drop a column in a schema:</li>
-            <pre
-              class="li-2"
-            ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> DROP COLUMN IF EXISTS <i>&lt;column name></i> ;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> DROP COLUMN IF EXISTS <i>&lt;column name></i> ;</code></pre>
+              
+            </section>
             <li class="li-2">To alter column name:</li>
-            <pre
-              class="li-2"
-            ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> RENAME COLUMN <i>&lt;new column name></i> ;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> RENAME COLUMN <i>&lt;new column name></i> ;</code></pre>
+              
+            </section>
             <li class="li-2">To alter column name in a schema:</li>
-            <pre
-              class="li-2"
-            ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> RENAME COLUMN <i>&lt;new column name></i> ;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> RENAME COLUMN <i>&lt;new column name></i> ;</code></pre>
+              
+            </section>
             <li class="li-2">To alter column type:</li>
-            <pre
-              class="li-2"
-            ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> ALTER COLUMN <i>&lt;column name></i> TYPE <i>&lt;column type></i>;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> ALTER COLUMN <i>&lt;column name></i> TYPE <i>&lt;column type></i>;</code></pre>
+              
+            </section>
             <li class="li-2">To alter column type in a schema:</li>
-            <pre
-              class="li-2"
-            ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> ALTER COLUMN <i>&lt;column name></i> TYPE <i>&lt;column type></i>;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> ALTER COLUMN <i>&lt;column name></i> TYPE <i>&lt;column type></i>;</code></pre>
+              
+            </section>
             <li class="li-2">To alter column default value:</li>
-            <pre
-              class="li-2"
-            ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> ALTER COLUMN <i>&lt;column name></i> SET DEFAULT <i>&lt;value></i>;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> ALTER COLUMN <i>&lt;column name></i> SET DEFAULT <i>&lt;value></i>;</code></pre>
+              
+            </section>
             <li class="li-2">To alter column default value in a schema:</li>
-            <pre
-              class="li-2"
-            ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> ALTER COLUMN <i>&lt;column name></i> SET DEFAULT <i>&lt;value></i>;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> ALTER COLUMN <i>&lt;column name></i> SET DEFAULT <i>&lt;value></i>;</code></pre>
+              
+            </section>
             <li class="li-2">To drop column default value:</li>
-            <pre
-              class="li-2"
-            ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> ALTER COLUMN <i>&lt;column name></i> DROP DEFAULT;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> ALTER COLUMN <i>&lt;column name></i> DROP DEFAULT;</code></pre>
+              
+            </section>
             <li class="li-2">To drop column default value in a schema:</li>
-            <pre
-              class="li-2"
-            ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> ALTER COLUMN <i>&lt;column name></i> DROP DEFAULT;</code></pre>
-            <!-- important info can belong here, if it applies to all tabs.------------>
-            <!---------------------Tab Content --------------------->
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> ALTER COLUMN <i>&lt;column name></i> DROP DEFAULT;</code></pre>
+              
+            </section>
             <br /><br />
-            <!-- Delete the div and br below if not using tabsAAAAAA-------->
-            <pre id="alter_table_copy" class="code-box">
-                      <code>
-      import psycopg2
-      
-      conn = psycopg2.connect(
-      user='postgres',
-      password='password',
-      host='localhost',
-      port=5432,
-      database='demo_database')
-      
-      conn.autocommit = True
-      cur = conn.cursor()
-      
-      alter_table = <span style="color: aqua;">"""ALTER TABLE IF EXISTS demo_table RENAME TO demo_renamed_table"""</span>
-      
-      cur.execute(alter_table)
-      
-      conn.commit()
-      conn.close()
-                      </code>
-                  </pre>
+            <section class="code-block">
+              <pre id="alter_table_copy" class="code-box">
+                        <code>
+import psycopg2
+
+conn = psycopg2.connect(
+  user='postgres',
+  password='password',
+  host='localhost',
+  port=5432,
+  database='demo_database')
+
+conn.autocommit = True
+cur = conn.cursor()
+
+alter_table = <span style="color: aqua;">"""ALTER TABLE IF EXISTS demo_table RENAME TO demo_renamed_table"""</span>
+
+cur.execute(alter_table)
+
+conn.commit()
+conn.close()
+                        </code>
+                    </pre>
+            </section>
             <br /><br />
-            <section class="output-box">
+            <section class="output-">
               <figure>
                 <figcaption>Alter Table</figcaption>
                 <img
@@ -1217,9 +1156,6 @@ conn.close()
                   title="alter_table"
                 />
               </figure>
-              <p class="centered">
-                <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
-              </p>
               <figure>
                 <figcaption>Alter Table In Schema</figcaption>
                 <img
@@ -1227,7 +1163,6 @@ conn.close()
                   title="alter_table_in_schema"
                 />
               </figure>
-              <p><<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>></p>
               <figure>
                 <figcaption>
                   Set Schema of a table (Move a Schema from one table to
@@ -1252,9 +1187,6 @@ conn.close()
                   title="new_table_name"
                 />
               </figure>
-              <p class="centered">
-                &lt;&lt;&lt; - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
-              </p>
               <figure>
                 <figcaption>Gitbash/PSQL => Old table name</figcaption>
                 <img
@@ -1277,27 +1209,11 @@ conn.close()
                 />
               </figure>
             </section>
-            <!---------------------Tab Content --------------------->
           </div>
-        </section>
-        </div>
-        <!--_________________END OF Alter Table SECTION_________________-->
         <br /><br />
-        <!--_________________SECTION_________________-->
         <div id="SQL13">
-          <h2></h2>
-          <div class="tab">
-            <section id="">
-              <h4></h4>
-              <ul>
-                <li></li>
-                <li class="li-2"></li>
-              </ul>
-            </section>
-          </div>
-          <button type="button" class="collapsible">Copy Table</button>
-          <div class="content">
-            <h3>Important Info:</h3>
+          <h2>
+          Copy Table</h2>
             <ul class="li-2">
               Change the
               <span style="color: aqua; background-color: gray"> aqua</span>
@@ -1311,53 +1227,63 @@ conn.close()
               >
             </li>
             <li>To copy a table:</li>
-            <pre
-              class="li-2"
-            ><code>CREATE TABLE <i>&lt;new table name></i> AS (SELECT <i>&lt;column names / *></i> FROM <i>&lt; table name></i>);</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>CREATE TABLE <i>&lt;new table name></i> AS (SELECT <i>&lt;column names / *></i> FROM <i>&lt; table name></i>);</code></pre>
+            </section>
             <li>To copy a table from a specific schema:</li>
-            <pre
-              class="li-2"
-            ><code>CREATE TABLE <i>&lt;schema name.new table name></i> AS (SELECT <i>&lt;column names / *></i> FROM <i>&lt;schema name.table name></i>);</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>CREATE TABLE <i>&lt;schema name.new table name></i> AS (SELECT <i>&lt;column names / *></i> FROM <i>&lt;schema name.table name></i>);</code></pre>
+            </section>
             <li>
               To copy a table without data (Table structure/column names and
               types only):
             </li>
-            <pre
-              class="li-2"
-            ><code>CREATE TABLE <i>&lt;new table name></i> AS (SELECT <i>&lt;column names / *></i> FROM <i>&lt; table name></i>) WITH NO DATA;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>CREATE TABLE <i>&lt;new table name></i> AS (SELECT <i>&lt;column names / *></i> FROM <i>&lt; table name></i>) WITH NO DATA;</code></pre>
+            </section>
             <li>
               To copy a table from a specific schema without data (Table
               structure/column names and types only):
             </li>
-            <pre
-              class="li-2"
-            ><code>CREATE TABLE <i>&lt;schema name.new table name></i> AS (SELECT <i>&lt;column names / *></i> FROM <i>&lt;schema name.table name></i>) WITH NO DATA;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>CREATE TABLE <i>&lt;schema name.new table name></i> AS (SELECT <i>&lt;column names / *></i> FROM <i>&lt;schema name.table name></i>) WITH NO DATA;</code></pre>
+              
+            </section>
             <br /><br />
-            <!---------------------Tab Content --------------------->
-            <pre id="copy_table_copy" class="code-box">
-                    <code>
-      import psycopg2
-      
-      conn = psycopg2.connect(
-      user='postgres',
-      password='password',
-      host='localhost',
-      port=5432,
-      database='demo_database')
-      
-      conn.autocommit = True
-      cur = conn.cursor()
-      
-      copy_table = """<span style="color: aqua;">CREATE TABLE demo_schema.copy_table AS (SELECT city, population FROM public.test_table);</span>"""
-      
-      cur.execute(copy_table)
-      
-      conn.commit()
-      conn.close()
-                    </code>
-                </pre>
+            <section class="code-block">
+              <pre id="copy_table_copy" class="code-box">
+                      <code>
+import psycopg2
+
+conn = psycopg2.connect(
+  user='postgres',
+  password='password',
+  host='localhost',
+  port=5432,
+  database='demo_database')
+
+conn.autocommit = True
+cur = conn.cursor()
+
+copy_table = """<span style="color: aqua;">CREATE TABLE demo_schema.copy_table AS (SELECT city, population FROM public.test_table);</span>"""
+
+cur.execute(copy_table)
+
+conn.commit()
+conn.close()
+                      </code>
+                  </pre>
+            </section>
             <br /><br />
-            <section class="output-box">
+            <section class="output">
               <figure>
                 <figcaption>Tables before copying</figcaption>
                 <img
@@ -1380,28 +1306,10 @@ conn.close()
                 />
               </figure>
             </section>
-            <!---------------------Tab Content --------------------->
           </div>
-        </section>
-        </div>
-        <!--_________________END OF SECTION_________________-->
         <br /><br />
-        <!--_________________SECTION_________________-->
         <div id="SQL14">
-          <h2></h2>
-          <div class="tab">
-            <section id="">
-              <h4></h4>
-              <ul>
-                <li></li>
-                <li class="li-2"></li>
-              </ul>
-            </section>
-          </div>
-          <button type="button" class="collapsible">Insert Values</button>
-          <div class="content">
-            <!-- important info can belong here, if it applies to all tabs.------------>
-            <h3>Important Info:</h3>
+          <h2>Insert Values</h2>
             <ul class="li-2">
               Change the
               <span style="color: aqua; background-color: gray"> aqua</span>
@@ -1425,59 +1333,77 @@ conn.close()
               <i>&lt;schema name.table name></i> convention.
             </li>
             <li>To insert Values into one column:</li>
-            <pre
-              class="li-2"
-            ><code>INSERT INTO <i>&lt;schema name.table name></i>(<i>&lt;column name></i>) VALUES (<i>&lt;value</i>);</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>INSERT INTO <i>&lt;schema name.table name></i>(<i>&lt;column name></i>) VALUES (<i>&lt;value</i>);</code></pre>
+              
+            </section>
             <li>To insert multiple Values into multiple columns:</li>
-            <pre
-              class="li-2"
-            ><code>INSERT INTO <i>&lt;schema name.table name></i>(<i>&lt;column name>, &lt;column name 2>, ...</i>) VALUES (<i>&lt;value for column name 1>, &lt;value for column name 2>, ...</i>);</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>INSERT INTO <i>&lt;schema name.table name></i>(<i>&lt;column name>, &lt;column name 2>, ...</i>) VALUES (<i>&lt;value for column name 1>, &lt;value for column name 2>, ...</i>);</code></pre>
+              
+            </section>
             <li>To insert multiple Values into one Column:</li>
-            <pre
-              class="li-2"
-            ><code>INSERT INTO <i>&lt;schema name.table name></i>(<i>&lt;column name></i>) VALUES (<i>&lt;value 1</i>), (<i>&lt;value 2></i>), (<i>&lt;value 3></i>);</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>INSERT INTO <i>&lt;schema name.table name></i>(<i>&lt;column name></i>) VALUES (<i>&lt;value 1</i>), (<i>&lt;value 2></i>), (<i>&lt;value 3></i>);</code></pre>
+              
+            </section>
             <li>To insert the default value by request</li>
-            <pre
-              class="li-2"
-            ><code>INSERT INTO <i>&lt;schema name.table name></i>(<i>&lt;column name></i>) VALUES (<i>&lt;value </i>, DEFAULT);</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>INSERT INTO <i>&lt;schema name.table name></i>(<i>&lt;column name></i>) VALUES (<i>&lt;value </i>, DEFAULT);</code></pre>
+              
+            </section>
             <li>
               To insert NULL as a value, make sure the value you want to be NULL
               is replaced with NULL
             </li>
-            <pre
-              class="li-2"
-            ><code>INSERT INTO <i>&lt;schema name.table name></i>(<i>&lt;column name 1>, &lt; column name 2>, &lt; column name ...></i>) VALUES (<i>NULL, NULL, NULL></i>;</code></pre>
-            <!---------------------Tab Content --------------------->
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>INSERT INTO <i>&lt;schema name.table name></i>(<i>&lt;column name 1>, &lt; column name 2>, &lt; column name ...></i>) VALUES (<i>NULL, NULL, NULL></i>;</code></pre>
+              
+            </section>
             <br /><br />
-            <pre id="tab_name_copy" class="code-box">
-                      <code>
-      import psycopg2
-      
-      conn = psycopg2.connect(
-      user='postgres',
-      password='password',
-      host='localhost',
-      port=5432,
-      database='demo_database')
-      
-      conn.autocommit = True
-      cur = conn.cursor()
-      
-      insert_values = """<span style="color: aqua">INSERT INTO demo_table (id, f_name) VALUES (5, 'Laila');</span>"""
-      
-      cur.execute(insert_values)
-      
-      conn.commit()
-      conn.close()
-                      </code>
-                  </pre>
+            <section class="code-block">
+              <pre id="tab_name_copy" class="code-box">
+                        <code>
+import psycopg2
+
+conn = psycopg2.connect(
+  user='postgres',
+  password='password',
+  host='localhost',
+  port=5432,
+  database='demo_database')
+
+conn.autocommit = True
+cur = conn.cursor()
+
+insert_values = """<span style="color: aqua">INSERT INTO demo_table (id, f_name) VALUES (5, 'Laila');</span>"""
+
+cur.execute(insert_values)
+
+conn.commit()
+conn.close()
+                        </code>
+                    </pre>
+            </section>
             <br /><br />
             <li>Demo Values:</li>
-            <pre class="li-2"><code>
-              demo_table => id = 5
-                            f_name = "Laila"
-            </code></pre>
-            <section class="output-box">
+            <section class="code-block">
+              <pre class="li-2"><code>
+                demo_table => id = 5
+                              f_name = "Laila"
+              </code></pre>
+            </section>
+            <section class="output">
               <figure>
                 <figcaption>
                   Empty Demo Schema => Demo Table (SQL query)
@@ -1487,9 +1413,7 @@ conn.close()
                   title="empty_demo_schema.demo_table_sql_query"
                 />
               </figure>
-              <p class="centered">
-                <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
-              </p>
+              
               <figure>
                 <figcaption>Inserting values</figcaption>
                 <img
@@ -1530,28 +1454,15 @@ conn.close()
                 />
               </figure>
             </section>
-            <!---------------------Tab Content --------------------->
+            
           </div>
-        </section>
-        </div>
-        <!--_________________END OF SECTION_________________-->
+          
         <br /><br />
-        <!--_________________SECTION_________________-->
+        
         <div id="SQL15">
-          <h2></h2>
-          <div class="tab">
-            <section id="">
-              <h4></h4>
-              <ul>
-                <li></li>
-                <li class="li-2"></li>
-              </ul>
-            </section>
-          </div>
-          <button type="button" class="collapsible">Delete Values</button>
-          <div class="content">
-            <!-- important info can belong here, if it applies to all tabs.------------>
-            <h3>Important Info:</h3>
+          <h2>
+            Delete Values</h2>
+            
             <ul class="li-2">
               Change the
               <span style="color: aqua; background-color: gray"> aqua</span>
@@ -1573,45 +1484,58 @@ conn.close()
               </figure>
             </li>
             <li>To drop rows with a specific value:</li>
-            <pre
-              class="li-2"
-            ><code>DELETE FROM <i>&lt;table name></i> WHERE <i>&lt;column name = value></i>;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>DELETE FROM <i>&lt;table name></i> WHERE <i>&lt;column name = value></i>;</code></pre>
+              
+            </section>
             <li>To drop multiple rows:</li>
-            <pre
-              class="li-2"
-            ><code>DELETE FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> IN (<i>&lt;value 1, value 2, ...></i>);</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>DELETE FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> IN (<i>&lt;value 1, value 2, ...></i>);</code></pre>
+              
+            </section>
             <li>To drop all rows:</li>
-            <pre
-              class="li-2"
-            ><code>DELETE FROM <i>&lt;table name></i>;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>DELETE FROM <i>&lt;table name></i>;</code></pre>
+              
+            </section>
             <li>To drop rows where value is NULL:</li>
-            <pre
-              class="li-2"
-            ><code>DELETE FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> IS NULL;</code></pre>
-            <pre id="tab_name_copy" class="code-box">
-                      <code>
-      import psycopg2
-      
-      conn = psycopg2.connect(
-      user='postgres',
-      password='password',
-      host='localhost',
-      port=5432,
-      database='demo_database')
-      
-      conn.autocommit = True
-      cur = conn.cursor()
-      
-      drop_rows_where_value = """<span style="color:aqua">DELETE FROM demo_schema.demo_table WHERE id = 125;</span>"""
-      
-      cur.execute(drop_rows_where_value)
-      
-      conn.commit()
-      conn.close()
-                      </code>
-                  </pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>DELETE FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> IS NULL;</code></pre>
+            </section>
+            <section class="code-block">
+              <pre id="tab_name_copy" class="code-box">
+                        <code>
+import psycopg2
+
+conn = psycopg2.connect(
+  user='postgres',
+  password='password',
+  host='localhost',
+  port=5432,
+  database='demo_database')
+
+conn.autocommit = True
+cur = conn.cursor()
+
+drop_rows_where_value = """<span style="color:aqua">DELETE FROM demo_schema.demo_table WHERE id = 125;</span>"""
+
+cur.execute(drop_rows_where_value)
+
+conn.commit()
+conn.close()
+                        </code>
+                    </pre>
+            </section>
             <br /><br />
-            <section class="output-box">
+            <section class="output">
               <figure>
                 <figcaption>Drop rows with specific Value</figcaption>
                 <img
@@ -1641,31 +1565,13 @@ conn.close()
                 />
               </figure>
             </section>
-            <!---------------------Tab Content --------------------->
+            
           </div>
-        </section>
-        </div>
-        <!--_________________END OF SECTION_________________-->
+          
         <br /><br />
-        <!--_________________SECTION_________________-->
+        
         <div id="SQL16">
-          <h2></h2>
-          <div class="tab">
-            <section id="">
-              <h4></h4>
-              <ul>
-                <li></li>
-                <li class="li-2"></li>
-              </ul>
-            </section>
-          </div>
-          <button type="button" class="collapsible">
-            Alter Values / Update Values
-          </button>
-          <div class="content">
-            <!-- important info can belong here, if it applies to all tabs.------------>
-            <h3>Important Info:</h3>
-            <ul class="li-2">
+          <h2>Alter Values / Update Values</h2><ul class="li-2">
               Change the
               <span style="color: aqua; background-color: gray"> aqua</span>
               code to any of the variations below replacing what is between &lt;
@@ -1677,17 +1583,26 @@ conn.close()
               <i>&lt;schema name.table name></i> convention.
             </li>
             <li>To change/update one row:</li>
-            <pre
-              class="li-2"
-            ><code>UPDATE <i>&lt;table name></i> SET <i>&lt;column name></i> = <i>&lt;value></i> WHERE <i>&lt;column name></i> = <i>&lt;value></i>;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>UPDATE <i>&lt;table name></i> SET <i>&lt;column name></i> = <i>&lt;value></i> WHERE <i>&lt;column name></i> = <i>&lt;value></i>;</code></pre>
+              
+            </section>
             <li>To change/update multiple rows:</li>
-            <pre
-              class="li-2"
-            ><code>UPDATE <i>&lt;table name></i> SET <i>&lt;column name></i> = <i>&lt;value></i> WHERE <i>&lt;column name></i> IN (<i>&lt;value 1, value 2, ...></i>);</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>UPDATE <i>&lt;table name></i> SET <i>&lt;column name></i> = <i>&lt;value></i> WHERE <i>&lt;column name></i> IN (<i>&lt;value 1, value 2, ...></i>);</code></pre>
+              
+            </section>
             <li>To change/update all rows:</li>
-            <pre
-              class="li-2"
-            ><code>UPDATE <i>&lt;table name></i> SET <i>&lt;column name></i> = <i>&lt;value></i>;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>UPDATE <i>&lt;table name></i> SET <i>&lt;column name></i> = <i>&lt;value></i>;</code></pre>
+              
+            </section>
             <li>To change/update row to default:</li>
             <h4 class="li-2">
               <i
@@ -1697,42 +1612,48 @@ conn.close()
                 NULL.</i
               >
             </h4>
-            <pre
-              class="li-2"
-            ><code>UPDATE <i>&lt;table name></i> SET <i>&lt;column name></i> = DEFAULT;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>UPDATE <i>&lt;table name></i> SET <i>&lt;column name></i> = DEFAULT;</code></pre>
+              
+            </section>
             <li>To change/update default column value:</li>
             <li class="li-2">
               Must use Alter Table
-              <pre
-                class="li-2"
-              ><code>ALTER TABLE <i>table name></i> ALTER COLUMN <i>&lt;column name></i> SET DEFAULT <i>&lt;default value></i>;</code></pre>
+              <section class="code-block">
+                <pre
+                  class="li-2"
+                ><code>ALTER TABLE <i>table name></i> ALTER COLUMN <i>&lt;column name></i> SET DEFAULT <i>&lt;default value></i>;</code></pre>
+              </section>
             </li>
-            <!---------------------Tab Content --------------------->
             <br /><br />
-            <pre id="tab_name_copy" class="code-box">
-                      <code>
-      import psycopg2
-      
-      conn = psycopg2.connect(
-      user='postgres',
-      password='password',
-      host='localhost',
-      port=5432,
-      database='demo_database')
-      
-      conn.autocommit = True
-      cur = conn.cursor()
-      
-      change_single_value = """<span style="color:aqua">UPDATE demo_schema.demo_table SET demo_col_1 = 'Toronto' WHERE demo_col_1 = 'Juno';</span>"""
-      
-      cur.execute(change_single_value)
-      
-      conn.commit()
-      conn.close()
-                      </code>
-                  </pre>
+            <section class="code-block">
+              <pre id="tab_name_copy" class="code-box">
+                        <code>
+import psycopg2
+
+conn = psycopg2.connect(
+  user='postgres',
+  password='password',
+  host='localhost',
+  port=5432,
+  database='demo_database')
+
+conn.autocommit = True
+cur = conn.cursor()
+
+change_single_value = """<span style="color:aqua">UPDATE demo_schema.demo_table SET demo_col_1 = 'Toronto' WHERE demo_col_1 = 'Juno';</span>"""
+
+cur.execute(change_single_value)
+
+conn.commit()
+conn.close()
+                        </code>
+                    </pre>
+            </section>
             <br /><br />
-            <section class="output-box">
+            <section class="output">
               <figure>
                 <figcaption>To change/update one row</figcaption>
                 <img src="images/Screenshot 2023-10-18 103045.png" title="" />
@@ -1750,28 +1671,10 @@ conn.close()
                 <img src="images/Screenshot 2023-10-18 124804.png" title="" />
               </figure>
             </section>
-            <!---------------------Tab Content --------------------->
           </div>
-        </section>
-        </div>
-        <!--_________________END OF SECTION_________________-->
         <br /><br />
-        <!--_________________SECTION_________________-->
         <div id="SQL17">
-          <h2></h2>
-          <div class="tab">
-            <section id="">
-              <h4></h4>
-              <ul>
-                <li></li>
-                <li class="li-2"></li>
-              </ul>
-            </section>
-          </div>
-          <button type="button" class="collapsible">Copy Values</button>
-          <div class="content">
-            <!-- important info can belong here, if it applies to all tabs.------------>
-            <h3><i>Important Info:</i></h3>
+          <h2>Copy Values</h2>
             <ul class="li-2">
               Change the
               <span style="color: aqua; background-color: gray"> aqua</span>
@@ -1789,75 +1692,62 @@ conn.close()
               default values.
             </li>
             <li>To Copy Values within the same table</li>
-            <pre
-              class="li-2"
-            ><code>INSERT INTO <i>&lt;table name></i>(<i>&lt;column name></i>) SELECT <i>&lt;column name></i> FROM <i>&lt;table name></i>;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>INSERT INTO <i>&lt;table name></i>(<i>&lt;column name></i>) SELECT <i>&lt;column name></i> FROM <i>&lt;table name></i>;</code></pre>
+              
+            </section>
             <li>
               To Copy Values from one table and insert it into another table
               (This is applicable even to tables in different schemas)
             </li>
-            <pre
-              class="li-2"
-            ><code>INSERT INTO <i>&lt;table  name></i>(<i>&lt;column name></i>) SELECT <i>&lt;column name></i> FROM <i>&lt;table name></i>;</code></pre>
-            <!-- important info can belong here, if it applies to all tabs.------------>
-            <!---------------------Tab Content ---------------------><br /><br />
-            <pre id="tab_name_copy" class="code-box">
-                      <code>
-      import psycopg2
-      
-      conn = psycopg2.connect(
-      user='postgres',
-      password='password',
-      host='localhost',
-      port=5432,
-      database='demo_database')
-      
-      conn.autocommit = True
-      cur = conn.cursor()
-                        
-      copy_values_same_table = """<span style="color:aqua">INSERT INTO demo_schema.demo_table(demo_col_2) SELECT demo_col_1 FROM demo_schema.demo_table;</span>"""
-                  
-      cur.execute(copy_values_same_table)
-      
-      conn.commit()
-      conn.close()
-                    </code>
-                  </pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>INSERT INTO <i>&lt;table  name></i>(<i>&lt;column name></i>) SELECT <i>&lt;column name></i> FROM <i>&lt;table name></i>;</code></pre>
+              
+            </section>
             <br /><br />
-            <section class="output-box">
+            <section class="code-block">
+              <pre id="tab_name_copy" class="code-box">
+                        <code>
+import psycopg2
+
+conn = psycopg2.connect(
+  user='postgres',
+  password='password',
+  host='localhost',
+  port=5432,
+  database='demo_database')
+
+conn.autocommit = True
+cur = conn.cursor()
+      
+copy_values_same_table = """<span style="color:aqua">INSERT INTO demo_schema.demo_table(demo_col_2) SELECT demo_col_1 FROM demo_schema.demo_table;</span>"""
+
+cur.execute(copy_values_same_table)
+
+conn.commit()
+conn.close()
+                      </code>
+                    </pre>
+            </section>
+            <br /><br />
+            <section class="output">
               <figure>
                 <figcaption>copy values within the same table</figcaption>
                 <img src="images/Screenshot 2023-10-18 211102.png" title="" />
               </figure>
-              <p class="centered">
-                <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
-              </p>
               <figure>
                 <figcaption>copy values from one table to another</figcaption>
                 <img src="images/Screenshot 2023-10-18 212116.png" title="" />
               </figure>
             </section>
-            <!---------------------Tab Content --------------------->
           </div>
-        </section>
-        </div>
-        <!--_________________END OF SECTION_________________-->
         <br /><br />
-        <!--_________________SECTION_________________-->
         <div id="SQL18">
-          <h2></h2>
-          <div class="tab">
-            <section id="">
-              <h4></h4>
-              <ul>
-                <li></li>
-                <li class="li-2"></li>
-              </ul>
-            </section>
-          </div>
-          <button type="button" class="collapsible">Order By</button>
-          <div class="content">
-            <h3>Important Info:</h3>
+          <h2>Order By</h2>
             <ul class="li-2">
               Change the
               <span style="color: aqua; background-color: gray"> aqua</span>
@@ -1877,58 +1767,45 @@ conn.close()
               Use NULLS FIRST or NULLS LAST to explicitly specify if nulls
               should be sorted first or last. DESC uses NULLS FIRST by default.
             </li>
-            <pre
-              class="li-2"
-            ><code>SELECT <i>&lt;column name></i> FROM <i>&lt;table name></i> ORDER BY <i>&lt;column name></i> <i>&lt;ASC/DESC></i> <i>&lt;NULLS FIRST/NULLS LAST></i>;</code></pre>
-            <!---------------------Tab Content --------------------->
-            <pre id="tab_name_copy" class="code-box">
-                    <code>
-      import psycopg2
-      
-      conn = psycopg2.connect(
-      user='postgres',
-      password='password',
-      host='localhost',
-      port=5432,
-      database='demo_database')
-      
-      conn.autocommit = True
-      cur = conn.cursor()
-      order = """<span style="color:aqua; background-color:grey;">SELECT f_name FROM demo_schema.demo_table ORDER BY f_name ASC;</span>"""
-      cur.execute(order)
-      
-      conn.commit()
-      conn.close()
-                    </code>
-                </pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>SELECT <i>&lt;column name></i> FROM <i>&lt;table name></i> ORDER BY <i>&lt;column name></i> <i>&lt;ASC/DESC></i> <i>&lt;NULLS FIRST/NULLS LAST></i>;</code></pre>
+              
+            </section>
+            <section class="code-block">
+              <pre id="tab_name_copy" class="code-box">
+                      <code>
+import psycopg2
+
+conn = psycopg2.connect(
+  user='postgres',
+  password='password',
+  host='localhost',
+  port=5432,
+  database='demo_database')
+
+conn.autocommit = True
+cur = conn.cursor()
+order = """<span style="color:aqua; background-color:grey;">SELECT f_name FROM demo_schema.demo_table ORDER BY f_name ASC;</span>"""
+cur.execute(order)
+
+conn.commit()
+conn.close()
+                      </code>
+                  </pre>
+            </section>
             <br /><br />
-            <section class="output-box">
+            <section class="output">
               <figure>
                 <figcaption>Order By</figcaption>
                 <img src="images/Screenshot 2023-10-18 214326.png" title="" />
               </figure>
             </section>
-            <!---------------------Tab Content --------------------->
           </div>
-        </section>
-        </div>
-        <!--_________________END OF SECTION_________________-->
         <br /><br />
-        <!--_________________SECTION_________________-->
         <div id="SQL19">
-          <h2></h2>
-          <div class="tab">
-            <section id="">
-              <h4></h4>
-              <ul>
-                <li></li>
-                <li class="li-2"></li>
-              </ul>
-            </section>
-          </div>
-          <button type="button" class="collapsible">Distinct</button>
-          <div class="content">
-            <h3>Important Info:</h3>
+          <h2>Distinct</h2>
             <ul class="li-2">
               Change the
               <span style="color: aqua; background-color: gray"> aqua</span>
@@ -1940,59 +1817,46 @@ conn.close()
               the
               <i>&lt;schema name.table name></i> convention.
             </li>
-            <pre
-              class="li-2"
-            ><code>SELECT DISTINCT <i>&lt;column name></i>FROM <i>&lt;table name></i> ORDER BY <i>&lt;column name></i> <i>&lt;ASC/DESC></i> <i>&lt;NULL FIRST/NULL LAST></i>;</code></pre>
-            <!---------------------Tab Content --------------------->
-            <pre id="tab_name_copy" class="code-box">
-                    <code>
-      import psycopg2
-      
-      conn = psycopg2.connect(
-      user='postgres',
-      password='password',
-      host='localhost',
-      port=5432,
-      database='demo_database')
-      
-      conn.autocommit = True
-      cur = conn.cursor()
-                    
-      order = """<span style="color:aqua; background-color:grey;">SELECT f_name FROM demo_schema.demo_table ORDER BY f_name ASC;</span>"""
-      cur.execute(order)
-      
-      conn.commit()
-      conn.close()
-                    </code>
-                </pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>SELECT DISTINCT <i>&lt;column name></i>FROM <i>&lt;table name></i> ORDER BY <i>&lt;column name></i> <i>&lt;ASC/DESC></i> <i>&lt;NULL FIRST/NULL LAST></i>;</code></pre>
+              
+            </section>
+            <section class="code-block">
+              <pre id="tab_name_copy" class="code-box">
+                      <code>
+import psycopg2
+
+conn = psycopg2.connect(
+  user='postgres',
+  password='password',
+  host='localhost',
+  port=5432,
+  database='demo_database')
+
+conn.autocommit = True
+cur = conn.cursor()
+  
+order = """<span style="color:aqua; background-color:grey;">SELECT f_name FROM demo_schema.demo_table ORDER BY f_name ASC;</span>"""
+cur.execute(order)
+
+conn.commit()
+conn.close()
+                      </code>
+                  </pre>
+            </section>
             <br /><br />
-            <section class="output-box">
+            <section class="output">
               <figure>
                 <figcaption>Order By Distinct</figcaption>
                 <img src="images/Screenshot 2023-10-18 231930.png" title="" />
               </figure>
             </section>
-            <!---------------------Tab Content --------------------->
           </div>
-        </section>
-        </div>
-        <!--_________________END OF SECTION_________________-->
         <br /><br />
-        <!--_________________SECTION_________________-->
         <div id="SQL20">
-          <h2></h2>
-          <div class="tab">
-            <section id="">
-              <h4></h4>
-              <ul>
-                <li></li>
-                <li class="li-2"></li>
-              </ul>
-            </section>
-          </div>
-          <button type="button" class="collapsible">Where</button>
-          <div class="content">
-            <h3>Important Info:</h3>
+          <h2>Where</h2>
             <ul class="li-2">
               Change the
               <span style="color: aqua; background-color: gray"> aqua</span>
@@ -2028,11 +1892,13 @@ conn.close()
             </li>
             <span class="li-2"
               >Used when checking if all conditions are either TRUE or FALSE
-              <pre
-                class="li-2"
-              ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> = <i>&lt;value></i> AND <i>&lt;column name></i> = <i>&lt;value></i>;</code></pre>
+              <section class="code-block">
+                <pre
+                  class="li-2"
+                ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> = <i>&lt;value></i> AND <i>&lt;column name></i> = <i>&lt;value></i>;</code></pre>
+              </section>
             </span>
-            <section class="output-box">
+            <section class="output">
               <figure>
                 <figcaption>WHERE => AND</figcaption>
                 <img src="images/Screenshot 2023-10-20 183846.png" title="" />
@@ -2043,11 +1909,13 @@ conn.close()
             </li>
             <span class="li-2"
               >Used if at least one condition must evaluate to TRUE
-              <pre
-                class="li-2"
-              ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> = <i>&lt;value></i> OR <i>&lt;column name></i> = <i>&lt;value></i>;</code></pre>
+              <section class="code-block">
+                <pre
+                  class="li-2"
+                ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> = <i>&lt;value></i> OR <i>&lt;column name></i> = <i>&lt;value></i>;</code></pre>
+              </section>
             </span>
-            <section class="output-box">
+            <section class="output">
               <figure>
                 <figcaption>WHERE => OR</figcaption>
                 <img src="images/Screenshot 2023-10-20 184209.png" title="" />
@@ -2059,11 +1927,13 @@ conn.close()
             <span class="li-2">
               Used only when checking a list of operators. Returns TRUE if
               <i>value</i> matches any value in the list.
-              <pre
-                class="li-2"
-              ><code>SELECT * FROM <i>&lt;table_name></i> WHERE <i>&lt;column name></i> IN (<i>&lt;value1, value2, ...></i>);</code></pre>
+              <section class="code-block">
+                <pre
+                  class="li-2"
+                ><code>SELECT * FROM <i>&lt;table_name></i> WHERE <i>&lt;column name></i> IN (<i>&lt;value1, value2, ...></i>);</code></pre>
+              </section>
             </span>
-            <section class="output-box">
+            <section class="output">
               <figure>
                 <figcaption>WHERE => IN</figcaption>
                 <img src="images/Screenshot 2023-10-20 184255.png" title="" />
@@ -2074,11 +1944,13 @@ conn.close()
             </li>
             <span class="li-2">
               Used to match a value between a range.
-              <pre class="li-2"><code
-                  >SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> BETWEEN <i>&lt;value1></i> AND <i>&lt;value2></i>;</code
-                ></pre>
+              <section class="code-block">
+                <pre class="li-2"><code
+                    >SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> BETWEEN <i>&lt;value1></i> AND <i>&lt;value2></i>;</code
+                  ></pre>
+              </section>
             </span>
-            <section class="output-box">
+            <section class="output">
               <figure>
                 <figcaption>WHERE => BETWEEN</figcaption>
                 <img src="images/Screenshot 2023-10-20 184349.png" title="" />
@@ -2097,8 +1969,11 @@ conn.close()
                 <span class="li_tab"
                   >EX: Matches anything that starts with 'Vio'</span
                 >
-                <pre><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> LIKE 'Vio%';</code></pre>
-                <section class="output-box">
+                <section class="code-block">
+                  <pre><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> LIKE 'Vio%';</code></pre>
+                  
+                </section>
+                <section class="output>
                   <figure>
                     <figcaption>WHERE => LIKE => %</figcaption>
                     <img
@@ -2115,8 +1990,10 @@ conn.close()
                   >Matches anything where the second character is 'i', followed
                   by any number of other characters.</span
                 >
-                <pre><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> LIKE '_i%';</code></pre>
-                <section class="output-box">
+                <section class="code-block">
+                  <pre><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> LIKE '_i%';</code></pre>
+                </section>
+                <section class="output">
                   <figure>
                     <figcaption>WHERE => LIKE => _</figcaption>
                     <img
@@ -2131,8 +2008,10 @@ conn.close()
                 <span class="li_tab"
                   >Matches but doesn't care for case sensitive.</span
                 >
-                <pre><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> ILIKE '%Vio%';</code></pre>
-                <section class="output-box">
+                <section class="code-block">
+                  <pre><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> ILIKE '%Vio%';</code></pre>
+                  
+                </section><section class="output">
                   <figure>
                     <figcaption>WHERE => ILIKE</figcaption>
                     <img
@@ -2148,11 +2027,13 @@ conn.close()
             </li>
             <span class="li-2">
               Check if the value is NULL.
-              <pre
-                class="li-2"
-              ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> = <i>&lt;value></i> AND <i>&lt;column name></i> IS NULL;</code></pre>
+              <section class="code-block">
+                <pre
+                  class="li-2"
+                ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> = <i>&lt;value></i> AND <i>&lt;column name></i> IS NULL;</code></pre>
+              </section>
             </span>
-            <section class="output-box">
+            <section class="output">
               <figure>
                 <figcaption>WHERE => IS NULL</figcaption>
                 <img src="images/Screenshot 2023-10-20 183846.png" title="" />
@@ -2160,9 +2041,11 @@ conn.close()
             </section>
             <span class="li-2">
               Return results including IS NULL.
-              <pre
-                class="li-2"
-              ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> IS NULL OR/AND <i>&lt;column name></i> IN (<i>&lt;value1>, &lt;value2>, &lt;...></i>);</code></pre>
+              <section class="code-block">
+                <pre
+                  class="li-2"
+                ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> IS NULL OR/AND <i>&lt;column name></i> IN (<i>&lt;value1>, &lt;value2>, &lt;...></i>);</code></pre>
+              </section>
             </span>
             <figure>
               <figcaption>
@@ -2175,11 +2058,13 @@ conn.close()
             </li>
             <span class="li-2">
               Omits the values specified by NOT
-              <pre
-                class="li-2"
-              ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> NOT IN (<i>&lt;value1, value2, ...></i>);</code></pre>
+              <section class="code-block">
+                <pre
+                  class="li-2"
+                ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> NOT IN (<i>&lt;value1, value2, ...></i>);</code></pre>
+              </section>
             </span>
-            <section class="output-box">
+            <section class="output">
               <figure>
                 <figcaption>WHERE => NOT</figcaption>
                 <img src="images/Screenshot 2023-10-21 154232.png" title="" />
@@ -2187,25 +2072,9 @@ conn.close()
             </section>
             <br /><br />
           </div>
-        </section>
-        </div>
-        <!--_________________END OF SECTION_________________-->
         <br /><br />
-        <!--_________________SECTION_________________-->
         <div id="SQL21">
-          <h2></h2>
-          <div class="tab">
-            <section id="">
-              <h4></h4>
-              <ul>
-                <li></li>
-                <li class="li-2"></li>
-              </ul>
-            </section>
-          </div>
-          <button type="button" class="collapsible">Limit & Offset</button>
-          <div class="content">
-            <h3>Important Info:</h3>
+          <h2>Limit & Offset</h2>
             <ul class="li-2">
               Change the
               <span style="color: aqua; background-color: gray"> aqua</span>
@@ -2218,15 +2087,20 @@ conn.close()
               <i>&lt;schema name.table name</i> convention.
             </li>
             <li>Limits the number of results returned by the query</li>
-            <pre
-              class="li-2"
-            ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> BETWEEN <i>&lt;value1></i> AND <i>&lt;value2></i>;</code></pre>
+            <section class="code-block">
+              <pre
+                class="li-2"
+              ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> BETWEEN <i>&lt;value1></i> AND <i>&lt;value2></i>;</code></pre>
+              
+            </section>
             <li>
               Offset is when you say to skip a certain number of rows before
               beginnign the return row
             </li>
-            <pre><code>SELECT * FROM <i>&lt;table name</i> LIMIT <i>&lt;number></i>, offset <i>&lt;number></i>;</code></pre>
-            <!---------------------Tab Content --------------------->
+            <section class="code-block">
+              <pre><code>SELECT * FROM <i>&lt;table name</i> LIMIT <i>&lt;number></i>, offset <i>&lt;number></i>;</code></pre>
+              
+            </section>
             <figure>
               <figcaption>Return Query Without Limits</figcaption>
               <img src="images/Screenshot 2023-10-21 154756.png" title="" />
@@ -2240,26 +2114,9 @@ conn.close()
               <img src="images/Screenshot 2023-10-23 090533.png" title="" />
             </figure>
           </div>
-        </section>
-        </div>
-        <!---------------------Tab Content --------------------->
-        <!--_________________END OF SECTION_________________-->
         <br /><br />
-        <!--_________________SECTION_________________-->
         <div id="SQL22">
-          <h2></h2>
-          <div class="tab">
-            <section id="">
-              <h4></h4>
-              <ul>
-                <li></li>
-                <li class="li-2"></li>
-              </ul>
-            </section>
-          </div>
-          <button type="button" class="collapsible">Joins</button>
-          <div class="content">
-            <h3>Important Info:</h3>
+          <h2>Joins</h2>
             <ul>
               Change the
               <span style="color: aqua; background-color: gray"> aqua</span>
@@ -2308,46 +2165,32 @@ conn.close()
               data. <br />Can choose to display however many columns from each
               table as liked that will correspond to the query.
             </li>
-            <pre><code>SELECT <i>&lt;column1 from table1>, &lt;column1 from table2>, &lt;column2 from table1>, ... </i>
-      FROM <i>&lt;table1></i> 
-      INNER JOIN <i>&lt;tabel2></i>
-      ON <i>&lt;column1 from table1 with similar data></i> = <i>&lt; column1 from table2 with similar data></i>;</code></pre>
+            <section class="code-block">
+<pre><code>SELECT <i>&lt;column1 from table1>, &lt;column1 from table2>, &lt;column2 from table1>, ... </i>
+FROM <i>&lt;table1></i> 
+INNER JOIN <i>&lt;tabel2></i>
+ON <i>&lt;column1 from table1 with similar data></i> = <i>&lt; column1 from table2 with similar data></i>;</code></pre>
+            </section>
             <br /><br />
             <section>
-              <pre><code>SELECT a_fruit, b_fruit 
-      FROM table_a 
-      INNER JOIN table_b
-      ON a_fruit = b_fruit;
-      </code></pre>
+              <section class="code-block">
+                <pre><code>SELECT a_fruit, b_fruit 
+FROM table_a 
+INNER JOIN table_b
+ON a_fruit = b_fruit;
+                      </code></pre>
+              </section>
             </section>
-            <section class="output-box">
+            <section class="output">
               <figure>
                 <figcaption>Inner Join</figcaption>
                 <img src="images//Screenshot 2023-10-22 160127.png" title="" />
               </figure>
             </section>
           </div>
-        </section>
-        </div>
-        <!---------------------Tab Content --------------------->
-        <!--_________________END OF SECTION_________________-->
         <br /><br />
-        <!--_________________SECTION_________________-->
         <div id="SQL23">
-          <h2></h2>
-          <div class="tab">
-            <section id="">
-              <h4></h4>
-              <ul>
-                <li></li>
-                <li class="li-2"></li>
-              </ul>
-            </section>
-          </div>
-          <button type="button" class="collapsible">Group By</button>
-          <div class="content">
-            <!-- Tabs Bar-->
-            <h3>Important Info:</h3>
+          <h2>Group By</h2>
             <ul class="li-2">
               Change the
               <span style="color: aqua; background-color: gray"> aqua</span>
@@ -2369,9 +2212,11 @@ conn.close()
                 >But if no aggregate function is used works like DISTINCT.</span
               >
             </li>
-            <pre><code>SELECT <i>&lt;Optional - aggregate></i><i>&lt;column name></i> FROM <i>&lt;table name></i> GROUP BY <i>&lt;column name</i>;</code></pre>
-            <!---------------------Tab Content --------------------->
-            <section class="output-box">
+            <section class="code-block">
+              <pre><code>SELECT <i>&lt;Optional - aggregate></i><i>&lt;column name></i> FROM <i>&lt;table name></i> GROUP BY <i>&lt;column name</i>;</code></pre>
+              
+            </section>
+            <section class="output">
               <figure>
                 <figcaption>
                   l_names grouped by sum of num column, limited to 5 first
@@ -2387,123 +2232,10 @@ conn.close()
                 <img src="images/Screenshot 2023-10-23 092245.png" title="" />
               </figure>
             </section>
-            <!---------------------Tab Content --------------------->
           </div>
-        </section>
-        </div>
-        <!--_________________END OF SECTION_________________-->
         <br /><br />
-        <!--_________________SECTION_________________-->
-        <div id="SQL24">
-          <h2></h2>
-          <div class="tab">
-            <section id="">
-              <h4></h4>
-              <ul>
-                <li></li>
-                <li class="li-2"></li>
-              </ul>
-            </section>
-          </div>
-          <button type="button" class="collapsible">TITLE</button>
-          <div class="content">
-            <h3>Important Info:</h3>
-            <ul class="li-2">
-              Change the
-              <span style="color: aqua; background-color: gray"> aqua</span>
-              code to any of the variations below replacing what is between &lt;
-              & > in italics with the appropriate names.
-            </ul>
-            <li>
-              To insert values to specific tables in specific schemas, follow
-              the
-              <i>&lt;schema name.table name</i> convention.
-            </li>
-            <!---------------------Tab Content --------------------->
-            <pre id="tab_name_copy" class="code-box">
-                    <code>
-                    code line1
-                    code line2
-                    code line3
-                    <span style="color:aqua; background-color:grey;"></span>
-                    </code>
-                </pre>
-            <br /><br />
-            <section class="output-box">
-              <figure>
-                <figcaption>Image Caption</figcaption>
-                <img src="images" title="" />
-              </figure>
-              <p class="centered">
-                <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
-              </p>
-              <figure>
-                <figcaption>Image Caption</figcaption>
-                <img src="images" title="" />
-              </figure>
-            </section>
-            <!---------------------Tab Content --------------------->
-          </div>
-        </section>
-        </div>
-        <!--_________________END OF SECTION_________________-->
-        <br /><br />
-        <!--_________________SECTION_________________-->
-        <div id="SQL25">
-          <h2></h2>
-          <div class="tab">
-            <section id="">
-              <h4></h4>
-              <ul>
-                <li></li>
-                <li class="li-2"></li>
-              </ul>
-            </section>
-          </div>
-          <button type="button" class="collapsible">TITLE</button>
-          <div class="content">
-            <h3>Important Info:</h3>
-            <ul class="li-2">
-              Change the
-              <span style="color: aqua; background-color: gray"> aqua</span>
-              code to any of the variations below replacing what is between &lt;
-              & > in italics with the appropriate names.
-            </ul>
-            <li>
-              To insert values to specific tables in specific schemas, follow
-              the
-              <i>&lt;schema name.table name</i> convention.
-            </li>
-            <!---------------------Tab Content --------------------->
-            <pre id="tab_name_copy" class="code-box">
-                    <code>
-                    code line1
-                    code line2
-                    code line3
-                    <span style="color:aqua; background-color:grey;"></span>
-                    </code>
-                </pre>
-            <br /><br />
-            <section class="output-box">
-              <figure>
-                <figcaption>Image Caption</figcaption>
-                <img src="images" title="" />
-              </figure>
-              <p class="centered">
-                <<< - - - - - - ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ - - - - - - >>>
-              </p>
-              <figure>
-                <figcaption>Image Caption</figcaption>
-                <img src="images" title="" />
-              </figure>
-            </section>
-            <!---------------------Tab Content --------------------->
-          </div>
-        </section>
-        </div>
-        <!--_________________END OF SECTION_________________-->
-        <br /><br />
-      </div>
+    </div>
+        
     <script src="sql.js"></script>
   </body>
 </html>
