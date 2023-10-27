@@ -1,76 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>SQL</title>
-  </head>
-  <body>
-    <div class="sidenav">
-      <h2 class="nav-title">Connecting :</h2>
-      <button class="dropdown-btn">
-        <a href="#SQL1">Access SQL</a>
-      </button>
-      <div class="dropdown-container">
-        <a href="#access_sql_python">Using Python</a>
-        <a href="#access_sql_gitbash">Using GitBash</a>
-        <a href="#access_sql_psql">Using PSQL</a>
-      </div>
-      <button class="dropdown-btn">
-        <a href="#SQL2">Disconnect from Database</a>
-      </button>
-      <div class="dropdown-container">
-        <a href="#sql2_using_python">Using Python</a>
-        <a href="#sql2_using_shell">Using GitBash/PSQL</a>
-      </div>
-      <h2 class="nav-title">Database :</h2>
-      <a href="#SQL3">Create Database</a>
-      <a href="#SQL4">Change to Database</a>
-      <a href="#SQL5">Rename DatabaseL</a>
-      <a href="#SQL6">Copy Database</a>
-      <a href="#SQL7">Delete Database</a>
-      <h2 class="nav-title">Schema :</h2>
-      <a href="#SQL9">Create Schema</a>
-      <a href="#SQL10">Drop Schema</a>
-      <h2 class="nav-title">Table :</h2>
-      <a href="#SQL11">Create Table</a>
-      <a href="#SQL12">Drop Table</a>
-      <a href="#SQL13">Alter Table</a>
-      <a href="#SQL14">Copy Table</a>
-      <h2 class="nav-title">Values :</h2>
-      <a href="#SQL15">Insert Values</a>
-      <a href="#SQL16">Delete Values</a>
-      <a href="#SQL17">Alter Values</a>
-      <a href="#SQL18">Copy Values</a>
-      <h2 class="nav-title">Fundamentals :</h2>
-      <a href="#SQL19">Order By</a>
-      <a href="#SQL20">Distinct</a>
-      <a href="#SQL21">Where</a>
-      <a href="#SQL22">Limit & Offset</a>
-      <a href="#SQL23">Joins</a>
-      <a href="#SQL24">Group By</a>
-    </div>
-    <div class="main">
-      <h1>SQL</h1>
-      <div id="SQL1">
-        <h2>Access SQL</h2>
-        <h4>Using Python</h4>
-        <ul>
-          <li>Import psycopg2</li>
-          <li>Create a conn variable with the following parameters</li>
-          <li class="li-2">user='postgres'</li>
-          <li class="li-2">password='password'</li>
-          <li class="li-2">host='localhost'</li>
-          <li class="li-2">port=5432</li>
-          <li>Always make sure to commit and close conn at the end.</li>
-          <li class="li-2">conn.commit()</li>
-          <li class="li-2">conn.close()</li>
-          <li>As of 2023-10-07, the password is password.</li>
-        </ul>
-        <section class="code-block">
-            <pre>
-              <code>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>SQL</title>
+    </head>
+    <body>
+        <div class="sidenav">
+            <h2 class="nav-title">Connecting :</h2>
+            <button class="dropdown-btn">
+                <a href="#access_sql">Access SQL</a>
+            </button>
+            <div class="dropdown-container">
+                <a href="#access_sql_python">Using Python</a>
+                <a href="#access_sql_gitbash">Using GitBash</a>
+                <a href="#access_sql_psql">Using PSQL</a>
+            </div>
+            <button class="dropdown-btn">
+                <a href="#disconnect_from_database">Disconnect from Database</a>
+            </button>
+            <div class="dropdown-container">
+                <a href="#disconnect_using_python">Using Python</a>
+                <a href="#disconnect_using_shell">Using GitBash/PSQL</a>
+            </div>
+            <h2 class="nav-title">Database :</h2>
+            <a href="#create_database">Create Database</a>
+            <a href="#change_to_database">Change to Database</a>
+            <a href="#rename_database">Rename Database</a>
+            <a href="#copy_database">Copy Database</a>
+            <a href="#delete_database">Delete Database</a>
+            <h2 class="nav-title">Schema :</h2>
+            <a href="#create_schema">Create Schema</a>
+            <a href="#dropschema">Drop Schema</a>
+            <h2 class="nav-title">Table :</h2>
+            <a href="#create_table">Create Table</a>
+            <a href="#drop_table">Drop Table</a>
+            <a href="#alter_table">Alter Table</a>
+            <a href="#copy_table">Copy Table</a>
+            <h2 class="nav-title">Values :</h2>
+            <a href="#insert_values">Insert Values</a>
+            <a href="#delete_values">Delete Values</a>
+            <a href="#alter_values">Alter Values</a>
+            <a href="#copy_values">Copy Values</a>
+            <h2 class="nav-title">Fundamentals :</h2>
+            <a href="#order_by">Order By</a>
+            <a href="#distinct">Distinct</a>
+            <a href="#where">Where</a>
+            <a href="#limit_offset">Limit & Offset</a>
+            <a href="#joins">Joins</a>
+            <a href="#group_by">Group By</a>
+            <a href="#aliases">Aliases</a>
+            <a href="#having">Having</a>
+            <a href="#foreign_key">Foreign Key</a>
+            <a href="#primary_key">Primary Key</a>
+            <a href="#check">Check</a>
+            <a href="unique">Unique</a>
+        </div>
+        <div class="main">
+            <h1 class="center-title">SQL</h1>
+            <div id="access_sql">
+                <h2 class="topic-title">Access SQL</h2>
+                <h4 id="access_sql_python" class="usage-title">Using Python</h4>
+                <ul>
+                    <li>Import psycopg2</li>
+                    <li>
+                        Create a conn variable with the following parameters
+                    </li>
+                    <li class="li-2">user='postgres'</li>
+                    <li class="li-2">password='password'</li>
+                    <li class="li-2">host='localhost'</li>
+                    <li class="li-2">port=5432</li>
+                    <li>
+                        Always make sure to commit and close conn at the end.
+                    </li>
+                    <li class="li-2">conn.commit()</li>
+                    <li class="li-2">conn.close()</li>
+                    <li>As of 2023-10-07, the password is password.</li>
+                </ul>
+                <section class="code-block">
+                    <pre>
+            <code>
 import psycopg2
 
 conn = psycopg2.connect(
@@ -87,171 +97,201 @@ cur.execute("""     """)
 
 conn.commit()
 conn.close()
-              </code>
-          </pre>
-        </section>
-        <h4>Using GitBash</h4>
-        <ul>
-          <li>To Access the psql server from GitBash first type: cd</li>
-          <figure>
-            <img src="images/Screenshot 2023-10-07 142838.png" alt="" />
-            <figcaption>cd</figcaption>
-          </figure>
-          <li>Now enter the psql server by typing: psql -U postgres</li>
-          <li class="li-2">The -U is for user</li>
-          <li class="li-2">postgres, is the username</li>
-          <li class="li-2">
-            The password is whatever you have set up: make sure it is easy
-            to remember.
-          </li>
-          <figure>
-            <img src="images/Screenshot 2023-10-07 142845.png" alt="" />
-            <figcaption>cd</figcaption>
-          </figure>
-        </ul>
-        <li>As of 2023-10-07, the password is password.</li>            
-        <h4>Using PSQL</h4>
-        <ul>
-          <li>
-            The password is whatever you have set up: make sure it is easy
-            to remember.
-          </li>
-          <li class="li-2">The password will never show.</li>
-          <li class="li-2">As of 2023-10-07, the password is password.</li>
-          <li>
-            Keep hitting enter, for each of the prompts until it asks for
-            the password.
-          </li>
-          <figure>
-            <img src="images/Screenshot 2023-10-07 145402.png" alt="" />
-            <figcaption>logging in to SQLShell</figcaption>
-          </figure>
-        </ul>
-      </div>
-      <br /><br />
-      <div id="SQL2">
-        <h2>Disconnect from Database</h2>
-        <h4>Using Python</h4>
-        <ul>
-          <li>To disconnect from database:</li>
-          <li class="li-2">
-            In the config file or conn, change the database='<i>&lt;database name></i>
-          </li>
-          <li>
-            OR remove it altogether, to drop the database if needed.
-          </li>
-        </ul>
-        <section class="code-block">
-          <pre><code class="copy">import psycopg2
+            </code>
+        </pre>
+                </section>
+                <h4 id="access_sql_gitbash" class="usage-title">
+                    Using GitBash
+                </h4>
+                <ul>
+                    <li>
+                        To Access the psql server from GitBash first type: cd
+                    </li>
+                    <figure>
+                        <img
+                            src="images/Screenshot 2023-10-07 142838.png"
+                            alt=""
+                        />
+                        <figcaption>cd</figcaption>
+                    </figure>
+                    <li>
+                        Now enter the psql server by typing: psql -U postgres
+                    </li>
+                    <li class="li-2">The -U is for user</li>
+                    <li class="li-2">postgres, is the username</li>
+                    <li class="li-2">
+                        The password is whatever you have set up: make sure it
+                        is easy to remember.
+                    </li>
+                    <figure>
+                        <img
+                            src="images/Screenshot 2023-10-07 142845.png"
+                            alt=""
+                        />
+                        <figcaption>cd</figcaption>
+                    </figure>
+                </ul>
+                <li>As of 2023-10-07, the password is password.</li>
+                <h4 id="access_sql_psql" class="usage-title">Using PSQL</h4>
+                <ul>
+                    <li>
+                        The password is whatever you have set up: make sure it
+                        is easy to remember.
+                    </li>
+                    <li class="li-2">The password will never show.</li>
+                    <li class="li-2">
+                        As of 2023-10-07, the password is password.
+                    </li>
+                    <li>
+                        Keep hitting enter, for each of the prompts until it
+                        asks for the password.
+                    </li>
+                    <figure>
+                        <img
+                            src="images/Screenshot 2023-10-07 145402.png"
+                            alt=""
+                        />
+                        <figcaption>logging in to SQLShell</figcaption>
+                    </figure>
+                </ul>
+            </div>
+            <div id="disconnect_from_database">
+                <h2 class="topic-title">Disconnect from Database</h2>
+                <h4 id="disconnect_using_python" class="usage-title">
+                    Using Python
+                </h4>
+                <ul>
+                    <li>To disconnect from database:</li>
+                    <li class="li-2">
+                        In the config file or conn, change the database='<i
+                            >&lt;database name></i
+                        >
+                    </li>
+                    <li>
+                        OR remove it altogether, to drop the database if needed.
+                    </li>
+                </ul>
+                <section class="code-block">
+                    <pre><code class="copy">import psycopg2
 conn = psycopg2.connect(
-  user='postgres',
-  password='password',
-  host='localhost',
-  port=5432
-  database='<i>&lt;database name></i>')
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432
+    database='<i>&lt;database name></i>')
 conn.autocommit = True
 cur = conn.cursor()
 # Actions to perform will go here:
 cur.execute("""     """)
 conn.commit()
 conn.close()
-          </code></pre>
-        </section>
-        <h4>Using GitBash/PSQL</h4>
-        <ul>
-          <li>
-            <b>The current database you are logged in is what is shown
-              before the #
-            </b>
-          </li>
-          <li>
-            Change to a different database in GitBash: \c
-            <i>&lt;database name></i>
-          </li>
-          <br />
-          <figure>
-            <img
-              src="images/Screenshot 2023-10-07 170031.png"
-              title="to_change_database_gitbash"
-            />
-            <figcaption>\c to change database in GitBash</figcaption>
-          </figure>          
-          <li>
-            If disconnecting from a database, make sure you have changed
-            to another database first.
-          </li>
-          <li>
-            Type in: (Select each line copy, then left click and choose
-            paste). Remember to change the <i>&lt;database name></i> to
-            the actual database you want to terminate.
-          </li>
-          <section class="code-block">
-            <pre><code>SELECT pg_terminate_backend(pg_stat_activity.pid)</code></pre>
-          </section>
-          <section class="code-block">
-            <pre><code>FROM pg_stat_activity</code></pre>
-          </section>
-          <section class="code-block">
-            <pre><code>WHERE pg_stat_activity.datname = '<i>&lt;database name>'</i></code></pre>
-          </section>
-          <section class="code-block">
-            <pre><code>AND pid &lt;> pg_backend_pid();</code></pre>
-          </section>
-          <li>
-            <b>When database is in use, and disconnecting from the database:</b>
-          </li>
-          <figure>
-            <img
-              src="images/Screenshot 2023-10-07 191505.png"
-              title="session_using_database"
-            />
-            <figcaption>
-              Session is using database, so it can not be dropped.
-            </figcaption>
-          </figure>
-          <figure>
-            <img
-              src="images/Screenshot 2023-10-07 191513.png"
-              title="disconnecting_from_database"
-            />
-            <figcaption>Disconnecting from database.</figcaption>
-          </figure>          
-        </ul>
-      </div>
-      <br /><br />
-      <div id="SQL3">
-        <h2>Create Database</h2>
-        <h4>Using Python</h4>
-        <ul>
-          <li>
-            Check the Dashboard of the postgres server to
-            check status and existence of database(s)
-          </li>
-          <figure>
-            <img
-              src="images/Screenshot 2023-10-06 134208.png"
-              alt=""
-            />
-            <figcaption>pgAdmin4 Dashboard</figcaption>
-          </figure>
-          <li>GitBash/PSQL Commands to use:</li>
-          <li class="tabbed2"><span class="command tabbed">\l</span>
-            To see a list of databases
-          </li>
-        </ul>
-        <h3 style="margin-bottom: 0px"></h3>
-        <h3>
-          Use the following code in pgAdmin replacing what is
-          between "&lt;" and ">" with the appropriate name.
-        </h3>
-        <section class="code-block">
-          <pre><code>CREATE DATABASE <i>&lt;database name></i>;
+        </code></pre>
+                </section>
+                <h4 id="disconnect_using_shell" class="usage-title">
+                    Using GitBash/PSQL
+                </h4>
+                <ul>
+                    <li>
+                        <b
+                            >The current database you are logged in is what is
+                            shown before the #
+                        </b>
+                    </li>
+                    <li>
+                        Change to a different database in GitBash: \c
+                        <i>&lt;database name></i>
+                    </li>
+                    <figure>
+                        <img
+                            src="images/Screenshot 2023-10-07 170031.png"
+                            title="to_change_database_gitbash"
+                        />
+                        <figcaption>
+                            \c to change database in GitBash
+                        </figcaption>
+                    </figure>
+                    <li>
+                        If disconnecting from a database, make sure you have
+                        changed to another database first.
+                    </li>
+                    <li>
+                        Type in: (Select each line copy, then left click and
+                        choose paste). Remember to change the
+                        <i>&lt;database name></i> to the actual database you
+                        want to terminate.
+                    </li>
+                    <section class="code-block">
+                        <pre><code>SELECT pg_terminate_backend(pg_stat_activity.pid)</code></pre>
+                    </section>
+                    <section class="code-block">
+                        <pre><code>FROM pg_stat_activity</code></pre>
+                    </section>
+                    <section class="code-block">
+                        <pre><code>WHERE pg_stat_activity.datname = '<i>&lt;database name>'</i></code></pre>
+                    </section>
+                    <section class="code-block">
+                        <pre><code>AND pid &lt;> pg_backend_pid();</code></pre>
+                    </section>
+                    <li>
+                        <b
+                            >When database is in use, and disconnecting from the
+                            database:</b
+                        >
+                    </li>
+                    <figure>
+                        <img
+                            src="images/Screenshot 2023-10-07 191505.png"
+                            title="session_using_database"
+                        />
+                        <figcaption>
+                            Session is using database, so it can not be dropped.
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img
+                            src="images/Screenshot 2023-10-07 191513.png"
+                            title="disconnecting_from_database"
+                        />
+                        <figcaption>Disconnecting from database.</figcaption>
+                    </figure>
+                </ul>
+            </div>
+            <div id="create_database">
+                <h2 class="topic-title">Create Database</h2>
+                <h4 class="usage-title">Using Python</h4>
+                <ul>
+                    <li>
+                        Check the Dashboard of the postgres server to check
+                        status and existence of database(s)
+                    </li>
+                    <figure>
+                        <img
+                            src="images/Screenshot 2023-10-06 134208.png"
+                            alt=""
+                        />
+                        <figcaption>pgAdmin4 Dashboard</figcaption>
+                    </figure>
+                    <li>GitBash/PSQL Commands to use:</li>
+                    <li
+                        class="li-2"
+                        style="margin-top: 8px; margin-bottom: 15px"
+                    >
+                        <span class="command">\l</span> To see a list of
+                        databases
+                    </li>
+                    <li>
+                        Use the following code in pgAdmin replacing what is
+                        between "&lt;" and ">" with the appropriate name.
+                    </li>
+
+                    <section class="code-block">
+                        <pre><code>CREATE DATABASE <i>&lt;database name></i>;
             </code>
-          </pre>
-        </section>
-        <h3>Use the code in the block below for Python</h3>
-        <section class="code-block">
-          <pre><code>import psycopg2
+        </pre>
+                    </section>
+                    Use the code in the block below for Python
+                    <section class="code-block">
+                        <pre><code>import psycopg2
 conn = psycopg2.connect(
     user='postgres',
     password='password',
@@ -262,49 +302,47 @@ cur = conn.cursor()
 cur.execute("""CREATE DATABASE demo_database""")
 conn.commit()
 conn.close()
-          </code></pre>
-        </section>
-        <section class="output">
-          <figure>
-            <p>Output</p>
-              <img
-                src="images/Screenshot 2023-10-07 110642.png"
-                alt=""
-              />
-            <figcaption>Created Database</figcaption>
-          </figure>
-        </section>
-        <section class="output">
-          <figure>
-            <p>Output</p>
-            <img
-                src="images/Screenshot 2023-10-07 143821.png"
-                alt=""
-            />
-            <figcaption>
-                Seeing list of databases in GitBash/PSQL
-            </figcaption>
-          </figure>
-        </section>
-      </div>
-      <!-- <br /><br /> --------------------------------------------------------------------------------------------------------------->
-      <div id="SQL4">
-          <h2>Change to Database</h2>
-              <ul>
-                  <li>
-                      In the config file or con in Python, database='<i
-                          >&lt;database name>'</i
-                      >
-                  </li>
-                  <section class="code-block">
-                      <pre><code>import psycopg2
+        </code></pre>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-07 110642.png"
+                                alt=""
+                            />
+                            <figcaption>Created Database</figcaption>
+                        </figure>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-07 143821.png"
+                                alt=""
+                            />
+                            <figcaption>
+                                Seeing list of databases in GitBash/PSQL
+                            </figcaption>
+                        </figure>
+                    </section>
+                </ul>
+            </div>
+            <div id="change_to_database">
+                <h2 class="topic-title">Change to Database</h2>
+                <ul>
+                    <li>
+                        In the config file or con in Python, database='<i
+                            >&lt;database name>'</i
+                        >
+                    </li>
+                    <section class="code-block">
+                        <pre><code>import psycopg2
     
 conn = psycopg2.connect(
-  user='postgres',
-  password='password',
-  host='localhost',
-  port=5432
-  database='<span style="color:aqua;"><i>&lt;database name></i></span>')
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432
+    database='<span style="color:aqua;"><i>&lt;database name></i></span>')
 
 conn.autocommit = True
 cur = conn.cursor()
@@ -314,66 +352,69 @@ cur.execute("""     """)
 
 conn.commit()
 conn.close()
-                      </code></pre>
-                  </section>
-                  <li>
-                      The current database you are logged in is what is shown
-                      before the #
-                  </li>
-                  <li>
-                      To change from default database to new database in
-                      GitBash use <span class="command">\c</span> followed by
-                      the name of the new database: \c
-                      <i>&lt;database name></i><br />
-                  </li>
-                  <figure>
-                      <img
-                          src="images/Screenshot 2023-10-07 170031.png"
-                          title="to_change_database_gitbash"
-                      />
-                      <figcaption>
-                          \c to change database in GitBash/PSQL
-                      </figcaption>
-                  </figure>
-              </ul>
-      </div>
-
-        <br /><br />
-
-        <div id="SQL5">
-          <h2>Rename Database</h2>
-            <ul>
-              <li>Make sure you are not in the database being changed.</li>
-            <li>
-              When trying to change the database, if you get a message that the
-              database session is active, disconnect the database.
-            </li>
-            <li>
-              When trying to alter using GitBash or SQLShell use the code below.
-            </li>
-            <li class="li-2">
-              The old database name and the new database name must be surrounded
-              by quotation marks.
-            </li>
-            <section class="code-block">
-              <pre>
+            </code></pre>
+                    </section>
+                    <li>
+                        The current database you are logged in is what is shown
+                        before the #
+                    </li>
+                    <li>
+                        To change from default database to new database in
+                        GitBash use <span class="command">\c</span> followed by
+                        the name of the new database: \c
+                        <i>&lt;database name></i>
+                    </li>
+                    <figure>
+                        <img
+                            src="images/Screenshot 2023-10-07 170031.png"
+                            title="to_change_database_gitbash"
+                        />
+                        <figcaption>
+                            \c to change database in GitBash/PSQL
+                        </figcaption>
+                    </figure>
+                </ul>
+            </div>
+            <div id="rename_database">
+                <h2 class="topic-title">Rename Database</h2>
+                <ul>
+                    <li>
+                        Make sure you are not in the database being changed.
+                    </li>
+                    <li>
+                        When trying to change the database, if you get a message
+                        that the database session is active, disconnect the
+                        database.
+                    </li>
+                    <li>
+                        When trying to alter using GitBash or SQLShell use the
+                        code below.
+                    </li>
+                    <li class="li-2">
+                        The old database name and the new database name must be
+                        surrounded by quotation marks.
+                    </li>
+                    <section class="code-block">
+                        <pre>
                 <code>ALTER DATABASE "<i>&lt;old database name></i>" RENAME TO "<i>&lt;new database name></i>";</code></pre>
-            </section>
-          </ul>
-          <h4>Using Python</h4>
-              <ul>
-                <li>Make sure to remove the database parameter from conn.</li>
-              </ul>
-              <section class="code-block">
-                <pre id="alter_database_name_copy">
-                        <code>
+                    </section>
+                </ul>
+                <h4 class="usage-title">Using Python</h4>
+                <ul>
+                    <li>
+                        Make sure to remove the database parameter from conn.
+                    </li>
+                </ul>
+                <section class="code-block">
+                    <pre id="alter_database_name_copy">
+            <code>
 import psycopg2
 
 conn = psycopg2.connect(
-  user='postgres',
-  password='password',
-  host='localhost',
-  port=5432)
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432)
 
 conn.autocommit = True
 cur = conn.cursor()
@@ -382,89 +423,88 @@ cur.execute("""ALTER DATABASE "demo_database_old" RENAME TO "demo_database";""")
 
 conn.commit()
 conn.close()
-                        </code>
-                    </pre>
-              </section>
+            </code>
+        </pre>
+                </section>
             </div>
-        <br /><br />
-
-        <div id="SQL6">
-          <h2>Copy Database</h2>
-              <li>Make sure you are not in the database being changed.</li>
-              <li>
-                When trying to change the database, if you get a message that the
-                database session is active, disconnect the database.
-              </li>
-            
-              <h5>When trying to alter using GitBash or SQLShell use the code below.</h5>
-            
-            <section class="code-block">
-              <pre>
-                      <code>CREATE DATABASE <i>&lt;new database name></i> WITH TEMPLATE <i>&lt;original database name></i> OWNER <i>&lt;database owner></i>;</code></pre>
-              
-            </section><br /><br /><br />
-            <section class="code-block">
-              <pre id="copy_database_copy" class="code-box">
-                        <code>
+            <div id="copy_database">
+                <h2 class="topic-title">Copy Database</h2>
+                <ul>
+                    <li>
+                        Make sure you are not in the database being changed.
+                    </li>
+                    <li>
+                        When trying to change the database, if you get a message
+                        that the database session is active, disconnect the
+                        database.
+                    </li>
+                    <li>
+                        When trying to alter using GitBash or SQLShell use the
+                        code below.
+                    </li>
+                    <section class="code-block">
+                        <pre><code>CREATE DATABASE <i>&lt;new database name></i> WITH TEMPLATE <i>&lt;original database name></i> OWNER <i>&lt;database owner></i>;</code></pre>
+                    </section>
+                    <section class="code-block">
+                        <pre id="copy_database_copy" class="code-box">
+                                <code>
 import psycopg2
 
 conn = psycopg2.connect(
-  user='postgres',
-  password='password',
-  host='localhost',
-  port=5432,
-  database='postgres')
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432,
+    database='postgres')
 
 conn.autocommit = True
-cur = conn.cursor()
-
-cur.execute("""CREATE DATABASE demo_database_2 WITH TEMPLATE gitbash_shell OWNER postgres;""")
-
-conn.commit()
-conn.close()
-                        </code>
-                    </pre>
-            </section>
-            <br /><br />
-            <section class="output">
-              <figure>
-                
-                <img
-                  src="images/Screenshot 2023-10-08 150301.png"
-                  title="original_database_prior_to_copying"
-                /><figcaption>Original Databases</figcaption>
-              </figure>
-              <figure>
-                
-                <img
-                  src="images/Screenshot 2023-10-08 150444.png"
-                  title="copying_database"
-                /><figcaption>Copying Database</figcaption>
-              </figure>
-              <figure>
-                
-                <img
-                  src="images/Screenshot 2023-10-08 150654.png"
-                  title="databases_after_copying"
-                /><figcaption>New & Original Databases</figcaption>
-              </figure>
-            </section>
-          </div>
-        <br /><br />
-        <div id="SQL7">
-          <h2>Delete Database</h2>
-            <li>When using GitBash or SQLShell use the code below.</li>
-            <br /><br /><br />
-            <section class="code-block">
-              <pre id="delete_database_copy" class="code-box">
-                          <code>
+                    cur = conn.cursor()
+                    
+                    cur.execute("""CREATE DATABASE demo_database_2 WITH TEMPLATE gitbash_shell OWNER postgres;""")
+                    
+                    conn.commit()
+                    conn.close()
+                </code></pre>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-08 150301.png"
+                                title="original_database_prior_to_copying"
+                            />
+                            <figcaption>Original Databases</figcaption>
+                        </figure>
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-08 150444.png"
+                                title="copying_database"
+                            />
+                            <figcaption>Copying Database</figcaption>
+                        </figure>
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-08 150654.png"
+                                title="databases_after_copying"
+                            />
+                            <figcaption>New & Original Databases</figcaption>
+                        </figure>
+                    </section>
+                </ul>
+            </div>
+            <div id="delete_database">
+                <h2 class="topic-title">Delete Database</h2>
+                <ul>
+                    <li>When using GitBash or SQLShell use the code below.</li>
+                    <section class="code-block">
+                        <pre id="delete_database_copy" class="code-box">
+                            <code>
 import psycopg2
 
 conn = psycopg2.connect(
-  user='postgres',
-  password='password',
-  host='localhost',
-  port=5432)
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432)
 
 conn.autocommit = True
 cur = conn.cursor()
@@ -473,99 +513,104 @@ cur.execute("""DROP DATABASE IF EXISTS demo_database""")
 
 conn.commit()
 conn.close()
-                          </code>
-                      </pre>
-            </section>
-            <br /><br />
-            <section class="output">
-              <figure>
-                <img
-                  src="images/Screenshot 2023-10-07 111337.png"
-                  title="delete_database"
-                />
-                <figcaption>Delete Database</figcaption>
-              </figure>
-              
-              <figure>
-                <img
-                  src="images/Screenshot 2023-10-14 100038.png"
-                  title="gitbash_psql_list_databases"
-                />
-                <figcaption>GitBash & PSQL List Databases</figcaption>
-              </figure>
-              <figure>
-                <img
-                  src="images/Screenshot 2023-10-14 110035.png"
-                  title="gitbash_psql_drop_database"
-                />
-                <figcaption>GitBash & PSQL drop Database</figcaption>
-              </figure>
-              <figure>
-                <img
-                  src="images/Screenshot 2023-10-14 110109.png"
-                  title="gitbash_psql_list_databases"
-                />
-                <figcaption>GitBash & PSQL list Databases</figcaption>
-              </figure>
-            </section>
-          </div>
-        <br /><br />
-        <div id="SQL8">
-          <h2>Create Schema</h2>
-            <h>Important Info:</h>
-            <li>
-              It is important to be in the database where you want to create the
-              schema.<br />
-              A database can contain 1 or more schemas, but a aschema can belong
-              to only one database.
-            </li>
-            <li class="li-2">The default schema is public.</li>
-            <li class="li-2">To create a new schema:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>CREATE SCHEMA <i>&lt;new schema name></i>;</code></pre>
-            </section>
-            <li class="li-2">
-              IF you try to look up the tables using <i>\dt</i>, you wouldn't
-              see the new schema. This is because the search path is set to
-              public by default.
-            </li>
-            <li class="li-2">To show the current search path:</li>
-            <section class="code-block">
-              <pre class="li-2"><code>SHOW search_path;</code></pre>
-            </section>
-            <li class="li-2">To put the new schema in the path:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>SET search_path TO <i>&lt;new schema name></i>;</code></pre>
-            </section>
-            <li class="li-2">
-              Or to use multiple schemas, so that when <i><b>\dt</b></i> is used
-              all tables in all schemas will show:
-            </li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>SET search_path TO <i>&lt;new schema name></i>, public;</code></pre>
-            </section>
-            <li>
-              To see all Schemas use <i><b>\dn</b></i>
-            </li>
-            
-            <br />
-            <section class="code-block">
-              <pre id="create_schema_copy" class="code-box">
-                        <code>
+                        </code>
+                        </pre>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-07 111337.png"
+                                title="delete_database"
+                            />
+                            <figcaption>Delete Database</figcaption>
+                        </figure>
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-14 100038.png"
+                                title="gitbash_psql_list_databases"
+                            />
+                            <figcaption>
+                                GitBash & PSQL List Databases
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-14 110035.png"
+                                title="gitbash_psql_drop_database"
+                            />
+                            <figcaption>
+                                GitBash & PSQL drop Database
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-14 110109.png"
+                                title="gitbash_psql_list_databases"
+                            />
+                            <figcaption>
+                                GitBash & PSQL list Databases
+                            </figcaption>
+                        </figure>
+                    </section>
+                </ul>
+            </div>
+            <div id="create_schema">
+                <h2 class="topic-title">Create Schema</h2>
+                <ul>
+                    <li>
+                        It is important to be in the database where you want to
+                        create the schema. A database can contain 1 or more
+                        schemas, but a aschema can belong to only one database.
+                    </li>
+                    <li class="li-2">The default schema is public.</li>
+                    <li class="li-2">To create a new schema:</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>CREATE SCHEMA <i>&lt;new schema name></i>;</code></pre>
+                    </section>
+                    <li class="li-2">
+                        IF you try to look up the tables using <i>\dt</i>, you
+                        wouldn't see the new schema. This is because the search
+                        path is set to public by default.
+                    </li>
+                    <li class="li-2">To show the current search path:</li>
+                    <section class="code-block">
+                        <pre class="li-2"><code>SHOW search_path;</code></pre>
+                    </section>
+                    <li class="li-2">To put the new schema in the path:</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>SET search_path TO <i>&lt;new schema name></i>;</code></pre>
+                    </section>
+                    <li class="li-2">
+                        Or to use multiple schemas, so that when
+                        <i><b>\dt</b></i> is used all tables in all schemas will
+                        show:
+                    </li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>SET search_path TO <i>&lt;new schema name></i>, public;</code></pre>
+                    </section>
+                    <li>
+                        To see all Schemas use\dn
+                        <i
+                            ><b><span class="command">\dn</span></b></i
+                        >
+                    </li>
+                    <section class="code-block">
+                        <pre id="create_schema_copy" class="code-box">
+                            <code>
 import psycopg2
 
 conn = psycopg2.connect(
-  user='postgres',
-  password='password',
-  host='localhost',
-  port=5432,
-  database='demo_database')
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432,
+    database='demo_database')
 
 conn.autocommit = True
 cur = conn.cursor()
@@ -574,101 +619,108 @@ cur.execute("""CREATE SCHEMA IF NOT EXISTS test AUTHORIZATION postgres;""")
 
 conn.commit()
 conn.close()
-                        </code>
-                    </pre>
-            </section>
-            <br /><br />
-            <section class="output">
-              <figure>
-                <figcaption>GitBash/PSQL => Create Schema</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-08 164504.png"
-                  title="GitBash/PSQL_creating_schema"
-                />
-              </figure>
-              <figure>
-                <figcaption>GitBash/PSQL => List all Schemas</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-09 092440.png"
-                  title="GitBash/PSQL_list_all_schemas"
-                />
-              </figure>
-              <figure>
-                <figcaption>
-                  GitBash/PSQL => Set search path to multiple schemas
-                </figcaption>
-                <img
-                  src="images/Screenshot 2023-10-09 093124.png"
-                  title="GitBash/PSQL_set_search_path_to_multiple_schemas"
-                />
-              </figure>
-              <figure>
-                <figcaption>GitBash/PSQL => View all schemas</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-09 093414.png"
-                  title="GitBash/PSQL_view_all_schemas"
-                />
-              </figure>
-              <figure>
-                <figcaption>GitBash/PSQL => Show search path</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-09 093339.png"
-                  title="GitBash/PSQL_view_search_path"
-                />
-              </figure>
-              <figure>
-                <figcaption>Python => Create Schema</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-09 095123.png"
-                  title="Python_create_schema"
-                />
-              </figure>
-            </section>
-        </div>
-        <br /><br />
-        <div id="SQL9">
-          <h2>Drop Schema</h2>
-            <li>
-              Make Sure your are in the database assosciated with the schema you
-              are trying to drop.
-            </li>
-            <li>To delete a Schema</li>
-            <ul class="li-2">
-              <section class="code-block">
-                <pre><code>DROP SCHEMA <i>&lt;schema name></i>;</code></pre>
-              </section>
-            </ul>
-            <li>To delete a Schema including everything it contains</li>
-            <ul class="li-2">
-              <section class="code-block">
-                <pre><code>DROP SCHEMA <i>&lt;schema name></i> CASCADE;</code></pre>
-              </section>
-            </ul>
-            <li>Can also use IF EXISTS if necessary</li>
-            <ul class="li-2">
-              <section class="code-block">
-                <pre><code>DROP SCHEMA IF EXISTS <i>&lt;schema name></i> CASCADE ;</code></pre>
-              </section>
-            </ul>
-            <li>
-              <b
-                ><i
-                  >Once the schema is dropped you have to reset search path.</i
-                ></b
-              >
-            </li>
-            <br /><br />
-            <section class="code-block">
-              <pre id="delete_schema_copy" class="code-box">
-                        <code>
+                </code>
+            </pre>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <figcaption>
+                                GitBash/PSQL => Create Schema
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-08 164504.png"
+                                title="GitBash/PSQL_creating_schema"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>
+                                GitBash/PSQL => List all Schemas
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-09 092440.png"
+                                title="GitBash/PSQL_list_all_schemas"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>
+                                GitBash/PSQL => Set search path to multiple
+                                schemas
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-09 093124.png"
+                                title="GitBash/PSQL_set_search_path_to_multiple_schemas"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>
+                                GitBash/PSQL => View all schemas
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-09 093414.png"
+                                title="GitBash/PSQL_view_all_schemas"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>
+                                GitBash/PSQL => Show search path
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-09 093339.png"
+                                title="GitBash/PSQL_view_search_path"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>Python => Create Schema</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-09 095123.png"
+                                title="Python_create_schema"
+                            />
+                        </figure>
+                    </section>
+                </ul>
+            </div>
+            <div id="dropschema">
+                <h2 class="topic-title">Drop Schema</h2>
+                <ul>
+                    <li>
+                        Make Sure your are in the database assosciated with the
+                        schema you are trying to drop.
+                    </li>
+                    <li>To delete a Schema</li>
+                    <section class="code-block">
+                        <pre><code>DROP SCHEMA <i>&lt;schema name></i>;</code></pre>
+                    </section>
+                    <li>To delete a Schema including everything it contains</li>
+                    <section class="code-block">
+                        <pre><code>DROP SCHEMA <i>&lt;schema name></i> CASCADE;</code></pre>
+                    </section>
+
+                    <li>Can also use IF EXISTS if necessary</li>
+
+                    <section class="code-block">
+                        <pre><code>DROP SCHEMA IF EXISTS <i>&lt;schema name></i> CASCADE ;</code></pre>
+                    </section>
+
+                    <li>
+                        <b
+                            ><i
+                                >Once the schema is dropped you have to reset
+                                search path.</i
+                            ></b
+                        >
+                    </li>
+
+                    <section class="code-block">
+                        <pre id="delete_schema_copy" class="code-box">
+            <code>
 import psycopg2
 
 conn = psycopg2.connect(
-  user='postgres',
-  password='password',
-  host='localhost',
-  port=5432,
-  database='demo_database')
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432,
+    database='demo_database')
 
 conn.autocommit = True
 cur = conn.cursor()
@@ -677,166 +729,170 @@ cur.execute("""DROP SCHEMA IF EXISTS demo_schema CASCADE;""")
 
 conn.commit()
 conn.close()
-                        </code>
-                    </pre>
-            </section>
-            <br /><br />
-            <section class="output">
-              <figure>
-                <figcaption>Python => Drop Schema</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-09 124332.png"
-                  title="drop_schema"
-                />
-              </figure>
-              <figure>
-                <figcaption>List of Schemas</figcaption>
-                <img
-                  src="images//Screenshot 2023-10-09 131834.png"
-                  title="list_of_schemas"
-                />
-              </figure>
-              <figure>
-                <figcaption>Show search path</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-09 124846.png"
-                  title="show search path"
-                />
-              </figure>
-              <figure>
-                <figcaption>Drop Schema</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-09 125645.png"
-                  title="drop_schema"
-                />
-              </figure>
-              <figure>
-                <figcaption>List of Schemas</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-09 125716.png"
-                  title="list_of_schemas"
-                />
-              </figure>
-              <figure>
-                <figcaption>Re-Set search path</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-09 125743.png"
-                  title="re_set_search_path"
-                />
-              </figure>
-              <figure>
-                <figcaption>Show search_path</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-09 125759.png"
-                  title="show_search_path"
-                />
-              </figure>
-            </section>
-          </div>
-        <br /><br />
-        <div id="SQL10">
-          <h2>Create Table</h2>
-                    <ul class="li-2">
-              Change the
-              <span style="color: aqua; background-color: gray"> aqua</span>
-              code to any of the variations below replacing what is between &lt;
-              & > in italics with the appropriate names.
-            </ul>
-            <li>
-              A Seperate config file can be made with the connection details to
-              safeguard database access details.
-            </li>
-            <li>
-              When creating a table, you must always specify the columns and
-              their types.
-            </li>
-            <li>To create a table:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>CREATE TABLE IF NOT EXISTS <i>&lt;table name></i>(<br><i>&lt;column name 1></i>,<br><i>&lt;column name 2></i>);</code></pre>
-              
-            </section><li>To create a table in a schema:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>CREATE TABLE IF NOT EXISTS <i>&lt;schema name.table name></i>(<br><i>&lt;column name 1></i>,<br><i>&lt;column name 2></i>);</code></pre>
-              
-            </section>
-            <li>
-              Serial can have the PRIMARY KEY attribute, which will help it when
-              joining it with other tables for queries.<br />
-              &emsp;&emsp;&emsp;The PRIMARY KEY makes each record unique.
-            </li>
-            <li>
-              NOT NULL => this field must have data in it, if there is no data,
-              the table will not work.
-            </li>
-            <li>
-              DEFAULT => Default value to fill as value for the column if no
-              data is provided at input.
-            </li>
-            <br />
-            <ul>
-              <strong>The most often used Data Types in SQL tables.</strong>
-            </ul>
-            <li class="li-2">
-              Serial: 1 to 2Billion, consecutive auto incrementing number.
-            </li>
-            <li class="li-2">Integer: From -21,000 upto 21,000.</li>
-            <li class="li-2">
-              Decimal: Upto 13,000 before decimal, and 16,000 after decimal.
-            </li>
-            <li class="li-2">Money: From -92,000 upto 92,000.</li>
-            <li class="li-2">
-              Varchar(n): Variable length string where (n) is the user specified
-              max length of characters.
-            </li>
-            <li class="li-2">Text: unlimited length of characters.</li>
-            <li class="li-2">Bool: True / False.</li>
-            <li class="li-2">Date: Saved in yy-mm-dd format.</li>
-            <li class="li-2">
-              Time(p)[without time zone]: Time of day no time zone.
-            </li>
-            <li class="li-2">Time(p): Time of day, including time zone.</li>
-            <li class="li-2">
-              Timestamp(p)[without time zone]: Date and time, without time zone.
-            </li>
-            <li class="li-2">
-              Timestamp(p): Date and time, including time zone.
-            </li>
-            <li class="li-2">Json: Textual json data.</li>
-            <li class="li-2">XML: XML data.</li>
-            <br />
-            <li class="li-2">
-              Example Code:
-              <section class="code-block">
-                <pre class="li-2"><code>"""CREATE TABLE demo_table1(
-                    id SERIAL PRIMARY KEY,
-                    age INTEGER NOT NULL,
-                    radius DECIMAL,
-                    price MONEY,
-                    department VARCHAR(225),
-                    quote TEXT,
-                    group_leader BOOLEAN NOT NULL,
-                    date DATE,
-                    time TIME with time zone,
-                    tmwtz TIME without time zone
-                    );"""</code></pre>
-              </section>
-            </li>
-            <br /><br />
-            <section class="code-block">
-              <pre id="create_table_copy" class="code-box">
-                        <code>
+            </code>
+        </pre>
+                    </section>
+
+                    <section class="output">
+                        <figure>
+                            <figcaption>Python => Drop Schema</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-09 124332.png"
+                                title="drop_schema"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>List of Schemas</figcaption>
+                            <img
+                                src="images//Screenshot 2023-10-09 131834.png"
+                                title="list_of_schemas"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>Show search path</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-09 124846.png"
+                                title="show search path"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>Drop Schema</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-09 125645.png"
+                                title="drop_schema"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>List of Schemas</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-09 125716.png"
+                                title="list_of_schemas"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>Re-Set search path</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-09 125743.png"
+                                title="re_set_search_path"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>Show search_path</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-09 125759.png"
+                                title="show_search_path"
+                            />
+                        </figure>
+                    </section>
+                </ul>
+            </div>
+            <div id="create_table">
+                <h2 class="topic-title">Create Table</h2>
+                <ul>
+                    <li class="li-2">
+                        Change the
+                        <span style="color: aqua; background-color: gray">
+                            aqua</span
+                        >
+                        code to any of the variations below replacing what is
+                        between &lt; & > in italics with the appropriate names.
+                    </li>
+                    <li>
+                        A Seperate config file can be made with the connection
+                        details to safeguard database access details.
+                    </li>
+                    <li>
+                        When creating a table, you must always specify the
+                        columns and their types.
+                    </li>
+                    <li>To create a table:</li>
+                    <section class="code-block">
+                        <pre><code>CREATE TABLE IF NOT EXISTS <i>&lt;table name></i>(<br><i>&lt;column name 1></i>,<br><i>&lt;column name 2></i>);</code></pre>
+                    </section>
+                    <li>To create a table in a schema:</li>
+                    <section class="code-block">
+                        <pre><code>CREATE TABLE IF NOT EXISTS <i>&lt;schema name.table name></i>(<br><i>&lt;column name 1></i>,<br><i>&lt;column name 2></i>);</code></pre>
+                    </section>
+                    <li>
+                        Serial can have the PRIMARY KEY attribute, which will
+                        help it when joining it with other tables for queries.
+                        &emsp;&emsp;&emsp;The PRIMARY KEY makes each record
+                        unique.
+                    </li>
+                    <li>
+                        NOT NULL => this field must have data in it, if there is
+                        no data, the table will not work.
+                    </li>
+                    <li>
+                        DEFAULT => Default value to fill as value for the column
+                        if no data is provided at input.
+                    </li>
+                    <ul>
+                        <strong
+                            >The most often used Data Types in SQL
+                            tables.</strong
+                        >
+                    </ul>
+                    <li class="li-2">
+                        Serial: 1 to 2Billion, consecutive auto incrementing
+                        number.
+                    </li>
+                    <li class="li-2">Integer: From -21,000 upto 21,000.</li>
+                    <li class="li-2">
+                        Decimal: Upto 13,000 before decimal, and 16,000 after
+                        decimal.
+                    </li>
+                    <li class="li-2">Money: From -92,000 upto 92,000.</li>
+                    <li class="li-2">
+                        Varchar(n): Variable length string where (n) is the user
+                        specified max length of characters.
+                    </li>
+                    <li class="li-2">Text: unlimited length of characters.</li>
+                    <li class="li-2">Bool: True / False.</li>
+                    <li class="li-2">Date: Saved in yy-mm-dd format.</li>
+                    <li class="li-2">
+                        Time(p)[without time zone]: Time of day no time zone.
+                    </li>
+                    <li class="li-2">
+                        Time(p): Time of day, including time zone.
+                    </li>
+                    <li class="li-2">
+                        Timestamp(p)[without time zone]: Date and time, without
+                        time zone.
+                    </li>
+                    <li class="li-2">
+                        Timestamp(p): Date and time, including time zone.
+                    </li>
+                    <li class="li-2">Json: Textual json data.</li>
+                    <li class="li-2">XML: XML data.</li>
+                    <li class="li-2">
+                        Example Code:
+                        <section class="code-block">
+                            <pre class="li-2"><code>"""CREATE TABLE demo_table1(
+    id SERIAL PRIMARY KEY,
+    age INTEGER NOT NULL,
+    radius DECIMAL,
+    price MONEY,
+    department VARCHAR(225),
+    quote TEXT,
+    group_leader BOOLEAN NOT NULL,
+    date DATE,
+    time TIME with time zone,
+    tmwtz TIME without time zone
+    );"""</code></pre>
+                        </section>
+                    </li>
+                    <section class="code-block">
+                        <pre id="create_table_copy" class="code-box">
+        <code>
 import psycopg2
 
 conn = psycopg2.connect(
-  user='postgres',
-  password='password',
-  host='localhost',
-  port=5432,
-  database='demo_database')
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432,
+    database='demo_database')
 
 conn.autocommit = True
 cur = conn.cursor()
@@ -853,94 +909,100 @@ cur.execute(create_table)
 
 conn.commit()
 conn.close()
-                        </code>
-                    </pre>
-            </section>
-            <br /><br />
-            <section class="output">
-              <figure>
-                <figcaption>Create Table</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-12 112845.png"
-                  title="Create Table"
-                />
-              </figure>
-              <figure>
-                <figcaption>Create Table in Schema</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-12 112623.png"
-                  title="create_table_in_schema"
-                />
-              </figure>
-              <figure>
-                <figcaption>GitBash/PSQL Create Table</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-14 130356.png"
-                  title="gitbash/psql_create_table"
-                />
-              </figure>
-              <figure>
-                <figcaption>GitBash/PSQL Create Table in Schema</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-14 130805.png"
-                  title="gitbash/psql_create_table_in_schema"
-                />
-              </figure>
-              <figure>
-                <figcaption>GitBash/PSQL list tables</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-14 130852.png"
-                  title="gitbash/psql_list_tables"
-                />
-              </figure>
-            </section>
-          </div>
-        <br /><br />
-        <div id="SQL11">
-          <h2>Drop Table</h2>
-            <ul class="li-2">
-              Change the
-              <span style="color: aqua; background-color: gray"> aqua</span>
-              code to any of the variations below replacing what is between &lt;
-              & > in italics with the appropriate names.
-            </ul>
-            <li>
-              Table is always created in default schema: public schema, UNLESS
-              specified.
-            </li>
-            <li>
-              To confirm the change, check using psql or refresh the database in
-              pgAdmin.
-            </li>
-            <li>To drop table:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>DROP TABLE IF EXISTS <i>&lt;table name></i>;</code></pre>
-            </section>
-            <li>To drop table from a schema:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>DROP TABLE IF EXISTS <i>&lt;schema name.table name></i>;</code></pre>
-            </section>
-            <li>To drop table and all dependant objects:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>DROP TABLE IF EXISTS <i>&lt;table name></i> CASCADE;</code></pre>
-            </section>
-            <section class="code-block">
-              <pre id="drop_table_copy" class="code-box">
-                        <code>
+        </code>
+    </pre>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <figcaption>Create Table</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-12 112845.png"
+                                title="Create Table"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>Create Table in Schema</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-12 112623.png"
+                                title="create_table_in_schema"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>GitBash/PSQL Create Table</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-14 130356.png"
+                                title="gitbash/psql_create_table"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>
+                                GitBash/PSQL Create Table in Schema
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-14 130805.png"
+                                title="gitbash/psql_create_table_in_schema"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>GitBash/PSQL list tables</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-14 130852.png"
+                                title="gitbash/psql_list_tables"
+                            />
+                        </figure>
+                    </section>
+                </ul>
+            </div>
+            <div id="drop_table">
+                <h2 class="topic-title">Drop Table</h2>
+
+                <ul class="li-2">
+                    Change the
+                    <span style="color: aqua; background-color: gray">
+                        aqua</span
+                    >
+                    code to any of the variations below replacing what is
+                    between &lt; & > in italics with the appropriate names.
+                </ul>
+                <ul>
+                    <li>
+                        Table is always created in default schema: public
+                        schema, UNLESS specified.
+                    </li>
+                    <li>
+                        To confirm the change, check using psql or refresh the
+                        database in pgAdmin.
+                    </li>
+                    <li>To drop table:</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>DROP TABLE IF EXISTS <i>&lt;table name></i>;</code></pre>
+                    </section>
+                    <li>To drop table from a schema:</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>DROP TABLE IF EXISTS <i>&lt;schema name.table name></i>;</code></pre>
+                    </section>
+                    <li>To drop table and all dependant objects:</li>
+
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>DROP TABLE IF EXISTS <i>&lt;table name></i> CASCADE;</code></pre>
+                    </section>
+                    <section class="code-block">
+                        <pre id="drop_table_copy" class="code-box">
+    <code>
 import psycopg2
 
 conn = psycopg2.connect(
-  user='postgres',
-  password='password',
-  host='localhost',
-  port=5432,
-  database='demo_database')
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432,
+    database='demo_database')
 
 conn.autocommit = True
 cur = conn.cursor()
@@ -951,184 +1013,176 @@ cur.execute(drop_table)
 
 conn.commit()
 conn.close()
-                        </code>
-                    </pre>
-            </section>
-            <br /><br />
-            <section class="output-">
-              <figure>
-                <figcaption>Drop Table</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-12 122825.png"
-                  title="drop_table"
-                />
-              </figure>
-              <figure>
-                <figcaption>Drop Table From a Schema</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-12 122756.png"
-                  title="drop_table_from_schema"
-                />
-              </figure>
-              <figure>
-                <figcaption>GitBash/PSQL Drop Table</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-14 150921.png"
-                  title="gitbash/psql_drop_table"
-                />
-              </figure>
-              <figure>
-                <figcaption>GitBash/PSQL Drop Table From a Schema</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-14 150725.png"
-                  title="gitbash/psql_drop_table_from_schema"
-                />
-              </figure>
-            </section>
-          </div>
-        <br /><br />
-        <div id="SQL12">
-          <h2>Alter Table</h2>
-            <ul class="li-2">
-              Change the
-              <span style="color: aqua; background-color: gray"> aqua</span>
-              code to any of the variations below replacing what is between &lt;
-              & > in italics with the appropriate names.
-            </ul>
-            <li>To rename table</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> RENAME TO <i>&lt;new table name></i>;</code></pre>
-              
-            </section>
-            <li>To rename table in a schema</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> RENAME TO <i>&lt;schema name.new table name></i>;</code></pre>
-              
-            </section>
-            <li>Set Schema of a table</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> SET SCHEMA <i>&lt;schema name></i>;</code></pre>
-              
-            </section>
-            <li>To move a table</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> SET SCHEMA <i>&lt;schema name></i>;</code></pre>
-              
-            </section>
-            <li>To move a table from one schema to another</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> SET SCHEMA <i>&lt;schema name></i>;</code></pre>
-              
-            </section>
-            <li>
-              Column add, drop, and alter can also be done at the same time.
-            </li>
-            <li class="li-2">To add a column:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> ADD COLUMN IF NOT EXISTS <i>&lt;column name> &lt;column type></i> ;</code></pre>
-              
-            </section>
-            <li class="li-2">To add a column in a schema:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> ADD COLUMN IF NOT EXISTS <i>&lt;column name> &lt;column type></i> ;</code></pre>
-              
-            </section>
-            <li class="li-2">To drop a column:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> DROP COLUMN IF EXISTS <i>&lt;column name></i> ;</code></pre>
-              
-            </section>
-            <li class="li-2">To drop a column in a schema:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> DROP COLUMN IF EXISTS <i>&lt;column name></i> ;</code></pre>
-              
-            </section>
-            <li class="li-2">To alter column name:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> RENAME COLUMN <i>&lt;new column name></i> ;</code></pre>
-              
-            </section>
-            <li class="li-2">To alter column name in a schema:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> RENAME COLUMN <i>&lt;new column name></i> ;</code></pre>
-              
-            </section>
-            <li class="li-2">To alter column type:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> ALTER COLUMN <i>&lt;column name></i> TYPE <i>&lt;column type></i>;</code></pre>
-              
-            </section>
-            <li class="li-2">To alter column type in a schema:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> ALTER COLUMN <i>&lt;column name></i> TYPE <i>&lt;column type></i>;</code></pre>
-              
-            </section>
-            <li class="li-2">To alter column default value:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> ALTER COLUMN <i>&lt;column name></i> SET DEFAULT <i>&lt;value></i>;</code></pre>
-              
-            </section>
-            <li class="li-2">To alter column default value in a schema:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> ALTER COLUMN <i>&lt;column name></i> SET DEFAULT <i>&lt;value></i>;</code></pre>
-              
-            </section>
-            <li class="li-2">To drop column default value:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> ALTER COLUMN <i>&lt;column name></i> DROP DEFAULT;</code></pre>
-              
-            </section>
-            <li class="li-2">To drop column default value in a schema:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> ALTER COLUMN <i>&lt;column name></i> DROP DEFAULT;</code></pre>
-              
-            </section>
-            <br /><br />
-            <section class="code-block">
-              <pre id="alter_table_copy" class="code-box">
-                        <code>
+    </code>
+</pre>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <figcaption>Drop Table</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-12 122825.png"
+                                title="drop_table"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>Drop Table From a Schema</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-12 122756.png"
+                                title="drop_table_from_schema"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>GitBash/PSQL Drop Table</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-14 150921.png"
+                                title="gitbash/psql_drop_table"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>
+                                GitBash/PSQL Drop Table From a Schema
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-14 150725.png"
+                                title="gitbash/psql_drop_table_from_schema"
+                            />
+                        </figure>
+                    </section>
+                </ul>
+            </div>
+            <div id="alter_table">
+                <h2 class="topic-title">Alter Table</h2>
+                <ul class="li-2">
+                    Change the
+                    <span style="color: aqua; background-color: gray">
+                        aqua</span
+                    >
+                    code to any of the variations below replacing what is
+                    between &lt; & > in italics with the appropriate names.
+                </ul>
+                <ul>
+                    <li>To rename table</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> RENAME TO <i>&lt;new table name></i>;</code></pre>
+                    </section>
+                    <li>To rename table in a schema</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> RENAME TO <i>&lt;schema name.new table name></i>;</code></pre>
+                    </section>
+                    <li>Set Schema of a table</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> SET SCHEMA <i>&lt;schema name></i>;</code></pre>
+                    </section>
+                    <li>To move a table</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> SET SCHEMA <i>&lt;schema name></i>;</code></pre>
+                    </section>
+                    <li>To move a table from one schema to another</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> SET SCHEMA <i>&lt;schema name></i>;</code></pre>
+                    </section>
+                    <li>
+                        Column add, drop, and alter can also be done at the same
+                        time.
+                    </li>
+                    <li class="li-2">To add a column:</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> ADD COLUMN IF NOT EXISTS <i>&lt;column name> &lt;column type></i> ;</code></pre>
+                    </section>
+                    <li class="li-2">To add a column in a schema:</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> ADD COLUMN IF NOT EXISTS <i>&lt;column name> &lt;column type></i> ;</code></pre>
+                    </section>
+                    <li class="li-2">To drop a column:</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> DROP COLUMN IF EXISTS <i>&lt;column name></i> ;</code></pre>
+                    </section>
+                    <li class="li-2">To drop a column in a schema:</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> DROP COLUMN IF EXISTS <i>&lt;column name></i> ;</code></pre>
+                    </section>
+                    <li class="li-2">To alter column name:</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> RENAME COLUMN <i>&lt;new column name></i> ;</code></pre>
+                    </section>
+                    <li class="li-2">To alter column name in a schema:</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> RENAME COLUMN <i>&lt;new column name></i> ;</code></pre>
+                    </section>
+                    <li class="li-2">To alter column type:</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> ALTER COLUMN <i>&lt;column name></i> TYPE <i>&lt;column type></i>;</code></pre>
+                    </section>
+                    <li class="li-2">To alter column type in a schema:</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> ALTER COLUMN <i>&lt;column name></i> TYPE <i>&lt;column type></i>;</code></pre>
+                    </section>
+                    <li class="li-2">To alter column default value:</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> ALTER COLUMN <i>&lt;column name></i> SET DEFAULT <i>&lt;value></i>;</code></pre>
+                    </section>
+                    <li class="li-2">
+                        To alter column default value in a schema:
+                    </li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> ALTER COLUMN <i>&lt;column name></i> SET DEFAULT <i>&lt;value></i>;</code></pre>
+                    </section>
+                    <li class="li-2">To drop column default value:</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>ALTER TABLE IF EXISTS <i>&lt;table name></i> ALTER COLUMN <i>&lt;column name></i> DROP DEFAULT;</code></pre>
+                    </section>
+                    <li class="li-2">
+                        To drop column default value in a schema:
+                    </li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>ALTER TABLE IF EXISTS <i>&lt;schema name.table name></i> ALTER COLUMN <i>&lt;column name></i> DROP DEFAULT;</code></pre>
+                    </section>
+
+                    <section class="code-block">
+                        <pre id="alter_table_copy" class="code-box">
+    <code>
 import psycopg2
 
 conn = psycopg2.connect(
-  user='postgres',
-  password='password',
-  host='localhost',
-  port=5432,
-  database='demo_database')
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432,
+    database='demo_database')
 
 conn.autocommit = True
 cur = conn.cursor()
@@ -1139,131 +1193,137 @@ cur.execute(alter_table)
 
 conn.commit()
 conn.close()
-                        </code>
-                    </pre>
-            </section>
-            <br /><br />
-            <section class="output-">
-              <figure>
-                <figcaption>Alter Table</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-12 124355.png"
-                  title="alter_table"
-                />
-              </figure>
-              <figure>
-                <figcaption>Alter Table In Schema</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-12 125053.png"
-                  title="alter_table_in_schema"
-                />
-              </figure>
-              <figure>
-                <figcaption>
-                  Set Schema of a table (Move a Schema from one table to
-                  another)
-                </figcaption>
-                <img
-                  src="images//Screenshot 2023-10-12 125628.png"
-                  title="set_schema_of_table"
-                />
-              </figure>
-              <figure>
-                <figcaption>pgAdmin => Old table name</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-08 095239.png"
-                  title="old_table_name"
-                />
-              </figure>
-              <figure>
-                <figcaption>pgAdmin => New table name</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-08 095352.png"
-                  title="new_table_name"
-                />
-              </figure>
-              <figure>
-                <figcaption>Gitbash/PSQL => Old table name</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-08 101258.png"
-                  title="GitBash/psql_alter_table_name"
-                />
-              </figure>
-              <figure>
-                <figcaption>GitBash/PSQL => Alter table name</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-08 101328.png"
-                  title="GitBash/psql_alter_table_name"
-                />
-              </figure>
-              <figure>
-                <figcaption>GitBash/PSQL => New table name</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-08 102408.png"
-                  title="GitBash/psql_new_table_name"
-                />
-              </figure>
-            </section>
-          </div>
-        <br /><br />
-        <div id="SQL13">
-          <h2>
-          Copy Table</h2>
-            <ul class="li-2">
-              Change the
-              <span style="color: aqua; background-color: gray"> aqua</span>
-              code to any of the variations below replacing what is between &lt;
-              & > in italics with the appropriate names.
-            </ul>
-            <li>
-              <b
-                >Table being copied will be created as a new table. Use join to
-                combine the columns.</b
-              >
-            </li>
-            <li>To copy a table:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>CREATE TABLE <i>&lt;new table name></i> AS (SELECT <i>&lt;column names / *></i> FROM <i>&lt; table name></i>);</code></pre>
-            </section>
-            <li>To copy a table from a specific schema:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>CREATE TABLE <i>&lt;schema name.new table name></i> AS (SELECT <i>&lt;column names / *></i> FROM <i>&lt;schema name.table name></i>);</code></pre>
-            </section>
-            <li>
-              To copy a table without data (Table structure/column names and
-              types only):
-            </li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>CREATE TABLE <i>&lt;new table name></i> AS (SELECT <i>&lt;column names / *></i> FROM <i>&lt; table name></i>) WITH NO DATA;</code></pre>
-            </section>
-            <li>
-              To copy a table from a specific schema without data (Table
-              structure/column names and types only):
-            </li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>CREATE TABLE <i>&lt;schema name.new table name></i> AS (SELECT <i>&lt;column names / *></i> FROM <i>&lt;schema name.table name></i>) WITH NO DATA;</code></pre>
-              
-            </section>
-            <br /><br />
-            <section class="code-block">
-              <pre id="copy_table_copy" class="code-box">
-                      <code>
+    </code>
+                </pre>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <figcaption>Alter Table</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-12 124355.png"
+                                title="alter_table"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>Alter Table In Schema</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-12 125053.png"
+                                title="alter_table_in_schema"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>
+                                Set Schema of a table (Move a Schema from one
+                                table to another)
+                            </figcaption>
+                            <img
+                                src="images//Screenshot 2023-10-12 125628.png"
+                                title="set_schema_of_table"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>pgAdmin => Old table name</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-08 095239.png"
+                                title="old_table_name"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>pgAdmin => New table name</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-08 095352.png"
+                                title="new_table_name"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>
+                                Gitbash/PSQL => Old table name
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-08 101258.png"
+                                title="GitBash/psql_alter_table_name"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>
+                                GitBash/PSQL => Alter table name
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-08 101328.png"
+                                title="GitBash/psql_alter_table_name"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>
+                                GitBash/PSQL => New table name
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-08 102408.png"
+                                title="GitBash/psql_new_table_name"
+                            />
+                        </figure>
+                    </section>
+                </ul>
+            </div>
+            <div id="copy_table">
+                <h2 class="topic-title">Copy Table</h2>
+                <ul class="li-2">
+                    Change the
+                    <span style="color: aqua; background-color: gray">
+                        aqua</span
+                    >
+                    code to any of the variations below replacing what is
+                    between &lt; & > in italics with the appropriate names.
+                </ul>
+                <ul>
+                    <li>
+                        <b
+                            >Table being copied will be created as a new table.
+                            Use join to combine the columns.</b
+                        >
+                    </li>
+                    <li>To copy a table:</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>CREATE TABLE <i>&lt;new table name></i> AS (SELECT <i>&lt;column names / *></i> FROM <i>&lt; table name></i>);</code></pre>
+                    </section>
+                    <li>To copy a table from a specific schema:</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>CREATE TABLE <i>&lt;schema name.new table name></i> AS (SELECT <i>&lt;column names / *></i> FROM <i>&lt;schema name.table name></i>);</code></pre>
+                    </section>
+                    <li>
+                        To copy a table without data (Table structure/column
+                        names and types only):
+                    </li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>CREATE TABLE <i>&lt;new table name></i> AS (SELECT <i>&lt;column names / *></i> FROM <i>&lt; table name></i>) WITH NO DATA;</code></pre>
+                    </section>
+                    <li>
+                        To copy a table from a specific schema without data
+                        (Table structure/column names and types only):
+                    </li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>CREATE TABLE <i>&lt;schema name.new table name></i> AS (SELECT <i>&lt;column names / *></i> FROM <i>&lt;schema name.table name></i>) WITH NO DATA;</code></pre>
+                    </section>
+
+                    <section class="code-block">
+                        <pre id="copy_table_copy" class="code-box">
+                    <code>
 import psycopg2
 
 conn = psycopg2.connect(
-  user='postgres',
-  password='password',
-  host='localhost',
-  port=5432,
-  database='demo_database')
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432,
+    database='demo_database')
 
 conn.autocommit = True
 cur = conn.cursor()
@@ -1274,109 +1334,107 @@ cur.execute(copy_table)
 
 conn.commit()
 conn.close()
-                      </code>
-                  </pre>
-            </section>
-            <br /><br />
-            <section class="output">
-              <figure>
-                <figcaption>Tables before copying</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-14 151745.png"
-                  title="tables_before_copying"
-                />
-              </figure>
-              <figure>
-                <figcaption>Copied Table</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-14 151505.png"
-                  title="copied_table"
-                />
-              </figure>
-              <figure>
-                <figcaption>Tables after copying</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-14 151745.png"
-                  title="tables_after_copying"
-                />
-              </figure>
-            </section>
-          </div>
-        <br /><br />
-        <div id="SQL14">
-          <h2>Insert Values</h2>
-            <ul class="li-2">
-              Change the
-              <span style="color: aqua; background-color: gray"> aqua</span>
-              code to any of the variations below replacing what is between &lt;
-              & > in italics with the appropriate names.
-            </ul>
-            <li><b>Query Tool in pgAdmin:</b></li>
-            <ul class="li-2">
-              To access:
-            </ul>
-            <figure class="li-2">
-              <figcaption>Image Caption</figcaption>
-              <img
-                src="images/Screenshot 2023-10-14 151923.png"
-                title="Query_Tool_pgAdmin"
-              />
-            </figure>
-            <li>
-              To insert values to specific tables in specific schemas, follow
-              the
-              <i>&lt;schema name.table name></i> convention.
-            </li>
-            <li>To insert Values into one column:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>INSERT INTO <i>&lt;schema name.table name></i>(<i>&lt;column name></i>) VALUES (<i>&lt;value</i>);</code></pre>
-              
-            </section>
-            <li>To insert multiple Values into multiple columns:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>INSERT INTO <i>&lt;schema name.table name></i>(<i>&lt;column name>, &lt;column name 2>, ...</i>) VALUES (<i>&lt;value for column name 1>, &lt;value for column name 2>, ...</i>);</code></pre>
-              
-            </section>
-            <li>To insert multiple Values into one Column:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>INSERT INTO <i>&lt;schema name.table name></i>(<i>&lt;column name></i>) VALUES (<i>&lt;value 1</i>), (<i>&lt;value 2></i>), (<i>&lt;value 3></i>);</code></pre>
-              
-            </section>
-            <li>To insert the default value by request</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>INSERT INTO <i>&lt;schema name.table name></i>(<i>&lt;column name></i>) VALUES (<i>&lt;value </i>, DEFAULT);</code></pre>
-              
-            </section>
-            <li>
-              To insert NULL as a value, make sure the value you want to be NULL
-              is replaced with NULL
-            </li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>INSERT INTO <i>&lt;schema name.table name></i>(<i>&lt;column name 1>, &lt; column name 2>, &lt; column name ...></i>) VALUES (<i>NULL, NULL, NULL></i>;</code></pre>
-              
-            </section>
-            <br /><br />
-            <section class="code-block">
-              <pre id="tab_name_copy" class="code-box">
-                        <code>
+                    </code>
+                </pre>
+                    </section>
+
+                    <section class="output">
+                        <figure>
+                            <figcaption>Tables before copying</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-14 151745.png"
+                                title="tables_before_copying"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>Copied Table</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-14 151505.png"
+                                title="copied_table"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>Tables after copying</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-14 151745.png"
+                                title="tables_after_copying"
+                            />
+                        </figure>
+                    </section>
+                </ul>
+            </div>
+            <div id="insert_values">
+                <h2 class="topic-title">Insert Values</h2>
+                <ul class="li-2">
+                    Change the
+                    <span style="color: aqua; background-color: gray">
+                        aqua</span
+                    >
+                    code to any of the variations below replacing what is
+                    between &lt; & > in italics with the appropriate names.
+                </ul>
+                <ul>
+                    <li><b>Query Tool in pgAdmin:</b></li>
+                    <ul class="li-2">
+                        To access:
+                    </ul>
+                    <figure class="li-2">
+                        <figcaption>Image Caption</figcaption>
+                        <img
+                            src="images/Screenshot 2023-10-14 151923.png"
+                            title="Query_Tool_pgAdmin"
+                        />
+                    </figure>
+                    <li>
+                        To insert values to specific tables in specific schemas,
+                        follow the
+                        <i>&lt;schema name.table name></i> convention.
+                    </li>
+                    <li>To insert Values into one column:</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>INSERT INTO <i>&lt;schema name.table name></i>(<i>&lt;column name></i>) VALUES (<i>&lt;value</i>);</code></pre>
+                    </section>
+                    <li>To insert multiple Values into multiple columns:</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>INSERT INTO <i>&lt;schema name.table name></i>(<i>&lt;column name>, &lt;column name 2>, ...</i>) VALUES (<i>&lt;value for column name 1>, &lt;value for column name 2>, ...</i>);</code></pre>
+                    </section>
+                    <li>To insert multiple Values into one Column:</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>INSERT INTO <i>&lt;schema name.table name></i>(<i>&lt;column name></i>) VALUES (<i>&lt;value 1</i>), (<i>&lt;value 2></i>), (<i>&lt;value 3></i>);</code></pre>
+                    </section>
+                    <li>To insert the default value by request</li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>INSERT INTO <i>&lt;schema name.table name></i>(<i>&lt;column name></i>) VALUES (<i>&lt;value </i>, DEFAULT);</code></pre>
+                    </section>
+                    <li>
+                        To insert NULL as a value, make sure the value you want
+                        to be NULL is replaced with NULL
+                    </li>
+                    <section class="code-block">
+                        <pre
+                            class="li-2"
+                        ><code>INSERT INTO <i>&lt;schema name.table name></i>(<i>&lt;column name 1>, &lt; column name 2>, &lt; column name ...></i>) VALUES (<i>NULL, NULL, NULL></i>;</code></pre>
+                    </section>
+
+                    <section class="code-block">
+                        <pre id="tab_name_copy" class="code-box">
+                    <code>
 import psycopg2
 
 conn = psycopg2.connect(
-  user='postgres',
-  password='password',
-  host='localhost',
-  port=5432,
-  database='demo_database')
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432,
+    database='demo_database')
 
 conn.autocommit = True
 cur = conn.cursor()
@@ -1387,135 +1445,124 @@ cur.execute(insert_values)
 
 conn.commit()
 conn.close()
-                        </code>
-                    </pre>
-            </section>
-            <br /><br />
-            <li>Demo Values:</li>
-            <section class="code-block">
-              <pre class="li-2"><code>
-                demo_table => id = 5
-                              f_name = "Laila"
-              </code></pre>
-            </section>
-            <section class="output">
-              <figure>
-                <figcaption>
-                  Empty Demo Schema => Demo Table (SQL query)
-                </figcaption>
-                <img
-                  src="images/Screenshot 2023-10-14 161253.png"
-                  title="empty_demo_schema.demo_table_sql_query"
-                />
-              </figure>
-              
-              <figure>
-                <figcaption>Inserting values</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-16 124635.png"
-                  title="inserting_values"
-                />
-              </figure>
-              <figure>
-                <figcaption>After inserting values</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-14 161432.png"
-                  title="after_inserting_values"
-                />
-              </figure>
-              <figure>
-                <figcaption>
-                  Table after inserting only values in one column
-                </figcaption>
-                <img
-                  src="images/Screenshot 2023-10-14 162619.png"
-                  title="after_inserting_values_in_only_one_column"
-                />
-              </figure>
-              <figure>
-                <figcaption>
-                  Table after inserting values in some columns
-                </figcaption>
-                <img
-                  src="images/Screenshot 2023-10-16 124501.png"
-                  title="inserting_values_in_some_columns"
-                />
-              </figure>
-              <figure>
-                <figcaption>Table after inserting NULL values</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-18 092109.png"
-                  title="inserting_null_values"
-                />
-              </figure>
-            </section>
-            
-          </div>
-          
-        <br /><br />
-        
-        <div id="SQL15">
-          <h2>
-            Delete Values</h2>
-            
-            <ul class="li-2">
-              Change the
-              <span style="color: aqua; background-color: gray"> aqua</span>
-              code to any of the variations below replacing what is between &lt;
-              & > in italics with the appropriate names.
-            </ul>
-            <li>
-              For specific tables in specific schemas, follow the
-              <i>&lt;schema name.table name></i> convention.
-            </li>
-            <li>
-              Sample table with data:
-              <figure>
-                <figcaption>Sample Table</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-18 093409.png"
-                  title="sample_table"
-                />
-              </figure>
-            </li>
-            <li>To drop rows with a specific value:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>DELETE FROM <i>&lt;table name></i> WHERE <i>&lt;column name = value></i>;</code></pre>
-              
-            </section>
-            <li>To drop multiple rows:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>DELETE FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> IN (<i>&lt;value 1, value 2, ...></i>);</code></pre>
-              
-            </section>
-            <li>To drop all rows:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>DELETE FROM <i>&lt;table name></i>;</code></pre>
-              
-            </section>
-            <li>To drop rows where value is NULL:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>DELETE FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> IS NULL;</code></pre>
-            </section>
-            <section class="code-block">
-              <pre id="tab_name_copy" class="code-box">
-                        <code>
+                    </code>
+                </pre>
+                    </section>
+
+                    <li>Demo Values:</li>
+                    <section class="code-block">
+                        <pre class="li-2"><code>
+demo_table => id = 5
+f_name = "Laila"
+            </code></pre>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <figcaption>
+                                Empty Demo Schema => Demo Table (SQL query)
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-14 161253.png"
+                                title="empty_demo_schema.demo_table_sql_query"
+                            />
+                        </figure>
+
+                        <figure>
+                            <figcaption>Inserting values</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-16 124635.png"
+                                title="inserting_values"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>After inserting values</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-14 161432.png"
+                                title="after_inserting_values"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>
+                                Table after inserting only values in one column
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-14 162619.png"
+                                title="after_inserting_values_in_only_one_column"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>
+                                Table after inserting values in some columns
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-16 124501.png"
+                                title="inserting_values_in_some_columns"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>
+                                Table after inserting NULL values
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-18 092109.png"
+                                title="inserting_null_values"
+                            />
+                        </figure>
+                    </section>
+                </ul>
+            </div>
+            <div id="delete_values">
+                <h2 class="topic-title">Delete Values</h2>
+                <ul class="li-2">
+                    Change the
+                    <span style="color: aqua; background-color: gray">
+                        aqua</span
+                    >
+                    code to any of the variations below replacing what is
+                    between &lt; & > in italics with the appropriate names.
+                </ul>
+                <ul>
+                    <li>
+                        For specific tables in specific schemas, follow the
+                        <i>&lt;schema name.table name></i> convention.
+                    </li>
+                    <li>
+                        Sample table with data:
+                        <figure>
+                            <figcaption>Sample Table</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-18 093409.png"
+                                title="sample_table"
+                            />
+                        </figure>
+                    </li>
+                    <li>To drop rows with a specific value:</li>
+                    <section class="code-block">
+                        <pre><code>DELETE FROM <i>&lt;table name></i> WHERE <i>&lt;column name = value></i>;</code></pre>
+                    </section>
+                    <li>To drop multiple rows:</li>
+                    <section class="code-block">
+                        <pre><code>DELETE FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> IN (<i>&lt;value 1, value 2, ...></i>);</code></pre>
+                    </section>
+                    <li>To drop all rows:</li>
+                    <section class="code-block">
+                        <pre><code>DELETE FROM <i>&lt;table name></i>;</code></pre>
+                    </section>
+                    <li>To drop rows where value is NULL:</li>
+                    <section class="code-block">
+                        <pre><code>DELETE FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> IS NULL;</code></pre>
+                    </section>
+                    <section class="code-block">
+                        <pre id="tab_name_copy" class="code-box">
+                    <code>
 import psycopg2
 
 conn = psycopg2.connect(
-  user='postgres',
-  password='password',
-  host='localhost',
-  port=5432,
-  database='demo_database')
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432,
+    database='demo_database')
 
 conn.autocommit = True
 cur = conn.cursor()
@@ -1526,114 +1573,104 @@ cur.execute(drop_rows_where_value)
 
 conn.commit()
 conn.close()
-                        </code>
-                    </pre>
-            </section>
-            <br /><br />
-            <section class="output">
-              <figure>
-                <figcaption>Drop rows with specific Value</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-18 093829.png"
-                  title="table_after_dropping_row"
-                />
-              </figure>
-              <figure>
-                <figcaption>Drop multiple rows</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-18 094027.png"
-                  title="table_after_dropping_multiple_rows"
-                />
-              </figure>
-              <figure>
-                <figcaption>Drop row where value is NULL</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-18 094347.png"
-                  title="table_when_NULL_value_is_dropped"
-                />
-              </figure>
-              <figure>
-                <figcaption>Drop all rows</figcaption>
-                <img
-                  src="images/Screenshot 2023-10-18 094608.png"
-                  title="table_after_dropping_all_rows"
-                />
-              </figure>
-            </section>
-            
-          </div>
-          
-        <br /><br />
-        
-        <div id="SQL16">
-          <h2>Alter Values / Update Values</h2><ul class="li-2">
-              Change the
-              <span style="color: aqua; background-color: gray"> aqua</span>
-              code to any of the variations below replacing what is between &lt;
-              & > in italics with the appropriate names.
-            </ul>
-            <li>
-              To insert values to specific tables in specific schemas, follow
-              the
-              <i>&lt;schema name.table name></i> convention.
-            </li>
-            <li>To change/update one row:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>UPDATE <i>&lt;table name></i> SET <i>&lt;column name></i> = <i>&lt;value></i> WHERE <i>&lt;column name></i> = <i>&lt;value></i>;</code></pre>
-              
-            </section>
-            <li>To change/update multiple rows:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>UPDATE <i>&lt;table name></i> SET <i>&lt;column name></i> = <i>&lt;value></i> WHERE <i>&lt;column name></i> IN (<i>&lt;value 1, value 2, ...></i>);</code></pre>
-              
-            </section>
-            <li>To change/update all rows:</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>UPDATE <i>&lt;table name></i> SET <i>&lt;column name></i> = <i>&lt;value></i>;</code></pre>
-              
-            </section>
-            <li>To change/update row to default:</li>
-            <h4 class="li-2">
-              <i
-                >If DEFAULT has not been previously set up, then set it up using
-                the below ALTER TABLE code. <br />
-                If no DEFAULT has been set up, the the value will be set to
-                NULL.</i
-              >
-            </h4>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>UPDATE <i>&lt;table name></i> SET <i>&lt;column name></i> = DEFAULT;</code></pre>
-              
-            </section>
-            <li>To change/update default column value:</li>
-            <li class="li-2">
-              Must use Alter Table
-              <section class="code-block">
-                <pre
-                  class="li-2"
-                ><code>ALTER TABLE <i>table name></i> ALTER COLUMN <i>&lt;column name></i> SET DEFAULT <i>&lt;default value></i>;</code></pre>
-              </section>
-            </li>
-            <br /><br />
-            <section class="code-block">
-              <pre id="tab_name_copy" class="code-box">
-                        <code>
+                    </code>
+                </pre>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <figcaption>
+                                Drop rows with specific Value
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-18 093829.png"
+                                title="table_after_dropping_row"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>Drop multiple rows</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-18 094027.png"
+                                title="table_after_dropping_multiple_rows"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>
+                                Drop row where value is NULL
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-18 094347.png"
+                                title="table_when_NULL_value_is_dropped"
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>Drop all rows</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-18 094608.png"
+                                title="table_after_dropping_all_rows"
+                            />
+                        </figure>
+                    </section>
+                </ul>
+            </div>
+            <div id="alter_values">
+                <h2 class="topic-title">Alter Values / Update Values</h2>
+                <ul class="li-2">
+                    Change the
+                    <span style="color: aqua; background-color: gray">
+                        aqua</span
+                    >
+                    code to any of the variations below replacing what is
+                    between &lt; & > in italics with the appropriate names.
+                </ul>
+                <ul>
+                    <li>
+                        To insert values to specific tables in specific schemas,
+                        follow the
+                        <i>&lt;schema name.table name></i> convention.
+                    </li>
+                    <li>To change/update one row:</li>
+                    <section class="code-block">
+                        <pre><code>UPDATE <i>&lt;table name></i> SET <i>&lt;column name></i> = <i>&lt;value></i> WHERE <i>&lt;column name></i> = <i>&lt;value></i>;</code></pre>
+                    </section>
+                    <li>To change/update multiple rows:</li>
+                    <section class="code-block">
+                        <pre><code>UPDATE <i>&lt;table name></i> SET <i>&lt;column name></i> = <i>&lt;value></i> WHERE <i>&lt;column name></i> IN (<i>&lt;value 1, value 2, ...></i>);</code></pre>
+                    </section>
+                    <li>To change/update all rows:</li>
+                    <section class="code-block">
+                        <pre><code>UPDATE <i>&lt;table name></i> SET <i>&lt;column name></i> = <i>&lt;value></i>;</code></pre>
+                    </section>
+                    <li>To change/update row to default:</li>
+                    <h4 class="li-2">
+                        <i
+                            >If DEFAULT has not been previously set up, then set
+                            it up using the below ALTER TABLE code. If no
+                            DEFAULT has been set up, the the value will be set
+                            to NULL.</i
+                        >
+                    </h4>
+                    <section class="code-block">
+                        <pre><code>UPDATE <i>&lt;table name></i> SET <i>&lt;column name></i> = DEFAULT;</code></pre>
+                    </section>
+                    <li>To change/update default column value:</li>
+                    <li>
+                        Must use Alter Table
+                        <section class="code-block">
+                            <pre><code>ALTER TABLE <i>table name></i> ALTER COLUMN <i>&lt;column name></i> SET DEFAULT <i>&lt;default value></i>;</code></pre>
+                        </section>
+                    </li>
+
+                    <section class="code-block">
+                        <pre id="tab_name_copy" class="code-box">
+                    <code>
 import psycopg2
 
 conn = psycopg2.connect(
-  user='postgres',
-  password='password',
-  host='localhost',
-  port=5432,
-  database='demo_database')
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432,
+    database='demo_database')
 
 conn.autocommit = True
 cur = conn.cursor()
@@ -1644,141 +1681,164 @@ cur.execute(change_single_value)
 
 conn.commit()
 conn.close()
-                        </code>
-                    </pre>
-            </section>
-            <br /><br />
-            <section class="output">
-              <figure>
-                <figcaption>To change/update one row</figcaption>
-                <img src="images/Screenshot 2023-10-18 103045.png" title="" />
-              </figure>
-              <figure>
-                <figcaption>To Change Multiple Rows</figcaption>
-                <img src="images/Screenshot 2023-10-18 103330.png" title="" />
-              </figure>
-              <figure>
-                <figcaption>To Change/Update All Rows</figcaption>
-                <img src="images/Screenshot 2023-10-18 124521.png" title="" />
-              </figure>
-              <figure>
-                <figcaption>To Change/Update Row to Default</figcaption>
-                <img src="images/Screenshot 2023-10-18 124804.png" title="" />
-              </figure>
-            </section>
-          </div>
-        <br /><br />
-        <div id="SQL17">
-          <h2>Copy Values</h2>
-            <ul class="li-2">
-              Change the
-              <span style="color: aqua; background-color: gray"> aqua</span>
-              code to any of the variations below replacing what is between &lt;
-              & > in italics with the appropriate names.
-            </ul>
-            <li>
-              To insert values to specific tables in specific schemas, follow
-              the
-              <i>&lt;schema name.table name></i> convention.
-            </li>
-            <li>
-              When inserting column values from one column to another SQL
-              considers it to be new entries and fills in the other columns with
-              default values.
-            </li>
-            <li>To Copy Values within the same table</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>INSERT INTO <i>&lt;table name></i>(<i>&lt;column name></i>) SELECT <i>&lt;column name></i> FROM <i>&lt;table name></i>;</code></pre>
-              
-            </section>
-            <li>
-              To Copy Values from one table and insert it into another table
-              (This is applicable even to tables in different schemas)
-            </li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>INSERT INTO <i>&lt;table  name></i>(<i>&lt;column name></i>) SELECT <i>&lt;column name></i> FROM <i>&lt;table name></i>;</code></pre>
-              
-            </section>
-            <br /><br />
-            <section class="code-block">
-              <pre id="tab_name_copy" class="code-box">
-                        <code>
+                    </code>
+            </pre>
+                    </section>
+
+                    <section class="output">
+                        <figure>
+                            <figcaption>To change/update one row</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-18 103045.png"
+                                title=""
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>To Change Multiple Rows</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-18 103330.png"
+                                title=""
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>To Change/Update All Rows</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-18 124521.png"
+                                title=""
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>
+                                To Change/Update Row to Default
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-18 124804.png"
+                                title=""
+                            />
+                        </figure>
+                    </section>
+                </ul>
+            </div>
+            <div id="copy_values">
+                <h2 class="topic-title">Copy Values</h2>
+                <ul class="li-2">
+                    Change the
+                    <span style="color: aqua; background-color: gray">
+                        aqua</span
+                    >
+                    code to any of the variations below replacing what is
+                    between &lt; & > in italics with the appropriate names.
+                </ul>
+                <ul>
+                    <li>
+                        To insert values to specific tables in specific schemas,
+                        follow the
+                        <i>&lt;schema name.table name></i> convention.
+                    </li>
+                    <li>
+                        When inserting column values from one column to another
+                        SQL considers it to be new entries and fills in the
+                        other columns with default values.
+                    </li>
+                    <li>To Copy Values within the same table</li>
+                    <section class="code-block">
+                        <pre><code>INSERT INTO <i>&lt;table name></i>(<i>&lt;column name></i>) SELECT <i>&lt;column name></i> FROM <i>&lt;table name></i>;</code></pre>
+                    </section>
+                    <li>
+                        To Copy Values from one table and insert it into another
+                        table (This is applicable even to tables in different
+                        schemas)
+                    </li>
+                    <section class="code-block">
+                        <pre><code>INSERT INTO <i>&lt;table  name></i>(<i>&lt;column name></i>) SELECT <i>&lt;column name></i> FROM <i>&lt;table name></i>;</code></pre>
+                    </section>
+
+                    <section class="code-block">
+                        <pre id="tab_name_copy" class="code-box">
+                    <code>
 import psycopg2
 
 conn = psycopg2.connect(
-  user='postgres',
-  password='password',
-  host='localhost',
-  port=5432,
-  database='demo_database')
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432,
+    database='demo_database')
 
 conn.autocommit = True
 cur = conn.cursor()
-      
+    
 copy_values_same_table = """<span style="color:aqua">INSERT INTO demo_schema.demo_table(demo_col_2) SELECT demo_col_1 FROM demo_schema.demo_table;</span>"""
 
 cur.execute(copy_values_same_table)
 
 conn.commit()
 conn.close()
-                      </code>
-                    </pre>
-            </section>
-            <br /><br />
-            <section class="output">
-              <figure>
-                <figcaption>copy values within the same table</figcaption>
-                <img src="images/Screenshot 2023-10-18 211102.png" title="" />
-              </figure>
-              <figure>
-                <figcaption>copy values from one table to another</figcaption>
-                <img src="images/Screenshot 2023-10-18 212116.png" title="" />
-              </figure>
-            </section>
-          </div>
-        <br /><br />
-        <div id="SQL18">
-          <h2>Order By</h2>
-            <ul class="li-2">
-              Change the
-              <span style="color: aqua; background-color: gray"> aqua</span>
-              code to any of the variations below replacing what is between &lt;
-              & > in italics with the appropriate names.
-            </ul>
-            <li>
-              To insert values to specific tables in specific schemas, follow
-              the
-              <i>&lt;schema name.table name></i> convention.
-            </li>
-            <li>
-              Use ASC to sort by Ascending Order, or DESC to sort by descending
-              order. ASC is used by default.
-            </li>
-            <li>
-              Use NULLS FIRST or NULLS LAST to explicitly specify if nulls
-              should be sorted first or last. DESC uses NULLS FIRST by default.
-            </li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>SELECT <i>&lt;column name></i> FROM <i>&lt;table name></i> ORDER BY <i>&lt;column name></i> <i>&lt;ASC/DESC></i> <i>&lt;NULLS FIRST/NULLS LAST></i>;</code></pre>
-              
-            </section>
-            <section class="code-block">
-              <pre id="tab_name_copy" class="code-box">
-                      <code>
+                    </code>
+                </pre>
+                    </section>
+
+                    <section class="output">
+                        <figure>
+                            <figcaption>
+                                copy values within the same table
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-18 211102.png"
+                                title=""
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>
+                                copy values from one table to another
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-18 212116.png"
+                                title=""
+                            />
+                        </figure>
+                    </section>
+                </ul>
+            </div>
+            <div id="order_by">
+                <h2 class="topic-title">Order By</h2>
+                <ul class="li-2">
+                    Change the
+                    <span style="color: aqua; background-color: gray">
+                        aqua</span
+                    >
+                    code to any of the variations below replacing what is
+                    between &lt; & > in italics with the appropriate names.
+                </ul>
+                <ul>
+                    <li>
+                        To insert values to specific tables in specific schemas,
+                        follow the
+                        <i>&lt;schema name.table name></i> convention.
+                    </li>
+                    <li>
+                        Use ASC to sort by Ascending Order, or DESC to sort by
+                        descending order. ASC is used by default.
+                    </li>
+                    <li>
+                        Use NULLS FIRST or NULLS LAST to explicitly specify if
+                        nulls should be sorted first or last. DESC uses NULLS
+                        FIRST by default.
+                    </li>
+                    <section class="code-block">
+                        <pre><code>SELECT <i>&lt;column name></i> FROM <i>&lt;table name></i> ORDER BY <i>&lt;column name></i> <i>&lt;ASC/DESC></i> <i>&lt;NULLS FIRST/NULLS LAST></i>;</code></pre>
+                    </section>
+                    <section class="code-block">
+                        <pre id="tab_name_copy" class="code-box">
+                    <code>
 import psycopg2
 
 conn = psycopg2.connect(
-  user='postgres',
-  password='password',
-  host='localhost',
-  port=5432,
-  database='demo_database')
+user='postgres',
+password='password',
+host='localhost',
+port=5432,
+database='demo_database')
 
 conn.autocommit = True
 cur = conn.cursor()
@@ -1787,450 +1847,601 @@ cur.execute(order)
 
 conn.commit()
 conn.close()
-                      </code>
-                  </pre>
-            </section>
-            <br /><br />
-            <section class="output">
-              <figure>
-                <figcaption>Order By</figcaption>
-                <img src="images/Screenshot 2023-10-18 214326.png" title="" />
-              </figure>
-            </section>
-          </div>
-        <br /><br />
-        <div id="SQL19">
-          <h2>Distinct</h2>
-            <ul class="li-2">
-              Change the
-              <span style="color: aqua; background-color: gray"> aqua</span>
-              code to any of the variations below replacing what is between &lt;
-              & > in italics with the appropriate names.
-            </ul>
-            <li>
-              To insert values to specific tables in specific schemas, follow
-              the
-              <i>&lt;schema name.table name></i> convention.
-            </li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>SELECT DISTINCT <i>&lt;column name></i>FROM <i>&lt;table name></i> ORDER BY <i>&lt;column name></i> <i>&lt;ASC/DESC></i> <i>&lt;NULL FIRST/NULL LAST></i>;</code></pre>
-              
-            </section>
-            <section class="code-block">
-              <pre id="tab_name_copy" class="code-box">
-                      <code>
+                    </code>
+                </pre>
+                    </section>
+
+                    <section class="output">
+                        <figure>
+                            <figcaption>Order By</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-18 214326.png"
+                                title=""
+                            />
+                        </figure>
+                    </section>
+                </ul>
+            </div>
+            <div id="distinct">
+                <h2 class="topic-title">Distinct</h2>
+                <ul class="li-2">
+                    Change the
+                    <span style="color: aqua; background-color: gray">
+                        aqua</span
+                    >
+                    code to any of the variations below replacing what is
+                    between &lt; & > in italics with the appropriate names.
+                </ul>
+                <ul>
+                    <li>
+                        To insert values to specific tables in specific schemas,
+                        follow the
+                        <i>&lt;schema name.table name></i> convention.
+                    </li>
+                    <section class="code-block">
+                        <pre><code>SELECT DISTINCT <i>&lt;column name></i>FROM <i>&lt;table name></i> ORDER BY <i>&lt;column name></i> <i>&lt;ASC/DESC></i> <i>&lt;NULL FIRST/NULL LAST></i>;</code></pre>
+                    </section>
+                    <section class="code-block">
+                        <pre id="tab_name_copy" class="code-box">
+                    <code>
 import psycopg2
 
 conn = psycopg2.connect(
-  user='postgres',
-  password='password',
-  host='localhost',
-  port=5432,
-  database='demo_database')
+    user='postgres',
+    password='password',
+    host='localhost',
+    port=5432,
+    database='demo_database')
 
 conn.autocommit = True
 cur = conn.cursor()
-  
+
 order = """<span style="color:aqua; background-color:grey;">SELECT f_name FROM demo_schema.demo_table ORDER BY f_name ASC;</span>"""
 cur.execute(order)
 
 conn.commit()
 conn.close()
-                      </code>
-                  </pre>
-            </section>
-            <br /><br />
-            <section class="output">
-              <figure>
-                <figcaption>Order By Distinct</figcaption>
-                <img src="images/Screenshot 2023-10-18 231930.png" title="" />
-              </figure>
-            </section>
-          </div>
-        <br /><br />
-        <div id="SQL20">
-          <h2>Where</h2>
-            <ul class="li-2">
-              Change the
-              <span style="color: aqua; background-color: gray"> aqua</span>
-              code to any of the variations below replacing what is between &lt;
-              & > in italics with the appropriate names.
-            </ul>
-            <li>
-              To insert values to specific tables in specific schemas, follow
-              the
-              <i>&lt;schema name.table name</i> convention.
-            </li>
-            <li>Where clause uses comparison and logical Operators.</li>
-            <li class="li-2">
-              <b><i>=</i></b>
-            </li>
-            <li class="li-2">
-              <b><i>&lt;</i></b>
-            </li>
-            <li class="li-2">
-              <b><i>></i></b>
-            </li>
-            <li class="li-2">
-              <b><i>&lt;=</i></b>
-            </li>
-            <li class="li-2">
-              <b><i>>=</i></b>
-            </li>
-            <li class="li-2">
-              <b><i>&lt;> or !=</i></b>
-            </li>
-            <li class="li-2">
-              <b><i>AND</i></b>
-            </li>
-            <span class="li-2"
-              >Used when checking if all conditions are either TRUE or FALSE
-              <section class="code-block">
-                <pre
-                  class="li-2"
-                ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> = <i>&lt;value></i> AND <i>&lt;column name></i> = <i>&lt;value></i>;</code></pre>
-              </section>
-            </span>
-            <section class="output">
-              <figure>
-                <figcaption>WHERE => AND</figcaption>
-                <img src="images/Screenshot 2023-10-20 183846.png" title="" />
-              </figure>
-            </section>
-            <li class="li-2">
-              <b><i>OR</i></b>
-            </li>
-            <span class="li-2"
-              >Used if at least one condition must evaluate to TRUE
-              <section class="code-block">
-                <pre
-                  class="li-2"
-                ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> = <i>&lt;value></i> OR <i>&lt;column name></i> = <i>&lt;value></i>;</code></pre>
-              </section>
-            </span>
-            <section class="output">
-              <figure>
-                <figcaption>WHERE => OR</figcaption>
-                <img src="images/Screenshot 2023-10-20 184209.png" title="" />
-              </figure>
-            </section>
-            <li class="li-2">
-              <b><i>IN</i></b>
-            </li>
-            <span class="li-2">
-              Used only when checking a list of operators. Returns TRUE if
-              <i>value</i> matches any value in the list.
-              <section class="code-block">
-                <pre
-                  class="li-2"
-                ><code>SELECT * FROM <i>&lt;table_name></i> WHERE <i>&lt;column name></i> IN (<i>&lt;value1, value2, ...></i>);</code></pre>
-              </section>
-            </span>
-            <section class="output">
-              <figure>
-                <figcaption>WHERE => IN</figcaption>
-                <img src="images/Screenshot 2023-10-20 184255.png" title="" />
-              </figure>
-            </section>
-            <li class="li-2">
-              <b><i>BETWEEN</i></b>
-            </li>
-            <span class="li-2">
-              Used to match a value between a range.
-              <section class="code-block">
-                <pre class="li-2"><code
-                    >SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> BETWEEN <i>&lt;value1></i> AND <i>&lt;value2></i>;</code
-                  ></pre>
-              </section>
-            </span>
-            <section class="output">
-              <figure>
-                <figcaption>WHERE => BETWEEN</figcaption>
-                <img src="images/Screenshot 2023-10-20 184349.png" title="" />
-              </figure>
-            </section>
-            <li class="li-2">
-              <b><i>LIKE</i></b>
-            </li>
-            <span class="li-2">
-              Used to query data using pattern matching.
-              <li class="li-2 li_tab">
-                <b>%</b><br />
-                <span class="li_tab"
-                  >Matches any sequence of zero or more characters.</span
-                ><br />
-                <span class="li_tab"
-                  >EX: Matches anything that starts with 'Vio'</span
-                >
-                <section class="code-block">
-                  <pre><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> LIKE 'Vio%';</code></pre>
-                  
-                </section>
-                <section class="output>
-                  <figure>
-                    <figcaption>WHERE => LIKE => %</figcaption>
-                    <img
-                      src="images/Screenshot 2023-10-20 184723.png"
-                      title=""
-                    />
-                  </figure>
-                </section>
-              </li>
-              <li class="li-2 li_tab">
-                <b>_</b><br />
-                <span class="li_tab">Matches any single character</span
-                ><br /><span class="li_tab"
-                  >Matches anything where the second character is 'i', followed
-                  by any number of other characters.</span
-                >
-                <section class="code-block">
-                  <pre><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> LIKE '_i%';</code></pre>
-                </section>
-                <section class="output">
-                  <figure>
-                    <figcaption>WHERE => LIKE => _</figcaption>
-                    <img
-                      src="images/Screenshot 2023-10-21 154146.png"
-                      title=""
-                    />
-                  </figure>
-                </section>
-              </li>
-              <li class="li-2 li_tab">
-                <b>ILIKE</b> Used for non-case-sensitive matching.<br />
-                <span class="li_tab"
-                  >Matches but doesn't care for case sensitive.</span
-                >
-                <section class="code-block">
-                  <pre><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> ILIKE '%Vio%';</code></pre>
-                  
-                </section><section class="output">
-                  <figure>
-                    <figcaption>WHERE => ILIKE</figcaption>
-                    <img
-                      src="images/Screenshot 2023-10-21 153957.png"
-                      title=""
-                    />
-                  </figure>
-                </section>
-              </li>
-            </span>
-            <li class="li-2">
-              <b><i>IS NULL</i></b>
-            </li>
-            <span class="li-2">
-              Check if the value is NULL.
-              <section class="code-block">
-                <pre
-                  class="li-2"
-                ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> = <i>&lt;value></i> AND <i>&lt;column name></i> IS NULL;</code></pre>
-              </section>
-            </span>
-            <section class="output">
-              <figure>
-                <figcaption>WHERE => IS NULL</figcaption>
-                <img src="images/Screenshot 2023-10-20 183846.png" title="" />
-              </figure>
-            </section>
-            <span class="li-2">
-              Return results including IS NULL.
-              <section class="code-block">
-                <pre
-                  class="li-2"
-                ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> IS NULL OR/AND <i>&lt;column name></i> IN (<i>&lt;value1>, &lt;value2>, &lt;...></i>);</code></pre>
-              </section>
-            </span>
-            <figure>
-              <figcaption>
-                WHERE => IS NULL AND/OR IN (value1, value2, ...)
-              </figcaption>
-              <img src="images/Screenshot 2023-10-23 092245.png" title="" />
-            </figure>
-            <li class="li-2">
-              <b><i>NOT</i></b>
-            </li>
-            <span class="li-2">
-              Omits the values specified by NOT
-              <section class="code-block">
-                <pre
-                  class="li-2"
-                ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> NOT IN (<i>&lt;value1, value2, ...></i>);</code></pre>
-              </section>
-            </span>
-            <section class="output">
-              <figure>
-                <figcaption>WHERE => NOT</figcaption>
-                <img src="images/Screenshot 2023-10-21 154232.png" title="" />
-              </figure>
-            </section>
-            <br /><br />
-          </div>
-        <br /><br />
-        <div id="SQL21">
-          <h2>Limit & Offset</h2>
-            <ul class="li-2">
-              Change the
-              <span style="color: aqua; background-color: gray"> aqua</span>
-              code to any of the variations below replacing what is between &lt;
-              & > in italics with the appropriate names.
-            </ul>
-            <li>
-              To insert values to specific tables in specific schemas, follow
-              the
-              <i>&lt;schema name.table name</i> convention.
-            </li>
-            <li>Limits the number of results returned by the query</li>
-            <section class="code-block">
-              <pre
-                class="li-2"
-              ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> BETWEEN <i>&lt;value1></i> AND <i>&lt;value2></i>;</code></pre>
-              
-            </section>
-            <li>
-              Offset is when you say to skip a certain number of rows before
-              beginnign the return row
-            </li>
-            <section class="code-block">
-              <pre><code>SELECT * FROM <i>&lt;table name</i> LIMIT <i>&lt;number></i>, offset <i>&lt;number></i>;</code></pre>
-              
-            </section>
-            <figure>
-              <figcaption>Return Query Without Limits</figcaption>
-              <img src="images/Screenshot 2023-10-21 154756.png" title="" />
-            </figure>
-            <figure>
-              <figcaption>Return Query With Limits</figcaption>
-              <img src="images/Screenshot 2023-10-21 154841.png" title="" />
-            </figure>
-            <figure>
-              <figcaption>Query With Limits and Offset</figcaption>
-              <img src="images/Screenshot 2023-10-23 090533.png" title="" />
-            </figure>
-          </div>
-        <br /><br />
-        <div id="SQL22">
-          <h2>Joins</h2>
-            <ul>
-              Change the
-              <span style="color: aqua; background-color: gray"> aqua</span>
-              code to any of the variations below replacing what is between &lt;
-              & > in italics with the appropriate names.
-            </ul>
-            <li>
-              To insert values to specific tables in specific schemas, follow
-              the
-              <i>&lt;schema name.table name</i> convention.
-            </li>
-            <h4><u>Inner Join</u></h4>
-            <li>
-              Inner Join joins the common values from the selected columns of
-              the selected tables.
-            </li>
-            <li>Using the following tables:<br /></li>
-            <section class="image-columns">
-              <figure>
-                <figcaption>Types of Joins</figcaption>
-                <img src="images/PostgreSQL-Joins.png" title="" />
-              </figure>
-              <div class="row">
-                <div class="column">
-                  <figure>
-                    <figcaption>demo_table</figcaption>
-                    <img
-                      src="images/Screenshot 2023-10-22 155912.png"
-                      title=""
-                    />
-                  </figure>
-                </div>
-                <div class="column">
-                  <figure>
-                    <figcaption>Joined Table</figcaption>
-                    <img
-                      src="images/Screenshot 2023-10-22 155944.png"
-                      title=""
-                    />
-                  </figure>
-                </div>
-              </div>
-            </section>
-            <li>
-              Must use 2 tables and 1 column from each that share the same-ish
-              data. <br />Can choose to display however many columns from each
-              table as liked that will correspond to the query.
-            </li>
-            <section class="code-block">
-<pre><code>SELECT <i>&lt;column1 from table1>, &lt;column1 from table2>, &lt;column2 from table1>, ... </i>
+                    </code>
+                </pre>
+                    </section>
+
+                    <section class="output">
+                        <figure>
+                            <figcaption>Order By Distinct</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-18 231930.png"
+                                title=""
+                            />
+                        </figure>
+                    </section>
+                </ul>
+            </div>
+            <div id="where">
+                <h2 class="topic-title">Where</h2>
+                <ul class="li-2">
+                    Change the
+                    <span style="color: aqua; background-color: gray">
+                        aqua</span
+                    >
+                    code to any of the variations below replacing what is
+                    between &lt; & > in italics with the appropriate names.
+                </ul>
+                <ul>
+                    <li>
+                        To insert values to specific tables in specific schemas,
+                        follow the
+                        <i>&lt;schema name.table name</i> convention.
+                    </li>
+                    <li>Where clause uses comparison and logical Operators.</li>
+                    <li class="li-2">
+                        <b><i>=</i></b>
+                    </li>
+                    <li class="li-2">
+                        <b><i>&lt;</i></b>
+                    </li>
+                    <li class="li-2">
+                        <b><i>></i></b>
+                    </li>
+                    <li class="li-2">
+                        <b><i>&lt;=</i></b>
+                    </li>
+                    <li class="li-2">
+                        <b><i>>=</i></b>
+                    </li>
+                    <li class="li-2">
+                        <b><i>&lt;> or !=</i></b>
+                    </li>
+                    <li class="li-2">
+                        <b><i>AND</i></b>
+                    </li>
+                    <span class="li-2"
+                        >Used when checking if all conditions are either TRUE or
+                        FALSE
+                        <section class="code-block">
+                            <pre
+                                class="li-2"
+                            ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> = <i>&lt;value></i> AND <i>&lt;column name></i> = <i>&lt;value></i>;</code></pre>
+                        </section>
+                    </span>
+                    <section class="output">
+                        <figure>
+                            <figcaption>WHERE => AND</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-20 183846.png"
+                                title=""
+                            />
+                        </figure>
+                    </section>
+                    <li class="li-2">
+                        <b><i>OR</i></b>
+                    </li>
+                    <span class="li-2"
+                        >Used if at least one condition must evaluate to TRUE
+                        <section class="code-block">
+                            <pre
+                                class="li-2"
+                            ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> = <i>&lt;value></i> OR <i>&lt;column name></i> = <i>&lt;value></i>;</code></pre>
+                        </section>
+                    </span>
+                    <section class="output">
+                        <figure>
+                            <figcaption>WHERE => OR</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-20 184209.png"
+                                title=""
+                            />
+                        </figure>
+                    </section>
+                    <li class="li-2">
+                        <b><i>IN</i></b>
+                    </li>
+                    <span class="li-2">
+                        Used only when checking a list of operators. Returns
+                        TRUE if
+                        <i>value</i> matches any value in the list.
+                        <section class="code-block">
+                            <pre
+                                class="li-2"
+                            ><code>SELECT * FROM <i>&lt;table_name></i> WHERE <i>&lt;column name></i> IN (<i>&lt;value1, value2, ...></i>);</code></pre>
+                        </section>
+                    </span>
+                    <section class="output">
+                        <figure>
+                            <figcaption>WHERE => IN</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-20 184255.png"
+                                title=""
+                            />
+                        </figure>
+                    </section>
+                    <li class="li-2">
+                        <b><i>BETWEEN</i></b>
+                    </li>
+                    <span class="li-2">
+                        Used to match a value between a range.
+                        <section class="code-block">
+                            <pre class="li-2"><code
+                  >SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> BETWEEN <i>&lt;value1></i> AND <i>&lt;value2></i>;</code
+                ></pre>
+                        </section>
+                    </span>
+                    <section class="output">
+                        <figure>
+                            <figcaption>WHERE => BETWEEN</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-20 184349.png"
+                                title=""
+                            />
+                        </figure>
+                    </section>
+                    <li class="li-2">
+                        <b><i>LIKE</i></b>
+                    </li>
+                    <span class="li-2">
+                        Used to query data using pattern matching.
+                        <li class="li-2 li_tab">
+                            <b>&percnt;</b>
+                            <span class="li_tab">
+                                Matches any sequence of zero or more
+                                characters.</span
+                            >
+
+                            <span class="li_tab">
+                                EX: Matches anything that starts with 'Vio'
+                            </span>
+                        </li>
+                        <section class="code-block">
+                            <pre><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> LIKE 'Vio%';</code></pre>
+                        </section>
+                        <li class="li-2 li_tab">
+                            <b>_</b>
+                            <span class="li_tab"
+                                >Matches any single character</span
+                            >
+
+                            <span class="li_tab"
+                                >Matches anything where the second character is
+                                'i', followed by any number of other
+                                characters.</span
+                            >
+                        </li>
+                        <section class="code-block">
+                            <pre><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> LIKE '_i&percnt;';</code></pre>
+                        </section>
+                        <section class="output">
+                            <figure>
+                                <figcaption>WHERE => LIKE => _</figcaption>
+                                <img
+                                    src="images/Screenshot 2023-10-21 154146.png"
+                                    title=""
+                                />
+                            </figure>
+                        </section>
+                        <li class="li-2 li_tab">
+                            <b>ILIKE</b> Used for non-case-sensitive matching.
+
+                            <span class="li_tab"
+                                >Matches but doesn't care for case
+                                sensitive.</span
+                            >
+                        </li>
+                        <section class="code-block">
+                            <pre><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> ILIKE '%Vio%';</code></pre>
+                        </section>
+                        <section class="output">
+                            <figure>
+                                <figcaption>WHERE => ILIKE</figcaption>
+                                <img
+                                    src="images/Screenshot 2023-10-21 153957.png"
+                                    title=""
+                                />
+                            </figure>
+                        </section>
+                    </span>
+                    <li class="li-2">
+                        <b><i>IS NULL</i></b>
+                    </li>
+                    <span class="li-2">
+                        Check if the value is NULL.
+                        <section class="code-block">
+                            <pre
+                                class="li-2"
+                            ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> = <i>&lt;value></i> AND <i>&lt;column name></i> IS NULL;</code></pre>
+                        </section>
+                    </span>
+                    <section class="output">
+                        <figure>
+                            <figcaption>WHERE => IS NULL</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-20 183846.png"
+                                title=""
+                            />
+                        </figure>
+                    </section>
+                    <span class="li-2">
+                        Return results including IS NULL.
+                        <section class="code-block">
+                            <pre
+                                class="li-2"
+                            ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> IS NULL OR/AND <i>&lt;column name></i> IN (<i>&lt;value1>, &lt;value2>, &lt;...></i>);</code></pre>
+                        </section>
+                    </span>
+                    <figure>
+                        <figcaption>
+                            WHERE => IS NULL AND/OR IN (value1, value2, ...)
+                        </figcaption>
+                        <img
+                            src="images/Screenshot 2023-10-23 092245.png"
+                            title=""
+                        />
+                    </figure>
+                    <li class="li-2">
+                        <b><i>NOT</i></b>
+                    </li>
+                    <span class="li-2">
+                        Omits the values specified by NOT
+                        <section class="code-block">
+                            <pre
+                                class="li-2"
+                            ><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> NOT IN (<i>&lt;value1, value2, ...></i>);</code></pre>
+                        </section>
+                    </span>
+                    <section class="output">
+                        <figure>
+                            <figcaption>WHERE => NOT</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-21 154232.png"
+                                title=""
+                            />
+                        </figure>
+                    </section>
+                </ul>
+            </div>
+            <div id="limit_offset">
+                <h2 class="topic-title">Limit & Offset</h2>
+                <ul class="li-2">
+                    Change the
+                    <span style="color: aqua; background-color: gray">
+                        aqua</span
+                    >
+                    code to any of the variations below replacing what is
+                    between &lt; & > in italics with the appropriate names.
+                </ul>
+                <ul>
+                    <li>
+                        To insert values to specific tables in specific schemas,
+                        follow the
+                        <i>&lt;schema name.table name</i> convention.
+                    </li>
+                    <li>Limits the number of results returned by the query</li>
+                    <section class="code-block">
+                        <pre><code>SELECT * FROM <i>&lt;table name></i> WHERE <i>&lt;column name></i> BETWEEN <i>&lt;value1></i> AND <i>&lt;value2></i>;</code></pre>
+                    </section>
+                    <li>
+                        Offset is when you say to skip a certain number of rows
+                        before beginnign the return row
+                    </li>
+                    <section class="code-block">
+                        <pre><code>SELECT * FROM <i>&lt;table name</i> LIMIT <i>&lt;number></i>, offset <i>&lt;number></i>;</code></pre>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <figcaption>Return Query Without Limits</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-21 154756.png"
+                                title=""
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>Return Query With Limits</figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-21 154841.png"
+                                title=""
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>
+                                Query With Limits and Offset
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-23 090533.png"
+                                title=""
+                            />
+                        </figure>
+                    </section>
+                </ul>
+            </div>
+            <div id="joins">
+                <h2 class="topic-title">Joins</h2>
+                <ul class="li-2">
+                    Change the
+                    <span style="color: aqua; background-color: gray">
+                        aqua</span
+                    >
+                    code to any of the variations below replacing what is
+                    between &lt; & > in italics with the appropriate names.
+                </ul>
+                <ul>
+                    <li>
+                        To insert values to specific tables in specific schemas,
+                        follow the
+                        <i>&lt;schema name.table name</i> convention.
+                    </li>
+                    <h4 class="usage-title"><u>Inner Join</u></h4>
+                    <li>
+                        Inner Join joins the common values from the selected
+                        columns of the selected tables.
+                    </li>
+                    <li>Using the following tables:</li>
+                    <section class="image-columns">
+                        <figure>
+                            <figcaption>Types of Joins</figcaption>
+                            <img src="images/PostgreSQL-Joins.png" title="" />
+                        </figure>
+                        <div class="row">
+                            <div class="column">
+                                <figure>
+                                    <figcaption>demo_table</figcaption>
+                                    <img
+                                        src="images/Screenshot 2023-10-22 155912.png"
+                                        title=""
+                                    />
+                                </figure>
+                            </div>
+                            <div class="column">
+                                <figure>
+                                    <figcaption>Joined Table</figcaption>
+                                    <img
+                                        src="images/Screenshot 2023-10-22 155944.png"
+                                        title=""
+                                    />
+                                </figure>
+                            </div>
+                        </div>
+                    </section>
+                    <li>
+                        Must use 2 tables and 1 column from each that share the
+                        same-ish data. Can choose to display however many
+                        columns from each table as liked that will correspond to
+                        the query.
+                    </li>
+                    <section class="code-block">
+                        <pre><code>SELECT <i>&lt;column1 from table1>, &lt;column1 from table2>, &lt;column2 from table1>, ... </i>
 FROM <i>&lt;table1></i> 
 INNER JOIN <i>&lt;tabel2></i>
 ON <i>&lt;column1 from table1 with similar data></i> = <i>&lt; column1 from table2 with similar data></i>;</code></pre>
-            </section>
-            <br /><br />
-            <section>
-              <section class="code-block">
-                <pre><code>SELECT a_fruit, b_fruit 
+                    </section>
+
+                    <section>
+                        <section class="code-block">
+                            <pre><code>SELECT a_fruit, b_fruit 
 FROM table_a 
 INNER JOIN table_b
 ON a_fruit = b_fruit;
-                      </code></pre>
-              </section>
-            </section>
-            <section class="output">
-              <figure>
-                <figcaption>Inner Join</figcaption>
-                <img src="images//Screenshot 2023-10-22 160127.png" title="" />
-              </figure>
-            </section>
-          </div>
-        <br /><br />
-        <div id="SQL23">
-          <h2>Group By</h2>
-            <ul class="li-2">
-              Change the
-              <span style="color: aqua; background-color: gray"> aqua</span>
-              code to any of the variations below replacing what is between &lt;
-              & > in italics with the appropriate names.
-            </ul>
-            <li>
-              To insert values to specific tables in specific schemas, follow
-              the
-              <i>&lt;schema name.table name</i> convention.
-            </li>
-            <li>
-              Condenses elements that share the same value. <br />
-              <span class="li_tab"
-                >Normally used with an aggregate function like SUM.</span
-              >
-              <br />
-              <span class="li_tab"
-                >But if no aggregate function is used works like DISTINCT.</span
-              >
-            </li>
-            <section class="code-block">
-              <pre><code>SELECT <i>&lt;Optional - aggregate></i><i>&lt;column name></i> FROM <i>&lt;table name></i> GROUP BY <i>&lt;column name</i>;</code></pre>
-              
-            </section>
-            <section class="output">
-              <figure>
-                <figcaption>
-                  l_names grouped by sum of num column, limited to 5 first
-                  returns
-                </figcaption>
-                <img src="images/Screenshot 2023-10-23 091649.png" title="" />
-              </figure>
-              <figure>
-                <figcaption>
-                  l_names without grouping by num column limited to the l_names
-                  that appear in GROUPED BY
-                </figcaption>
-                <img src="images/Screenshot 2023-10-23 092245.png" title="" />
-              </figure>
-            </section>
-          </div>
-        <br /><br />
-    </div>
-        
-    <script src="sql.js"></script>
-  </body>
+                    </code></pre>
+                        </section>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <figcaption>Inner Join</figcaption>
+                            <img
+                                src="images//Screenshot 2023-10-22 160127.png"
+                                title=""
+                            />
+                        </figure>
+                    </section>
+                </ul>
+            </div>
+            <div id="group_by">
+                <h2 class="topic-title">Group By</h2>
+                <ul class="li-2">
+                    Change the
+                    <span style="color: aqua; background-color: gray"
+                        >aqua</span
+                    >
+                    code to any of the variations below replacing what is
+                    between &lt; & > in italics with the appropriate names.
+                </ul>
+                <ul>
+                    <li>
+                        To insert values to specific tables in specific schemas,
+                        follow the
+                        <i>&lt;schema name.table name</i> convention.
+                    </li>
+                    <li>
+                        Condenses elements that share the same value.
+                        <span class="li_tab"
+                            >Normally used with an aggregate function like
+                            SUM.</span
+                        >
+
+                        <span class="li_tab"
+                            >But if no aggregate function is used works like
+                            DISTINCT.</span
+                        >
+                    </li>
+                    <section class="code-block">
+                        <pre><code>SELECT <i>&lt;Optional - aggregate></i><i>&lt;column name></i> FROM <i>&lt;table name></i> GROUP BY <i>&lt;column name</i>;</code></pre>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <figcaption>
+                                l_names grouped by sum of num column, limited to
+                                5 first returns
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-23 091649.png"
+                                title=""
+                            />
+                        </figure>
+                        <figure>
+                            <figcaption>
+                                l_names without grouping by num column limited
+                                to the l_names that appear in GROUPED BY
+                            </figcaption>
+                            <img
+                                src="images/Screenshot 2023-10-23 092245.png"
+                                title=""
+                            />
+                        </figure>
+                    </section>
+                </ul>
+            </div>
+            <div id="aliases">
+                <h2 class="topic-title">Aliases</h2>
+                <ul class="li-2">
+                    Change the
+                    <span style="color: aqua; background-color: gray"
+                        >aqua</span
+                    >
+                    code to any of the variations below replacing what is
+                    between &lt; & > in italics with the appropriate names.
+                </ul>
+                <ul>
+                    <li>
+                        Temporarily assigns new names to tables creted during
+                        the execution of a query
+                    </li>
+                    <section class="code-block">
+                        <pre><code>
+                            code1
+                            code2
+                            code3
+                        </code></pre>
+                    </section>
+                </ul>
+            </div>
+            <div id="having">
+                <h2 class="topic-title">Having</h2>
+                <ul class="li-2">
+                    Change the
+                    <span style="color: aqua; background-color: gray"
+                        >aqua</span
+                    >
+                    code to any of the variations below replacing what is
+                    between &lt; & > in italics with the appropriate names.
+                </ul>
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+            <div id="foreign_key">
+                <h2 class="topic-title">Foreign Key</h2>
+                <ul class="li-2">
+                    Change the
+                    <span style="color: aqua; background-color: gray"
+                        >aqua</span
+                    >
+                    code to any of the variations below replacing what is
+                    between &lt; & > in italics with the appropriate names.
+                </ul>
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+            <div id="primary_key">
+                <h2 class="topic-title">Primary Key</h2>
+                <ul class="li-2">
+                    Change the
+                    <span style="color: aqua; background-color: gray"
+                        >aqua</span
+                    >
+                    code to any of the variations below replacing what is
+                    between &lt; & > in italics with the appropriate names.
+                </ul>
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+            <div id="check">
+                <h2 class="topic-title">Check</h2>
+                <ul class="li-2">
+                    Change the
+                    <span style="color: aqua; background-color: gray"
+                        >aqua</span
+                    >
+                    code to any of the variations below replacing what is
+                    between &lt; & > in italics with the appropriate names.
+                </ul>
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+            <div id="unique">
+                <h2 class="topic-title">Unique</h2>
+                <ul class="li-2">
+                    Change the
+                    <span style="color: aqua; background-color: gray"
+                        >aqua</span
+                    >
+                    code to any of the variations below replacing what is
+                    between &lt; & > in italics with the appropriate names.
+                </ul>
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <script src="sql.js"></script>
+    </body>
 </html>
