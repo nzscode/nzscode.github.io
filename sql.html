@@ -30,6 +30,7 @@
             <a href="#rename_database">Rename Database</a>
             <a href="#copy_database">Copy Database</a>
             <a href="#delete_database">Delete Database</a>
+            <a href="#restore_database">Restore Database</a>
             <h2 class="nav-title">Schema :</h2>
             <a href="#create_schema">Create Schema</a>
             <a href="#dropschema">Drop Schema</a>
@@ -552,6 +553,181 @@ conn.close()
                             </figcaption>
                         </figure>
                     </section>
+                </ul>
+            </div>
+            <div id="restore_database">
+                <h2 class="topic-title">Restore Database</h2>
+                <ul class="li-2">
+                    Change the
+                    <span style="color: aqua; background-color: gray"
+                        >aqua</span
+                    >
+                    code to any of the variations below replacing what is
+                    between &lt; & > in italics with the appropriate names.
+                </ul>
+                <ul>
+                    <li>
+                        To load the database first save the sample database
+                        somewhere easy to remember.
+                    </li>
+                    <li class="li-2">
+                        Download the database if it is a zip file,
+                        unpack/extract and save it as sample_database (or an
+                        equivalent name).
+                    </li>
+                    <li class="li-2">
+                        C:\Users\nzsco\Documents\sample_database
+                    </li>
+                    <li><b>If using PowerShell</b></li>
+                    <li class="li-2">Launch the PowerShell</li>
+                    <li class="li-2">Type:</li>
+                    <section class="code-block">
+                        <pre><code>
+psql -U postgres
+                        </code></pre>
+                    </section>
+                    <li class="li-2">
+                        Enter the password at the prompt. (Default password is
+                        <i>password</i>
+                    </li>
+                    <figure class="li-2">
+                        <img
+                            src="images/Screenshot 2023-10-30 115541.png"
+                            alt=""
+                        />
+                        <figcaption>
+                            Logging into to postgreSQL using PowerShell
+                        </figcaption>
+                    </figure>
+                    <li><b>If using PSQL Shell</b></li>
+                    <li class="li-2">
+                        Press enter for all the other prompts except for
+                        password, enter the password. (Default is
+                        <i>password</i>).
+                    </li>
+                    <figure class="li-2">
+                        <img
+                            src="images/Screenshot 2023-10-30 115014.png"
+                            alt=""
+                        />
+                        <figcaption>
+                            Logging into to postgreSQL using PSQL Shell
+                        </figcaption>
+                    </figure>
+                    <li><b>If using GitBash</b></li>
+                    <li class="li-2">Launch GitBash</li>
+                    <li class="li-2">Type:</li>
+                    <section class="code-block">
+                        <pre><code>
+psql -U postgres
+                        </code></pre>
+                    </section>
+                    <li class="li-2">
+                        Enter the password at the prompt. (Default password is
+                        <i>password</i>
+                    </li>
+                    <figure class="li-2">
+                        <img
+                            src="images/Screenshot 2023-10-30 115649.png"
+                            alt=""
+                        />
+                        <figcaption>
+                            Logging into to postgreSQL using GitBash
+                        </figcaption>
+                    </figure>
+                    <li>
+                        Regardless of which of the above methods you use to
+                        login to PostgreSQL Database, the following steps are
+                        all the same.
+                    </li>
+                    <section class="code-block">
+                        <pre><code>
+CREATE DATABASE <i>&lt;database_name></i>
+                        </code></pre>
+                    </section>
+                    <li class="li-2">The result will look like this:</li>
+                    <section class="output li-2">
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-30 120325.png"
+                                alt=""
+                            />
+                            <figcaption>Create Database</figcaption>
+                        </figure>
+                    </section>
+                    <li>
+                        Finally enter the <i>exit</i> command to quit whichever
+                        shell program you are using.
+                    </li>
+                    <li>On pgAdmin Navigate to File > Preferences.</li>
+                    <figure class="li-2">
+                        <img
+                            src="images/Screenshot 2023-10-30 120631.png"
+                            alt=""
+                        />
+                        <figcaption>pgAdmin4 => File > Preferences</figcaption>
+                    </figure>
+                    <li class="li-2">Scroll down to Paths > Binary Paths</li>
+                    <li class="li-2">
+                        Now scroll to PostgreSQL Binary Path on the large
+                        window, and Navigate to your current database server (As
+                        of October 2023, it is PostgreSQL16)
+                    </li>
+                    <li class="li-2">
+                        Under Binary Path Field, enter where the bin file of
+                        your version of PostgreSQL is stored.(As of 2023,
+                        PostgreSQL16 was stored in C:\Program
+                        Files\PostgreSQL\16\bin
+                    </li>
+                    <li class="li-2">Save it.</li>
+                    <section class="output">
+                        <figure class="li-2">
+                            <img
+                                src="images/Screenshot 2023-10-30 120806.png"
+                                alt=""
+                            />
+                            <figcaption>
+                                Checking Binary path of PostgreSQL(current
+                                version = 16)\bin
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <li>
+                        Now on pgAdmin4, navigate to the table, and choose
+                        right-click option '<i>restore</i>'
+                    </li>
+                    <figure class="li-2">
+                        <img
+                            src="images/Screenshot 2023-10-30 130504.png"
+                            alt=""
+                        />
+                        <figcaption>
+                            <i
+                                >Choosing restore option from right clik menu on
+                                table name.</i
+                            >
+                        </figcaption>
+                    </figure>
+                    <li class="li-2">
+                        Choose the location where you saved the downloaded
+                        database, and select it for the filename field.
+                    </li>
+                    <li>Click Restore.</li>
+                    <section class="output">
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-30 131146.png"
+                                alt=""
+                            />
+                            <figcaption>
+                                Restore sample database from location.
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <li>
+                        Now verify the contents of the table, by making sure all
+                        columns and respective data have been imported.
+                    </li>
                 </ul>
             </div>
             <div id="create_schema">
@@ -2359,15 +2535,38 @@ ON a_fruit = b_fruit;
                 </ul>
                 <ul>
                     <li>
-                        Temporarily assigns new names to tables creted during
-                        the execution of a query
+                        Temporarily assigns new names to columns/tables created
+                        during the execution of a query
                     </li>
+                    <li><b>When using for columns</b></li>
                     <section class="code-block">
                         <pre><code>
-                            code1
-                            code2
-                            code3
+"""SELECT <i>&lt;column1, column2, ...></i> FROM <i>&lt;table name></i> AS <i>&lt;new table name</i> WHERE <i>&lt;column name></i> = <i>&lt;value</i>;"""
                         </code></pre>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-30 100811.png"
+                                alt=""
+                            />
+                            <figcaption>Alias Table Name</figcaption>
+                        </figure>
+                    </section>
+                    <li><b>When using for tables</b></li>
+                    <section class="code-block">
+                        <pre><code>
+"""SELECT <i>&lt;column1></i> AS <i>&lt;new column1 name</i>, <i>&lt;column2</i> AS <i>&lt;new column2 name></i>, <i>&lt;...></i> AS <i>&lt;new ... name></i> FROM <i>&lt;table name></i>  WHERE <i>&lt;column name></i> = <i>&lt;value</i>;"""
+                        </code></pre>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-30 101548.png"
+                                alt=""
+                            />
+                            <figcaption>Alias Column Name</figcaption>
+                        </figure>
                     </section>
                 </ul>
             </div>
@@ -2382,7 +2581,33 @@ ON a_fruit = b_fruit;
                     between &lt; & > in italics with the appropriate names.
                 </ul>
                 <ul>
-                    <li></li>
+                    <li>
+                        Specifies a search condition, and is most often used
+                        with the GROUP BY clause.
+                    </li>
+                    <li>
+                        WHERE allows filtering rows based on a condition, HAVING
+                        filters groups of rows.
+                    </li>
+                    <section class="code-block">
+                        <pre><code>
+SELECT <i>&lt;column name></i>, <i>&lt;aggregate></i> (<i>&lt;column name></i>)
+FROM <i>&lt;table name></i>
+GROUP BY <i>&lt;column name</i>
+HAVING <i>&lt;aggregate></i> (<i>&lt;column name></i>) <i>&lt;conditional statement></i>
+ORDER BY <i>&lt;aggregate></i> <i>&lt;ASC/DESC></i>
+*LIMIT <i>&lt;number>*(optional)</i>;
+                        </code></pre>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-30 132045.png"
+                                alt=""
+                            />
+                            <figcaption>Having</figcaption>
+                        </figure>
+                    </section>
                 </ul>
             </div>
             <div id="foreign_key">
@@ -2396,7 +2621,29 @@ ON a_fruit = b_fruit;
                     between &lt; & > in italics with the appropriate names.
                 </ul>
                 <ul>
-                    <li></li>
+                    <li>
+                        It is a column or group of columns in a table that
+                        references the primary key of another table.
+                    </li>
+                    <li>Foreign Key Constraints must be set:</li>
+                    <section class="code-block li-2">
+                        <pre><code>
+CONSTRAINT <i>&lt;foreign key column name></i>
+    FOREIGN KEY(<i>&lt;column details that belong in the foreign key></i>) 
+        REFERENCES <i>&lt;referencing table name></i>(<i>&lt;referencing key column name></i>)
+                        </code></pre>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-30 135755.png"
+                                alt=""
+                            />
+                            <figcaption>
+                                Setting constraints for foreign key
+                            </figcaption>
+                        </figure>
+                    </section>
                 </ul>
             </div>
             <div id="primary_key">
@@ -2410,7 +2657,17 @@ ON a_fruit = b_fruit;
                     between &lt; & > in italics with the appropriate names.
                 </ul>
                 <ul>
-                    <li></li>
+                    <li>
+                        If not explicitly named, a default name and primary key
+                        will be assigned.
+                    </li>
+                    <li>
+                        Primary Keys can be naed at table creation in either way
+                        below:
+                    </li>
+                    <li class="li-2">
+                        Declare Primary Key with the column types
+                    </li>
                 </ul>
             </div>
             <div id="check">
