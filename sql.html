@@ -56,7 +56,8 @@
             <a href="#foreign_key">Foreign Key</a>
             <a href="#primary_key">Primary Key</a>
             <a href="#check">Check</a>
-            <a href="unique">Unique</a>
+            <a href="#unique">Unique</a>
+            <a href="#constraints">Constraints</a>
         </div>
         <div class="main">
             <h1 class="center-title">SQL</h1>
@@ -2662,12 +2663,72 @@ CONSTRAINT <i>&lt;foreign key column name></i>
                         will be assigned.
                     </li>
                     <li>
-                        Primary Keys can be naed at table creation in either way
-                        below:
+                        Primary Key(s) can be made at table creation in either
+                        way below:
                     </li>
-                    <li class="li-2">
-                        Declare Primary Key with the column types
+                    <li class="li-2">Declare a Primary Key :</li>
+                    <section class="code-block">
+                        <pre><code>
+CREATE TABLE <i>&lt;table name></i> (
+    <i>&lt;column1 name></i> <i>&lt;column1 type></i> PRIMARY KEY,
+    <i>&lt;column2 name></i> <i>&lt;column2 type></i>,
+    <i>...</i>
+);
+                        </code></pre>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-31 112202.png"
+                                alt=""
+                            />
+                            <figcaption>Creating a Primary Key</figcaption>
+                        </figure>
+                    </section>
+                    <li class="li-2">Declaring Multiple Primary Keys:</li>
+                    <section class="code-block">
+                        <pre><code>
+CREATE TABLE <i>&lt;table name></i> (
+    <i>&lt;column1 name></i> <i>&lt;column1 type></i>,
+    <i>&lt;column2 name></i> <i>&lt;column2 type></i>,
+    <i>&lt;...></i>,
+
+    PRIMARY KEY (<i>&lt;column1 name</i>, <i>&lt;column2 name</i>, <i>&lt;...></i>)
+);
+                        </code></pre>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-31 112717.png"
+                                alt=""
+                            />
+                            <figcaption>
+                                Creating Multiple Primary Keys
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <li>
+                        If changing a Primary Key on an already created table:
                     </li>
+                    <li>Use Alter Table</li>
+                    <section class="code-block li-2">
+                        <pre><code>
+ALTER TABLE <i>&lt;table name></i> ADD PRIMARY KEY (<i>&lt;column1 name></i>, <i>&lt;column2 name></i>, <i>&lt;...></i>) ;
+                        </code></pre>
+                    </section>
+                    <li>To auto Increment Primary Key</li>
+                    <section class="code-block li-2">
+                        <pre><code>
+ALTER TABLE <i>&lt;table name></i> ADD <i>&lt;column1 name></i> SERIAL PRIMARY KEY;
+                        </code></pre>
+                    </section>
+                    <li>To Drop Primary Key</li>
+                    <section class="code-block li-2">
+                        <pre><code>
+ALTER TABLE <i>&lt;table name></i> DROP CONSTRAINT <i>&lt;primary key constraint></i>;
+                        </code></pre>
+                    </section>
                 </ul>
             </div>
             <div id="check">
@@ -2681,7 +2742,47 @@ CONSTRAINT <i>&lt;foreign key column name></i>
                     between &lt; & > in italics with the appropriate names.
                 </ul>
                 <ul>
-                    <li></li>
+                    <li>
+                        Uses a Boolean expression to evaluate values before they
+                        are inserted/updated to a column
+                    </li>
+                    <li>Typically used during Create Table</li>
+                    <section class="code-block li-2">
+                        <pre><code>
+CREATE TABLE <i>&lt;table name></i> (
+    <i>&lt;id></i> SERIAL PRIMARY KEY,
+    <i>&lt;column2 name></i> numeric CHECK (x > <i>&lt;value></i>),
+    <i>&lt;column3 name></i> DATE (<i>&lt;column3 name></i> > '<i>&lt;yyyy-mm-dd></i>')
+);
+                        </code></pre>
+                    </section>
+                    <section class="output li-2">
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-31 115747.png"
+                                alt=""
+                            />
+                            <figcaption>Using Check Constraints</figcaption>
+                        </figure>
+                    </section>
+                    <li>Add a Check Constraint to an existing table:</li>
+                    <section class="code-block li-2">
+                        <pre><code>
+ALTER TABLE <i>&lt;table name></i> 
+ADD CONSTRAINT <i>&lt;name of constraint></i> 
+CHECK (
+    <i>&lt;values to check></i>
+);
+                        </code></pre>
+                    </section>
+                    <li>To drop a check constraint from an existing table:</li>
+                    <section class="code-block">
+                        <pre><code>
+                            code1
+                            code2
+                            code3
+                        </code></pre>
+                    </section>
                 </ul>
             </div>
             <div id="unique">
@@ -2696,6 +2797,156 @@ CONSTRAINT <i>&lt;foreign key column name></i>
                 </ul>
                 <ul>
                     <li></li>
+                </ul>
+            </div>
+            <div id="constraints">
+                <h2 class="topic-title">Constraints</h2>
+                <ul class="li-2">
+                    Change the
+                    <span style="color: aqua; background-color: gray"
+                        >aqua</span
+                    >
+                    code to any of the variations below replacing what is
+                    between &lt; & > in italics with the appropriate names.
+                </ul>
+                <ul>
+                    <li>Types of Constraints</li>
+                    <li class="li-2">CHECK</li>
+                    <li class="li-2">NOT NULL</li>
+                    <li class="li-2">UNIQUE</li>
+                    <li class="li-2">PRIMARY</li>
+                    <li class="li-2">FOREIGN</li>
+                    <li>To Add a constraint at Table Creation</li>
+                    <section class="code-block">
+                        <pre><code>
+CREATE TABLE <i>&lt;table name></i> (
+    <i>&lt;column1 name></i> <i>&lt;constraint type></i>
+);
+                        </code></pre>
+                    </section>
+                    <section class="output li-2">
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-31 123457.png"
+                                alt=""
+                            />
+                            <figcaption>
+                                Adding Constraints without specifying names, and
+                                referencing a foreign key directly
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <section class="output li-2">
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-31 124014.png"
+                                alt=""
+                            />
+                            <figcaption>
+                                Adding Constraints at the end of column creation
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <li class="li-2">
+                        Adding constraints and specifying constraint names
+                    </li>
+                    <section class="output">
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-31 130257.png"
+                                alt=""
+                            />
+                            <figcaption>
+                                Adding Constraints and specifying constraints
+                                during column creation (except foreign key)
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-31 125650.png"
+                                alt=""
+                            />
+                            <figcaption>
+                                Adding Constraints and specifying constraint
+                                names at end of column creation
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-31 154920.png"
+                                alt=""
+                            />
+                            <figcaption>
+                                Combining multiple constraints
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <li class="li-2">
+                        For the first_name constraint, the entry values must
+                        start with any alphabet in the range a-z, followed by
+                        anything else. The value will be checked in lowercase to
+                        make it easier.
+                    </li>
+                    <li>
+                        To add a constraint to an existing column in a table
+                    </li>
+                    <section class="code-block">
+                        <pre><code>
+ALTER TABLE <i>&lt;table name></i>
+ADD CONSTRAINT <i>&lt;constraint name></i> <i>&lt;constraint type></i> (<i>&lt;column1 name></i>);
+                        </code></pre>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-31 213115.png"
+                                alt=""
+                            />
+                            <figcaption>Add Constraint to a Table</figcaption>
+                        </figure>
+                    </section>
+                    <li>To modify a constraint</li>
+
+                    <li>To drop a constraint from a column</li>
+                    <section class="code-block">
+                        <pre><code>
+ALTER TABLE <i>&lt;table name></i>
+DROP CONSTRAINT <i>&lt;constraint name></i>;
+                        </code></pre>
+                    </section>
+                    <section class="output">
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-31 213335.png"
+                                alt=""
+                            />
+                            <figcaption>
+                                Dropped constraint from column in a table
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <li>To find a constraint</li>
+                    <section class="code-block">
+                        <pre><code>
+SELECT CONSTRAINT_NAME
+FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
+WHERE TABLE_NAME = '<i>&lt;table name></i>'
+AND CONSTRAINT_TYPE = '<i>&lt;constraint type></i>';
+                        </code></pre>
+                    </section>
+                    <section class="output li-2">
+                        <figure>
+                            <img
+                                src="images/Screenshot 2023-10-31 121227.png"
+                                alt=""
+                            />
+                            <figcaption>Finding Constraints</figcaption>
+                        </figure>
+                    </section>
                 </ul>
             </div>
         </div>
